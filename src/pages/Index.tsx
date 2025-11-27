@@ -107,10 +107,10 @@ const Index = () => {
 
   const handleRain = () => {
     setIsRaining(true);
-    // Stop animation after 5 seconds (when water reaches half)
+    // Stop animation smoothly after 6.5 seconds (water fill + smooth exit)
     setTimeout(() => {
       setIsRaining(false);
-    }, 5000);
+    }, 6500);
   };
 
   const handleReset = () => {

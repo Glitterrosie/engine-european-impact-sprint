@@ -35,7 +35,7 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3, onReset }: Con
         size="lg"
         className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg border-2 border-primary transition-all hover:scale-105 font-semibold"
       >
-        Add Dark Cloud
+        Delete Cloud Storage
       </Button>
       <Button
         onClick={onReset}

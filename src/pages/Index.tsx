@@ -91,20 +91,15 @@ const Index = () => {
   };
 
   const handleAction3 = () => {
-    const maxAttempts = 50;
-    let attempt = 0;
-    let randomX: number;
-    let randomY: number;
-
-    do {
-      randomX = Math.random() * 55 + 5;
-      randomY = Math.random() * 60 + 5;
-      attempt++;
-    } while (checkCollision(randomX, randomY, clouds) && attempt < maxAttempts);
-
-    if (attempt < maxAttempts) {
-      setClouds((prev) => [...prev, { color: "dark" as const, x: randomX, y: randomY }]);
-    }
+    setClouds((prev) => {
+      const lastWhiteIndex = prev.map((cloud, index) => cloud.color === "white" ? index : -1)
+        .filter(index => index !== -1)
+        .pop();
+      
+      if (lastWhiteIndex === undefined) return prev;
+      
+      return prev.filter((_, index) => index !== lastWhiteIndex);
+    });
   };
 
   const handleReset = () => {

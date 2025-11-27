@@ -127,7 +127,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center p-4">
-      <div className="flex items-center justify-center gap-8 w-full max-w-6xl">
+      <div className="flex flex-col items-center gap-6 w-full max-w-6xl">
+        <div className="bg-card/50 backdrop-blur-sm border border-border rounded-lg p-4 max-w-md text-center">
+          <p className="text-sm text-foreground">
+            Click on a light blue cloud to see your deletion options with groups of similar pictures!
+          </p>
+        </div>
+        <div className="flex items-center justify-center gap-8">
         <PhoneMockup>
           <CloudWidget clouds={clouds} onLightCloudClick={() => setShowPhotoDialog(true)} />
           <RainEffect isRaining={isRaining} />
@@ -140,6 +146,7 @@ const Index = () => {
           onRain={handleRain}
           onReset={handleReset}
         />
+      </div>
       </div>
       <PhotoGroupsDialog open={showPhotoDialog} onOpenChange={setShowPhotoDialog} />
     </div>

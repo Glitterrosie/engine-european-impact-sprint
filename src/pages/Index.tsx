@@ -15,16 +15,16 @@ const generateInitialClouds = (): Cloud[] => {
     "light", "white", "dark", "light", "white", "dark", "light"
   ];
   
-  // Alternating rows: 3-2-3-2-3 pattern
+  // Alternating rows: 3-2-3-2-3 pattern with more spacing
   // Account for cloud size (approximately 20% width, 15% height)
   const rowPatterns = [3, 2, 3, 2, 3];
-  const yPositions = [10, 25, 40, 55, 70];
+  const yPositions = [8, 25, 42, 59, 76];
   
   let cloudIndex = 0;
   
   for (let row = 0; row < rowPatterns.length; row++) {
     const cloudsInRow = rowPatterns[row];
-    const availableWidth = 50; // from 5 to 55 (accounting for cloud width)
+    const availableWidth = 55; // from 5 to 60
     const spacing = availableWidth / (cloudsInRow + 1);
     
     for (let col = 0; col < cloudsInRow; col++) {

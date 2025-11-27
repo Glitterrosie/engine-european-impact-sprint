@@ -103,7 +103,7 @@ const Index = () => {
 
           <ControlButtons
             onAction1={deleteLightCloud}
-            onAction2={() => addCloud("light")}
+            onAction2={() => addCloud("white")}
             onAction3={() => addCloud("dark")}
           />
         </div>

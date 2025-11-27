@@ -27,7 +27,7 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3 }: ControlButto
         size="lg"
         className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg border-2 border-accent transition-all hover:scale-105 font-semibold"
       >
-        Add Light Cloud
+        Buy new Cloud Storage
       </Button>
       <Button
         onClick={onAction3}

@@ -61,16 +61,16 @@ const Index = () => {
     // Calculate future scale after adding new cloud
     const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
     
-    // Try up to 100 times to find a non-colliding position
-    // Place clouds in bottom area (65% to 90% Y position)
+    // Try up to 200 times to find a non-colliding position
+    // Place clouds in bottom area (60% to 85% Y position) with wider X range
     do {
-      randomX = Math.random() * 50 + 25;
-      randomY = Math.random() * 25 + 65;
+      randomX = Math.random() * 70 + 15;
+      randomY = Math.random() * 25 + 60;
       attempts++;
-    } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 100);
+    } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 200);
     
     // Only add cloud if we found a valid position
-    if (attempts < 100) {
+    if (attempts < 200) {
       setClouds([...clouds, { color, x: randomX, y: randomY }]);
     }
   };

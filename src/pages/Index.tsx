@@ -15,7 +15,7 @@ const generateInitialClouds = (): Cloud[] => {
     "light", "white", "dark", "light", "white", "dark", "light"
   ];
   
-  // Alternating rows: 3-2-3-2-3 pattern with even more spacing
+  // Alternating rows: 3-2-3-2-3 pattern stretched horizontally
   // Account for cloud size (approximately 20% width, 15% height)
   const rowPatterns = [3, 2, 3, 2, 3];
   const yPositions = [5, 23, 41, 59, 77];
@@ -24,19 +24,29 @@ const generateInitialClouds = (): Cloud[] => {
   
   for (let row = 0; row < rowPatterns.length; row++) {
     const cloudsInRow = rowPatterns[row];
-    const availableWidth = 60; // from 5 to 65
-    const spacing = availableWidth / (cloudsInRow + 1);
-    
-    for (let col = 0; col < cloudsInRow; col++) {
-      if (cloudIndex >= 13) break;
-      
-      clouds.push({
-        color: colors[cloudIndex],
-        x: 5 + spacing * (col + 1),
-        y: yPositions[row]
-      });
-      
-      cloudIndex++;
+    // Use full width for 3-cloud rows, adjust center for 2-cloud rows
+    if (cloudsInRow === 3) {
+      const positions = [8, 30, 52];
+      for (let col = 0; col < cloudsInRow; col++) {
+        if (cloudIndex >= 13) break;
+        clouds.push({
+          color: colors[cloudIndex],
+          x: positions[col],
+          y: yPositions[row]
+        });
+        cloudIndex++;
+      }
+    } else {
+      const positions = [15, 45];
+      for (let col = 0; col < cloudsInRow; col++) {
+        if (cloudIndex >= 13) break;
+        clouds.push({
+          color: colors[cloudIndex],
+          x: positions[col],
+          y: yPositions[row]
+        });
+        cloudIndex++;
+      }
     }
     if (cloudIndex >= 13) break;
   }

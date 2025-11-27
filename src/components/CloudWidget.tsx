@@ -6,9 +6,10 @@ interface CloudProps {
   x?: number;
   y?: number;
   scale?: number;
+  onClick?: () => void;
 }
 
-const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1 }: CloudProps) => {
+const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1, onClick }: CloudProps) => {
   const colorClass = 
     color === "white" ? "fill-cloud-white" :
     color === "light" ? "fill-cloud-light" :
@@ -36,12 +37,13 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1 }: CloudProps) => {
       width={baseWidth * scale}
       height={baseHeight * scale}
       viewBox="0 0 100 60"
-      className={`${colorClass} ${glowClass} transition-all duration-700`}
+      className={`${colorClass} ${glowClass} transition-all duration-700 ${color === 'light' ? 'cursor-pointer hover:scale-110' : ''}`}
       style={{
         position: 'absolute',
         left: `${x}%`,
         top: `${y}%`,
       }}
+      onClick={color === 'light' ? onClick : undefined}
     >
       {/* Fluffy cloud made of overlapping circles */}
       <circle cx="25" cy="35" r="15" />
@@ -55,9 +57,10 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1 }: CloudProps) => {
 
 interface CloudWidgetProps {
   clouds: Array<{ color: "white" | "light" | "dark"; x: number; y: number }>;
+  onLightCloudClick?: () => void;
 }
 
-export const CloudWidget = ({ clouds }: CloudWidgetProps) => {
+export const CloudWidget = ({ clouds, onLightCloudClick }: CloudWidgetProps) => {
   // Calculate scale based on number of clouds - more clouds = smaller size
   const calculateScale = () => {
     const baseScale = 2.0;
@@ -86,6 +89,7 @@ export const CloudWidget = ({ clouds }: CloudWidgetProps) => {
             x={cloud.x}
             y={cloud.y}
             scale={cloudScale}
+            onClick={cloud.color === 'light' ? onLightCloudClick : undefined}
           />
         ))}
       </div>

@@ -6,7 +6,7 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "light" as const, x: 42, y: 35 },
+  { color: "light" as const, x: 0, y: 0 },
   { color: "white" as const, x: 68, y: 42 },
   { color: "dark" as const, x: 28, y: 48 },
   { color: "light" as const, x: 55, y: 55 },
@@ -28,7 +28,7 @@ const Index = () => {
     setClouds((prev) => {
       const firstLightIndex = prev.findIndex((cloud) => cloud.color === "light");
       if (firstLightIndex === -1) return prev;
-      
+
       const newClouds = [...prev];
       newClouds[firstLightIndex] = { ...newClouds[firstLightIndex], color: "white" };
       return newClouds;
@@ -38,8 +38,8 @@ const Index = () => {
   const checkCollision = (x: number, y: number, existingClouds: typeof clouds) => {
     const cloudWidth = 15;
     const cloudHeight = 10;
-    
-    return existingClouds.some(cloud => {
+
+    return existingClouds.some((cloud) => {
       const dx = Math.abs(x - cloud.x);
       const dy = Math.abs(y - cloud.y);
       return dx < cloudWidth && dy < cloudHeight;

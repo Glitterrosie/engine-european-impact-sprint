@@ -19,8 +19,8 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1 }: CloudProps) => {
     color === "light" ? "drop-shadow-[0_0_15px_rgba(144,205,244,0.6)]" :
     "drop-shadow-[0_0_15px_rgba(93,138,168,0.5)]";
   
-  const baseWidth = 440;
-  const baseHeight = 280;
+  const baseWidth = 147;
+  const baseHeight = 93;
 
   return (
     <motion.svg
@@ -61,9 +61,9 @@ interface CloudWidgetProps {
 export const CloudWidget = ({ clouds }: CloudWidgetProps) => {
   // Calculate scale based on number of clouds - more clouds = smaller size
   const calculateScale = () => {
-    const baseScale = 4.8;
-    const minScale = 2.0;
-    const scaleFactor = Math.max(minScale, baseScale - (clouds.length * 0.2));
+    const baseScale = 1.6;
+    const minScale = 0.67;
+    const scaleFactor = Math.max(minScale, baseScale - (clouds.length * 0.067));
     return scaleFactor;
   };
   

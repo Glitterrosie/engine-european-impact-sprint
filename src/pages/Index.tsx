@@ -11,7 +11,7 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 25, y: 22 },
+  { color: "white", x: 0, y: 0 },
   { color: "light", x: 50, y: 25 },
   { color: "dark", x: 75, y: 28 },
   { color: "white", x: 28, y: 45 },
@@ -33,11 +33,11 @@ const Index = () => {
     // Scale affects collision distance - proper spacing for visibility
     const cloudWidth = 28 * currentScale;
     const cloudHeight = 35 * currentScale;
-    
+
     for (const cloud of existingClouds) {
       const distanceX = Math.abs(newX - cloud.x);
       const distanceY = Math.abs(newY - cloud.y);
-      
+
       if (distanceX < cloudWidth && distanceY < cloudHeight) {
         return true; // Collision detected
       }
@@ -46,7 +46,7 @@ const Index = () => {
   };
 
   const deleteLightCloud = () => {
-    const lightCloudIndex = clouds.findIndex(cloud => cloud.color === "light");
+    const lightCloudIndex = clouds.findIndex((cloud) => cloud.color === "light");
     if (lightCloudIndex !== -1) {
       const newClouds = [...clouds];
       newClouds[lightCloudIndex] = { ...newClouds[lightCloudIndex], color: "white" };
@@ -57,10 +57,10 @@ const Index = () => {
   const addCloud = (color: "white" | "light" | "dark") => {
     let attempts = 0;
     let randomX, randomY;
-    
+
     // Calculate future scale after adding new cloud
-    const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
-    
+    const futureScale = Math.max(0.67, 1.6 - (clouds.length + 1) * 0.067);
+
     // Try up to 250 times to find a non-colliding position
     // X: 25% to 75% (properly centered accounting for transform: translate(-50%, -50%))
     // Y: 70% to 85% (bottom area, accounting for transform)
@@ -69,7 +69,7 @@ const Index = () => {
       randomY = Math.random() * 15 + 70;
       attempts++;
     } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 250);
-    
+
     // Only add cloud if we found a valid position
     if (attempts < 250) {
       setClouds([...clouds, { color, x: randomX, y: randomY }]);
@@ -89,20 +89,12 @@ const Index = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-5xl font-bold text-foreground mb-3">
-            Cloudy Widget
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Visualize your cloud storage with interactive clouds
-          </p>
+          <h1 className="text-5xl font-bold text-foreground mb-3">Cloudy Widget</h1>
+          <p className="text-lg text-muted-foreground">Visualize your cloud storage with interactive clouds</p>
         </motion.div>
 
         <div className="flex items-center justify-center gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <PhoneMockup>
               <CloudWidget clouds={clouds} key={clouds.length} />
             </PhoneMockup>

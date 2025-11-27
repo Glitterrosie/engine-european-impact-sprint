@@ -19,6 +19,21 @@ const Index = () => {
     { color: "light", x: 5, y: 75 },
   ]);
 
+  const checkCollision = (newX: number, newY: number, existingClouds: Cloud[]) => {
+    const cloudWidth = 15; // Approximate cloud width in percentage
+    const cloudHeight = 20; // Approximate cloud height in percentage
+    
+    for (const cloud of existingClouds) {
+      const distanceX = Math.abs(newX - cloud.x);
+      const distanceY = Math.abs(newY - cloud.y);
+      
+      if (distanceX < cloudWidth && distanceY < cloudHeight) {
+        return true; // Collision detected
+      }
+    }
+    return false; // No collision
+  };
+
   const deleteLightCloud = () => {
     const lightCloudIndex = clouds.findIndex(cloud => cloud.color === "light");
     if (lightCloudIndex !== -1) {
@@ -29,9 +44,20 @@ const Index = () => {
   };
 
   const addCloud = (color: "white" | "light" | "dark") => {
-    const randomX = Math.random() * 60 + 10;
-    const randomY = Math.random() * 70 + 5;
-    setClouds([...clouds, { color, x: randomX, y: randomY }]);
+    let attempts = 0;
+    let randomX, randomY;
+    
+    // Try up to 50 times to find a non-colliding position
+    do {
+      randomX = Math.random() * 60 + 10;
+      randomY = Math.random() * 70 + 5;
+      attempts++;
+    } while (checkCollision(randomX, randomY, clouds) && attempts < 50);
+    
+    // Only add cloud if we found a valid position
+    if (attempts < 50) {
+      setClouds([...clouds, { color, x: randomX, y: randomY }]);
+    }
   };
 
   return (

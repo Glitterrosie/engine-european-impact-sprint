@@ -19,6 +19,15 @@ const Index = () => {
     { color: "light", x: 5, y: 75 },
   ]);
 
+  const deleteLightCloud = () => {
+    const lightCloudIndex = clouds.findIndex(cloud => cloud.color === "light");
+    if (lightCloudIndex !== -1) {
+      const newClouds = [...clouds];
+      newClouds[lightCloudIndex] = { ...newClouds[lightCloudIndex], color: "white" };
+      setClouds(newClouds);
+    }
+  };
+
   const addCloud = (color: "white" | "light" | "dark") => {
     const randomX = Math.random() * 60 + 10;
     const randomY = Math.random() * 70 + 5;
@@ -54,7 +63,7 @@ const Index = () => {
           </motion.div>
 
           <ControlButtons
-            onAction1={() => addCloud("white")}
+            onAction1={deleteLightCloud}
             onAction2={() => addCloud("light")}
             onAction3={() => addCloud("dark")}
           />

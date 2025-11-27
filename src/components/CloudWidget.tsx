@@ -13,8 +13,14 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0 }: CloudProps) => {
     color === "light" ? "fill-cloud-light" :
     "fill-cloud-dark";
 
+  const glowClass =
+    color === "white" ? "drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]" :
+    color === "light" ? "drop-shadow-[0_0_15px_rgba(144,205,244,0.6)]" :
+    "drop-shadow-[0_0_15px_rgba(93,138,168,0.5)]";
+
   return (
     <motion.svg
+      key={`${color}-${x}-${y}`}
       initial={{ opacity: 0, scale: 0.8, x: x - 20, y: y - 20 }}
       animate={{ opacity: 1, scale: 1, x, y }}
       transition={{ 
@@ -23,10 +29,10 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0 }: CloudProps) => {
         type: "spring",
         stiffness: 100
       }}
-      width="80"
-      height="50"
+      width="110"
+      height="70"
       viewBox="0 0 80 50"
-      className={colorClass}
+      className={`${colorClass} ${glowClass} transition-all duration-700`}
     >
       <path d="M20 35 C20 28, 25 25, 30 25 C30 18, 38 15, 45 18 C48 12, 58 12, 62 18 C70 18, 75 23, 75 30 C75 37, 70 42, 62 42 L25 42 C17 42, 12 37, 12 30 C12 28, 14 26, 16 25 C17 30, 19 33, 20 35 Z" />
     </motion.svg>

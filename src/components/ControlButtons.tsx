@@ -20,7 +20,7 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3 }: ControlButto
         size="lg"
         className="bg-card hover:bg-card/90 text-card-foreground shadow-lg border-2 border-border transition-all hover:scale-105 font-semibold"
       >
-        Add White Cloud
+        Delete unrelevant data
       </Button>
       <Button
         onClick={onAction2}

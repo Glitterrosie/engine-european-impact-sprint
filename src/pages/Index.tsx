@@ -10,22 +10,24 @@ interface Cloud {
   y: number;
 }
 
+const INITIAL_CLOUDS: Cloud[] = [
+  { color: "white", x: 0, y: 20 },
+  { color: "light", x: 30, y: 20 },
+  { color: "dark", x: 60, y: 20 },
+  { color: "white", x: 0, y: 45 },
+  { color: "light", x: 30, y: 45 },
+  { color: "dark", x: 60, y: 45 },
+  { color: "white", x: 0, y: 70 },
+  { color: "light", x: 30, y: 70 },
+  { color: "dark", x: 60, y: 70 },
+  { color: "white", x: 15, y: 32 },
+  { color: "light", x: 45, y: 32 },
+  { color: "dark", x: 15, y: 57 },
+  { color: "white", x: 45, y: 57 },
+];
+
 const Index = () => {
-  const [clouds, setClouds] = useState<Cloud[]>([
-    { color: "white", x: 0, y: 20 },
-    { color: "light", x: 30, y: 20 },
-    { color: "dark", x: 60, y: 20 },
-    { color: "white", x: 0, y: 45 },
-    { color: "light", x: 30, y: 45 },
-    { color: "dark", x: 60, y: 45 },
-    { color: "white", x: 0, y: 70 },
-    { color: "light", x: 30, y: 70 },
-    { color: "dark", x: 60, y: 70 },
-    { color: "white", x: 15, y: 32 },
-    { color: "light", x: 45, y: 32 },
-    { color: "dark", x: 15, y: 57 },
-    { color: "white", x: 45, y: 57 },
-  ]);
+  const [clouds, setClouds] = useState<Cloud[]>(INITIAL_CLOUDS);
 
   const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {
     // Scale affects collision distance
@@ -73,6 +75,10 @@ const Index = () => {
     }
   };
 
+  const resetClouds = () => {
+    setClouds(INITIAL_CLOUDS);
+  };
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-8">
       <div className="max-w-6xl w-full">
@@ -105,6 +111,7 @@ const Index = () => {
             onAction1={deleteLightCloud}
             onAction2={() => addCloud("white")}
             onAction3={() => addCloud("dark")}
+            onReset={resetClouds}
           />
         </div>
 

@@ -5,9 +5,10 @@ interface ControlButtonsProps {
   onAction1: () => void;
   onAction2: () => void;
   onAction3: () => void;
+  onReset: () => void;
 }
 
-export const ControlButtons = ({ onAction1, onAction2, onAction3 }: ControlButtonsProps) => {
+export const ControlButtons = ({ onAction1, onAction2, onAction3, onReset }: ControlButtonsProps) => {
   return (
     <motion.div 
       className="flex flex-col gap-4"
@@ -35,6 +36,14 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3 }: ControlButto
         className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg border-2 border-primary transition-all hover:scale-105 font-semibold"
       >
         Add Dark Cloud
+      </Button>
+      <Button
+        onClick={onReset}
+        size="lg"
+        variant="outline"
+        className="shadow-lg transition-all hover:scale-105 font-semibold"
+      >
+        Reset
       </Button>
     </motion.div>
   );

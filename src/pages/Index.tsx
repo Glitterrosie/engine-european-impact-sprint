@@ -5,21 +5,48 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
-const INITIAL_CLOUDS: Cloud[] = [
-  { color: "light" as const, x: 15, y: 10 },
-  { color: "white" as const, x: 55, y: 15 },
-  { color: "dark" as const, x: 10, y: 25 },
-  { color: "light" as const, x: 40, y: 30 },
-  { color: "white" as const, x: 25, y: 40 },
-  { color: "dark" as const, x: 60, y: 45 },
-  { color: "light" as const, x: 15, y: 55 },
-  { color: "white" as const, x: 45, y: 60 },
-  { color: "dark" as const, x: 30, y: 70 },
-  { color: "light" as const, x: 65, y: 75 },
-  { color: "white" as const, x: 20, y: 82 },
-  { color: "dark" as const, x: 50, y: 87 },
-  { color: "light" as const, x: 75, y: 88 },
-];
+const generateInitialClouds = (): Cloud[] => {
+  const clouds: Cloud[] = [];
+  const colors: Array<"white" | "light" | "dark"> = [
+    "light", "white", "dark", "light", "white", "dark", 
+    "light", "white", "dark", "light", "white", "dark", "light"
+  ];
+  
+  // Grid-based distribution with jitter for natural look
+  const cols = 4;
+  const rows = 4;
+  const xStep = 70 / cols;
+  const yStep = 75 / rows;
+  
+  let cloudIndex = 0;
+  
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (cloudIndex >= 13) break;
+      
+      // Base position in grid
+      const baseX = 15 + col * xStep;
+      const baseY = 15 + row * yStep;
+      
+      // Add jitter for natural distribution (seeded randomness)
+      const jitterX = ((cloudIndex * 17) % 20) - 10;
+      const jitterY = ((cloudIndex * 13) % 20) - 10;
+      
+      clouds.push({
+        color: colors[cloudIndex],
+        x: Math.max(10, Math.min(80, baseX + jitterX)),
+        y: Math.max(10, Math.min(85, baseY + jitterY))
+      });
+      
+      cloudIndex++;
+    }
+    if (cloudIndex >= 13) break;
+  }
+  
+  return clouds;
+};
+
+const INITIAL_CLOUDS: Cloud[] = generateInitialClouds();
 
 const Index = () => {
   const [clouds, setClouds] = useState(INITIAL_CLOUDS);

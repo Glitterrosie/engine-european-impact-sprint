@@ -11,7 +11,7 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 0, y: 0 },
+  { color: "white", x: 25, y: 22 },
   { color: "light", x: 50, y: 25 },
   { color: "dark", x: 75, y: 28 },
   { color: "white", x: 28, y: 45 },
@@ -62,11 +62,11 @@ const Index = () => {
     const futureScale = Math.max(0.67, 1.6 - (clouds.length + 1) * 0.067);
 
     // Try up to 250 times to find a non-colliding position
-    // X: 25% to 75% (properly centered accounting for transform: translate(-50%, -50%))
-    // Y: 70% to 85% (bottom area, accounting for transform)
+    // X: 10% to 90% (full width, centered with transform: translate(-50%, -50%))
+    // Y: 10% to 90% (full height, centered with transform)
     do {
-      randomX = Math.random() * 50 + 25;
-      randomY = Math.random() * 15 + 70;
+      randomX = Math.random() * 80 + 10;
+      randomY = Math.random() * 80 + 10;
       attempts++;
     } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 250);
 

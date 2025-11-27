@@ -122,7 +122,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center p-4">
-      <div className="flex items-center gap-8 w-full max-w-6xl">
+      <div className="flex items-center justify-center gap-8 w-full max-w-6xl">
         <PhoneMockup>
           <CloudWidget clouds={clouds} onLightCloudClick={() => setShowPhotoDialog(true)} />
           <RainEffect isRaining={isRaining} />

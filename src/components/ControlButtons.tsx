@@ -1,0 +1,41 @@
+import { Button } from "./ui/button";
+import { motion } from "framer-motion";
+
+interface ControlButtonsProps {
+  onAction1: () => void;
+  onAction2: () => void;
+  onAction3: () => void;
+}
+
+export const ControlButtons = ({ onAction1, onAction2, onAction3 }: ControlButtonsProps) => {
+  return (
+    <motion.div 
+      className="flex flex-col gap-4"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
+    >
+      <Button
+        onClick={onAction1}
+        size="lg"
+        className="bg-card hover:bg-card/90 text-card-foreground shadow-lg border-2 border-border transition-all hover:scale-105 font-semibold"
+      >
+        Add White Cloud
+      </Button>
+      <Button
+        onClick={onAction2}
+        size="lg"
+        className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg border-2 border-accent transition-all hover:scale-105 font-semibold"
+      >
+        Add Light Cloud
+      </Button>
+      <Button
+        onClick={onAction3}
+        size="lg"
+        className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg border-2 border-primary transition-all hover:scale-105 font-semibold"
+      >
+        Add Dark Cloud
+      </Button>
+    </motion.div>
+  );
+};

@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        cloud: {
+          white: "hsl(var(--cloud-white))",
+          light: "hsl(var(--cloud-light))",
+          dark: "hsl(var(--cloud-dark))",
+        },
+        phone: {
+          frame: "hsl(var(--phone-frame))",
+          screen: "hsl(var(--phone-screen))",
+          notch: "hsl(var(--phone-notch))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

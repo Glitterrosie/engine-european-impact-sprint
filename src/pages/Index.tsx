@@ -11,19 +11,19 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 15, y: 10 },
-  { color: "light", x: 40, y: 18 },
-  { color: "dark", x: 60, y: 20 },
-  { color: "white", x: 18, y: 38 },
-  { color: "light", x: 38, y: 42 },
-  { color: "dark", x: 62, y: 40 },
-  { color: "white", x: 22, y: 62 },
-  { color: "light", x: 42, y: 65 },
-  { color: "dark", x: 65, y: 68 },
-  { color: "white", x: 30, y: 28 },
-  { color: "light", x: 52, y: 52 },
-  { color: "dark", x: 28, y: 52 },
-  { color: "white", x: 50, y: 30 },
+  { color: "white", x: 25, y: 22 },
+  { color: "light", x: 50, y: 25 },
+  { color: "dark", x: 75, y: 28 },
+  { color: "white", x: 28, y: 45 },
+  { color: "light", x: 50, y: 48 },
+  { color: "dark", x: 72, y: 47 },
+  { color: "white", x: 30, y: 68 },
+  { color: "light", x: 52, y: 71 },
+  { color: "dark", x: 75, y: 73 },
+  { color: "white", x: 40, y: 35 },
+  { color: "light", x: 65, y: 58 },
+  { color: "dark", x: 38, y: 58 },
+  { color: "white", x: 62, y: 37 },
 ];
 
 const Index = () => {
@@ -62,11 +62,11 @@ const Index = () => {
     const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
     
     // Try up to 250 times to find a non-colliding position
-    // X: 25% to 75% (centered horizontally with margins)
-    // Y: 70% to 88% (bottom area, fully visible)
+    // X: 25% to 75% (properly centered accounting for transform: translate(-50%, -50%))
+    // Y: 70% to 85% (bottom area, accounting for transform)
     do {
       randomX = Math.random() * 50 + 25;
-      randomY = Math.random() * 18 + 70;
+      randomY = Math.random() * 15 + 70;
       attempts++;
     } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 250);
     

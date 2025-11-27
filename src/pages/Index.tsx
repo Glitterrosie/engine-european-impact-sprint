@@ -11,19 +11,19 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: -12, y: 30 },
-  { color: "light", x: 18, y: 28 },
-  { color: "dark", x: 38, y: 35 },
-  { color: "white", x: -17, y: 52 },
-  { color: "light", x: 11, y: 55 },
-  { color: "dark", x: 41, y: 50 },
-  { color: "white", x: -7, y: 75 },
-  { color: "light", x: 23, y: 72 },
-  { color: "dark", x: 48, y: 78 },
-  { color: "white", x: 3, y: 42 },
-  { color: "light", x: 33, y: 63 },
-  { color: "dark", x: -2, y: 63 },
-  { color: "white", x: 28, y: 42 },
+  { color: "white", x: 30, y: 25 },
+  { color: "light", x: 50, y: 28 },
+  { color: "dark", x: 70, y: 30 },
+  { color: "white", x: 28, y: 48 },
+  { color: "light", x: 48, y: 52 },
+  { color: "dark", x: 72, y: 50 },
+  { color: "white", x: 32, y: 72 },
+  { color: "light", x: 52, y: 75 },
+  { color: "dark", x: 75, y: 78 },
+  { color: "white", x: 40, y: 38 },
+  { color: "light", x: 62, y: 62 },
+  { color: "dark", x: 38, y: 62 },
+  { color: "white", x: 60, y: 40 },
 ];
 
 const Index = () => {
@@ -62,10 +62,10 @@ const Index = () => {
     const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
     
     // Try up to 250 times to find a non-colliding position
-    // X: 15% to 85% (centered horizontally with margins)
+    // X: 25% to 75% (centered horizontally with margins)
     // Y: 70% to 88% (bottom area, fully visible)
     do {
-      randomX = Math.random() * 70 + 15;
+      randomX = Math.random() * 50 + 25;
       randomY = Math.random() * 18 + 70;
       attempts++;
     } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 250);
@@ -77,7 +77,7 @@ const Index = () => {
   };
 
   const resetClouds = () => {
-    setClouds(INITIAL_CLOUDS);
+    setClouds([...INITIAL_CLOUDS]);
   };
 
   return (
@@ -104,7 +104,7 @@ const Index = () => {
             transition={{ duration: 0.5 }}
           >
             <PhoneMockup>
-              <CloudWidget clouds={clouds} />
+              <CloudWidget clouds={clouds} key={clouds.length} />
             </PhoneMockup>
           </motion.div>
 

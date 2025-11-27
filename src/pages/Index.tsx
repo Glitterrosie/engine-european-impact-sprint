@@ -6,20 +6,20 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "light" as const, x: 30, y: 30 },
-  { color: "light" as const, x: 65, y: 35 },
-  { color: "light" as const, x: 45, y: 45 },
-  { color: "light" as const, x: 35, y: 55 },
-  { color: "light" as const, x: 60, y: 60 },
-  { color: "light" as const, x: 50, y: 65 },
-  { color: "light" as const, x: 40, y: 70 },
-  { color: "light" as const, x: 55, y: 75 },
-  { color: "light" as const, x: 35, y: 75 },
-  { color: "dark" as const, x: 45, y: 80 },
-  { color: "dark" as const, x: 60, y: 80 },
-  { color: "dark" as const, x: 40, y: 85 },
-  { color: "dark" as const, x: 55, y: 85 },
-  { color: "dark" as const, x: 50, y: 90 },
+  { color: "light" as const, x: 30, y: 23 },
+  { color: "light" as const, x: 65, y: 28 },
+  { color: "light" as const, x: 45, y: 38 },
+  { color: "light" as const, x: 35, y: 48 },
+  { color: "light" as const, x: 60, y: 53 },
+  { color: "light" as const, x: 50, y: 58 },
+  { color: "light" as const, x: 40, y: 63 },
+  { color: "light" as const, x: 55, y: 68 },
+  { color: "light" as const, x: 35, y: 68 },
+  { color: "dark" as const, x: 45, y: 73 },
+  { color: "dark" as const, x: 60, y: 73 },
+  { color: "dark" as const, x: 40, y: 78 },
+  { color: "dark" as const, x: 55, y: 78 },
+  { color: "dark" as const, x: 50, y: 83 },
 ];
 
 const Index = () => {

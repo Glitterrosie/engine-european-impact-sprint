@@ -23,8 +23,8 @@ const Index = () => {
 
   const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {
     // Scale affects collision distance
-    const cloudWidth = 15 * currentScale;
-    const cloudHeight = 20 * currentScale;
+    const cloudWidth = 60 * currentScale;
+    const cloudHeight = 80 * currentScale;
     
     for (const cloud of existingClouds) {
       const distanceX = Math.abs(newX - cloud.x);
@@ -51,7 +51,7 @@ const Index = () => {
     let randomX, randomY;
     
     // Calculate future scale after adding new cloud
-    const futureScale = Math.max(0.5, 1.2 - ((clouds.length + 1) * 0.05));
+    const futureScale = Math.max(2.0, 4.8 - ((clouds.length + 1) * 0.2));
     
     // Try up to 100 times to find a non-colliding position
     do {

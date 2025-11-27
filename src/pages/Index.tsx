@@ -12,16 +12,19 @@ interface Cloud {
 
 const Index = () => {
   const [clouds, setClouds] = useState<Cloud[]>([
-    { color: "white", x: 10, y: 10 },
-    { color: "light", x: 45, y: 25 },
-    { color: "dark", x: 20, y: 50 },
-    { color: "white", x: 60, y: 60 },
-    { color: "light", x: 5, y: 75 },
+    { color: "white", x: 15, y: 15 },
+    { color: "light", x: 50, y: 20 },
+    { color: "dark", x: 85, y: 25 },
+    { color: "white", x: 25, y: 50 },
+    { color: "light", x: 65, y: 55 },
+    { color: "dark", x: 35, y: 80 },
+    { color: "white", x: 80, y: 75 },
   ]);
 
-  const checkCollision = (newX: number, newY: number, existingClouds: Cloud[]) => {
-    const cloudWidth = 15; // Approximate cloud width in percentage
-    const cloudHeight = 20; // Approximate cloud height in percentage
+  const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {
+    // Scale affects collision distance
+    const cloudWidth = 15 * currentScale;
+    const cloudHeight = 20 * currentScale;
     
     for (const cloud of existingClouds) {
       const distanceX = Math.abs(newX - cloud.x);
@@ -47,15 +50,18 @@ const Index = () => {
     let attempts = 0;
     let randomX, randomY;
     
-    // Try up to 50 times to find a non-colliding position
+    // Calculate future scale after adding new cloud
+    const futureScale = Math.max(0.5, 1.2 - ((clouds.length + 1) * 0.05));
+    
+    // Try up to 100 times to find a non-colliding position
     do {
-      randomX = Math.random() * 60 + 10;
-      randomY = Math.random() * 70 + 5;
+      randomX = Math.random() * 80 + 10;
+      randomY = Math.random() * 85 + 10;
       attempts++;
-    } while (checkCollision(randomX, randomY, clouds) && attempts < 50);
+    } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 100);
     
     // Only add cloud if we found a valid position
-    if (attempts < 50) {
+    if (attempts < 100) {
       setClouds([...clouds, { color, x: randomX, y: randomY }]);
     }
   };

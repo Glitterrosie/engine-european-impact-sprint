@@ -11,28 +11,28 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 0, y: 20 },
-  { color: "light", x: 30, y: 20 },
-  { color: "dark", x: 60, y: 20 },
-  { color: "white", x: 0, y: 50 },
-  { color: "light", x: 30, y: 50 },
-  { color: "dark", x: 60, y: 50 },
-  { color: "white", x: 0, y: 80 },
-  { color: "light", x: 30, y: 80 },
-  { color: "dark", x: 60, y: 80 },
-  { color: "white", x: 15, y: 35 },
-  { color: "light", x: 45, y: 35 },
-  { color: "dark", x: 15, y: 65 },
-  { color: "white", x: 45, y: 65 },
+  { color: "white", x: 25, y: 30 },
+  { color: "light", x: 55, y: 28 },
+  { color: "dark", x: 75, y: 35 },
+  { color: "white", x: 20, y: 52 },
+  { color: "light", x: 48, y: 55 },
+  { color: "dark", x: 78, y: 50 },
+  { color: "white", x: 30, y: 75 },
+  { color: "light", x: 60, y: 72 },
+  { color: "dark", x: 85, y: 78 },
+  { color: "white", x: 40, y: 42 },
+  { color: "light", x: 70, y: 63 },
+  { color: "dark", x: 35, y: 63 },
+  { color: "white", x: 65, y: 42 },
 ];
 
 const Index = () => {
   const [clouds, setClouds] = useState<Cloud[]>(INITIAL_CLOUDS);
 
   const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {
-    // Scale affects collision distance - increased spacing
-    const cloudWidth = 25 * currentScale;
-    const cloudHeight = 32 * currentScale;
+    // Scale affects collision distance - proper spacing for visibility
+    const cloudWidth = 28 * currentScale;
+    const cloudHeight = 35 * currentScale;
     
     for (const cloud of existingClouds) {
       const distanceX = Math.abs(newX - cloud.x);
@@ -61,16 +61,17 @@ const Index = () => {
     // Calculate future scale after adding new cloud
     const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
     
-    // Try up to 200 times to find a non-colliding position
-    // Place clouds in bottom area (60% to 85% Y position) centered horizontally
+    // Try up to 250 times to find a non-colliding position
+    // X: 15% to 85% (centered horizontally with margins)
+    // Y: 70% to 88% (bottom area, fully visible)
     do {
-      randomX = Math.random() * 60 + 20;
-      randomY = Math.random() * 25 + 60;
+      randomX = Math.random() * 70 + 15;
+      randomY = Math.random() * 18 + 70;
       attempts++;
-    } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 200);
+    } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 250);
     
     // Only add cloud if we found a valid position
-    if (attempts < 200) {
+    if (attempts < 250) {
       setClouds([...clouds, { color, x: randomX, y: randomY }]);
     }
   };

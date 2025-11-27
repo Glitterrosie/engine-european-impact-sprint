@@ -4,6 +4,7 @@ import { ControlButtons } from "@/components/ControlButtons";
 import { PhoneMockup } from "@/components/PhoneMockup";
 import { RainEffect } from "@/components/RainEffect";
 import { WaterFill } from "@/components/WaterFill";
+import { PhotoGroupsDialog } from "@/components/PhotoGroupsDialog";
 
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
@@ -53,6 +54,7 @@ const INITIAL_CLOUDS: Cloud[] = generateInitialClouds();
 const Index = () => {
   const [clouds, setClouds] = useState(INITIAL_CLOUDS);
   const [isRaining, setIsRaining] = useState(false);
+  const [showPhotoDialog, setShowPhotoDialog] = useState(false);
 
   const handleAction1 = () => {
     setClouds((prev) => {
@@ -122,7 +124,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-primary/5 flex items-center justify-center p-4">
       <div className="flex flex-col items-center gap-8 w-full max-w-4xl">
         <PhoneMockup>
-          <CloudWidget clouds={clouds} />
+          <CloudWidget clouds={clouds} onLightCloudClick={() => setShowPhotoDialog(true)} />
           <RainEffect isRaining={isRaining} />
           <WaterFill isActive={isRaining} />
         </PhoneMockup>
@@ -134,6 +136,7 @@ const Index = () => {
           onReset={handleReset}
         />
       </div>
+      <PhotoGroupsDialog open={showPhotoDialog} onOpenChange={setShowPhotoDialog} />
     </div>
   );
 };

@@ -7,10 +7,10 @@ interface RainEffectProps {
 const RainDrop = ({ delay, xPos }: { delay: number; xPos: number }) => {
   return (
     <motion.div
-      className="absolute w-1 h-12 bg-blue-400 rounded-full"
+      className="absolute w-1 h-12 bg-[#90CDF4] rounded-full"
       style={{ 
         left: `${xPos}%`,
-        boxShadow: "0 0 4px rgba(59, 130, 246, 0.8)"
+        boxShadow: "0 0 4px rgba(144, 205, 244, 0.8)"
       }}
       initial={{ top: -20, opacity: 0, scaleY: 0 }}
       animate={{

@@ -9,9 +9,10 @@ export const WaterFill = ({ isActive }: WaterFillProps) => {
     <AnimatePresence>
       {isActive && (
         <motion.div
-          className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-500/90 via-blue-400/70 to-blue-300/50 rounded-b-[32px]"
+          className="absolute bottom-0 left-0 right-0 rounded-b-[32px]"
           style={{
-            boxShadow: "inset 0 4px 20px rgba(59, 130, 246, 0.4)"
+            background: "linear-gradient(to top, rgba(144, 205, 244, 0.9), rgba(144, 205, 244, 0.7), rgba(144, 205, 244, 0.5))",
+            boxShadow: "inset 0 4px 20px rgba(144, 205, 244, 0.4)"
           }}
           initial={{ height: "0%" }}
           animate={{ height: "50%" }}
@@ -25,7 +26,7 @@ export const WaterFill = ({ isActive }: WaterFillProps) => {
           <motion.div
             className="absolute top-0 left-0 right-0 h-8"
             style={{
-              background: "radial-gradient(ellipse at center, rgba(96, 165, 250, 0.6) 0%, transparent 70%)"
+              background: "radial-gradient(ellipse at center, rgba(144, 205, 244, 0.6) 0%, transparent 70%)"
             }}
             animate={{
               x: [-20, 20, -20],
@@ -40,7 +41,7 @@ export const WaterFill = ({ isActive }: WaterFillProps) => {
           <motion.div
             className="absolute top-2 left-0 right-0 h-6"
             style={{
-              background: "radial-gradient(ellipse at center, rgba(147, 197, 253, 0.5) 0%, transparent 70%)"
+              background: "radial-gradient(ellipse at center, rgba(144, 205, 244, 0.5) 0%, transparent 70%)"
             }}
             animate={{
               x: [20, -20, 20],

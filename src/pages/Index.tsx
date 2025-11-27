@@ -2,6 +2,8 @@ import { useState } from "react";
 import { CloudWidget } from "@/components/CloudWidget";
 import { ControlButtons } from "@/components/ControlButtons";
 import { PhoneMockup } from "@/components/PhoneMockup";
+import { RainEffect } from "@/components/RainEffect";
+import { WaterFill } from "@/components/WaterFill";
 
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
@@ -50,6 +52,7 @@ const INITIAL_CLOUDS: Cloud[] = generateInitialClouds();
 
 const Index = () => {
   const [clouds, setClouds] = useState(INITIAL_CLOUDS);
+  const [isRaining, setIsRaining] = useState(false);
 
   const handleAction1 = () => {
     setClouds((prev) => {
@@ -102,8 +105,17 @@ const Index = () => {
     });
   };
 
+  const handleRain = () => {
+    setIsRaining(true);
+    // Stop animation after 5 seconds (when water reaches half)
+    setTimeout(() => {
+      setIsRaining(false);
+    }, 5000);
+  };
+
   const handleReset = () => {
     setClouds(INITIAL_CLOUDS);
+    setIsRaining(false);
   };
 
   return (
@@ -111,11 +123,14 @@ const Index = () => {
       <div className="flex flex-col items-center gap-8 w-full max-w-4xl">
         <PhoneMockup>
           <CloudWidget clouds={clouds} />
+          <RainEffect isRaining={isRaining} />
+          <WaterFill isActive={isRaining} />
         </PhoneMockup>
         <ControlButtons
           onAction1={handleAction1}
           onAction2={handleAction2}
           onAction3={handleAction3}
+          onRain={handleRain}
           onReset={handleReset}
         />
       </div>

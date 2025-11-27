@@ -5,10 +5,11 @@ interface ControlButtonsProps {
   onAction1: () => void;
   onAction2: () => void;
   onAction3: () => void;
+  onRain: () => void;
   onReset: () => void;
 }
 
-export const ControlButtons = ({ onAction1, onAction2, onAction3, onReset }: ControlButtonsProps) => {
+export const ControlButtons = ({ onAction1, onAction2, onAction3, onRain, onReset }: ControlButtonsProps) => {
   return (
     <motion.div 
       className="flex flex-col gap-4"
@@ -36,6 +37,13 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3, onReset }: Con
         className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg border-2 border-primary transition-all hover:scale-105 font-semibold"
       >
         Delete Cloud Storage
+      </Button>
+      <Button
+        onClick={onRain}
+        size="lg"
+        className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg border-2 border-blue-600 transition-all hover:scale-105 font-semibold"
+      >
+        Rain
       </Button>
       <Button
         onClick={onReset}

@@ -53,8 +53,8 @@ const Index = () => {
     let randomY: number;
 
     do {
-      randomX = Math.random() * 70 + 10;
-      randomY = Math.random() * 80 + 10;
+      randomX = Math.random() * 80;
+      randomY = Math.random() * 90;
       attempt++;
     } while (checkCollision(randomX, randomY, clouds) && attempt < maxAttempts);
 
@@ -70,8 +70,8 @@ const Index = () => {
     let randomY: number;
 
     do {
-      randomX = Math.random() * 70 + 10;
-      randomY = Math.random() * 80 + 10;
+      randomX = Math.random() * 80;
+      randomY = Math.random() * 90;
       attempt++;
     } while (checkCollision(randomX, randomY, clouds) && attempt < maxAttempts);
 

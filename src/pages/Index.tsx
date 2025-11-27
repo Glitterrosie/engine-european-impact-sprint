@@ -11,7 +11,7 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 20, y: 15 },
+  { color: "white", x: 15, y: 10 },
   { color: "light", x: 40, y: 18 },
   { color: "dark", x: 60, y: 20 },
   { color: "white", x: 18, y: 38 },

@@ -15,24 +15,23 @@ const generateInitialClouds = (): Cloud[] => {
     "light", "white", "dark", "light", "white", "dark", "light"
   ];
   
-  // Even grid distribution
-  const cols = 4;
-  const rows = 4;
-  const xStep = 60 / (cols - 1);
-  const yStep = 60 / (rows - 1);
-  const xOffset = 10;
-  const yOffset = 15;
+  // Alternating rows: 3-2-3-2-3 pattern
+  const rowPatterns = [3, 2, 3, 2, 3];
+  const yPositions = [15, 30, 45, 60, 75];
   
   let cloudIndex = 0;
   
-  for (let row = 0; row < rows; row++) {
-    for (let col = 0; col < cols; col++) {
+  for (let row = 0; row < rowPatterns.length; row++) {
+    const cloudsInRow = rowPatterns[row];
+    const spacing = 60 / (cloudsInRow + 1);
+    
+    for (let col = 0; col < cloudsInRow; col++) {
       if (cloudIndex >= 13) break;
       
       clouds.push({
         color: colors[cloudIndex],
-        x: xOffset + col * xStep,
-        y: yOffset + row * yStep
+        x: 10 + spacing * (col + 1),
+        y: yPositions[row]
       });
       
       cloudIndex++;

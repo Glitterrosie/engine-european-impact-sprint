@@ -11,19 +11,19 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 15, y: 20 },
+  { color: "white", x: 20, y: 20 },
   { color: "light", x: 50, y: 20 },
-  { color: "dark", x: 85, y: 20 },
-  { color: "white", x: 15, y: 50 },
+  { color: "dark", x: 80, y: 20 },
+  { color: "white", x: 20, y: 50 },
   { color: "light", x: 50, y: 50 },
-  { color: "dark", x: 85, y: 50 },
-  { color: "white", x: 15, y: 80 },
+  { color: "dark", x: 80, y: 50 },
+  { color: "white", x: 20, y: 80 },
   { color: "light", x: 50, y: 80 },
-  { color: "dark", x: 85, y: 80 },
-  { color: "white", x: 32, y: 35 },
-  { color: "light", x: 68, y: 35 },
-  { color: "dark", x: 32, y: 65 },
-  { color: "white", x: 68, y: 65 },
+  { color: "dark", x: 80, y: 80 },
+  { color: "white", x: 35, y: 35 },
+  { color: "light", x: 65, y: 35 },
+  { color: "dark", x: 35, y: 65 },
+  { color: "white", x: 65, y: 65 },
 ];
 
 const Index = () => {
@@ -62,9 +62,9 @@ const Index = () => {
     const futureScale = Math.max(0.67, 1.6 - ((clouds.length + 1) * 0.067));
     
     // Try up to 200 times to find a non-colliding position
-    // Place clouds in bottom area (60% to 85% Y position) with wider X range
+    // Place clouds in bottom area (60% to 85% Y position) centered horizontally
     do {
-      randomX = Math.random() * 70 + 15;
+      randomX = Math.random() * 60 + 20;
       randomY = Math.random() * 25 + 60;
       attempts++;
     } while (checkCollision(randomX, randomY, clouds, futureScale) && attempts < 200);

@@ -11,19 +11,19 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 20, y: 20 },
-  { color: "light", x: 50, y: 20 },
-  { color: "dark", x: 80, y: 20 },
-  { color: "white", x: 20, y: 50 },
-  { color: "light", x: 50, y: 50 },
-  { color: "dark", x: 80, y: 50 },
-  { color: "white", x: 20, y: 80 },
-  { color: "light", x: 50, y: 80 },
-  { color: "dark", x: 80, y: 80 },
-  { color: "white", x: 35, y: 35 },
-  { color: "light", x: 65, y: 35 },
-  { color: "dark", x: 35, y: 65 },
-  { color: "white", x: 65, y: 65 },
+  { color: "white", x: 10, y: 20 },
+  { color: "light", x: 40, y: 20 },
+  { color: "dark", x: 70, y: 20 },
+  { color: "white", x: 10, y: 50 },
+  { color: "light", x: 40, y: 50 },
+  { color: "dark", x: 70, y: 50 },
+  { color: "white", x: 10, y: 80 },
+  { color: "light", x: 40, y: 80 },
+  { color: "dark", x: 70, y: 80 },
+  { color: "white", x: 25, y: 35 },
+  { color: "light", x: 55, y: 35 },
+  { color: "dark", x: 25, y: 65 },
+  { color: "white", x: 55, y: 65 },
 ];
 
 const Index = () => {

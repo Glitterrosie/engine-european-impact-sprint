@@ -12,13 +12,13 @@ const INITIAL_CLOUDS: Cloud[] = [
   { color: "light" as const, x: 40, y: 25 },
   { color: "white" as const, x: 25, y: 35 },
   { color: "dark" as const, x: 60, y: 40 },
-  { color: "light" as const, x: 10, y: 45 },
-  { color: "white" as const, x: 45, y: 50 },
-  { color: "dark" as const, x: 30, y: 58 },
-  { color: "light" as const, x: 58, y: 62 },
-  { color: "white" as const, x: 18, y: 68 },
-  { color: "dark" as const, x: 42, y: 72 },
-  { color: "light" as const, x: 28, y: 78 },
+  { color: "light" as const, x: 10, y: 50 },
+  { color: "white" as const, x: 45, y: 55 },
+  { color: "dark" as const, x: 30, y: 65 },
+  { color: "light" as const, x: 58, y: 70 },
+  { color: "white" as const, x: 15, y: 78 },
+  { color: "dark" as const, x: 42, y: 82 },
+  { color: "light" as const, x: 68, y: 88 },
 ];
 
 const Index = () => {
@@ -53,8 +53,8 @@ const Index = () => {
     let randomY: number;
 
     do {
-      randomX = Math.random() * 50 + 25;
-      randomY = Math.random() * 15 + 70;
+      randomX = Math.random() * 70 + 10;
+      randomY = Math.random() * 80 + 10;
       attempt++;
     } while (checkCollision(randomX, randomY, clouds) && attempt < maxAttempts);
 
@@ -70,8 +70,8 @@ const Index = () => {
     let randomY: number;
 
     do {
-      randomX = Math.random() * 50 + 25;
-      randomY = Math.random() * 15 + 70;
+      randomX = Math.random() * 70 + 10;
+      randomY = Math.random() * 80 + 10;
       attempt++;
     } while (checkCollision(randomX, randomY, clouds) && attempt < maxAttempts);
 

@@ -15,11 +15,13 @@ const generateInitialClouds = (): Cloud[] => {
     "light", "white", "dark", "light", "white", "dark", "light"
   ];
   
-  // Grid-based distribution with jitter for natural look
+  // Even grid distribution
   const cols = 4;
   const rows = 4;
-  const xStep = 70 / cols;
-  const yStep = 75 / rows;
+  const xStep = 60 / (cols - 1);
+  const yStep = 60 / (rows - 1);
+  const xOffset = 10;
+  const yOffset = 15;
   
   let cloudIndex = 0;
   
@@ -27,18 +29,10 @@ const generateInitialClouds = (): Cloud[] => {
     for (let col = 0; col < cols; col++) {
       if (cloudIndex >= 13) break;
       
-      // Base position in grid
-      const baseX = 15 + col * xStep;
-      const baseY = 15 + row * yStep;
-      
-      // Add jitter for natural distribution (seeded randomness)
-      const jitterX = ((cloudIndex * 17) % 20) - 10;
-      const jitterY = ((cloudIndex * 13) % 20) - 10;
-      
       clouds.push({
         color: colors[cloudIndex],
-        x: Math.max(5, Math.min(80, baseX + jitterX - 24)),
-        y: Math.max(10, Math.min(85, baseY + jitterY))
+        x: xOffset + col * xStep,
+        y: yOffset + row * yStep
       });
       
       cloudIndex++;

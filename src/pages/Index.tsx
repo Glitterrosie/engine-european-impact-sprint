@@ -11,28 +11,28 @@ interface Cloud {
 }
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "white", x: 0, y: 20 },
-  { color: "light", x: 30, y: 20 },
-  { color: "dark", x: 60, y: 20 },
-  { color: "white", x: 0, y: 45 },
-  { color: "light", x: 30, y: 45 },
-  { color: "dark", x: 60, y: 45 },
-  { color: "white", x: 0, y: 70 },
-  { color: "light", x: 30, y: 70 },
-  { color: "dark", x: 60, y: 70 },
-  { color: "white", x: 15, y: 32 },
-  { color: "light", x: 45, y: 32 },
-  { color: "dark", x: 15, y: 57 },
-  { color: "white", x: 45, y: 57 },
+  { color: "white", x: 15, y: 20 },
+  { color: "light", x: 50, y: 20 },
+  { color: "dark", x: 85, y: 20 },
+  { color: "white", x: 15, y: 50 },
+  { color: "light", x: 50, y: 50 },
+  { color: "dark", x: 85, y: 50 },
+  { color: "white", x: 15, y: 80 },
+  { color: "light", x: 50, y: 80 },
+  { color: "dark", x: 85, y: 80 },
+  { color: "white", x: 32, y: 35 },
+  { color: "light", x: 68, y: 35 },
+  { color: "dark", x: 32, y: 65 },
+  { color: "white", x: 68, y: 65 },
 ];
 
 const Index = () => {
   const [clouds, setClouds] = useState<Cloud[]>(INITIAL_CLOUDS);
 
   const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {
-    // Scale affects collision distance
-    const cloudWidth = 20 * currentScale;
-    const cloudHeight = 27 * currentScale;
+    // Scale affects collision distance - increased spacing
+    const cloudWidth = 25 * currentScale;
+    const cloudHeight = 32 * currentScale;
     
     for (const cloud of existingClouds) {
       const distanceX = Math.abs(newX - cloud.x);

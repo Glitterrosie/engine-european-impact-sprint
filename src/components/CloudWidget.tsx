@@ -41,7 +41,6 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0, scale = 1 }: CloudProps) => {
         position: 'absolute',
         left: `${x}%`,
         top: `${y}%`,
-        transform: `translate(-50%, -50%)`
       }}
     >
       {/* Fluffy cloud made of overlapping circles */}

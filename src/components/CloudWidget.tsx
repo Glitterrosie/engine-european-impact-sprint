@@ -61,9 +61,9 @@ interface CloudWidgetProps {
 export const CloudWidget = ({ clouds }: CloudWidgetProps) => {
   // Calculate scale based on number of clouds - more clouds = smaller size
   const calculateScale = () => {
-    const baseScale = 1.6;
-    const minScale = 0.67;
-    const scaleFactor = Math.max(minScale, baseScale - (clouds.length * 0.067));
+    const baseScale = 3.2;
+    const minScale = 1.34;
+    const scaleFactor = Math.max(minScale, baseScale - (clouds.length * 0.134));
     return scaleFactor;
   };
   

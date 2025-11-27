@@ -31,10 +31,15 @@ const Cloud = ({ color, delay = 0, x = 0, y = 0 }: CloudProps) => {
       }}
       width="110"
       height="70"
-      viewBox="0 0 80 50"
+      viewBox="0 0 100 60"
       className={`${colorClass} ${glowClass} transition-all duration-700`}
     >
-      <path d="M20 35 C20 28, 25 25, 30 25 C30 18, 38 15, 45 18 C48 12, 58 12, 62 18 C70 18, 75 23, 75 30 C75 37, 70 42, 62 42 L25 42 C17 42, 12 37, 12 30 C12 28, 14 26, 16 25 C17 30, 19 33, 20 35 Z" />
+      {/* Fluffy cloud made of overlapping circles */}
+      <circle cx="25" cy="35" r="15" />
+      <circle cx="42" cy="30" r="18" />
+      <circle cx="58" cy="32" r="16" />
+      <circle cx="70" cy="38" r="14" />
+      <ellipse cx="48" cy="42" rx="28" ry="12" />
     </motion.svg>
   );
 };

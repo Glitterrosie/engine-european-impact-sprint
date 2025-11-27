@@ -6,7 +6,7 @@ import { PhoneMockup } from "@/components/PhoneMockup";
 type Cloud = { color: "white" | "light" | "dark"; x: number; y: number };
 
 const INITIAL_CLOUDS: Cloud[] = [
-  { color: "light" as const, x: 0, y: 0 },
+  { color: "light" as const, x: 20, y: 20 },
   { color: "white" as const, x: 68, y: 42 },
   { color: "dark" as const, x: 28, y: 48 },
   { color: "light" as const, x: 55, y: 55 },

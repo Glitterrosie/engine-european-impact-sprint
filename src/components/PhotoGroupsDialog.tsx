@@ -57,22 +57,19 @@ const PHOTO_GROUPS = [
 export const PhotoGroupsDialog = ({ open, onOpenChange }: PhotoGroupsDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md">
+      <DialogContent className="max-w-[240px] p-4">
         <DialogHeader>
-          <DialogTitle>Photo Groups</DialogTitle>
+          <DialogTitle className="text-sm">Photo Groups</DialogTitle>
         </DialogHeader>
-        <ScrollArea className="h-[400px] pr-4">
-          <div className="space-y-6">
+        <ScrollArea className="h-[300px]">
+          <div className="space-y-4">
             {PHOTO_GROUPS.map((group) => (
-              <div key={group.id} className="space-y-2">
-                <h3 className="font-semibold text-sm text-foreground">
-                  {group.name}
-                </h3>
-                <div className="grid grid-cols-4 gap-2">
+              <div key={group.id}>
+                <div className="grid grid-cols-3 gap-1.5">
                   {group.photos.map((photo) => (
                     <div
                       key={photo.id}
-                      className="aspect-square rounded-lg shadow-md transition-transform hover:scale-105 cursor-pointer"
+                      className="aspect-square rounded-md shadow-sm transition-transform hover:scale-105 cursor-pointer"
                       style={{ backgroundColor: photo.color }}
                     />
                   ))}

@@ -26,7 +26,7 @@ const generateInitialClouds = (): Cloud[] => {
     const cloudsInRow = rowPatterns[row];
     // Use full width for 3-cloud rows, adjust center for 2-cloud rows
     if (cloudsInRow === 3) {
-      const positions = [8, 30, 52];
+      const positions = [3, 25, 47];
       for (let col = 0; col < cloudsInRow; col++) {
         if (cloudIndex >= 13) break;
         clouds.push({
@@ -37,7 +37,7 @@ const generateInitialClouds = (): Cloud[] => {
         cloudIndex++;
       }
     } else {
-      const positions = [15, 45];
+      const positions = [10, 40];
       for (let col = 0; col < cloudsInRow; col++) {
         if (cloudIndex >= 13) break;
         clouds.push({

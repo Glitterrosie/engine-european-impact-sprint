@@ -70,15 +70,15 @@ export const CloudWidget = ({ clouds }: CloudWidgetProps) => {
   const cloudScale = calculateScale();
   
   return (
-    <div className="w-full h-full bg-gradient-to-b from-secondary/30 to-secondary/60 relative overflow-hidden rounded-[32px] p-4">
+    <div className="w-full h-full bg-gradient-to-b from-secondary/30 to-secondary/60 relative overflow-hidden rounded-[32px]">
       {/* Widget header */}
-      <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-foreground">Cloudy</h2>
-        <p className="text-xs text-muted-foreground mt-1">Cloud Storage</p>
+      <div className="absolute top-4 left-0 right-0 text-center z-10">
+        <h2 className="text-xl font-bold text-foreground">Cloudy</h2>
+        <p className="text-xs text-muted-foreground mt-0.5">Cloud Storage</p>
       </div>
 
-      {/* Clouds container */}
-      <div className="relative w-full h-[400px]">
+      {/* Clouds container - fills entire widget */}
+      <div className="relative w-full h-full pt-16">
         {clouds.map((cloud, index) => (
           <Cloud 
             key={index}

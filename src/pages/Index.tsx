@@ -12,20 +12,19 @@ interface Cloud {
 
 const Index = () => {
   const [clouds, setClouds] = useState<Cloud[]>([
-    { color: "white", x: 20, y: 15 },
-    { color: "light", x: 50, y: 15 },
-    { color: "dark", x: 80, y: 15 },
-    { color: "white", x: 20, y: 40 },
-    { color: "light", x: 50, y: 40 },
-    { color: "dark", x: 80, y: 40 },
-    { color: "white", x: 20, y: 65 },
-    { color: "light", x: 50, y: 65 },
-    { color: "dark", x: 80, y: 65 },
-    { color: "white", x: 35, y: 27 },
-    { color: "light", x: 65, y: 27 },
-    { color: "dark", x: 35, y: 52 },
-    { color: "white", x: 65, y: 52 },
-    { color: "light", x: 50, y: 77 },
+    { color: "white", x: 20, y: 20 },
+    { color: "light", x: 50, y: 20 },
+    { color: "dark", x: 80, y: 20 },
+    { color: "white", x: 20, y: 45 },
+    { color: "light", x: 50, y: 45 },
+    { color: "dark", x: 80, y: 45 },
+    { color: "white", x: 20, y: 70 },
+    { color: "light", x: 50, y: 70 },
+    { color: "dark", x: 80, y: 70 },
+    { color: "white", x: 35, y: 32 },
+    { color: "light", x: 65, y: 32 },
+    { color: "dark", x: 35, y: 57 },
+    { color: "white", x: 65, y: 57 },
   ]);
 
   const checkCollision = (newX: number, newY: number, existingClouds: Cloud[], currentScale: number) => {

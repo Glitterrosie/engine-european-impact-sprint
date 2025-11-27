@@ -34,7 +34,7 @@ const generateInitialClouds = (): Cloud[] => {
       
       clouds.push({
         color: colors[cloudIndex],
-        x: Math.max(10, Math.min(80, baseX + jitterX - 14)),
+        x: Math.max(5, Math.min(80, baseX + jitterX - 24)),
         y: Math.max(10, Math.min(85, baseY + jitterY))
       });
       

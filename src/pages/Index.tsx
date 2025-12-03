@@ -133,7 +133,7 @@ const Index = () => {
             Click on a light blue cloud to see your deletion options with groups of similar pictures!
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <PhoneMockup>
           <CloudWidget clouds={clouds} onLightCloudClick={() => setShowPhotoDialog(true)} />
           <RainEffect isRaining={isRaining} />

@@ -22,7 +22,7 @@ export const ControlButtons = ({ onAction1, onAction2, onAction3, onRain, onRese
         size="lg"
         className="bg-card hover:bg-card/90 text-card-foreground shadow-lg border-2 border-border transition-all hover:scale-105 font-semibold"
       >
-        Delete irrelevant data
+        Delete irrelevant Data
       </Button>
       <Button
         onClick={onAction2}

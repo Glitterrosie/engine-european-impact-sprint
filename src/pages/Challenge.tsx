@@ -43,12 +43,16 @@ const Challenge = () => {
             <h2 className="font-display font-bold text-xl text-gray-900 mb-4 uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
               Key Information
             </h2>
-            {infoItems.map((item) => (
-              <div key={item.label} className="py-4 border-b border-gray-100 last:border-b-0">
-                <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-1">{item.label}</p>
-                <p className="text-gray-700 text-sm leading-relaxed">{item.value}</p>
-              </div>
-            ))}
+            <table className="w-full text-sm">
+              <tbody>
+                {infoItems.map((item) => (
+                  <tr key={item.label} className="border-b border-gray-100 last:border-b-0">
+                    <td className="py-3 pr-4 align-top font-bold text-esprint-purple uppercase tracking-wide text-xs whitespace-nowrap w-1/4">{item.label}</td>
+                    <td className="py-3 text-gray-700 leading-relaxed">{item.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </motion.div>
         </div>
 

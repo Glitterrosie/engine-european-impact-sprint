@@ -13,7 +13,6 @@ const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
       {/* Fixed key visual background */}
       <div className="fixed inset-0 -z-10">
         <img src={keyVisual} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div className="pt-28 pb-20">

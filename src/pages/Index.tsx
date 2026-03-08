@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import keyVisual from "@/assets/key-visual.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
+import esprintLogo from "@/assets/esprint-logo-date-white.svg";
 
 const stats = [
   { value: "60", label: "Tech Students" },
@@ -33,27 +34,13 @@ const Index = () => {
             <img src={hpiEngineLogo} alt="HPI Engine" className="h-7 mb-8" />
           </motion.div>
 
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)]"
-            style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}
           >
-            European<br />
-            Impact<br />
-            Sprint
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-8 text-base md:text-lg text-white/90 font-display font-bold uppercase tracking-widest drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
-          >
-            25 – 28th August, 2026<br />
-            @ Hasso Plattner Institute Potsdam
-          </motion.p>
+            <img src={esprintLogo} alt="European Impact Sprint – 25-28 August 2026" className="w-full max-w-lg drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)]" />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

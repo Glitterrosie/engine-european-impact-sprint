@@ -31,26 +31,39 @@ const HowItWorks = () => {
     >
       <div className="space-y-8">
         {/* Collaboration & Criteria + Selection Process */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
-        >
-          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
-            Student Selection Criteria
-          </h2>
-          <ul className="space-y-3">
-            {criteria.map((c, i) => (
-              <li key={i} className="flex gap-3 items-start">
-                <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
-                </span>
-                <p className="text-gray-700 text-sm">{c}</p>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 shadow-xl"
+          >
+            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
+              Student Selection Criteria
+            </h2>
+            <ul className="space-y-3">
+              {criteria.map((c, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
+                  </span>
+                  <p className="text-gray-700 text-sm">{c}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center"
+          >
+            <div className="w-full h-full min-h-[250px] bg-gray-100 flex items-center justify-center">
+              <p className="text-gray-400 text-sm">Photo placeholder</p>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Timeline */}
         <motion.div

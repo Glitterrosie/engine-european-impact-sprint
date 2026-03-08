@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"TT Lakes Neue"', '"Titillium Web"', 'sans-serif'],
+        body: ['"Titillium Web"', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,15 +61,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        cloud: {
-          white: "hsl(var(--cloud-white))",
-          light: "hsl(var(--cloud-light))",
-          dark: "hsl(var(--cloud-dark))",
-        },
-        phone: {
-          frame: "hsl(var(--phone-frame))",
-          screen: "hsl(var(--phone-screen))",
-          notch: "hsl(var(--phone-notch))",
+        esprint: {
+          pink: "hsl(var(--esprint-pink))",
+          orange: "hsl(var(--esprint-orange))",
+          purple: "hsl(var(--esprint-purple))",
+          red: "hsl(var(--esprint-red))",
+          darkblue: "hsl(var(--esprint-darkblue))",
+          cream: "hsl(var(--esprint-cream))",
         },
       },
       borderRadius: {
@@ -75,20 +77,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

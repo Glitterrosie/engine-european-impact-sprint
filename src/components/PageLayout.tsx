@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import keyVisual from "@/assets/key-visual.png";
+import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -17,7 +18,10 @@ const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
 
       <div className="pt-28 pb-20">
         <div className="container mx-auto px-4">
-          {/* Page header on the gradient */}
+          {/* E-Sprint logo */}
+          <img src={esprintLogo} alt="European Impact Sprint" className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]" />
+
+          {/* Page header */}
           <div className="mb-8">
             <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
               {title}
@@ -29,7 +33,6 @@ const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
             )}
           </div>
 
-          {/* Content in white boxes */}
           {children}
         </div>
       </div>

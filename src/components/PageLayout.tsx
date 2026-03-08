@@ -5,7 +5,7 @@ import esprintLogo from "@/assets/esprint-logo-white.svg";
 interface PageLayoutProps {
   children: ReactNode;
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
 }
 
 const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {

@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -38,14 +37,8 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="flex items-center">
-          {isHome ? (
-            <span className="font-display font-black text-lg tracking-tight text-white">
-              European Impact Sprint
-            </span>
-          ) : (
-            <img src={esprintLogo} alt="European Impact Sprint" className="h-8" />
-          )}
+        <Link to="/" className="font-display font-black text-lg tracking-tight text-white">
+          European Impact Sprint
         </Link>
 
         {/* Desktop */}

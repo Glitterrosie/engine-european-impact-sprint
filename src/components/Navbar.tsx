@@ -37,8 +37,8 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-display font-black text-lg tracking-tight text-white">
-          European Impact Sprint
+        <Link to="/" className="text-white">
+          <span className="sr-only">Home</span>
         </Link>
 
         {/* Desktop */}

@@ -19,7 +19,7 @@ const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
       <div className="pt-28 pb-20">
         <div className="container mx-auto px-4">
           {/* E-Sprint logo */}
-          <img src={esprintLogo} alt="European Impact Sprint" className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]" />
+          <img src={esprintLogo} alt="European Impact Sprint" className="w-48 md:w-64 mb-6 mt-[-3rem] drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]" />
 
           {/* Page header */}
           <div className="mb-8">

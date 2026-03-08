@@ -8,67 +8,55 @@ const Partners = () => {
   return (
     <PageLayout title="Partners">
       <div className="space-y-8">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* HPI */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="overflow-hidden rounded-2xl"
-          >
-            <div className="p-8 flex items-center justify-center">
-              <a href="https://hpi.de" target="_blank" rel="noopener noreferrer">
-                <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-16 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]" />
-              </a>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-2">Host</p>
-              <h3 className="font-display font-bold text-xl text-gray-900 mb-3">Hasso Plattner Institute</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                The Hasso Plattner Institute (HPI) in Potsdam is Germany's university center of excellence for digital engineering, advancing research and education in IT systems engineering, data engineering, cyber security, entrepreneurship, and digital health.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* HPI Engine */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="overflow-hidden rounded-2xl"
-          >
-            <div className="p-8 flex items-center justify-center">
-              <a href="https://hpi-engine.de" target="_blank" rel="noopener noreferrer">
-                <img src={hpiEngineLogo} alt="HPI Engine" className="h-12 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]" />
-              </a>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-2">Organizer</p>
-              <h3 className="font-display font-bold text-xl text-gray-900 mb-3">HPI Engine</h3>
-              <p className="text-sm text-gray-400 italic mb-2">Startup Ecosystem</p>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                One of Europe's leading startup ecosystems, empowering outstanding tech talent to become leaders and founders.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* SAP */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="overflow-hidden rounded-2xl"
-          >
-            <div className="p-8 flex items-center justify-center">
-              <a href="https://sap.com" target="_blank" rel="noopener noreferrer">
-                <img src={sapLogoWhite} alt="SAP" className="h-16 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]" />
-              </a>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-2">Partner</p>
-              <h3 className="font-display font-bold text-xl text-gray-900">SAP</h3>
-            </div>
-          </motion.div>
+        <div className="grid md:grid-cols-3 gap-8 items-stretch">
+          {[
+            {
+              logo: hpiLogoWhite,
+              logoAlt: "Hasso Plattner Institute",
+              logoClass: "h-16",
+              link: "https://hpi.de",
+              role: "Host",
+              name: "Hasso Plattner Institute",
+              desc: "The Hasso Plattner Institute (HPI) in Potsdam is Germany's university center of excellence for digital engineering, advancing research and education in IT systems engineering, data engineering, cyber security, entrepreneurship, and digital health.",
+            },
+            {
+              logo: hpiEngineLogo,
+              logoAlt: "HPI Engine",
+              logoClass: "h-12",
+              link: "https://hpi-engine.de",
+              role: "Organizer",
+              name: "HPI Engine",
+              desc: "One of Europe's leading startup ecosystems, empowering outstanding tech talent to become leaders and founders through innovation programs and entrepreneurship education.",
+            },
+            {
+              logo: sapLogoWhite,
+              logoAlt: "SAP",
+              logoClass: "h-16",
+              link: "https://sap.com",
+              role: "Partner",
+              name: "SAP",
+              desc: "Europe's largest software company and global leader in enterprise applications and business AI, partnering with HPI to empower the next generation of tech innovators across the continent.",
+            },
+          ].map((p, i) => (
+            <motion.div
+              key={p.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.1 }}
+              className="overflow-hidden rounded-2xl flex flex-col"
+            >
+              <div className="p-8 flex items-center justify-center h-32">
+                <a href={p.link} target="_blank" rel="noopener noreferrer">
+                  <img src={p.logo} alt={p.logoAlt} className={`${p.logoClass} drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]`} />
+                </a>
+              </div>
+              <div className="bg-white p-8 rounded-2xl shadow-xl flex-1">
+                <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-2">{p.role}</p>
+                <h3 className="font-display font-bold text-xl text-gray-900 mb-3">{p.name}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{p.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {/* University partners */}

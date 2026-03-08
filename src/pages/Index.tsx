@@ -66,9 +66,6 @@ const Index = () => {
                 Learn more <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm">
-              <Link to="/contact">Contact us</Link>
-            </Button>
           </motion.div>
         </div>
       </section>

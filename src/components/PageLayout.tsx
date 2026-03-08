@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import keyVisual from "@/assets/key-visual.png";
+
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 interface PageLayoutProps {

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import keyVisual from "@/assets/key-visual.png";
+
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import esprintLogo from "@/assets/esprint-logo-date-white.svg";
 

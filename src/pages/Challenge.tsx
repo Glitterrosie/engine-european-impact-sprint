@@ -27,7 +27,7 @@ const Challenge = () => {
               Program Brief
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Potsdam, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges.
+              The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...
             </p>
             <div className="mt-6 rounded-xl overflow-hidden aspect-video bg-gray-100 flex items-center justify-center">
               <p className="text-gray-400 text-sm">Photo placeholder</p>

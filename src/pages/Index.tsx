@@ -22,7 +22,7 @@ const Index = () => {
 
       {/* Hero – text directly on key visual */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        
 
         <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-28 pt-32">
           <motion.div
@@ -37,7 +37,8 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)]"
+            className="font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)]"
+            style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}
           >
             European<br />
             Impact<br />
@@ -64,9 +65,6 @@ const Index = () => {
               <Link to="/challenge">
                 Learn more <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm">
-              <Link to="/contact">Contact us</Link>
             </Button>
           </motion.div>
         </div>

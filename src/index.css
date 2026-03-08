@@ -34,6 +34,38 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'TT Lakes Neue Compressed';
+  src: url('/fonts/TT_Lakes_Neue_Compressed_Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Lakes Neue Compressed';
+  src: url('/fonts/TT_Lakes_Neue_Compressed_Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Lakes Neue Condensed';
+  src: url('/fonts/TT_Lakes_Neue_Condensed_Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TT Lakes Neue Expanded';
+  src: url('/fonts/TT_Lakes_Neue_Expanded_Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
 
 @layer base {

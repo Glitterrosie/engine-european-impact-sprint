@@ -36,23 +36,45 @@ const Benefits = () => {
       title="Program Benefits"
       subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
     >
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-        {benefits.map((b, i) => (
-          <motion.div
-            key={b.title}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="bg-white rounded-2xl p-8 shadow-xl text-center w-full"
-          >
-            <div className="h-12 w-12 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 mx-auto">
-              <b.icon className="h-6 w-6 text-esprint-purple" />
-            </div>
-            <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
-            <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
-          </motion.div>
-        ))}
+      <div className="flex flex-col items-center gap-6">
+        {/* Top row: 3 boxes */}
+        <div className="grid md:grid-cols-3 gap-6 w-full">
+          {benefits.slice(0, 3).map((b, i) => (
+            <motion.div
+              key={b.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="bg-white rounded-2xl p-8 shadow-xl text-center"
+            >
+              <div className="h-12 w-12 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 mx-auto">
+                <b.icon className="h-6 w-6 text-esprint-purple" />
+              </div>
+              <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+        {/* Bottom row: 2 boxes centered in the gaps */}
+        <div className="grid md:grid-cols-2 gap-6 w-full md:max-w-[66%]">
+          {benefits.slice(3).map((b, i) => (
+            <motion.div
+              key={b.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (i + 3) * 0.08 }}
+              className="bg-white rounded-2xl p-8 shadow-xl text-center"
+            >
+              <div className="h-12 w-12 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 mx-auto">
+                <b.icon className="h-6 w-6 text-esprint-purple" />
+              </div>
+              <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </PageLayout>
   );

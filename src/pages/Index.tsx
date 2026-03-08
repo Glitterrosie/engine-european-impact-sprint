@@ -17,62 +17,60 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Key visual as full background */}
+      <section className="relative min-h-screen flex items-end overflow-hidden">
+        {/* Key visual - vivid, no blur */}
         <div className="absolute inset-0">
           <img
             src={keyVisual}
             alt=""
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
+          {/* Darkening overlay for text readability - stronger at bottom where text sits */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center pt-24">
+        <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-28 pt-32">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <img src={hpiEngineLogo} alt="HPI Engine" className="h-8 mx-auto mb-8 opacity-70" />
+            <img src={hpiEngineLogo} alt="HPI Engine" className="h-7 mb-8 opacity-80" />
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display font-black text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
+            className="font-display font-black text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white drop-shadow-[0_2px_30px_rgba(0,0,0,0.4)]"
           >
             European<br />
-            Impact Sprint<br />
-            <span className="bg-gradient-to-r from-esprint-pink via-esprint-orange to-esprint-purple bg-clip-text text-transparent">
-              2026
-            </span>
+            Impact<br />
+            Sprint
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-lg md:text-xl text-foreground/80 max-w-xl mx-auto"
+            className="mt-8 text-base md:text-lg text-white/90 font-display font-bold uppercase tracking-widest drop-shadow-[0_1px_8px_rgba(0,0,0,0.5)]"
           >
-            25–28th August 2026<br />
-            Hasso Plattner Institute, Potsdam
+            25 – 28th August, 2026<br />
+            @ Hasso Plattner Institute Potsdam
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex gap-4 justify-center flex-wrap"
+            className="mt-8 flex gap-4 flex-wrap"
           >
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
+            <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 font-bold shadow-lg">
               <Link to="/challenge">
                 Learn more <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-foreground/20 text-foreground hover:bg-foreground/10">
+            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-white/40 text-white hover:bg-white/10 backdrop-blur-sm">
               <Link to="/contact">Contact us</Link>
             </Button>
           </motion.div>

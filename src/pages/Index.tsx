@@ -30,7 +30,7 @@ const Index = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <img src={hpiEngineLogo} alt="HPI Engine" className="h-7 mb-8 opacity-80" />
+            <img src={hpiEngineLogo} alt="HPI Engine" className="h-7 mb-8" />
           </motion.div>
 
           <motion.h1

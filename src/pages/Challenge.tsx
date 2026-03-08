@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026" },
-  { label: "Program Schedule", value: "4-day full time program, featuring on-site workshops during the day (ca. 9 am – 6 pm) as well as community activities during the evenings." },
+  { label: "Program Schedule", value: "The European Impact Sprint is a 4-day full time program, featuring on-site workshops during the day (ca. 9 am – 6 pm) as well as community activities during the evenings to connect with other participants. The detailed agenda will be shared at the kick-off in July." },
   { label: "Location", value: "Hasso Plattner Institute, Potsdam, Germany (30 min from Berlin airport and train station)" },
   { label: "Accommodation", value: "Shared glamping tents on campus" },
   { label: "Language", value: "English" },

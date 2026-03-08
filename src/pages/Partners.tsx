@@ -23,7 +23,7 @@ const Partners = () => {
               logo: hpiEngineLogo,
               logoAlt: "HPI Engine",
               logoClass: "h-12",
-              link: "https://hpi-engine.de",
+              link: "https://engine.hpi.de",
               role: "Organizer",
               name: "HPI Engine",
               desc: "One of Europe's leading startup ecosystems, empowering outstanding tech talent to become leaders and founders through innovation programs and entrepreneurship education.",

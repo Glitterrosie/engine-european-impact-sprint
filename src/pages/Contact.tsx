@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <PageLayout
       title="Contact"
-      subtitle="Ready to shape the future? You're interested in joining the program as a participant or partner? Contact us!"
+      subtitle={<><span className="font-display font-black text-2xl md:text-3xl block mb-2">Ready to shape the future?</span>You're interested in joining the program as a participant or partner? Contact us!</>}
     >
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Form */}

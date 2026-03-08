@@ -31,59 +31,26 @@ const HowItWorks = () => {
     >
       <div className="space-y-8">
         {/* Collaboration & Criteria + Selection Process */}
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
-          >
-            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
-              Collaboration & Criteria
-            </h2>
-            <p className="text-gray-600 text-sm mb-4">
-              We are aiming to partner with leading universities in computer science education in Europe. We ask every university to select and nominate two students that fulfill the following criteria:
-            </p>
-            <ul className="space-y-3">
-              {criteria.map((c, i) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
-                  </span>
-                  <p className="text-gray-700 text-sm">{c}</p>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
-          >
-            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-pink pb-3 mb-6">
-              Selection Process
-            </h2>
-            <p className="text-gray-600 text-sm mb-4">
-              We leave it up to each university to determine the best way to select and nominate students. We suggest that nomination to this program can be done as:
-            </p>
-            <ul className="space-y-3 text-sm text-gray-700">
-              <li className="flex gap-2 items-start">
-                <span className="text-esprint-pink mt-0.5">•</span>
-                A prize for the top-performing students in a relevant course or program.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+        >
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
+            Student Selection Criteria
+          </h2>
+          <ul className="space-y-3">
+            {criteria.map((c, i) => (
+              <li key={i} className="flex gap-3 items-start">
+                <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
+                </span>
+                <p className="text-gray-700 text-sm">{c}</p>
               </li>
-              <li className="flex gap-2 items-start">
-                <span className="text-esprint-pink mt-0.5">•</span>
-                For students highly active in university tech clubs, coding societies, or student-led innovation hubs.
-              </li>
-              <li className="flex gap-2 items-start">
-                <span className="text-esprint-pink mt-0.5">•</span>
-                Using the nomination as a recognition award for outstanding engagement or leadership.
-              </li>
-            </ul>
-          </motion.div>
-        </div>
+            ))}
+          </ul>
+        </motion.div>
 
         {/* Timeline */}
         <motion.div

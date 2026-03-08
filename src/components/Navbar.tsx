@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -16,11 +16,31 @@ const navItems = [
 const Navbar = () => {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = location.pathname === "/";
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const showBg = scrolled || !isHome;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        showBg
+          ? "bg-background/90 backdrop-blur-xl border-b border-border"
+          : "bg-transparent border-b border-transparent"
+      )}
+    >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-display font-black text-lg tracking-tight text-foreground">
+        <Link to="/" className={cn(
+          "font-display font-black text-lg tracking-tight transition-colors",
+          showBg ? "text-foreground" : "text-white"
+        )}>
           European Impact Sprint
         </Link>
 
@@ -33,8 +53,10 @@ const Navbar = () => {
               className={cn(
                 "px-3 py-1.5 rounded-md text-sm font-semibold transition-colors",
                 location.pathname === item.path
-                  ? "bg-primary/20 text-primary"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  ? showBg ? "bg-primary/20 text-primary" : "bg-white/20 text-white"
+                  : showBg
+                    ? "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
               {item.label}
@@ -44,7 +66,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={cn("md:hidden transition-colors", showBg ? "text-foreground" : "text-white")}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -53,7 +75,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4 space-y-1">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-4 pb-4 space-y-1">
           {navItems.map((item) => (
             <Link
               key={item.path}

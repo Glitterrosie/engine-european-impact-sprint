@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import keyVisual from "@/assets/key-visual.png";
+
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 interface PageLayoutProps {
@@ -11,10 +11,6 @@ interface PageLayoutProps {
 const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
   return (
     <div className="min-h-screen relative">
-      {/* Fixed key visual background */}
-      <div className="fixed inset-0 -z-10">
-        <img src={keyVisual} alt="" className="w-full h-full object-cover" />
-      </div>
 
       <div className="pt-28 pb-20">
         <div className="container mx-auto px-4">

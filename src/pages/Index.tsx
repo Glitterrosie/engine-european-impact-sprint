@@ -15,15 +15,14 @@ const stats = [
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      {/* Fixed key visual background for entire page */}
+      {/* Fixed key visual background – no overlay */}
       <div className="fixed inset-0 -z-10">
         <img src={keyVisual} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Hero */}
+      {/* Hero – text directly on key visual */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
         <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-28 pt-32">
           <motion.div
@@ -76,38 +75,39 @@ const Index = () => {
       {/* Content sections in white boxes */}
       <section className="py-16">
         <div className="container mx-auto px-4 space-y-8">
-          {/* Stats box */}
+          {/* Tagline box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-10 md:p-14 shadow-xl"
+            className="bg-white rounded-2xl p-10 md:p-14 shadow-xl text-center"
           >
-            <h2 className="font-display font-bold text-2xl md:text-3xl text-gray-900 text-center">
+            <h2 className="font-display font-bold text-2xl md:text-3xl text-gray-900">
               Ready to Shape the Future of Tech in Europe?
             </h2>
-            <p className="mt-3 text-gray-600 text-center text-lg max-w-2xl mx-auto">
+            <p className="mt-3 text-gray-600 text-lg max-w-2xl mx-auto">
               Join Europe's brightest minds, solve real-world challenges and build lasting connections.
             </p>
-
-            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-center"
-                >
-                  <p className="font-display font-black text-5xl md:text-6xl text-esprint-purple">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 text-gray-500 font-semibold text-sm">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
+
+          {/* Stats as separate boxes */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white rounded-2xl p-8 shadow-xl text-center"
+              >
+                <p className="font-display font-black text-5xl md:text-6xl text-esprint-purple">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-gray-500 font-semibold text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
 
           {/* Overview cards */}
           <div className="grid md:grid-cols-3 gap-6">

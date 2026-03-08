@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import hpiLogo from "@/assets/hpi-logo.svg";
+import hpiEngineLogo from "@/assets/hpi-engine-white.png";
+import sapLogo from "@/assets/sap-logo.png";
 
 const Partners = () => {
   return (
@@ -13,7 +16,7 @@ const Partners = () => {
             Partners
           </motion.h1>
 
-          {/* Host */}
+          {/* Host & Organizer */}
           <div className="mt-16 grid lg:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -22,9 +25,9 @@ const Partners = () => {
               className="bg-card rounded-xl p-8 border border-border"
             >
               <p className="text-sm font-bold text-primary uppercase tracking-wide mb-4">Host</p>
-              <div className="h-16 w-40 bg-muted rounded-lg flex items-center justify-center mb-6">
-                <span className="text-muted-foreground text-xs">HPI Logo</span>
-              </div>
+              <a href="https://hpi.de" target="_blank" rel="noopener noreferrer">
+                <img src={hpiLogo} alt="Hasso Plattner Institute" className="h-14 mb-6" />
+              </a>
               <h3 className="font-display font-bold text-xl mb-3">Hasso Plattner Institute</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 The Hasso Plattner Institute (HPI) in Potsdam is Germany's university center of excellence for digital engineering, advancing research and education in IT systems engineering, data engineering, cyber security, entrepreneurship, and digital health.
@@ -39,9 +42,9 @@ const Partners = () => {
               className="bg-card rounded-xl p-8 border border-border"
             >
               <p className="text-sm font-bold text-primary uppercase tracking-wide mb-4">Organizer</p>
-              <div className="h-16 w-40 bg-muted rounded-lg flex items-center justify-center mb-6">
-                <span className="text-muted-foreground text-xs">HPI Engine Logo</span>
-              </div>
+              <a href="https://hpi-engine.de" target="_blank" rel="noopener noreferrer">
+                <img src={hpiEngineLogo} alt="HPI Engine" className="h-10 mb-6" />
+              </a>
               <h3 className="font-display font-bold text-xl mb-3">HPI Engine</h3>
               <p className="text-sm text-muted-foreground italic mb-2">Startup Ecosystem</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
@@ -49,6 +52,22 @@ const Partners = () => {
               </p>
             </motion.div>
           </div>
+
+          {/* SAP */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12 bg-card rounded-xl p-8 border border-border flex flex-col md:flex-row items-center gap-8"
+          >
+            <a href="https://sap.com" target="_blank" rel="noopener noreferrer">
+              <img src={sapLogo} alt="SAP" className="h-16" />
+            </a>
+            <div>
+              <p className="text-sm font-bold text-primary uppercase tracking-wide mb-1">Partner</p>
+              <h3 className="font-display font-bold text-xl">SAP</h3>
+            </div>
+          </motion.div>
 
           {/* University partners */}
           <motion.div

@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
             <div>
               <Label htmlFor="org" className="text-gray-700 text-sm font-semibold">Organization</Label>
-              <Input id="org" name="organization" className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+              <Input id="org" name="organization" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
             </div>
             <div>
               <Label htmlFor="email" className="text-gray-700 text-sm font-semibold">Email Address</Label>

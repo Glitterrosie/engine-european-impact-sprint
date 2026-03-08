@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Lightbulb, PartyPopper, Network, Wrench } from "lucide-react";
+import PageLayout from "@/components/PageLayout";
 
 const benefits = [
   {
@@ -31,41 +32,39 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <div className="min-h-screen pt-24">
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black text-4xl md:text-6xl mb-4"
-          >
-            Program Benefits
-          </motion.h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!
-          </p>
-
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b, i) => (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-xl p-8 border border-border hover:border-primary/30 transition-all group"
-              >
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                  <b.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-display font-bold text-lg mb-3">{b.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+    <PageLayout
+      title="Program Benefits"
+      subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+      >
+        <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-pink pb-3 mb-8">
+          Program Benefits
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {benefits.map((b, i) => (
+            <motion.div
+              key={b.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="rounded-xl border border-gray-100 p-6 hover:border-esprint-purple/30 transition-all group bg-gray-50/50"
+            >
+              <div className="h-10 w-10 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 group-hover:bg-esprint-purple/20 transition-colors">
+                <b.icon className="h-5 w-5 text-esprint-purple" />
+              </div>
+              <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </div>
+      </motion.div>
+    </PageLayout>
   );
 };
 

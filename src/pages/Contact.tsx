@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import PageLayout from "@/components/PageLayout";
 import essamImg from "@/assets/essam.jpeg";
 import hendrikImg from "@/assets/hendrik.jpg";
 import lisaImg from "@/assets/lisa.png";
@@ -30,73 +31,70 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen pt-24">
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black text-4xl md:text-6xl mb-4"
-          >
-            Contact
-          </motion.h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Ready to shape the future? You're interested in joining the program as a participant or partner? Contact us!
-          </p>
+    <PageLayout
+      title="Contact"
+      subtitle="Ready to shape the future? You're interested in joining the program as a participant or partner? Contact us!"
+    >
+      <div className="grid lg:grid-cols-2 gap-8">
+        {/* Form */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+        >
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
+            Get in Touch
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <Label htmlFor="name" className="text-gray-700 text-sm font-semibold">Full Name</Label>
+              <Input id="name" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+            </div>
+            <div>
+              <Label htmlFor="org" className="text-gray-700 text-sm font-semibold">Organization</Label>
+              <Input id="org" className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+            </div>
+            <div>
+              <Label htmlFor="email" className="text-gray-700 text-sm font-semibold">Email Address</Label>
+              <Input id="email" type="email" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+            </div>
+            <div>
+              <Label htmlFor="message" className="text-gray-700 text-sm font-semibold">Message</Label>
+              <Textarea id="message" required rows={5} className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+            </div>
+            <Button type="submit" disabled={sending} className="bg-esprint-purple hover:bg-esprint-purple/90 text-white rounded-full px-8">
+              {sending ? "Sending..." : "Send Message"}
+            </Button>
+          </form>
+        </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16 mt-16">
-            {/* Form */}
-            <motion.form
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="space-y-5"
-            >
-              <div>
-                <Label htmlFor="name" className="text-foreground">Full Name</Label>
-                <Input id="name" required className="mt-1.5 bg-card border-border" />
+        {/* Team */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+        >
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-pink pb-3 mb-8">
+            Our Team
+          </h2>
+          <div className="grid gap-8">
+            {team.map((t) => (
+              <div key={t.name} className="flex items-center gap-5">
+                <div className="w-20 h-20 rounded-full overflow-hidden bg-gray-100 shrink-0">
+                  <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <p className="font-display font-bold text-gray-900">{t.name}</p>
+                  <p className="text-gray-500 text-sm">{t.role}</p>
+                </div>
               </div>
-              <div>
-                <Label htmlFor="org" className="text-foreground">Organization</Label>
-                <Input id="org" className="mt-1.5 bg-card border-border" />
-              </div>
-              <div>
-                <Label htmlFor="email" className="text-foreground">Email Address</Label>
-                <Input id="email" type="email" required className="mt-1.5 bg-card border-border" />
-              </div>
-              <div>
-                <Label htmlFor="message" className="text-foreground">Message</Label>
-                <Textarea id="message" required rows={5} className="mt-1.5 bg-card border-border" />
-              </div>
-              <Button type="submit" disabled={sending} className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
-                {sending ? "Sending..." : "Send Message"}
-              </Button>
-            </motion.form>
-
-            {/* Team */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <h2 className="font-display font-bold text-2xl mb-8">Our Team</h2>
-              <div className="grid sm:grid-cols-3 gap-6">
-                {team.map((t) => (
-                  <div key={t.name} className="text-center">
-                    <div className="w-28 h-28 mx-auto rounded-full overflow-hidden bg-muted border-2 border-border">
-                      <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
-                    </div>
-                    <p className="font-display font-bold mt-4">{t.name}</p>
-                    <p className="text-muted-foreground text-sm">{t.role}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            ))}
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </PageLayout>
   );
 };
 

@@ -20,14 +20,26 @@ const Contact = () => {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      toast({ title: "Message sent!", description: "We'll get back to you soon." });
-      setSending(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      formData.append("access_key", "bfdc05e8-0544-45a7-aff1-438a028e7eb4");
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        toast({ title: "Message sent!", description: "We'll get back to you soon." });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Error", description: "Could not send message. Please try again.", variant: "destructive" });
+    }
+    setSending(false);
   };
 
   return (
@@ -49,19 +61,19 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <Label htmlFor="name" className="text-gray-700 text-sm font-semibold">Full Name</Label>
-              <Input id="name" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+              <Input id="name" name="name" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
             </div>
             <div>
               <Label htmlFor="org" className="text-gray-700 text-sm font-semibold">Organization</Label>
-              <Input id="org" className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+              <Input id="org" name="organization" className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
             </div>
             <div>
               <Label htmlFor="email" className="text-gray-700 text-sm font-semibold">Email Address</Label>
-              <Input id="email" type="email" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+              <Input id="email" name="email" type="email" required className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
             </div>
             <div>
               <Label htmlFor="message" className="text-gray-700 text-sm font-semibold">Message</Label>
-              <Textarea id="message" required rows={5} className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
+              <Textarea id="message" name="message" required rows={5} className="mt-1.5 bg-gray-50 border-gray-200 text-gray-900" />
             </div>
             <Button type="submit" disabled={sending} className="bg-esprint-purple hover:bg-esprint-purple/90 text-white rounded-full px-8">
               {sending ? "Sending..." : "Send Message"}

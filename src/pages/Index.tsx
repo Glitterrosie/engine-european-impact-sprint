@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import keyVisual from "@/assets/key-visual.png";
+import keyVisual2 from "@/assets/key-visual-2.png";
+import hpiEngineLogo from "@/assets/hpi-engine-white.png";
 
 const stats = [
   { value: "60", label: "Tech Students" },
@@ -16,22 +18,31 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Key visual background */}
+        {/* Key visual as full background */}
         <div className="absolute inset-0">
           <img
             src={keyVisual}
             alt=""
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+          <div className="absolute inset-0 bg-background/50 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center pt-24">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <img src={hpiEngineLogo} alt="HPI Engine" className="h-8 mx-auto mb-8 opacity-70" />
+          </motion.div>
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="font-display font-black text-5xl md:text-7xl lg:text-8xl leading-tight tracking-tight"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="font-display font-black text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tight"
           >
             European<br />
             Impact Sprint<br />
@@ -43,8 +54,8 @@ const Index = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mt-6 text-lg md:text-xl text-foreground/80 max-w-xl mx-auto"
           >
             25–28th August 2026<br />
             Hasso Plattner Institute, Potsdam
@@ -53,7 +64,7 @@ const Index = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-8 flex gap-4 justify-center flex-wrap"
           >
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8">
@@ -61,16 +72,19 @@ const Index = () => {
                 Learn more <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-border text-foreground hover:bg-muted">
+            <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-foreground/20 text-foreground hover:bg-foreground/10">
               <Link to="/contact">Contact us</Link>
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Tagline + Stats */}
-      <section className="py-24">
-        <div className="container mx-auto px-4 text-center">
+      {/* Tagline + Stats with key visual strip */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <img src={keyVisual2} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -109,8 +123,14 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quick overview cards */}
-      <section className="py-24 bg-card/50">
+      {/* Key visual divider */}
+      <div className="h-64 md:h-80 overflow-hidden relative">
+        <img src={keyVisual2} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      </div>
+
+      {/* Overview cards */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6">
             {[

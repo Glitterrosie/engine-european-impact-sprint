@@ -77,14 +77,28 @@ const HowItWorks = () => {
             Timeline
           </h2>
           <div className="relative">
-            <div className="hidden md:block absolute top-5 left-0 right-0 h-1 rounded-full bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
+            {/* Continuous line */}
+            <div className="hidden md:block absolute top-[10px] left-0 right-0 h-1 rounded-full bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
             <div className="grid md:grid-cols-5 gap-6">
               {timeline.map((t, i) => (
-                <div key={i} className="relative text-center md:text-left">
-                  <div className="hidden md:block w-3 h-3 rounded-full bg-esprint-purple mx-auto md:mx-0 mb-4 relative z-10 ring-4 ring-white" />
+                <div key={i} className="relative text-center">
+                  {/* Dots on top of line */}
+                  <div className="hidden md:flex justify-center gap-1.5 mb-4 relative z-10">
+                    {Array.from({ length: t.dots }).map((_, d) => (
+                      <div key={d} className="w-4 h-4 rounded-full bg-esprint-purple ring-4 ring-white" />
+                    ))}
+                  </div>
                   <p className="text-esprint-purple font-bold text-sm">{t.date}</p>
-                  <p className="font-display font-bold text-gray-900 mt-1 text-sm">{t.title}</p>
-                  <p className="text-gray-500 text-xs mt-1">{t.desc}</p>
+                  {t.isMain ? (
+                    <div className="mt-2 flex justify-center">
+                      <img src={esprintLogo} alt="European Impact Sprint" className="h-12 invert" />
+                    </div>
+                  ) : (
+                    <>
+                      <p className="font-display font-bold text-gray-900 mt-1 text-sm">{t.title}</p>
+                      <p className="text-gray-500 text-xs mt-1">{t.desc}</p>
+                    </>
+                  )}
                 </div>
               ))}
             </div>

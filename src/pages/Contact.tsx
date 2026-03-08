@@ -20,14 +20,26 @@ const Contact = () => {
   const { toast } = useToast();
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    setTimeout(() => {
-      toast({ title: "Message sent!", description: "We'll get back to you soon." });
-      setSending(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    try {
+      const formData = new FormData(e.target as HTMLFormElement);
+      formData.append("access_key", "bfdc05e8-0544-45a7-aff1-438a028e7eb4");
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      if (res.ok) {
+        toast({ title: "Message sent!", description: "We'll get back to you soon." });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        toast({ title: "Error", description: "Something went wrong. Please try again.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Error", description: "Could not send message. Please try again.", variant: "destructive" });
+    }
+    setSending(false);
   };
 
   return (

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PageLayout from "@/components/PageLayout";
 
 const criteria = [
   "Bachelor's students in Computer Science, preferably final year",
@@ -24,109 +25,118 @@ const schedule = [
 
 const HowItWorks = () => {
   return (
-    <div className="min-h-screen pt-24">
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.h1
+    <PageLayout
+      title="How it Works"
+      subtitle="Students are nominated by their universities, joined into diverse teams and guided by experts throughout their 4-day journey on-site at HPI Potsdam."
+    >
+      <div className="space-y-8">
+        {/* Collaboration & Criteria + Selection Process */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black text-4xl md:text-6xl mb-4"
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
           >
-            How it Works
-          </motion.h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Students are nominated by their universities, joined into diverse teams and guided by experts throughout their 4-day journey on-site at HPI Potsdam.
-          </p>
-        </div>
-      </section>
+            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
+              Collaboration & Criteria
+            </h2>
+            <p className="text-gray-600 text-sm mb-4">
+              We are aiming to partner with leading universities in computer science education in Europe. We ask every university to select and nominate two students that fulfill the following criteria:
+            </p>
+            <ul className="space-y-3">
+              {criteria.map((c, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
+                  </span>
+                  <p className="text-gray-700 text-sm">{c}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
 
-      {/* Selection Criteria */}
-      <section className="py-16 bg-card/50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display font-bold text-2xl md:text-3xl mb-8">Student Selection Criteria</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {criteria.map((c, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex gap-4 items-start bg-card rounded-lg p-5 border border-border"
-              >
-                <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-primary font-bold text-sm">{i + 1}</span>
-                </div>
-                <p className="text-foreground">{c}</p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+          >
+            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-pink pb-3 mb-6">
+              Selection Process
+            </h2>
+            <p className="text-gray-600 text-sm mb-4">
+              We leave it up to each university to determine the best way to select and nominate students. We suggest that nomination to this program can be done as:
+            </p>
+            <ul className="space-y-3 text-sm text-gray-700">
+              <li className="flex gap-2 items-start">
+                <span className="text-esprint-pink mt-0.5">•</span>
+                A prize for the top-performing students in a relevant course or program.
+              </li>
+              <li className="flex gap-2 items-start">
+                <span className="text-esprint-pink mt-0.5">•</span>
+                For students highly active in university tech clubs, coding societies, or student-led innovation hubs.
+              </li>
+              <li className="flex gap-2 items-start">
+                <span className="text-esprint-pink mt-0.5">•</span>
+                Using the nomination as a recognition award for outstanding engagement or leadership.
+              </li>
+            </ul>
+          </motion.div>
         </div>
-      </section>
 
-      {/* Timeline */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display font-bold text-2xl md:text-3xl mb-12">Nomination Timeline</h2>
+        {/* Timeline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+        >
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-orange pb-3 mb-8">
+            Timeline
+          </h2>
           <div className="relative">
-            {/* Line */}
-            <div className="hidden md:block absolute top-6 left-0 right-0 h-0.5 bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
+            <div className="hidden md:block absolute top-5 left-0 right-0 h-1 rounded-full bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
             <div className="grid md:grid-cols-5 gap-6">
               {timeline.map((t, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="relative text-center md:text-left"
-                >
-                  <div className="hidden md:block w-3 h-3 rounded-full bg-primary mx-auto md:mx-0 mb-4" />
-                  <p className="text-primary font-bold text-sm">{t.date}</p>
-                  <p className="font-display font-bold mt-1">{t.title}</p>
-                  <p className="text-muted-foreground text-sm mt-1">{t.desc}</p>
-                </motion.div>
+                <div key={i} className="relative text-center md:text-left">
+                  <div className="hidden md:block w-3 h-3 rounded-full bg-esprint-purple mx-auto md:mx-0 mb-4 relative z-10 ring-4 ring-white" />
+                  <p className="text-esprint-purple font-bold text-sm">{t.date}</p>
+                  <p className="font-display font-bold text-gray-900 mt-1 text-sm">{t.title}</p>
+                  <p className="text-gray-500 text-xs mt-1">{t.desc}</p>
+                </div>
               ))}
             </div>
           </div>
+        </motion.div>
 
-          <div className="mt-12 space-y-2 text-sm text-muted-foreground">
-            <p>3rd July 2026 – Nomination Deadline</p>
-            <p>15th July 2026 – Participants Announcement</p>
-            <p>3rd August 2026 – Online Kick-Off for Participants</p>
-            <p>25–28th August 2026 – E-Sprint at HPI, Potsdam</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Program Schedule */}
-      <section className="py-20 bg-card/50">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display font-bold text-2xl md:text-3xl mb-12">Program Schedule</h2>
+        {/* Schedule */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+        >
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-8">
+            Program Schedule
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {schedule.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-xl border border-border overflow-hidden"
-              >
-                <div className="aspect-video bg-muted flex items-center justify-center">
-                  <p className="text-muted-foreground text-xs">Photo placeholder</p>
+              <div key={i} className="rounded-xl border border-gray-200 overflow-hidden">
+                <div className="aspect-video bg-gray-50 flex items-center justify-center">
+                  <p className="text-gray-400 text-xs">Photo placeholder</p>
                 </div>
-                <div className="p-5">
-                  <p className="text-primary text-xs font-bold uppercase tracking-wide">{s.day}</p>
-                  <p className="font-display font-bold mt-1">{s.title}</p>
-                  <p className="text-muted-foreground text-sm mt-2">{s.desc}</p>
+                <div className="p-4">
+                  <p className="text-esprint-purple text-xs font-bold uppercase tracking-wide">{s.day}</p>
+                  <p className="font-display font-bold text-gray-900 mt-1">{s.title}</p>
+                  <p className="text-gray-500 text-sm mt-1">{s.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </PageLayout>
   );
 };
 

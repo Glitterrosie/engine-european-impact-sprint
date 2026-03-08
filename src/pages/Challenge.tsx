@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import PageLayout from "@/components/PageLayout";
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026" },
@@ -12,61 +13,60 @@ const infoItems = [
 
 const Challenge = () => {
   return (
-    <div className="min-h-screen pt-24">
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.h1
+    <PageLayout title="The Challenge">
+      <div className="space-y-8">
+        {/* Main content */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-display font-black text-4xl md:text-6xl mb-6"
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
           >
-            The Challenge
-          </motion.h1>
+            <h2 className="font-display font-bold text-xl text-gray-900 mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">
+              Program Brief
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Potsdam, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges.
+            </p>
+            <div className="mt-6 rounded-xl overflow-hidden aspect-video bg-gray-100 flex items-center justify-center">
+              <p className="text-gray-400 text-sm">Photo placeholder</p>
+            </div>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mt-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-            >
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Potsdam, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges.
-              </p>
-              <div className="mt-8 rounded-xl overflow-hidden aspect-video bg-muted flex items-center justify-center border border-border">
-                <p className="text-muted-foreground text-sm">Photo placeholder</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
+          >
+            <h2 className="font-display font-bold text-xl text-gray-900 mb-4 uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
+              Key Information
+            </h2>
+            {infoItems.map((item) => (
+              <div key={item.label} className="py-4 border-b border-gray-100 last:border-b-0">
+                <p className="text-xs font-bold text-esprint-purple uppercase tracking-wide mb-1">{item.label}</p>
+                <p className="text-gray-700 text-sm leading-relaxed">{item.value}</p>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-0"
-            >
-              {infoItems.map((item, i) => (
-                <div key={item.label} className="py-5 border-b border-border">
-                  <p className="text-sm font-bold text-primary uppercase tracking-wide mb-1">{item.label}</p>
-                  <p className="text-foreground text-sm leading-relaxed">{item.value}</p>
-                </div>
-              ))}
-            </motion.div>
-          </div>
+            ))}
+          </motion.div>
         </div>
-      </section>
 
-      {/* Europe map placeholder */}
-      <section className="py-20 bg-card/50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display font-bold text-3xl mb-4">30 Partner Universities Across Europe</h2>
-          <p className="text-muted-foreground mb-12 max-w-xl mx-auto">
-            Hover over countries to see partner universities, logos and contact persons.
-          </p>
-          <div className="rounded-xl bg-muted border border-border aspect-[16/9] max-w-4xl mx-auto flex items-center justify-center">
-            <p className="text-muted-foreground">Interactive Europe Map – Coming Soon</p>
+        {/* Europe map */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl text-center"
+        >
+          <h2 className="font-display font-bold text-2xl text-gray-900 mb-3">30 Partner Universities Across Europe</h2>
+          <p className="text-gray-500 mb-8">Hover over countries to see partner universities, logos and contact persons.</p>
+          <div className="rounded-xl bg-gray-50 aspect-[16/9] max-w-4xl mx-auto flex items-center justify-center border border-gray-200">
+            <p className="text-gray-400">Interactive Europe Map – Coming Soon</p>
           </div>
-        </div>
-      </section>
-    </div>
+        </motion.div>
+      </div>
+    </PageLayout>
   );
 };
 

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import keyVisual from "@/assets/key-visual.png";
-import keyVisual2 from "@/assets/key-visual-2.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.png";
 
 const stats = [
@@ -15,19 +14,16 @@ const stats = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Fixed key visual background for entire page */}
+      <div className="fixed inset-0 -z-10">
+        <img src={keyVisual} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
       {/* Hero */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        {/* Key visual - vivid, no blur */}
-        <div className="absolute inset-0">
-          <img
-            src={keyVisual}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          {/* Darkening overlay for text readability - stronger at bottom where text sits */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-28 pt-32">
           <motion.div
@@ -77,64 +73,48 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Tagline + Stats with key visual strip */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img src={keyVisual2} alt="" className="w-full h-full object-cover" />
-        </div>
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <motion.h2
+      {/* Content sections in white boxes */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 space-y-8">
+          {/* Stats box */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display font-bold text-3xl md:text-4xl max-w-3xl mx-auto"
+            className="bg-white rounded-2xl p-10 md:p-14 shadow-xl"
           >
-            Ready to Shape the Future of Tech in Europe?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto"
-          >
-            Join Europe's brightest minds, solve real-world challenges and build lasting connections.
-          </motion.p>
+            <h2 className="font-display font-bold text-2xl md:text-3xl text-gray-900 text-center">
+              Ready to Shape the Future of Tech in Europe?
+            </h2>
+            <p className="mt-3 text-gray-600 text-center text-lg max-w-2xl mx-auto">
+              Join Europe's brightest minds, solve real-world challenges and build lasting connections.
+            </p>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
-                <p className="font-display font-black text-5xl md:text-6xl bg-gradient-to-r from-esprint-pink to-esprint-purple bg-clip-text text-transparent">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-muted-foreground font-semibold">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="text-center"
+                >
+                  <p className="font-display font-black text-5xl md:text-6xl text-esprint-purple">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 text-gray-500 font-semibold text-sm">{stat.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
 
-      {/* Key visual divider */}
-      <div className="h-64 md:h-80 overflow-hidden relative">
-        <img src={keyVisual2} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      </div>
-
-      {/* Overview cards */}
-      <section className="py-24">
-        <div className="container mx-auto px-4">
+          {/* Overview cards */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "from-esprint-pink to-esprint-red" },
-              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "from-esprint-purple to-esprint-pink" },
-              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "from-esprint-orange to-esprint-pink" },
+              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge" },
+              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits" },
+              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works" },
             ].map((card, i) => (
               <motion.div
                 key={card.title}
@@ -145,11 +125,13 @@ const Index = () => {
               >
                 <Link
                   to={card.link}
-                  className="block bg-card rounded-xl p-8 border border-border hover:border-primary/50 transition-all group h-full"
+                  className="block bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all group h-full"
                 >
-                  <div className={`h-1 w-12 rounded-full bg-gradient-to-r ${card.color} mb-6`} />
-                  <h3 className="font-display font-bold text-xl mb-3 group-hover:text-primary transition-colors">{card.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{card.desc}</p>
+                  <h3 className="font-display font-bold text-xl text-gray-900 mb-3 group-hover:text-esprint-purple transition-colors">{card.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
+                  <span className="inline-flex items-center mt-4 text-esprint-purple text-sm font-semibold group-hover:gap-2 transition-all">
+                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                  </span>
                 </Link>
               </motion.div>
             ))}

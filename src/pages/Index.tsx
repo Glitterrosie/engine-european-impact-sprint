@@ -16,10 +16,6 @@ const stats = [
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      {/* Fixed key visual background – no overlay */}
-      <div className="fixed inset-0 -z-10">
-        <img src={keyVisual} alt="" className="w-full h-full object-cover" />
-      </div>
 
       {/* Hero – text directly on key visual */}
       <section className="relative min-h-screen flex items-end overflow-hidden">

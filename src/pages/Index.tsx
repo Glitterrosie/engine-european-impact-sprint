@@ -22,7 +22,7 @@ const Index = () => {
 
       {/* Hero – text directly on key visual */}
       <section className="relative min-h-screen flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        
 
         <div className="relative z-10 container mx-auto px-4 pb-20 md:pb-28 pt-32">
           <motion.div

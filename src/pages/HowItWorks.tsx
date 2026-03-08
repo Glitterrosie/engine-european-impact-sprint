@@ -80,7 +80,7 @@ const HowItWorks = () => {
           <div className="relative">
             {/* Continuous line */}
             <div className="hidden md:block absolute top-[34px] left-0 right-0 h-1 rounded-full bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
-            <div className="grid md:grid-cols-5 gap-6">
+            <div className="grid md:grid-cols-6 gap-4">
               {timeline.map((t, i) => (
                 <div key={i} className="relative text-center">
                   {/* Date above dots */}

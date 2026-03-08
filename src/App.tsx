@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Challenge from "./pages/Challenge";
 import HowItWorks from "./pages/HowItWorks";
@@ -27,6 +28,7 @@ const App = () => (
         <img src={keyVisual} alt="" className="w-full h-full object-cover" />
       </div>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />

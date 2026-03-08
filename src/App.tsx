@@ -13,6 +13,7 @@ import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import keyVisual from "@/assets/key-visual.png";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* Global fixed background */}
+      <div className="fixed inset-0 -z-10">
+        <img src={keyVisual} alt="" className="w-full h-full object-cover" />
+      </div>
       <BrowserRouter>
         <Navbar />
         <Routes>

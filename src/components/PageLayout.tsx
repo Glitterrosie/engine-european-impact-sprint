@@ -27,7 +27,7 @@ const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
               {title}
             </h1>
             {subtitle && (
-              <p className="mt-3 text-lg text-white/80 max-w-3xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+              <p className="mt-3 text-lg text-white max-w-3xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
                 {subtitle}
               </p>
             )}

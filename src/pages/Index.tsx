@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import keyVisual from "@/assets/key-visual.png";
-import hpiEngineLogo from "@/assets/hpi-engine-white.png";
+import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 
 const stats = [
   { value: "60", label: "Tech Students" },

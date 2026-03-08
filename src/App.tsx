@@ -27,6 +27,7 @@ const App = () => (
         <img src={keyVisual} alt="" className="w-full h-full object-cover" />
       </div>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />

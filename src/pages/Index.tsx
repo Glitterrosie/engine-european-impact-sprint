@@ -53,7 +53,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Content sections in white boxes */}
+      {/* Content sections with colorful blocks */}
       <section className="py-16">
         <div className="container mx-auto px-4 space-y-8">
           {/* Tagline box */}
@@ -61,41 +61,49 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-10 md:p-14 shadow-xl text-center"
+            className="bg-esprint-pink rounded-2xl p-10 md:p-14 shadow-xl text-center"
           >
-            <h2 className="font-display font-bold text-2xl md:text-3xl text-gray-900">
+            <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
               Ready to Shape the Future of Tech in Europe?
             </h2>
-            <p className="mt-3 text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="mt-3 text-primary-foreground/80 text-lg max-w-2xl mx-auto">
               Join Europe's brightest minds, solve real-world challenges and build lasting connections.
             </p>
           </motion.div>
 
-          {/* Stats as separate boxes */}
+          {/* Stats as colorful boxes */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-xl text-center"
-              >
-                <p className="font-display font-black text-5xl md:text-6xl text-esprint-purple">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-gray-500 font-semibold text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
+            {stats.map((stat, i) => {
+              const colors = [
+                "bg-esprint-orange",
+                "bg-esprint-purple",
+                "bg-esprint-pink",
+                "bg-esprint-darkblue",
+              ];
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`${colors[i]} rounded-2xl p-8 shadow-xl text-center`}
+                >
+                  <p className="font-display font-black text-5xl md:text-6xl text-primary-foreground">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 text-primary-foreground/70 font-semibold text-sm">{stat.label}</p>
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Overview cards */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge" },
-              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits" },
-              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works" },
+              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
+              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-purple text-primary-foreground" },
+              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-primary-foreground" },
             ].map((card, i) => (
               <motion.div
                 key={card.title}
@@ -106,11 +114,11 @@ const Index = () => {
               >
                 <Link
                   to={card.link}
-                  className="block bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all group h-full"
+                  className={`block ${card.color} rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all group h-full`}
                 >
-                  <h3 className="font-display font-bold text-xl text-gray-900 mb-3 group-hover:text-esprint-purple transition-colors">{card.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{card.desc}</p>
-                  <span className="inline-flex items-center mt-4 text-esprint-purple text-sm font-semibold group-hover:gap-2 transition-all">
+                  <h3 className="font-display font-bold text-xl mb-3">{card.title}</h3>
+                  <p className="text-sm leading-relaxed opacity-80">{card.desc}</p>
+                  <span className="inline-flex items-center mt-4 text-sm font-semibold opacity-90 group-hover:gap-2 transition-all">
                     Learn more <ArrowRight className="ml-1 h-4 w-4" />
                   </span>
                 </Link>

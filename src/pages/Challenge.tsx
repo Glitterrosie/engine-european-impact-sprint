@@ -83,64 +83,38 @@ const Challenge = () => {
           className="bg-esprint-darkblue rounded-t-2xl p-8 md:p-10 text-center shadow-xl col-span-full"
         >
           <h2 className="font-display font-bold text-2xl text-primary-foreground mb-8">Partner Universities Coming Soon</h2>
-          <div className="max-w-3xl mx-auto">
-            <svg viewBox="-31.5 -46.5 75 55" className="w-full" xmlns="http://www.w3.org/2000/svg">
-              {/* Real simplified Europe map paths */}
-              <g fill="hsl(var(--primary-foreground))" fillOpacity="0.08" stroke="hsl(var(--primary-foreground))" strokeWidth="0.15" strokeOpacity="0.3">
-                {/* Iceland */}
-                <path d="M-25,-30 l2,-1 3,0 2,1 1,2 -1,2 -3,1 -3,0 -2,-1 -1,-2z" />
-                {/* Norway/Sweden */}
-                <path d="M5,-40 l2,1 2,3 1,4 0,5 -1,4 -2,3 -1,4 -2,3 -3,2 -2,0 -1,-2 0,-4 1,-5 1,-4 0,-4 1,-3 1,-3 2,-2z" />
-                {/* Finland */}
-                <path d="M12,-38 l3,1 2,3 1,4 0,5 -1,4 -2,3 -2,1 -2,-1 -1,-3 0,-4 0,-4 1,-4 1,-3z" />
-                {/* UK */}
-                <path d="M-8,-18 l1,-3 2,-2 2,0 1,2 0,3 -1,3 -2,2 -1,1 -1,-1 -1,-2 0,-2z" />
-                {/* Ireland */}
-                <path d="M-12,-17 l2,-1 2,0 1,2 0,2 -1,2 -2,1 -2,0 -1,-2 0,-2z" />
-                {/* France */}
-                <path d="M-6,-10 l4,-1 3,0 3,1 1,2 0,3 -1,2 -3,2 -2,1 -3,0 -2,-1 -2,-2 -1,-2 0,-2 1,-2z" />
-                {/* Spain */}
-                <path d="M-9,-2 l3,-1 4,0 4,0 3,1 1,2 0,3 -1,2 -3,1 -4,1 -4,0 -3,-1 -2,-2 0,-3 1,-2z" />
-                {/* Portugal */}
-                <path d="M-12,-1 l1,-1 1,0 1,1 0,3 0,3 -1,2 -1,0 -1,-1 -1,-3 0,-3z" />
-                {/* Germany */}
-                <path d="M2,-16 l3,-1 3,0 2,1 1,3 0,3 -1,2 -2,1 -3,0 -2,-1 -2,-2 -1,-2 0,-2 1,-1z" />
-                {/* Poland */}
-                <path d="M8,-17 l4,-1 3,1 2,2 1,2 0,3 -1,2 -3,1 -3,0 -3,-1 -1,-2 0,-3 0,-2z" />
-                {/* Italy */}
-                <path d="M4,-5 l2,-2 2,-1 2,0 1,1 1,3 0,3 -1,3 -2,2 -1,0 -1,-1 -1,-2 0,-2 -1,-2z" />
-                {/* Sicily */}
-                <path d="M6,2 l2,0 1,1 0,1 -2,1 -2,0 -1,-1 1,-1z" />
-                {/* Sardinia */}
-                <path d="M2,0 l1,-1 1,0 1,1 0,2 -1,1 -1,0 -1,-1z" />
-                {/* Switzerland/Austria */}
-                <path d="M1,-9 l3,0 3,0 2,1 0,1 -2,1 -3,0 -3,0 -2,-1 0,-1z" />
-                {/* Czech Republic */}
-                <path d="M5,-13 l3,0 2,1 1,1 0,1 -2,1 -3,0 -2,-1 -1,-1z" />
-                {/* Denmark */}
-                <path d="M2,-20 l2,0 1,1 0,2 -1,1 -2,0 -1,-1 0,-2z" />
-                {/* Netherlands/Belgium */}
-                <path d="M-2,-15 l2,0 2,0 1,1 0,2 -1,1 -2,0 -2,-1 -1,-1z" />
-                {/* Romania */}
-                <path d="M14,-10 l3,-1 3,1 1,2 0,2 -1,2 -3,1 -3,0 -2,-1 -1,-2 0,-2z" />
-                {/* Bulgaria */}
-                <path d="M16,-5 l3,0 2,1 0,2 -1,1 -3,1 -2,0 -1,-1 0,-2z" />
-                {/* Greece */}
-                <path d="M14,0 l2,-1 2,0 1,2 0,3 -1,2 -2,1 -2,0 -1,-2 0,-3z" />
-                {/* Turkey (European part) */}
-                <path d="M19,-4 l3,0 2,1 1,2 -1,1 -2,1 -2,0 -1,-1 -1,-2z" />
-                {/* Hungary */}
-                <path d="M10,-10 l3,0 2,1 1,1 0,2 -2,1 -3,0 -2,-1 -1,-1 0,-2z" />
-                {/* Ukraine */}
-                <path d="M16,-18 l5,-1 4,1 3,2 1,3 0,3 -2,2 -4,1 -4,0 -3,-1 -2,-2 -1,-3 0,-3z" />
-                {/* Baltic States */}
-                <path d="M11,-22 l2,-1 2,0 1,2 0,3 -1,2 -2,0 -2,-1 -1,-2 0,-2z" />
-                {/* Belarus */}
-                <path d="M13,-18 l3,0 2,1 1,2 0,2 -1,1 -3,0 -2,-1 -1,-2 0,-2z" />
-                {/* Croatia/Serbia */}
-                <path d="M9,-6 l3,-1 2,1 1,2 0,2 -1,1 -2,1 -2,0 -2,-1 -1,-2 1,-2z" />
-              </g>
-            </svg>
+          <div className="max-w-4xl mx-auto">
+            <ComposableMap
+              projection="geoAzimuthalEqualArea"
+              projectionConfig={{
+                rotate: [-10, -52, 0],
+                scale: 700,
+              }}
+              width={800}
+              height={550}
+              style={{ width: "100%", height: "auto" }}
+            >
+              <Geographies geography={EUROPE_GEO_URL}>
+                {({ geographies }) =>
+                  geographies
+                    .filter((geo) => EUROPE_COUNTRIES.includes(geo.properties.name))
+                    .map((geo) => (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        fill="hsl(var(--primary-foreground) / 0.08)"
+                        stroke="hsl(var(--primary-foreground) / 0.3)"
+                        strokeWidth={0.5}
+                        style={{
+                          default: { outline: "none" },
+                          hover: { fill: "hsl(var(--primary-foreground) / 0.15)", outline: "none" },
+                          pressed: { outline: "none" },
+                        }}
+                      />
+                    ))
+                }
+              </Geographies>
+            </ComposableMap>
           </div>
         </motion.div>
       </div>

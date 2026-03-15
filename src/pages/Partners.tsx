@@ -45,8 +45,8 @@ const Partners = () => {
       subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="relative flex flex-col items-center">
+      <div className="flex-1 flex items-center justify-center px-4 py-12 w-full">
+        <div className="relative flex flex-col items-center w-full max-w-5xl mx-auto">
           {/* Vertical connecting line */}
           <div
             className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-white/10"

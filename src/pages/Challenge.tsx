@@ -36,6 +36,11 @@ const Challenge = () => {
 
           {/* Key Facts – right, colored rows */}
           <div className="flex flex-col">
+            <div className="bg-esprint-darkblue px-5 md:px-6 py-4">
+              <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide">
+                Key Information
+              </h2>
+            </div>
             {infoItems.map((item, i) => (
               <motion.div
                 key={item.label}
@@ -43,7 +48,7 @@ const Challenge = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className={`${item.bg} ${item.text} flex`}
+                className={`${item.bg} ${item.text} flex flex-1`}
               >
                 <div className={`w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r ${item.accent}`}>
                   <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">

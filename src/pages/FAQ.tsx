@@ -23,6 +23,7 @@ const faqSections = [
     title: "Program Structure",
     hsl: "var(--esprint-pink)",
     textClass: "text-esprint-darkblue",
+    align: "right" as const,
     items: [
       { q: "What challenges will students be working on?", a: "Projects range from sustainability to technology — each designed to solve tangible challenges." },
       { q: "Will I have to pay for travel, accommodation and meals during the program?", a: "HPI will cover all cost for accommodation (glamping camp, on-campus) and meals during the program. In addition, you will be reimbursed for travel costs up to 200€." },
@@ -73,10 +74,10 @@ const FAQ = () => {
           className="relative px-6 md:px-12 lg:px-16 py-10"
           style={{ background: `hsl(${section.hsl})` }}
         >
-          <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
+          <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6 ${'align' in section && section.align === 'right' ? 'text-right' : ''}`}>
             {section.title}
           </h2>
-          <Accordion type="single" collapsible className="space-y-3 max-w-3xl">
+          <Accordion type="single" collapsible className={`space-y-3 max-w-3xl ${'align' in section && section.align === 'right' ? 'ml-auto' : ''}`}>
             {section.items.map((item, i) => (
               <AccordionItem
                 key={i}

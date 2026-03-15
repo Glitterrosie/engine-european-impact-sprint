@@ -82,51 +82,57 @@ const Partners = () => {
 
                 {/* Circle group centered on blob */}
                 <div className="absolute" style={{ width: dashedSize, height: dashedSize, top: (260 - dashedSize) / 2 - 10, left: (240 - dashedSize) / 2 }}>
-
-                {/* Colored outer circle */}
-                <div
-                  className="absolute rounded-full"
-                  style={{
-                    width: outerSize,
-                    height: outerSize,
-                    top: (dashedSize - outerSize) / 2,
-                    left: (dashedSize - outerSize) / 2,
-                    background: `hsl(${p.color} / 0.25)`,
-                  }}
-                />
-
-                {/* Inner circle with logo */}
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute rounded-full flex items-center justify-center group"
-                  style={{
-                    width: circleSize,
-                    height: circleSize,
-                    top: (dashedSize - circleSize) / 2,
-                    left: (dashedSize - circleSize) / 2,
-                    background: `hsl(${p.color})`,
-                    boxShadow: `0 8px 25px hsl(${p.color} / 0.35)`,
-                  }}
-                >
-                  <img
-                    src={p.logo}
-                    alt={p.logoAlt}
-                    className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"
+                  {/* Dashed outer ring */}
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{ border: `2px dashed hsl(${p.color} / 0.4)` }}
                   />
-                </a>
 
-                {/* Number */}
-                <div
-                  className="absolute font-display font-bold text-lg"
-                  style={{
-                    color: `hsl(${p.color})`,
-                    bottom: 4,
-                    right: 8,
-                  }}
-                >
-                  {i + 1}
+                  {/* Colored outer circle */}
+                  <div
+                    className="absolute rounded-full"
+                    style={{
+                      width: outerSize,
+                      height: outerSize,
+                      top: (dashedSize - outerSize) / 2,
+                      left: (dashedSize - outerSize) / 2,
+                      background: `hsl(${p.color} / 0.25)`,
+                    }}
+                  />
+
+                  {/* Inner circle with logo */}
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute rounded-full flex items-center justify-center group"
+                    style={{
+                      width: circleSize,
+                      height: circleSize,
+                      top: (dashedSize - circleSize) / 2,
+                      left: (dashedSize - circleSize) / 2,
+                      background: `hsl(${p.color})`,
+                      boxShadow: `0 8px 25px hsl(${p.color} / 0.35)`,
+                    }}
+                  >
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"
+                    />
+                  </a>
+
+                  {/* Number */}
+                  <div
+                    className="absolute font-display font-bold text-lg"
+                    style={{
+                      color: `hsl(${p.color})`,
+                      bottom: 4,
+                      right: 8,
+                    }}
+                  >
+                    {i + 1}
+                  </div>
                 </div>
               </div>
 

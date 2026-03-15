@@ -34,6 +34,12 @@ const partners = [
   },
 ];
 
+const blobPaths = [
+  "polygon(10% 0%, 90% 5%, 100% 40%, 95% 85%, 70% 100%, 20% 95%, 0% 60%, 5% 20%)",
+  "polygon(15% 5%, 85% 0%, 100% 35%, 90% 90%, 60% 100%, 10% 90%, 0% 50%, 5% 15%)",
+  "polygon(5% 10%, 80% 0%, 100% 45%, 95% 80%, 75% 100%, 15% 95%, 0% 55%, 10% 20%)",
+];
+
 const Partners = () => {
   const circleSize = 100;
   const outerSize = 130;
@@ -56,58 +62,77 @@ const Partners = () => {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="flex flex-col items-center text-center"
             >
-              {/* Circle assembly */}
-              <div className="relative flex-shrink-0 mb-6" style={{ width: dashedSize, height: dashedSize }}>
-                {/* Dashed outer ring */}
+              {/* Circle assembly with blob */}
+              <div className="relative flex-shrink-0 mb-6" style={{ width: dashedSize + 80, height: dashedSize + 100 }}>
+                {/* Large blob placeholder behind circle */}
                 <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ border: `2px dashed hsl(${p.color} / 0.4)` }}
-                />
-
-                {/* Colored outer circle */}
-                <div
-                  className="absolute rounded-full"
+                  className="absolute w-full h-full"
                   style={{
-                    width: outerSize,
-                    height: outerSize,
-                    top: (dashedSize - outerSize) / 2,
-                    left: (dashedSize - outerSize) / 2,
-                    background: `hsl(${p.color} / 0.25)`,
-                  }}
-                />
-
-                {/* Inner circle with logo */}
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute rounded-full flex items-center justify-center group"
-                  style={{
-                    width: circleSize,
-                    height: circleSize,
-                    top: (dashedSize - circleSize) / 2,
-                    left: (dashedSize - circleSize) / 2,
-                    background: `hsl(${p.color})`,
-                    boxShadow: `0 8px 25px hsl(${p.color} / 0.35)`,
+                    clipPath: blobPaths[i],
+                    background: `hsl(${p.color} / 0.08)`,
+                    border: `1px solid hsl(${p.color} / 0.12)`,
+                    top: 10,
+                    left: 0,
                   }}
                 >
-                  <img
-                    src={p.logo}
-                    alt={p.logoAlt}
-                    className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"
+                  <div className="w-full h-full flex items-end justify-center pb-4">
+                    <span className="text-white/15 text-[10px] uppercase tracking-widest">Photo</span>
+                  </div>
+                </div>
+
+                {/* Circle group centered on blob */}
+                <div className="absolute" style={{ width: dashedSize, height: dashedSize, top: (260 - dashedSize) / 2 - 10, left: (240 - dashedSize) / 2 }}>
+                  {/* Dashed outer ring */}
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{ border: `2px dashed hsl(${p.color} / 0.4)` }}
                   />
-                </a>
 
-                {/* Number */}
-                <div
-                  className="absolute font-display font-bold text-lg"
-                  style={{
-                    color: `hsl(${p.color})`,
-                    bottom: 4,
-                    right: 8,
-                  }}
-                >
-                  {i + 1}
+                  {/* Colored outer circle */}
+                  <div
+                    className="absolute rounded-full"
+                    style={{
+                      width: outerSize,
+                      height: outerSize,
+                      top: (dashedSize - outerSize) / 2,
+                      left: (dashedSize - outerSize) / 2,
+                      background: `hsl(${p.color} / 0.25)`,
+                    }}
+                  />
+
+                  {/* Inner circle with logo */}
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute rounded-full flex items-center justify-center group"
+                    style={{
+                      width: circleSize,
+                      height: circleSize,
+                      top: (dashedSize - circleSize) / 2,
+                      left: (dashedSize - circleSize) / 2,
+                      background: `hsl(${p.color})`,
+                      boxShadow: `0 8px 25px hsl(${p.color} / 0.35)`,
+                    }}
+                  >
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"
+                    />
+                  </a>
+
+                  {/* Number */}
+                  <div
+                    className="absolute font-display font-bold text-lg"
+                    style={{
+                      color: `hsl(${p.color})`,
+                      bottom: 4,
+                      right: 8,
+                    }}
+                  >
+                    {i + 1}
+                  </div>
                 </div>
               </div>
 

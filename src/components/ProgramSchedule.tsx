@@ -24,9 +24,12 @@ const bgSolid = [
 const ProgramSchedule = () => {
   return (
     <div className="max-w-3xl mx-auto">
-      <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
+      <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-4">
         Program Schedule
       </h2>
+      <p className="text-primary-foreground/70 leading-relaxed mb-12">
+        Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion.
+      </p>
 
       <div className="relative">
         {/* SVG curved white line */}

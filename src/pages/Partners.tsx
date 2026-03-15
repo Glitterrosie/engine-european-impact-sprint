@@ -22,7 +22,7 @@ const Partners = () => {
           transition={{ delay: 0.1 }}
           className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="grid md:grid-cols-2 gap-0">
+          <div className="grid md:grid-cols-[2fr_1fr] gap-0">
             {/* Left: Logo + Text */}
             <div className="p-8 md:p-10 flex flex-col text-primary-foreground">
               <div className="flex items-center gap-4 mb-2">

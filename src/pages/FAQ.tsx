@@ -111,18 +111,6 @@ const FAQ = () => {
         }}
       />
 
-      {/* Key visual overlay on top of everything */}
-      <div
-        className="absolute inset-0 z-20 pointer-events-none"
-        style={{
-          backgroundImage: `url(${keyVisual})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          opacity: 0.12,
-          mixBlendMode: 'overlay',
-        }}
-      />
     </div>
   );
 };

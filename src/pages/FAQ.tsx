@@ -88,23 +88,28 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* Right side - SVG cutout text revealing key visual */}
-      <div ref={sidebarRef} className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
-        <div
-          className="absolute left-0 right-0 bottom-0"
-          style={{
-            top: questionsTop,
-            backgroundImage: `url(${keyVisual})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            WebkitMaskImage: `url("data:image/svg+xml,${svgContent}")`,
-            WebkitMaskSize: '100% 520px',
-            WebkitMaskRepeat: 'repeat-y',
-            maskImage: `url("data:image/svg+xml,${svgContent}")`,
-            maskSize: '100% 520px',
-            maskRepeat: 'repeat-y',
-          }}
-        />
+      {/* Right side - large vertical text with key visual fill */}
+      <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
+        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-start pt-24">
+          <span
+            className="font-display font-black leading-[0.85] w-full text-center"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+              fontSize: 'clamp(8rem, 12vw, 14rem)',
+              letterSpacing: '-0.04em',
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
+            FAQ
+          </span>
+        </div>
       </div>
     </div>
   );

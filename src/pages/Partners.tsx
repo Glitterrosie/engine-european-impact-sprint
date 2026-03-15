@@ -70,7 +70,7 @@ const Partners = () => {
               <div
                 className="flex-1 relative"
                 style={{
-                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0), hsl(${color.hslVar} / 0.4), hsl(${color.hslVar} / 0.8), ${color.bg})`,
+                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
                 }}
               >
                 {/* Text content */}

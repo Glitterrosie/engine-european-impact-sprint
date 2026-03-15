@@ -72,19 +72,19 @@ const Partners = () => {
                 style={{
                   background: `linear-gradient(to left, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
                   WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  WebkitMaskSize: '15% auto, 100% 100%',
-                  WebkitMaskPosition: '2rem center, center center',
+                  WebkitMaskSize: '10% auto, 100% 100%',
+                  WebkitMaskPosition: '3rem center, center center',
                   WebkitMaskRepeat: 'no-repeat, no-repeat',
                   WebkitMaskComposite: 'xor',
                   maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  maskSize: '15% auto, 100% 100%',
-                  maskPosition: '2rem center, center center',
+                  maskSize: '10% auto, 100% 100%',
+                  maskPosition: '3rem center, center center',
                   maskRepeat: 'no-repeat, no-repeat',
                   maskComposite: 'exclude',
                 }}
               >
                 {/* Text content */}
-                <div className="relative z-10 p-8 md:p-10 md:pl-32 lg:pl-40 flex flex-col justify-center h-full">
+                <div className="relative z-10 p-8 md:p-10 md:pl-64 flex flex-col justify-center h-full">
                   <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2`}>
                     {p.role}
                   </p>

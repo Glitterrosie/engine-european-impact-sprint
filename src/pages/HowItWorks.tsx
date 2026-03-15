@@ -181,7 +181,7 @@ const HowItWorks = () => {
                     <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
                       <span className={`bg-white/90 ${colors[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
                       <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
-                      <span className={`bg-white/90 ${colors[i]} inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
+                      <span className="bg-esprint-orange text-esprint-dark inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg">{s.desc}</span>
                     </div>
                   </motion.div>
                 );

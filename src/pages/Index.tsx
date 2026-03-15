@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +13,81 @@ const stats = [
   { value: "4", label: "Days" },
   { value: "1", label: "Goal" },
 ];
+
+const statColors = [
+  { front: "bg-esprint-orange text-esprint-darkblue", back: "bg-esprint-purple text-primary-foreground" },
+  { front: "bg-esprint-pink text-esprint-darkblue", back: "bg-esprint-darkblue text-primary-foreground" },
+  { front: "bg-esprint-red text-primary-foreground", back: "bg-esprint-orange text-esprint-darkblue" },
+  { front: "bg-esprint-purple text-primary-foreground", back: "bg-esprint-pink text-esprint-darkblue" },
+];
+
+const overviewCards = [
+  {
+    title: "The Challenge",
+    desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.",
+    link: "/challenge",
+    front: "bg-esprint-cream text-background",
+    back: "bg-esprint-purple text-primary-foreground",
+  },
+  {
+    title: "Program Benefits",
+    desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.",
+    link: "/benefits",
+    front: "bg-esprint-darkblue text-primary-foreground",
+    back: "bg-esprint-red text-primary-foreground",
+  },
+  {
+    title: "How it Works",
+    desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.",
+    link: "/how-it-works",
+    front: "bg-esprint-orange text-esprint-darkblue",
+    back: "bg-esprint-darkblue text-primary-foreground",
+  },
+];
+
+const FlipCard = ({ card }: { card: typeof overviewCards[0] }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div
+      className="relative h-full"
+      style={{ perspective: "1000px" }}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+    >
+      <motion.div
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        style={{ transformStyle: "preserve-3d" }}
+        className="relative h-full"
+      >
+        {/* Front */}
+        <div
+          className={`${card.front} p-8 h-full absolute inset-0`}
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <h3 className="font-display font-bold text-xl mb-3">{card.title}</h3>
+          <p className="text-sm leading-relaxed opacity-80">{card.desc}</p>
+          <span className="inline-flex items-center mt-4 text-sm font-semibold opacity-90">
+            Hover to flip <ArrowRight className="ml-1 h-4 w-4" />
+          </span>
+        </div>
+
+        {/* Back */}
+        <Link
+          to={card.link}
+          className={`${card.back} p-8 h-full absolute inset-0 flex flex-col justify-center items-center text-center group`}
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <h3 className="font-display font-bold text-2xl mb-3">{card.title}</h3>
+          <span className="inline-flex items-center text-sm font-semibold opacity-90 group-hover:gap-2 transition-all">
+            Learn more <ArrowRight className="ml-1 h-4 w-4" />
+          </span>
+        </Link>
+      </motion.div>
+    </div>
+  );
+};
 
 const Index = () => {
   return (
@@ -71,57 +147,39 @@ const Index = () => {
             </p>
           </motion.div>
 
-          {/* Stats row – touching, own rounded block */}
+          {/* Stats row – color swap on hover */}
           <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4">
-            {stats.map((stat, i) => {
-              const colors = [
-                "bg-esprint-orange text-esprint-darkblue",
-                "bg-esprint-pink text-esprint-darkblue",
-                "bg-esprint-red",
-                "bg-esprint-purple",
-              ];
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`${colors[i]} p-8 text-center`}
-                >
-                  <p className="font-display font-black text-5xl md:text-6xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 font-semibold text-sm opacity-70">{stat.label}</p>
-                </motion.div>
-              );
-            })}
+            {stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.05, zIndex: 10 }}
+                className={`${statColors[i].front} p-8 text-center cursor-default transition-colors duration-300 hover:${statColors[i].back.split(" ")[0]} relative`}
+              >
+                <p className="font-display font-black text-5xl md:text-6xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 font-semibold text-sm opacity-70">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Overview cards – touching, own rounded block */}
-          <div className="rounded-2xl overflow-hidden shadow-xl grid md:grid-cols-3">
-            {[
-              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
-              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-darkblue text-primary-foreground" },
-              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-esprint-darkblue" },
-            ].map((card, i) => (
+          {/* Overview cards – flip on hover */}
+          <div className="rounded-2xl overflow-hidden shadow-xl grid md:grid-cols-3" style={{ minHeight: "220px" }}>
+            {overviewCards.map((card, i) => (
               <motion.div
                 key={card.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
+                className="relative"
+                style={{ minHeight: "220px" }}
               >
-                <Link
-                  to={card.link}
-                  className={`block ${card.color} p-8 hover:brightness-110 transition-all group h-full`}
-                >
-                  <h3 className="font-display font-bold text-xl mb-3">{card.title}</h3>
-                  <p className="text-sm leading-relaxed opacity-80">{card.desc}</p>
-                  <span className="inline-flex items-center mt-4 text-sm font-semibold opacity-90 group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
+                <FlipCard card={card} />
               </motion.div>
             ))}
           </div>

@@ -162,7 +162,7 @@ const HowItWorks = () => {
                   >
                     {/* Blob with overlaid text */}
                     <div className="w-full md:w-5/12 flex items-center justify-center relative">
-                      <svg viewBox="-100 -100 200 200" className="w-full max-w-[240px]">
+                      <svg viewBox="-100 -100 200 200" className="w-full max-w-[320px]">
                         <defs>
                           <clipPath id={`blob-${i}`}>
                             <path d={blobPaths[i]} />

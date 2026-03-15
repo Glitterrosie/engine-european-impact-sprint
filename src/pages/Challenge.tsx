@@ -61,6 +61,92 @@ const Challenge = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Partner Universities Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-esprint-darkblue rounded-t-2xl p-8 md:p-10 text-center shadow-xl col-span-full"
+        >
+          <h2 className="font-display font-bold text-2xl text-primary-foreground mb-2">Partner Universities</h2>
+          <p className="text-primary-foreground/60 mb-8">30 universities across Europe — coming soon</p>
+          <div className="max-w-3xl mx-auto">
+            <svg viewBox="0 0 800 600" className="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Simplified Europe outline */}
+              <path
+                d="M400,80 L420,75 L450,90 L470,85 L500,100 L520,95 L540,110 L560,120 L570,140 L580,160 L590,180 L585,200 L575,220 L560,235 L550,250 L555,270 L565,290 L570,310 L560,330 L545,345 L530,355 L515,360 L500,370 L485,380 L470,385 L460,395 L445,400 L430,395 L415,385 L400,380 L385,385 L370,395 L355,400 L340,395 L325,385 L310,375 L295,365 L280,355 L265,345 L250,330 L240,315 L235,300 L230,280 L225,260 L220,240 L225,220 L235,200 L245,185 L260,170 L275,160 L290,150 L300,135 L310,120 L325,110 L340,100 L355,92 L370,85 L385,82 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* Scandinavia */}
+              <path
+                d="M380,30 L390,25 L405,30 L415,40 L420,55 L415,70 L400,80 L385,82 L375,75 L365,60 L360,45 L370,35 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* UK/Ireland */}
+              <path
+                d="M230,120 L250,110 L265,115 L275,130 L270,150 L255,160 L240,155 L230,140 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              <path
+                d="M210,130 L225,125 L230,140 L225,150 L215,148 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* Iberian Peninsula */}
+              <path
+                d="M240,310 L270,295 L300,300 L310,320 L305,345 L285,360 L260,355 L245,340 L235,325 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* Italy */}
+              <path
+                d="M400,280 L415,275 L425,290 L430,310 L425,335 L415,355 L405,365 L395,355 L390,335 L385,310 L390,290 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* Eastern Europe */}
+              <path
+                d="M500,100 L540,110 L570,140 L590,180 L585,220 L570,250 L550,270 L530,260 L510,240 L495,220 L485,200 L480,170 L480,140 L490,120 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+              {/* Greece */}
+              <path
+                d="M490,340 L510,330 L520,345 L515,365 L500,375 L485,370 L480,355 Z"
+                stroke="hsl(var(--primary-foreground))"
+                strokeWidth="1.5"
+                strokeOpacity="0.2"
+                fill="hsl(var(--primary-foreground))"
+                fillOpacity="0.05"
+              />
+            </svg>
+          </div>
+        </motion.div>
       </div>
     </PageLayout>
   );

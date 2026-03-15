@@ -31,11 +31,11 @@ const benefits = [
 ];
 
 const cardColors = [
-  "bg-esprint-orange text-esprint-darkblue",
-  "bg-esprint-pink text-esprint-darkblue",
-  "bg-esprint-purple text-primary-foreground",
-  "bg-esprint-red text-primary-foreground",
-  "bg-esprint-darkblue text-primary-foreground",
+  { bg: "bg-esprint-orange", text: "text-esprint-darkblue", hoverText: "hover:text-esprint-orange" },
+  { bg: "bg-esprint-pink", text: "text-esprint-darkblue", hoverText: "hover:text-esprint-pink" },
+  { bg: "bg-esprint-purple", text: "text-primary-foreground", hoverText: "hover:text-esprint-purple" },
+  { bg: "bg-esprint-red", text: "text-primary-foreground", hoverText: "hover:text-esprint-red" },
+  { bg: "bg-esprint-darkblue", text: "text-primary-foreground", hoverText: "hover:text-esprint-darkblue" },
 ];
 
 const Benefits = () => {
@@ -44,45 +44,26 @@ const Benefits = () => {
       title="Program Benefits"
       subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
     >
-      <div className="flex flex-col items-center gap-6">
-        {/* Top row: 3 boxes */}
-        <div className="grid md:grid-cols-3 gap-6 w-full">
-          {benefits.slice(0, 3).map((b, i) => (
+      <div className="rounded-2xl overflow-hidden shadow-xl grid md:grid-cols-5">
+        {benefits.map((b, i) => {
+          const color = cardColors[i];
+          return (
             <motion.div
               key={b.title}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className={`${cardColors[i]} rounded-2xl p-8 shadow-xl text-center`}
+              className={`${color.bg} ${color.text} ${color.hoverText} hover:bg-white p-8 text-center transition-all duration-300 cursor-default group`}
             >
-              <div className="h-12 w-12 rounded-lg bg-background/15 flex items-center justify-center mb-4 mx-auto">
+              <div className="h-12 w-12 rounded-lg bg-background/15 group-hover:bg-current/10 flex items-center justify-center mb-4 mx-auto transition-colors duration-300">
                 <b.icon className="h-6 w-6" />
               </div>
               <h3 className="font-display font-bold mb-2">{b.title}</h3>
               <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
             </motion.div>
-          ))}
-        </div>
-        {/* Bottom row: 2 boxes centered in the gaps */}
-        <div className="grid md:grid-cols-2 gap-6 w-full md:max-w-[66%]">
-          {benefits.slice(3).map((b, i) => (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i + 3) * 0.08 }}
-              className={`${cardColors[i + 3]} rounded-2xl p-8 shadow-xl text-center`}
-            >
-              <div className="h-12 w-12 rounded-lg bg-background/15 flex items-center justify-center mb-4 mx-auto">
-                <b.icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display font-bold mb-2">{b.title}</h3>
-              <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </PageLayout>
   );

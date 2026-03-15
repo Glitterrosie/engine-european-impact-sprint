@@ -96,7 +96,7 @@ const FAQ = () => {
             style={{
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
-              fontSize: 'clamp(8rem, 12vw, 14rem)',
+              fontSize: 'clamp(5rem, 8vw, 9rem)',
               letterSpacing: '-0.04em',
               backgroundImage: `url(${keyVisual})`,
               backgroundSize: 'cover',

@@ -130,7 +130,7 @@ const HowItWorks = () => {
                 stroke="white"
                 strokeWidth="2.5"
                 strokeDasharray="8 6"
-                opacity="0.4"
+                opacity="1"
                 fill="none"
               />
             </svg>

@@ -141,7 +141,7 @@ const Partners = () => {
                 </div>
 
                 {/* Text content */}
-                <div className={`max-w-xs ${isRight ? "text-right" : "text-left"}`}>
+                <div className={`max-w-sm md:max-w-md flex-1 ${isRight ? "text-right" : "text-left"}`}>
                   <p
                     className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
                     style={{ color: `hsl(${p.color})` }}

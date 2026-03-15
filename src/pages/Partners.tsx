@@ -64,13 +64,13 @@ const Partners = () => {
                 style={{
                   background: color.bg,
                   WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  WebkitMaskSize: `${p.logoMaskSize} 100%`,
-                  WebkitMaskPosition: 'center 25%, center center',
+                  WebkitMaskSize: `${p.logoMaskSize} auto, 100% 100%`,
+                  WebkitMaskPosition: 'center 20%, center center',
                   WebkitMaskRepeat: 'no-repeat, no-repeat',
                   WebkitMaskComposite: 'xor',
                   maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  maskSize: `${p.logoMaskSize} 100%`,
-                  maskPosition: 'center 25%, center center',
+                  maskSize: `${p.logoMaskSize} auto, 100% 100%`,
+                  maskPosition: 'center 20%, center center',
                   maskRepeat: 'no-repeat, no-repeat',
                   maskComposite: 'exclude',
                 }}

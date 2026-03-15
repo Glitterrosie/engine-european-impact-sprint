@@ -48,7 +48,7 @@ const Partners = () => {
             </div>
 
             {/* Right: Campus photos */}
-            <div className="grid grid-rows-2 gap-1 min-h-[280px]">
+            <div className="grid grid-rows-2 gap-1">
               <div className="overflow-hidden">
                 <img src={hpiCampus2} alt="HPI Campus building" className="w-full h-full object-cover" />
               </div>

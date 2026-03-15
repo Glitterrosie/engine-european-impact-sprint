@@ -86,37 +86,28 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0">
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 200 1000"
-          preserveAspectRatio="xMidYMid slice"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="200" height="1000">
-              <image href={keyVisual} x="-300" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid slice" />
-            </pattern>
-            <mask id="faq-text-mask">
-              <rect width="200" height="1000" fill="black" />
-              <text
-                x="30"
-                y="500"
-                textAnchor="middle"
-                dominantBaseline="central"
-                fontFamily="'TT Lakes Neue', sans-serif"
-                fontWeight="900"
-                fontSize="200"
-                fill="white"
-                transform="rotate(-90, 30, 500)"
-                letterSpacing="-5"
-              >
-                FAQ
-              </text>
-            </mask>
-          </defs>
-          <rect width="200" height="1000" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
-        </svg>
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0 bg-white">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            className="font-display font-black"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+              fontSize: 'clamp(10rem, 20vw, 14rem)',
+              letterSpacing: '-0.05em',
+              lineHeight: 1,
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
+            FAQ
+          </span>
+        </div>
       </div>
     </div>
   );

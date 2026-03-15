@@ -77,9 +77,9 @@ const Index = () => {
               {stats.map((stat, i) => {
                 const colors = [
                   "bg-esprint-orange",
-                  "bg-esprint-purple",
                   "bg-esprint-pink",
-                  "bg-esprint-darkblue",
+                  "bg-esprint-red",
+                  "bg-esprint-purple",
                 ];
                 return (
                   <motion.div

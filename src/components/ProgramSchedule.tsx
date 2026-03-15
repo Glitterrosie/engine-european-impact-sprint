@@ -48,7 +48,7 @@ const ProgramSchedule = () => {
           fill="none"
         >
           <path
-            d="M 21 0 C 21 8, 21 10, 21 14 C 21 22, 79 28, 79 38 C 79 48, 21 52, 21 62 C 21 72, 79 78, 79 86 C 79 92, 50 96, 50 100"
+            d="M 21 0 C 21 8, 21 10, 21 14 C 21 22, 79 28, 79 38 C 79 48, 21 52, 21 62 C 21 72, 79 78, 79 86"
             stroke="white"
             strokeWidth="0.3"
             strokeDasharray="1 0.8"

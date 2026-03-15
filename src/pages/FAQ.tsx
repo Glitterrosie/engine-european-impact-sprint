@@ -95,15 +95,15 @@ const FAQ = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 1000'>${[0, 1, 2, 3, 4].map(i => `<text x='${20 + i * 40}' y='500' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='34' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 420'>${[0, 1, 2, 3, 4].map(i => `<text x='${20 + i * 40}' y='210' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='34' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
-            WebkitMaskSize: '100% 100%',
-            WebkitMaskRepeat: 'no-repeat',
+            WebkitMaskSize: '100% 420px',
+            WebkitMaskRepeat: 'repeat-y',
             maskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 1000'>${[0, 1, 2, 3, 4].map(i => `<text x='${20 + i * 40}' y='500' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='34' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 420'>${[0, 1, 2, 3, 4].map(i => `<text x='${20 + i * 40}' y='210' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='34' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
-            maskSize: '100% 100%',
-            maskRepeat: 'no-repeat',
+            maskSize: '100% 420px',
+            maskRepeat: 'repeat-y',
           }}
         />
       </div>

@@ -158,7 +158,7 @@ const HowItWorks = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-0 md:gap-0`}
+                    className={`flex flex-col md:flex-row items-center gap-2 md:gap-6`}
                   >
                     {/* Blob with overlaid text */}
                     <div className="w-full md:w-5/12 flex items-center justify-center relative">
@@ -178,10 +178,10 @@ const HowItWorks = () => {
                     </div>
 
                     {/* Text content beside the blob */}
-                    <div className={`w-full md:w-7/12 flex flex-col ${isEven ? 'md:items-start' : 'md:items-end'} items-center justify-center -mt-4 md:mt-0`}>
+                    <div className="w-full md:w-7/12 flex flex-col md:items-start items-center justify-center -mt-4 md:mt-0">
                       <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-1`}>{s.day}</span>
-                      <h3 className={`font-display font-black text-lg md:text-xl text-primary-foreground mb-1 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>{s.title}</h3>
-                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs leading-relaxed px-3 py-1 rounded-lg ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>{s.desc}</span>
+                      <h3 className="font-display font-black text-lg md:text-xl text-primary-foreground mb-1 md:text-left text-center">{s.title}</h3>
+                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs leading-relaxed px-3 py-1 rounded-lg md:text-left text-center`}>{s.desc}</span>
                     </div>
                   </motion.div>
                 );

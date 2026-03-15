@@ -17,7 +17,7 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-esprint-orange rounded-2xl shadow-xl overflow-hidden"
+          className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
         >
           <div className="grid md:grid-cols-2 gap-0">
             {/* Left: Logo + Text */}

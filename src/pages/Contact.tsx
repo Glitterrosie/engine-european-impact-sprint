@@ -12,9 +12,9 @@ import hendrikImg from "@/assets/hendrik.jpg";
 import lisaImg from "@/assets/lisa.png";
 
 const team = [
-  { name: "Essam Sharaf", role: "Program Manager", img: essamImg },
-  { name: "Hendrik Laflör", role: "Program Manager", img: hendrikImg },
-  { name: "Lisa Jeller", role: "Event Manager", img: lisaImg },
+  { name: "Essam Sharaf", role: "Program Manager", img: essamImg, linkedin: "https://linkedin.com/in/essam-sharaf-7a595420" },
+  { name: "Hendrik Laflör", role: "Program Manager", img: hendrikImg, linkedin: "https://de.linkedin.com/in/sayhitohendrik" },
+  { name: "Lisa Jeller", role: "Event Manager", img: lisaImg, linkedin: "https://de.linkedin.com/in/lisajeller" },
 ];
 
 const Contact = () => {

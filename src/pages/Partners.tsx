@@ -6,6 +6,9 @@ import sapLogoWhite from "@/assets/sap-logo-white.png";
 import hpiCampus1 from "@/assets/hpi-campus-1.jpg";
 import hpiCampus2 from "@/assets/hpi-campus-2.jpg";
 import hpiCampus3 from "@/assets/hpi-campus-3.jpg";
+import hpiEngine1 from "@/assets/hpi-engine-1.jpg";
+import hpiEngine2 from "@/assets/hpi-engine-2.jpg";
+import hpiEngine3 from "@/assets/hpi-engine-3.jpg";
 
 const Partners = () => {
   return (

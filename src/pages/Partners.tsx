@@ -19,6 +19,7 @@ const partners = [
     logo: hpiEngineLogo,
     logoAlt: "HPI Engine",
     logoClass: "h-10",
+    logoMaskSize: "55%",
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",

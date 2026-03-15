@@ -17,31 +17,27 @@ const stats = [
 const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string; label: string }; colorClass: string; dotCount: number; delay: number }) => {
   const [hovered, setHovered] = useState(false);
 
-  // Generate dots in concentric rings, pulled toward center
+  // Generate dots in a grid pattern, sorted by distance from center for staggered reveal
   const dots = (() => {
-    const result: { x: number; y: number; delay: number; size: number }[] = [];
-    const totalDots = dotCount;
-    // Distribute dots in rings
-    let placed = 0;
-    let ring = 0;
-    while (placed < totalDots) {
-      const radius = ring === 0 ? 0 : 12 + ring * 10;
-      const dotsInRing = ring === 0 ? 1 : Math.min(Math.floor(ring * 6), totalDots - placed);
-      for (let j = 0; j < dotsInRing && placed < totalDots; j++) {
-        const angle = (j / dotsInRing) * Math.PI * 2 + ring * 0.3;
-        // Add slight randomness for organic feel
-        const r = radius + (Math.random() - 0.5) * 6;
-        result.push({
-          x: 50 + Math.cos(angle) * r,
-          y: 50 + Math.sin(angle) * r,
-          delay: ring * 0.06 + j * 0.015,
-          size: Math.max(3, 5 - ring * 0.3),
-        });
-        placed++;
+    const result: { x: number; y: number; dist: number }[] = [];
+    const cols = Math.ceil(Math.sqrt(dotCount * 1.5));
+    const rows = Math.ceil(dotCount / cols);
+    const spacingX = 60 / cols;
+    const spacingY = 60 / rows;
+    const startX = 50 - (cols - 1) * spacingX / 2;
+    const startY = 50 - (rows - 1) * spacingY / 2;
+    
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        if (result.length >= dotCount) break;
+        const x = startX + c * spacingX;
+        const y = startY + r * spacingY;
+        const dist = Math.sqrt((x - 50) ** 2 + (y - 50) ** 2);
+        result.push({ x, y, dist });
       }
-      ring++;
     }
-    return result;
+    // Sort by distance so center dots appear first
+    return result.sort((a, b) => a.dist - b.dist);
   })();
 
   return (

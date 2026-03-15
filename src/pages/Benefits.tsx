@@ -31,11 +31,11 @@ const benefits = [
 ];
 
 const cardColors = [
-  { color: "text-esprint-orange", border: "border-esprint-orange", num: "text-esprint-orange" },
-  { color: "text-esprint-pink", border: "border-esprint-pink", num: "text-esprint-pink" },
-  { color: "text-esprint-purple", border: "border-esprint-purple", num: "text-esprint-purple" },
-  { color: "text-esprint-red", border: "border-esprint-red", num: "text-esprint-red" },
-  { color: "text-esprint-darkblue", border: "border-esprint-darkblue", num: "text-esprint-darkblue" },
+  { bg: "bg-esprint-orange", text: "text-esprint-darkblue" },
+  { bg: "bg-esprint-pink", text: "text-esprint-darkblue" },
+  { bg: "bg-esprint-purple", text: "text-white" },
+  { bg: "bg-esprint-red", text: "text-white" },
+  { bg: "bg-esprint-darkblue", text: "text-white" },
 ];
 
 const Benefits = () => {

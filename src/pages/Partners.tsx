@@ -69,44 +69,39 @@ const Partners = () => {
           viewport={{ once: true }}
           className="bg-esprint-red rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="grid md:grid-cols-2 gap-0">
-            {/* Left: Logo + Text */}
-            <div className="p-8 md:p-10 flex flex-col text-primary-foreground">
-              <div className="flex items-center gap-4 mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Organizer</span>
-              </div>
-              <div className="mb-6">
-                <img src={hpiEngineLogo} alt="HPI Engine" className="h-10" />
-              </div>
-              <p className="text-sm leading-relaxed opacity-90 mb-4">
+          <div className="p-4 md:p-5 text-primary-foreground">
+            <div className="flex items-center gap-4 mb-2">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Organizer</span>
+            </div>
+            <div className="mb-3">
+              <img src={hpiEngineLogo} alt="HPI Engine" className="h-9" />
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <p className="text-xs leading-relaxed opacity-90">
                 HPI Engine is one of Europe's leading entrepreneurship ecosystems. We empower students, scientists, and tech founders to build digital products and startups through tailored programs, state-of-the-art infrastructure, close mentoring and a strong community.
               </p>
-              <p className="text-sm leading-relaxed opacity-90 mb-6">
+              <p className="text-xs leading-relaxed opacity-90">
                 The HPI ecosystem has produced 300+ startups shaping industries worldwide and attracting over €1B in venture capital.
               </p>
-              <a
-                href="https://engine.hpi.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-bold hover:underline underline-offset-2 mt-auto"
-              >
-                More information: engine.hpi.de →
-              </a>
             </div>
-
-            {/* Right: Photos */}
-            <div className="grid grid-rows-2 gap-1 min-h-[350px]">
-              <div className="bg-primary-foreground/10 flex items-center justify-center">
-                <p className="text-primary-foreground/30 text-sm">HPI Engine Photo 1</p>
-              </div>
-              <div className="grid grid-cols-2 gap-1">
-                <div className="bg-primary-foreground/8 flex items-center justify-center">
-                  <p className="text-primary-foreground/30 text-xs">Photo 2</p>
-                </div>
-                <div className="bg-primary-foreground/5 flex items-center justify-center">
-                  <p className="text-primary-foreground/30 text-xs">Photo 3</p>
-                </div>
-              </div>
+            <a
+              href="https://engine.hpi.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold hover:underline underline-offset-2"
+            >
+              More information: engine.hpi.de →
+            </a>
+          </div>
+          <div className="grid grid-cols-3 gap-1">
+            <div className="overflow-hidden h-36">
+              <img src={hpiEngine1} alt="HPI Engine event stage" className="w-full h-full object-cover" />
+            </div>
+            <div className="overflow-hidden h-36">
+              <img src={hpiEngine2} alt="HPI Engine community networking" className="w-full h-full object-cover" />
+            </div>
+            <div className="overflow-hidden h-36">
+              <img src={hpiEngine3} alt="HPI Engine incubator team" className="w-full h-full object-cover" />
             </div>
           </div>
         </motion.div>

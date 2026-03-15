@@ -66,17 +66,17 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
                 key={di}
                 className="absolute rounded-full bg-white"
                 style={{
-                  width: dot.size,
-                  height: dot.size,
+                  width: 5,
+                  height: 5,
                   left: `${dot.x}%`,
                   top: `${dot.y}%`,
-                  marginLeft: -dot.size / 2,
-                  marginTop: -dot.size / 2,
+                  marginLeft: -2.5,
+                  marginTop: -2.5,
                 }}
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 0.9 }}
                 exit={{ scale: 0, opacity: 0 }}
-                transition={{ duration: 0.3, delay: dot.delay }}
+                transition={{ duration: 0.25, delay: di * 0.008 }}
               />
             ))}
           </motion.div>

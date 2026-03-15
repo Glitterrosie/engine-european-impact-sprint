@@ -104,7 +104,7 @@ const Index = () => {
               {[
                 { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
                 { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-darkblue text-primary-foreground" },
-                { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-primary-foreground" },
+                { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-esprint-darkblue" },
               ].map((card, i) => (
                 <motion.div
                   key={card.title}

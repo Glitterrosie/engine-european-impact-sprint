@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import PageLayout from "@/components/PageLayout";
 import ProgramSchedule from "@/components/ProgramSchedule";
 import challengeBrief from "@/assets/challenge-brief.jpg";
+import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -27,6 +29,8 @@ const infoItems = [
 ];
 
 const Challenge = () => {
+  const [isHpiHovered, setIsHpiHovered] = useState(false);
+
   return (
     <PageLayout title="The Challenge" noPadBottom>
       <div className="flex-1 grid lg:grid-cols-2 gap-6 items-stretch">
@@ -120,6 +124,40 @@ const Challenge = () => {
                     ))
                 }
               </Geographies>
+
+              <Marker coordinates={[13.12525, 52.392528]}>
+                <g
+                  onMouseEnter={() => setIsHpiHovered(true)}
+                  onMouseLeave={() => setIsHpiHovered(false)}
+                  className="cursor-pointer"
+                >
+                  <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
+                  <circle r={2.5} fill="hsl(var(--primary-foreground))" />
+
+                  {isHpiHovered && (
+                    <g transform="translate(0,-38)">
+                      <rect
+                        x={-26}
+                        y={-14}
+                        width={52}
+                        height={20}
+                        rx={10}
+                        fill="hsl(var(--esprint-darkblue))"
+                        stroke="hsl(var(--primary-foreground) / 0.35)"
+                        strokeWidth={0.6}
+                      />
+                      <image
+                        href={hpiLogoWhite}
+                        x={-17}
+                        y={-9}
+                        width={34}
+                        height={10}
+                        preserveAspectRatio="xMidYMid meet"
+                      />
+                    </g>
+                  )}
+                </g>
+              </Marker>
             </ComposableMap>
           </div>
         </motion.div>

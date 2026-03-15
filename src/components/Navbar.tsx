@@ -35,7 +35,7 @@ const Navbar = () => {
         showBg
           ? isWhitePage
             ? "bg-white/90 backdrop-blur-xl border-b border-gray-200"
-            : "bg-black/40 backdrop-blur-xl border-b border-white/10"
+            : "bg-esprint-darkblue/90 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       )}
     >

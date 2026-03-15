@@ -36,7 +36,7 @@ const partners = [
 
 const cardColors = [
   { bg: "hsl(var(--esprint-orange))", hslVar: "var(--esprint-orange)", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
-  { bg: "hsl(var(--esprint-pink))", hslVar: "var(--esprint-pink)", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
+  { bg: "hsl(var(--esprint-red))", hslVar: "var(--esprint-red)", text: "text-white", roleText: "text-white/60" },
   { bg: "hsl(var(--esprint-purple))", hslVar: "var(--esprint-purple)", text: "text-white", roleText: "text-white/60" },
 ];
 

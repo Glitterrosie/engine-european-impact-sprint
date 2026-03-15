@@ -153,19 +153,39 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4 space-y-6">
           {/* Tagline box – separate */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-esprint-darkblue rounded-2xl p-10 md:p-14 text-center shadow-xl"
-          >
-            <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
-              Ready to Shape the Future of Tech in Europe?
+          <div className="bg-esprint-darkblue rounded-2xl p-10 md:p-14 text-center shadow-xl overflow-hidden">
+            <h2 className="font-display font-bold text-2xl md:text-4xl text-primary-foreground leading-tight">
+              {[
+                { text: "Ready to ", color: "" },
+                { text: "Shape ", color: "text-esprint-orange" },
+                { text: "the ", color: "" },
+                { text: "Future ", color: "text-esprint-pink" },
+                { text: "of Tech in ", color: "" },
+                { text: "Europe", color: "text-esprint-purple" },
+                { text: "?", color: "" },
+              ].map((word, wi) => (
+                <motion.span
+                  key={wi}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 + wi * 0.08 }}
+                  className={`inline-block ${word.color}`}
+                >
+                  {word.text}
+                </motion.span>
+              ))}
             </h2>
-            <p className="mt-3 text-primary-foreground/80 text-lg max-w-2xl mx-auto">
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.7 }}
+              className="mt-4 text-primary-foreground/80 text-lg max-w-2xl mx-auto"
+            >
               Join Europe's brightest minds, solve real-world challenges and build lasting connections.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
 
           {/* Stats row – touching, own rounded block */}
           <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4">

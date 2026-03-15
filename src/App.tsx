@@ -13,6 +13,7 @@ import Benefits from "./pages/Benefits";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import keyVisual from "@/assets/key-visual.png";
 

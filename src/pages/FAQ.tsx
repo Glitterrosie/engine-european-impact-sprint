@@ -43,12 +43,16 @@ const faqSections = [
 const FAQ = () => {
   return (
     <div className="min-h-screen relative flex flex-col">
-      {/* Header block with logo */}
+      {/* Header with key visual background */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="relative pt-24 pb-10 px-6 md:px-12 lg:px-16 z-10"
-        style={{ background: `hsl(var(--esprint-darkblue))` }}
+        style={{
+          backgroundImage: `url(${keyVisual})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        }}
       >
         <img
           src={esprintLogo}
@@ -58,7 +62,7 @@ const FAQ = () => {
         <h1 className="font-display font-black text-5xl md:text-7xl text-white">
           FAQ
         </h1>
-        <p className="text-esprint-cream/70 mt-3 text-lg max-w-xl">
+        <p className="text-white/70 mt-3 text-lg max-w-xl">
           Everything you need to know about the European Impact Sprint.
         </p>
       </motion.div>
@@ -97,10 +101,14 @@ const FAQ = () => {
         </motion.div>
       ))}
 
-      {/* Bottom fill block */}
+      {/* Bottom key visual section */}
       <div
-        className="flex-1 min-h-[80px] relative z-10"
-        style={{ background: `hsl(var(--esprint-darkblue))` }}
+        className="flex-1 min-h-[120px] relative z-10"
+        style={{
+          backgroundImage: `url(${keyVisual})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+        }}
       />
 
       {/* Key visual overlay on top of everything */}

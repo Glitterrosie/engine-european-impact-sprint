@@ -77,7 +77,7 @@ const Partners = () => {
               />
 
               {/* Content */}
-              <div className="relative z-10 p-8 pt-52 md:pt-56 flex flex-col items-start h-full">
+              <div className="relative z-10 p-8 pt-60 md:pt-64 flex flex-col items-start h-full">
                 <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-1`}>
                   {p.role}
                 </p>

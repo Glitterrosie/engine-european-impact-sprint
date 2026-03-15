@@ -144,6 +144,12 @@ const HowItWorks = () => {
                   "text-esprint-purple",
                   "text-esprint-red",
                 ];
+                const bgSolid = [
+                  "bg-esprint-orange",
+                  "bg-esprint-pink",
+                  "bg-esprint-purple",
+                  "bg-esprint-red",
+                ];
                 const bgColors = [
                   "bg-esprint-orange/40",
                   "bg-esprint-pink/40",

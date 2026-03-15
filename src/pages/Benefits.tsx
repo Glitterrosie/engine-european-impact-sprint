@@ -75,21 +75,21 @@ const Benefits = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Left bundle */}
-          <path d="M0,720 C80,725 180,735 240,690 C320,630 350,550 340,450 C330,350 280,230 200,130 C170,90 130,40 100,0" stroke="white" strokeWidth="1.5" opacity="0.6" />
-          <path d="M0,680 C90,690 200,700 270,650 C360,580 380,490 360,380 C340,280 290,190 230,100 C210,70 180,30 160,0" stroke="white" strokeWidth="1.5" opacity="0.55" />
-          <path d="M0,635 C100,650 210,665 290,610 C390,530 400,430 380,320 C360,220 310,150 260,70 C240,40 220,10 210,0" stroke="white" strokeWidth="1.5" opacity="0.5" />
-          <path d="M0,590 C110,610 220,630 310,565 C410,480 420,370 395,260 C370,170 330,110 290,40 C275,15 265,0 260,0" stroke="white" strokeWidth="1.5" opacity="0.45" />
-          <path d="M40,750 C60,720 130,670 200,620 C300,540 340,430 330,310 C320,210 300,140 270,70 C255,35 240,0 230,-30" stroke="white" strokeWidth="1.5" opacity="0.4" />
+          {/* Left bundle - 5 lines tracing the purple→blue→dark bowl shape */}
+          <path d="M0,30 C80,25 180,15 240,60 C320,120 350,200 340,300 C330,400 280,520 200,620 C170,660 130,710 100,750" stroke="white" strokeWidth="1.5" opacity="0.6" />
+          <path d="M0,70 C90,60 200,50 270,100 C360,170 380,260 360,370 C340,470 290,560 230,650 C210,680 180,720 160,750" stroke="white" strokeWidth="1.5" opacity="0.55" />
+          <path d="M0,115 C100,100 210,85 290,140 C390,220 400,320 380,430 C360,530 310,600 260,680 C240,710 220,740 210,750" stroke="white" strokeWidth="1.5" opacity="0.5" />
+          <path d="M0,160 C110,140 220,120 310,185 C410,270 420,380 395,490 C370,580 330,640 290,710 C275,735 265,750 260,750" stroke="white" strokeWidth="1.5" opacity="0.45" />
+          <path d="M40,0 C60,30 130,80 200,130 C300,210 340,320 330,440 C320,540 300,610 270,680 C255,715 240,750 230,780" stroke="white" strokeWidth="1.5" opacity="0.4" />
 
-          {/* Center lines */}
-          <path d="M500,750 C490,670 480,570 490,470 C500,370 530,250 570,150 C590,100 610,50 630,0" stroke="white" strokeWidth="1.5" opacity="0.5" />
-          <path d="M540,750 C530,650 520,530 530,420 C545,310 575,210 610,120 C630,70 650,30 670,0" stroke="white" strokeWidth="1.5" opacity="0.45" />
-          <path d="M580,750 C570,630 565,490 580,370 C595,260 620,180 655,100 C675,50 695,10 710,0" stroke="white" strokeWidth="1.5" opacity="0.4" />
+          {/* Center lines - tracing the dark/blue→orange boundary */}
+          <path d="M500,0 C490,80 480,180 490,280 C500,380 530,500 570,600 C590,650 610,700 630,750" stroke="white" strokeWidth="1.5" opacity="0.5" />
+          <path d="M540,0 C530,100 520,220 530,330 C545,440 575,540 610,630 C630,680 650,720 670,750" stroke="white" strokeWidth="1.5" opacity="0.45" />
+          <path d="M580,0 C570,120 565,260 580,380 C595,490 620,570 655,650 C675,700 695,740 710,750" stroke="white" strokeWidth="1.5" opacity="0.4" />
 
-          {/* Right lines */}
-          <path d="M780,750 C775,650 770,550 775,440 C780,330 800,220 820,130 C830,90 840,40 850,0" stroke="white" strokeWidth="1.5" opacity="0.45" />
-          <path d="M830,750 C825,630 820,500 830,380 C840,270 855,190 870,110 C880,60 890,20 900,0" stroke="white" strokeWidth="1.5" opacity="0.4" />
+          {/* Right lines - tracing the orange→pink boundary */}
+          <path d="M780,0 C775,100 770,200 775,310 C780,420 800,530 820,620 C830,660 840,710 850,750" stroke="white" strokeWidth="1.5" opacity="0.45" />
+          <path d="M830,0 C825,120 820,250 830,370 C840,480 855,560 870,640 C880,690 890,730 900,750" stroke="white" strokeWidth="1.5" opacity="0.4" />
         </svg>
       </div>
     </PageLayout>

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
@@ -8,16 +9,14 @@ const partners = [
   {
     logo: hpiLogoWhite,
     logoAlt: "Hasso Plattner Institute",
-    logoClass: "h-16",
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",
-    desc: "The Hasso Plattner Institute (HPI) in Potsdam is Germany's university center of excellence for digital engineering, advancing research and education in IT systems engineering, data engineering, cyber security, entrepreneurship, and digital health.",
+    desc: "Germany's university center of excellence for digital engineering, advancing research and education in IT systems engineering, data engineering, cyber security, entrepreneurship, and digital health.",
   },
   {
     logo: hpiEngineLogo,
     logoAlt: "HPI Engine",
-    logoClass: "h-12",
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",
@@ -26,7 +25,6 @@ const partners = [
   {
     logo: sapLogoWhite,
     logoAlt: "SAP",
-    logoClass: "h-16",
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",
@@ -35,67 +33,99 @@ const partners = [
 ];
 
 const cardColors = [
-  { bg: "hsl(var(--esprint-orange))", hslVar: "var(--esprint-orange)", text: "text-white", roleText: "text-white/60" },
-  { bg: "hsl(var(--esprint-red))", hslVar: "var(--esprint-red)", text: "text-white", roleText: "text-white/60" },
-  { bg: "hsl(var(--esprint-purple))", hslVar: "var(--esprint-purple)", text: "text-white", roleText: "text-white/60" },
+  { bg: "hsl(var(--esprint-orange))", hslVar: "var(--esprint-orange)", text: "text-white", roleText: "text-white/70" },
+  { bg: "hsl(var(--esprint-red))", hslVar: "var(--esprint-red)", text: "text-white", roleText: "text-white/70" },
+  { bg: "hsl(var(--esprint-purple))", hslVar: "var(--esprint-purple)", text: "text-white", roleText: "text-white/70" },
 ];
 
 const Partners = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
     <PageLayout title="Partners" subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe." noPadBottom>
       <div className="flex flex-col gap-0 mt-4 flex-1">
         {partners.map((p, i) => {
           const color = cardColors[i];
+          const isExpanded = expanded === i;
+
           return (
             <motion.div
               key={p.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col md:flex-row overflow-hidden relative"
+              transition={{ delay: i * 0.08 }}
+              className="cursor-pointer overflow-hidden"
+              style={{ background: color.bg }}
+              onClick={() => setExpanded(isExpanded ? null : i)}
             >
-              {/* White logo area on the left - transparent, key visual shows through */}
-              <div className="p-10 md:p-12 flex items-center justify-center md:w-64 flex-shrink-0 relative z-10">
-                <a href={p.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={p.logo}
-                    alt={p.logoAlt}
-                    className="w-32 drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]"
-                  />
-                </a>
+              {/* Collapsed: logo + role centered */}
+              <div className="flex items-center justify-between px-8 md:px-12 py-8">
+                <div className="flex items-center gap-6">
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      className="w-28 md:w-32 drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
+                    />
+                  </a>
+                  <span className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} hidden md:block`}>
+                    {p.role}
+                  </span>
+                </div>
+
+                {/* Expand indicator */}
+                <motion.div
+                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-white/50"
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 8L10 13L15 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </motion.div>
               </div>
 
-              {/* Gradient colored block with logo cutout on right */}
-              <div
-                className="flex-1 relative"
-                style={{
-                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
-                  WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  WebkitMaskSize: '8rem auto, 100% 100%',
-                  WebkitMaskPosition: 'calc(100% - 3rem) center, center center',
-                  WebkitMaskRepeat: 'no-repeat, no-repeat',
-                  WebkitMaskComposite: 'xor',
-                  maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  maskSize: '8rem auto, 100% 100%',
-                  maskPosition: 'calc(100% - 3rem) center, center center',
-                  maskRepeat: 'no-repeat, no-repeat',
-                  maskComposite: 'exclude',
-                }}
-              >
-                {/* Text content */}
-                <div className="relative z-10 p-8 md:p-10 md:pr-64 flex flex-col justify-center h-full">
-                  <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2`}>
-                    {p.role}
-                  </p>
-                  <h3 className={`font-display font-bold text-xl ${color.text} mb-3 leading-tight`}>
-                    {p.name}
-                  </h3>
-                  <p className={`text-sm ${color.text} opacity-80 leading-relaxed max-w-2xl`}>
-                    {p.desc}
-                  </p>
-                </div>
-              </div>
+              {/* Expanded: description */}
+              <AnimatePresence>
+                {isExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-8 md:px-12 pb-8 md:pb-10 pt-0">
+                      <div className="border-t border-white/15 pt-6 max-w-3xl">
+                        <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2 md:hidden`}>
+                          {p.role}
+                        </p>
+                        <h3 className={`font-display font-bold text-xl ${color.text} mb-3 leading-tight`}>
+                          {p.name}
+                        </h3>
+                        <p className={`text-sm ${color.text} opacity-80 leading-relaxed`}>
+                          {p.desc}
+                        </p>
+                        <a
+                          href={p.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-block mt-4 text-xs font-bold uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+                        >
+                          Learn more →
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           );
         })}

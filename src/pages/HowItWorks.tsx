@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import ProgramSchedule from "@/components/ProgramSchedule";
+import gisNewYork from "@/assets/gis-newyork.png";
+import esprintLogo from "@/assets/esprint-logo-white.svg";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const criteria = [

@@ -34,7 +34,7 @@ const Challenge = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="p-8 md:p-10 pb-0 flex flex-col"
+          className="p-8 md:p-10 pb-0 flex flex-col h-full"
         >
           <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">
             Program Brief
@@ -48,7 +48,7 @@ const Challenge = () => {
         </motion.div>
 
         {/* Key Information – colored rows */}
-        <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col">
+        <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
           <div className="bg-esprint-darkblue p-8 md:p-10 pb-4">
             <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
               Key Information

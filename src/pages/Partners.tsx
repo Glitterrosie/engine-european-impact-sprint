@@ -4,101 +4,156 @@ import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogoWhite from "@/assets/sap-logo-white.png";
 
-const partners = [
-  {
-    logo: hpiLogoWhite,
-    logoAlt: "Hasso Plattner Institute",
-    link: "https://hpi.de",
-    role: "Host",
-    name: "Hasso Plattner Institute",
-    desc: "Germany's center of excellence for digital engineering, advancing research in IT, cyber security, and entrepreneurship.",
-    bg: "bg-esprint-orange",
-    text: "text-esprint-darkblue",
-  },
-  {
-    logo: hpiEngineLogo,
-    logoAlt: "HPI Engine",
-    link: "https://engine.hpi.de",
-    role: "Organizer",
-    name: "HPI Engine",
-    desc: "One of Europe's leading startup ecosystems, empowering tech talent to become founders through innovation programs.",
-    bg: "bg-esprint-red",
-    text: "text-primary-foreground",
-  },
-  {
-    logo: sapLogoWhite,
-    logoAlt: "SAP",
-    link: "https://sap.com",
-    role: "Partner",
-    name: "SAP",
-    desc: "Europe's largest software company, partnering with HPI to empower the next generation of tech innovators.",
-    bg: "bg-esprint-purple",
-    text: "text-primary-foreground",
-  },
-];
-
 const Partners = () => {
   return (
     <PageLayout
       title="About HPI"
-      subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
+      subtitle="The European Impact Sprint is organized by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >
-      <div className="flex-1 flex items-center justify-center px-4 md:px-8 py-16 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full max-w-5xl mx-auto">
-          {partners.map((p, i) => (
-            <motion.a
-              key={p.name}
-              href={p.link}
+      <div className="space-y-6">
+        {/* HPI Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-esprint-orange rounded-2xl shadow-xl overflow-hidden"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            {/* Left: Logo + Text */}
+            <div className="p-8 md:p-10 flex flex-col text-esprint-darkblue">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host & Organizer</span>
+              </div>
+              <div className="mb-6">
+                <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-12 brightness-0" />
+              </div>
+              <p className="text-sm leading-relaxed opacity-90 mb-4">
+                The Hasso Plattner Institute (HPI) was founded in 1998 by Hasso Plattner, co-founder of SAP and one of Europe's most successful tech entrepreneurs. Today, HPI is a leading academic institution for digital engineering, educating the next generation of technology leaders, innovators and entrepreneurs.
+              </p>
+              <p className="text-sm leading-relaxed opacity-90 mb-6">
+                Located in Potsdam near Berlin, HPI attracts more than 900 Bachelor's and Master's students and around 80 PhD candidates. With a focus on IT Systems Engineering, Computer Science, Digital Health, Cybersecurity and Data Engineering, HPI has produced more than 2,500 graduates supported by state-of-the-art infrastructure and an interdisciplinary faculty of 30+ professors.
+              </p>
+              <a
+                href="https://hpi.de/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold hover:underline underline-offset-2 mt-auto"
+              >
+                More information: hpi.de →
+              </a>
+            </div>
+
+            {/* Right: Campus photos */}
+            <div className="grid grid-rows-2 gap-1 min-h-[400px]">
+              <div className="bg-esprint-darkblue/20 flex items-center justify-center">
+                <p className="text-esprint-darkblue/40 text-sm">HPI Campus Photo 1</p>
+              </div>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="bg-esprint-darkblue/15 flex items-center justify-center">
+                  <p className="text-esprint-darkblue/40 text-xs">Photo 2</p>
+                </div>
+                <div className="bg-esprint-darkblue/10 flex items-center justify-center">
+                  <p className="text-esprint-darkblue/40 text-xs">Photo 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* HPI Engine Block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-esprint-red rounded-2xl shadow-xl overflow-hidden"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            {/* Left: Logo + Text */}
+            <div className="p-8 md:p-10 flex flex-col text-primary-foreground">
+              <div className="flex items-center gap-4 mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Organizer</span>
+              </div>
+              <div className="mb-6">
+                <img src={hpiEngineLogo} alt="HPI Engine" className="h-10" />
+              </div>
+              <p className="text-sm leading-relaxed opacity-90 mb-4">
+                HPI Engine is one of Europe's leading entrepreneurship ecosystems. We empower students, scientists, and tech founders to build digital products and startups through tailored programs, state-of-the-art infrastructure, close mentoring and a strong community.
+              </p>
+              <p className="text-sm leading-relaxed opacity-90 mb-6">
+                The HPI ecosystem has produced 300+ startups shaping industries worldwide and attracting over €1B in venture capital.
+              </p>
+              <a
+                href="https://engine.hpi.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold hover:underline underline-offset-2 mt-auto"
+              >
+                More information: engine.hpi.de →
+              </a>
+            </div>
+
+            {/* Right: Photos */}
+            <div className="grid grid-rows-2 gap-1 min-h-[350px]">
+              <div className="bg-primary-foreground/10 flex items-center justify-center">
+                <p className="text-primary-foreground/30 text-sm">HPI Engine Photo 1</p>
+              </div>
+              <div className="grid grid-cols-2 gap-1">
+                <div className="bg-primary-foreground/8 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 2</p>
+                </div>
+                <div className="bg-primary-foreground/5 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 3</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* University Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl"
+        >
+          <h2 className="font-display font-bold text-2xl text-primary-foreground mb-3">University Partners</h2>
+          <p className="text-primary-foreground/50">Logos of 30 European partner universities – Coming Soon</p>
+          <p className="text-sm text-primary-foreground/40 mt-4">
+            Interested in becoming a partner?{" "}
+            <a href="/contact" className="text-esprint-pink hover:underline font-semibold">Contact us!</a>
+          </p>
+        </motion.div>
+
+        {/* Industry Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="py-12 px-8 md:px-10 text-center"
+        >
+          <h2 className="font-display font-bold text-lg text-primary-foreground/60 uppercase tracking-wide mb-8">
+            Industry Partners
+          </h2>
+          <div className="max-w-sm mx-auto">
+            <a
+              href="https://sap.com"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-              className="flex flex-col items-center text-center group"
+              className="flex flex-col items-center group"
             >
-              {/* Logo */}
-              <div className="h-24 flex items-center justify-center mb-6">
-                <img
-                  src={p.logo}
-                  alt={p.logoAlt}
-                  className="max-h-full max-w-[180px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)] group-hover:scale-105 transition-transform"
-                />
-              </div>
-
-              {/* Colored text box */}
-              <div className={`${p.bg} ${p.text} rounded-xl p-6 w-full`}>
-                <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1 opacity-70">
-                  {p.role}
-                </p>
-                <h3 className="font-display font-bold text-lg mb-2 leading-tight">
-                  {p.name}
-                </h3>
-                <p className="text-sm leading-relaxed opacity-80">
-                  {p.desc}
-                </p>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+              <img
+                src={sapLogoWhite}
+                alt="SAP"
+                className="h-10 opacity-60 group-hover:opacity-100 transition-opacity mb-3"
+              />
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary-foreground/40">
+                Camp Sponsor
+              </span>
+            </a>
+          </div>
+        </motion.div>
       </div>
-
-      {/* University partners */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center py-16 px-8"
-        style={{ background: "hsl(var(--esprint-darkblue))" }}
-      >
-        <h2 className="font-display font-bold text-2xl text-white mb-3">University Partners</h2>
-        <p className="text-white/50">Logos of 30 European partner universities – Coming Soon</p>
-        <p className="text-sm text-white/40 mt-4">
-          Interested in becoming a partner?{" "}
-          <a href="/contact" className="text-esprint-pink hover:underline font-semibold">Contact us!</a>
-        </p>
-      </motion.div>
     </PageLayout>
   );
 };

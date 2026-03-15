@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import PageLayout from "@/components/PageLayout";
+import ProgramSchedule from "@/components/ProgramSchedule";
 import challengeBrief from "@/assets/challenge-brief.jpg";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
@@ -117,6 +118,11 @@ const Challenge = () => {
             </ComposableMap>
           </div>
         </motion.div>
+
+        {/* Program Schedule */}
+        <div className="col-span-full mt-4">
+          <ProgramSchedule />
+        </div>
       </div>
     </PageLayout>
   );

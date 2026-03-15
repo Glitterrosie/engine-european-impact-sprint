@@ -5,12 +5,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import esprintLogo from "@/assets/esprint-logo-white.svg";
 import keyVisual from "@/assets/key-visual.png";
 
 const faqSections = [
   {
     title: "Nomination & Requirements",
-    color: "esprint-orange",
     hsl: "var(--esprint-orange)",
     textClass: "text-esprint-darkblue",
     items: [
@@ -21,7 +21,6 @@ const faqSections = [
   },
   {
     title: "Program Structure",
-    color: "esprint-pink",
     hsl: "var(--esprint-pink)",
     textClass: "text-esprint-darkblue",
     items: [
@@ -32,7 +31,6 @@ const faqSections = [
   },
   {
     title: "Certificates & IP",
-    color: "esprint-purple",
     hsl: "var(--esprint-purple)",
     textClass: "text-white",
     items: [
@@ -44,22 +42,19 @@ const faqSections = [
 
 const FAQ = () => {
   return (
-    <div
-      className="min-h-screen relative"
-      style={{
-        backgroundImage: `url(${keyVisual})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
-    >
-      {/* Header block */}
+    <div className="min-h-screen relative flex flex-col">
+      {/* Header block with logo */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="pt-24 pb-10 px-6 md:px-12 lg:px-16 md:mr-20"
+        className="relative pt-24 pb-10 px-6 md:px-12 lg:px-16 z-10"
         style={{ background: `hsl(var(--esprint-darkblue))` }}
       >
+        <img
+          src={esprintLogo}
+          alt="European Impact Sprint"
+          className="w-48 md:w-64 mb-6"
+        />
         <h1 className="font-display font-black text-5xl md:text-7xl text-white">
           FAQ
         </h1>
@@ -68,53 +63,58 @@ const FAQ = () => {
         </p>
       </motion.div>
 
-      {/* FAQ section blocks + key visual strip */}
-      <div className="flex min-h-0">
-        {/* Stacked color blocks */}
-        <div className="flex-1 flex flex-col">
-          {faqSections.map((section, si) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: si * 0.15 }}
-              className="px-6 md:px-12 lg:px-16 py-10"
-              style={{ background: `hsl(${section.hsl})` }}
-            >
-              <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
-                {section.title}
-              </h2>
-              <Accordion type="single" collapsible className="space-y-3 max-w-3xl">
-                {section.items.map((item, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`${si}-${i}`}
-                    className="border-none rounded-xl px-5 backdrop-blur-sm"
-                    style={{ background: 'hsla(0, 0%, 100%, 0.15)' }}
-                  >
-                    <AccordionTrigger className={`text-left font-semibold ${section.textClass} hover:no-underline text-sm py-4`}>
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className={`${section.textClass} opacity-80 leading-relaxed text-sm`}>
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </motion.div>
-          ))}
+      {/* Stacked color blocks */}
+      {faqSections.map((section, si) => (
+        <motion.div
+          key={section.title}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: si * 0.1 }}
+          className="relative px-6 md:px-12 lg:px-16 py-10 z-10"
+          style={{ background: `hsl(${section.hsl})` }}
+        >
+          <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
+            {section.title}
+          </h2>
+          <Accordion type="single" collapsible className="space-y-3 max-w-3xl">
+            {section.items.map((item, i) => (
+              <AccordionItem
+                key={i}
+                value={`${si}-${i}`}
+                className="border-none rounded-xl px-5 backdrop-blur-sm"
+                style={{ background: 'hsla(0, 0%, 100%, 0.15)' }}
+              >
+                <AccordionTrigger className={`text-left font-semibold ${section.textClass} hover:no-underline text-sm py-4`}>
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className={`${section.textClass} opacity-80 leading-relaxed text-sm`}>
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
+      ))}
 
-          {/* Bottom dark blue block to fill to footer */}
-          <div
-            className="flex-1 min-h-[80px]"
-            style={{ background: `hsl(var(--esprint-darkblue))` }}
-          />
-        </div>
+      {/* Bottom fill block */}
+      <div
+        className="flex-1 min-h-[80px] relative z-10"
+        style={{ background: `hsl(var(--esprint-darkblue))` }}
+      />
 
-        {/* Key visual strip on the right */}
-        <div className="hidden md:block w-20 flex-shrink-0" />
-      </div>
+      {/* Key visual overlay on top of everything */}
+      <div
+        className="absolute inset-0 z-20 pointer-events-none"
+        style={{
+          backgroundImage: `url(${keyVisual})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          opacity: 0.12,
+          mixBlendMode: 'overlay',
+        }}
+      />
     </div>
   );
 };

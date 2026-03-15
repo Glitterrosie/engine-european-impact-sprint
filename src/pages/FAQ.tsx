@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -6,12 +5,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import esprintLogo from "@/assets/esprint-logo-white.svg";
 import keyVisual from "@/assets/key-visual.png";
 
 const faqSections = [
   {
     title: "Nomination & Requirements",
+    color: "esprint-orange",
+    hsl: "var(--esprint-orange)",
+    textClass: "text-esprint-darkblue",
     items: [
       { q: "As a student, how can I apply to the program?", a: "Please contact your university." },
       { q: "Are there specific requirements to participate?", a: "To participate in the European Impact Sprint, you must be a Bachelor's student of Computer Science (or similar) nominated by one of our selected partner universities, proficient in English and completed the application form." },
@@ -20,10 +21,21 @@ const faqSections = [
   },
   {
     title: "Program Structure",
+    color: "esprint-pink",
+    hsl: "var(--esprint-pink)",
+    textClass: "text-esprint-darkblue",
     items: [
       { q: "What challenges will students be working on?", a: "Projects range from sustainability to technology — each designed to solve tangible challenges." },
       { q: "Will I have to pay for travel, accommodation and meals during the program?", a: "HPI will cover all cost for accommodation (glamping camp, on-campus) and meals during the program. In addition, you will be reimbursed for travel costs up to 200€." },
       { q: "What do I need to prepare in advance?", a: "The details of this year's challenge will be explained during the Kick-off session. Please read the suggested documents and articles shared after the Kick-off to gain an in-depth understanding of the topic." },
+    ],
+  },
+  {
+    title: "Certificates & IP",
+    color: "esprint-purple",
+    hsl: "var(--esprint-purple)",
+    textClass: "text-white",
+    items: [
       { q: "Do I receive a certificate at the end of the program?", a: "Yes, all participants receive a certificate at the end of the program." },
       { q: "How do you deal with intellectual property developed during the program?", a: "Any ideas developed during the course of the program are remaining with the students. Furthermore, HPI does not consider use of office space and infrastructure as constituting a significant use of HPI resources with regards to IP." },
     ],
@@ -31,11 +43,9 @@ const faqSections = [
 ];
 
 const FAQ = () => {
-  const questionsRef = React.useRef<HTMLDivElement>(null);
-
   return (
     <div
-      className="min-h-screen relative overflow-hidden"
+      className="min-h-screen relative"
       style={{
         backgroundImage: `url(${keyVisual})`,
         backgroundSize: 'cover',
@@ -43,79 +53,67 @@ const FAQ = () => {
         backgroundAttachment: 'fixed',
       }}
     >
-      {/* White overlay with text cutouts on the right */}
-      <div className="absolute inset-0 pointer-events-none hidden md:block">
-        <div
-          className="absolute top-0 right-0 bottom-0 w-56 lg:w-72"
-          style={{
-            background: 'white',
-            WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 1200'><rect width='280' height='1200' fill='white'/>${Array.from({ length: 5 }, (_, i) => `<text x='${28 + i * 56}' y='96' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='48' fill='black' writing-mode='tb' letter-spacing='2'>FAQFAQFAQFAQ</text>`).join('')}</svg>`
-            )}")`,
-            WebkitMaskSize: '100% 1200px',
-            WebkitMaskRepeat: 'repeat-y',
-            maskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 1200'><rect width='280' height='1200' fill='white'/>${Array.from({ length: 5 }, (_, i) => `<text x='${28 + i * 56}' y='96' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='48' fill='black' writing-mode='tb' letter-spacing='2'>FAQFAQFAQFAQ</text>`).join('')}</svg>`
-            )}")`,
-            maskSize: '100% 1200px',
-            maskRepeat: 'repeat-y',
-          }}
-        />
-      </div>
+      {/* Header block */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="pt-24 pb-10 px-6 md:px-12 lg:px-16 md:mr-20"
+        style={{ background: `hsl(var(--esprint-darkblue))` }}
+      >
+        <h1 className="font-display font-black text-5xl md:text-7xl text-white">
+          FAQ
+        </h1>
+        <p className="text-esprint-cream/70 mt-3 text-lg max-w-xl">
+          Everything you need to know about the European Impact Sprint.
+        </p>
+      </motion.div>
 
-      {/* Main content on white background */}
-      <div className="relative z-10 flex">
-        <div className="flex-1 bg-white flex flex-col pt-24 pb-20 px-6 md:px-12 lg:px-16 md:mr-56 lg:mr-72">
-          {/* Logo - inverted to dark/blue */}
-          <img
-            src={esprintLogo}
-            alt="European Impact Sprint"
-            className="w-48 md:w-64 mb-6"
-            style={{
-              filter: "brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(700%) hue-rotate(180deg) brightness(95%) contrast(95%)",
-            }}
+      {/* FAQ section blocks + key visual strip */}
+      <div className="flex min-h-0">
+        {/* Stacked color blocks */}
+        <div className="flex-1 flex flex-col">
+          {faqSections.map((section, si) => (
+            <motion.div
+              key={section.title}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: si * 0.15 }}
+              className="px-6 md:px-12 lg:px-16 py-10"
+              style={{ background: `hsl(${section.hsl})` }}
+            >
+              <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
+                {section.title}
+              </h2>
+              <Accordion type="single" collapsible className="space-y-3 max-w-3xl">
+                {section.items.map((item, i) => (
+                  <AccordionItem
+                    key={i}
+                    value={`${si}-${i}`}
+                    className="border-none rounded-xl px-5 backdrop-blur-sm"
+                    style={{ background: 'hsla(0, 0%, 100%, 0.15)' }}
+                  >
+                    <AccordionTrigger className={`text-left font-semibold ${section.textClass} hover:no-underline text-sm py-4`}>
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className={`${section.textClass} opacity-80 leading-relaxed text-sm`}>
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </motion.div>
+          ))}
+
+          {/* Bottom dark blue block to fill to footer */}
+          <div
+            className="flex-1 min-h-[80px]"
+            style={{ background: `hsl(var(--esprint-darkblue))` }}
           />
-
-          {/* Page header */}
-          <div className="mb-10">
-            <h1 className="font-display font-black text-4xl md:text-6xl text-esprint-darkblue">
-              FAQ
-            </h1>
-          </div>
-
-          {/* FAQ sections */}
-          <div ref={questionsRef} className="max-w-3xl space-y-8">
-            {faqSections.map((section, si) => (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: si * 0.1 }}
-              >
-                <h2 className="font-display font-bold text-sm text-esprint-darkblue uppercase tracking-widest border-b-2 border-esprint-purple pb-3 mb-6">
-                  {section.title}
-                </h2>
-                <Accordion type="single" collapsible className="space-y-2">
-                  {section.items.map((item, i) => (
-                    <AccordionItem
-                      key={i}
-                      value={`${si}-${i}`}
-                      className="border border-gray-200 rounded-lg px-5 bg-gray-50/50"
-                    >
-                      <AccordionTrigger className="text-left font-semibold text-esprint-darkblue hover:no-underline text-sm">
-                        {item.q}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-gray-600 leading-relaxed text-sm">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </motion.div>
-            ))}
-          </div>
         </div>
+
+        {/* Key visual strip on the right */}
+        <div className="hidden md:block w-20 flex-shrink-0" />
       </div>
     </div>
   );

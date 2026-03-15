@@ -81,20 +81,9 @@ const Index = () => {
                 "bg-esprint-red",
                 "bg-esprint-purple",
               ];
+              const dotCount = parseInt(stat.value) || 0;
               return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className={`${colors[i]} p-8 text-center`}
-                >
-                  <p className="font-display font-black text-5xl md:text-6xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 font-semibold text-sm opacity-70">{stat.label}</p>
-                </motion.div>
+                <StatCard key={stat.label} stat={stat} colorClass={colors[i]} dotCount={dotCount} delay={i * 0.1} />
               );
             })}
           </div>

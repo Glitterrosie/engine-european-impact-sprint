@@ -62,7 +62,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-esprint-pink p-10 md:p-14 text-center"
+              className="bg-esprint-darkblue p-10 md:p-14 text-center"
             >
               <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
                 Ready to Shape the Future of Tech in Europe?

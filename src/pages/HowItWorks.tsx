@@ -25,7 +25,7 @@ const schedule = [
   { day: "Day 4 – 28th August", title: "Presentation", desc: "Final presentation and individual departure." },
 ];
 
-const tornClipPath = "polygon(2% 5%, 5% 2%, 8% 6%, 12% 1%, 18% 4%, 22% 1%, 28% 5%, 33% 2%, 38% 6%, 44% 1%, 50% 4%, 56% 1%, 62% 5%, 68% 2%, 73% 6%, 78% 1%, 83% 4%, 88% 2%, 92% 5%, 96% 1%, 100% 4%, 99% 8%, 100% 14%, 98% 20%, 100% 28%, 99% 35%, 100% 42%, 98% 50%, 100% 58%, 99% 65%, 100% 72%, 98% 80%, 100% 86%, 99% 92%, 100% 96%, 97% 100%, 92% 97%, 86% 100%, 80% 98%, 73% 100%, 66% 97%, 60% 100%, 53% 98%, 46% 100%, 40% 97%, 33% 100%, 26% 98%, 20% 100%, 14% 97%, 8% 100%, 3% 98%, 0% 96%, 1% 90%, 0% 84%, 2% 78%, 0% 72%, 1% 65%, 0% 58%, 2% 50%, 0% 42%, 1% 35%, 0% 28%, 2% 20%, 0% 14%, 1% 8%)";
+const blobClipPath = "polygon(50% 0%, 65% 2%, 78% 6%, 88% 14%, 95% 24%, 98% 36%, 100% 50%, 98% 64%, 95% 76%, 88% 86%, 78% 94%, 65% 98%, 50% 100%, 35% 98%, 22% 94%, 12% 86%, 5% 76%, 2% 64%, 0% 50%, 2% 36%, 5% 24%, 12% 14%, 22% 6%, 35% 2%)";
 
 const HowItWorks = () => {
   return (
@@ -155,13 +155,13 @@ const HowItWorks = () => {
                     transition={{ delay: 0.1 }}
                     className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
                   >
-                    {/* Placeholder with organic torn border */}
+                    {/* Placeholder with smooth blob border */}
                     <div className="w-full md:w-5/12">
                       <div
-                        className={`${bgColors[i]} overflow-hidden rounded-3xl border-4 border-foreground/10`}
-                        style={{ clipPath: tornClipPath }}
+                        className={`${bgColors[i]} overflow-hidden`}
+                        style={{ clipPath: blobClipPath, borderRadius: '50%' }}
                       >
-                        <div className="w-full aspect-[16/10] flex items-center justify-center">
+                        <div className="w-full aspect-square flex items-center justify-center">
                           <p className="text-foreground/40 text-sm">Photo placeholder</p>
                         </div>
                       </div>
@@ -169,9 +169,9 @@ const HowItWorks = () => {
 
                     {/* Text content */}
                     <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
-                      <p className={`${colors[i]} text-xs font-bold uppercase tracking-widest mb-1`}>{s.day}</p>
+                      <span className={`${bgColors[i]} ${colors[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
                       <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
-                      <p className={`${colors[i]} text-sm leading-relaxed opacity-80`}>{s.desc}</p>
+                      <span className={`${bgColors[i]} ${colors[i]} inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
                     </div>
                   </motion.div>
                 );

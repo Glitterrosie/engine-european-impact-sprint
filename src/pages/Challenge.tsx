@@ -135,23 +135,23 @@ const Challenge = () => {
                   <circle r={2.5} fill="hsl(var(--primary-foreground))" />
 
                   {isHpiHovered && (
-                    <g transform="translate(0,-44)">
+                    <g transform="translate(0,-56)">
                       <rect
-                        x={-36}
-                        y={-18}
-                        width={72}
-                        height={28}
-                        rx={12}
+                        x={-68}
+                        y={-30}
+                        width={136}
+                        height={52}
+                        rx={16}
                         fill="hsl(var(--esprint-darkblue))"
                         stroke="hsl(var(--primary-foreground) / 0.35)"
                         strokeWidth={0.6}
                       />
                       <image
                         href={hpiLogoWhite}
-                        x={-24}
-                        y={-11}
-                        width={48}
-                        height={14}
+                        x={-48}
+                        y={-18}
+                        width={96}
+                        height={28}
                         preserveAspectRatio="xMidYMid meet"
                       />
                     </g>

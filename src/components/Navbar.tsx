@@ -105,28 +105,6 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-black/80 backdrop-blur-xl border-b border-white/10 px-4 pb-4 space-y-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={() => setMobileOpen(false)}
-              className={cn(
-                "block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
-                location.pathname === item.path
-                  ? "bg-white/20 text-white"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </nav>
   );
 };
 

@@ -18,6 +18,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = location.pathname === "/";
+  const isWhitePage = location.pathname === "/faq";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -32,12 +33,14 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         showBg
-          ? "bg-black/40 backdrop-blur-xl border-b border-white/10"
+          ? isWhitePage
+            ? "bg-white/90 backdrop-blur-xl border-b border-gray-200"
+            : "bg-black/40 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="text-white">
+        <Link to="/" className={isWhitePage ? "text-esprint-darkblue" : "text-white"}>
           <span className="sr-only">Home</span>
         </Link>
 
@@ -49,9 +52,13 @@ const Navbar = () => {
               to={item.path}
               className={cn(
                 "px-3 py-1.5 rounded-md text-sm font-semibold transition-colors",
-                location.pathname === item.path
-                  ? "bg-white/20 text-white"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
+                isWhitePage
+                  ? location.pathname === item.path
+                    ? "bg-esprint-darkblue/10 text-esprint-darkblue"
+                    : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
+                  : location.pathname === item.path
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
               {item.label}
@@ -61,7 +68,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-white transition-colors"
+          className={cn("md:hidden transition-colors", isWhitePage ? "text-esprint-darkblue" : "text-white")}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,7 +77,12 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-black/80 backdrop-blur-xl border-b border-white/10 px-4 pb-4 space-y-1">
+        <div className={cn(
+          "md:hidden backdrop-blur-xl px-4 pb-4 space-y-1",
+          isWhitePage
+            ? "bg-white/90 border-b border-gray-200"
+            : "bg-black/80 border-b border-white/10"
+        )}>
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -78,9 +90,13 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className={cn(
                 "block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
-                location.pathname === item.path
-                  ? "bg-white/20 text-white"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
+                isWhitePage
+                  ? location.pathname === item.path
+                    ? "bg-esprint-darkblue/10 text-esprint-darkblue"
+                    : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
+                  : location.pathname === item.path
+                    ? "bg-white/20 text-white"
+                    : "text-white/70 hover:text-white hover:bg-white/10"
               )}
             >
               {item.label}

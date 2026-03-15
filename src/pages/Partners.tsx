@@ -46,15 +46,15 @@ const Partners = () => {
 
             {/* Right: Campus photos */}
             <div className="grid grid-rows-2 gap-1 min-h-[400px]">
-              <div className="bg-esprint-darkblue/20 flex items-center justify-center">
-                <p className="text-esprint-darkblue/40 text-sm">HPI Campus Photo 1</p>
+              <div className="bg-primary-foreground/10 flex items-center justify-center">
+                <p className="text-primary-foreground/30 text-sm">HPI Campus Photo 1</p>
               </div>
               <div className="grid grid-cols-2 gap-1">
-                <div className="bg-esprint-darkblue/15 flex items-center justify-center">
-                  <p className="text-esprint-darkblue/40 text-xs">Photo 2</p>
+                <div className="bg-primary-foreground/8 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 2</p>
                 </div>
-                <div className="bg-esprint-darkblue/10 flex items-center justify-center">
-                  <p className="text-esprint-darkblue/40 text-xs">Photo 3</p>
+                <div className="bg-primary-foreground/5 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 3</p>
                 </div>
               </div>
             </div>

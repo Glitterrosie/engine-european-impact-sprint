@@ -17,26 +17,33 @@ const stats = [
 const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string; label: string }; colorClass: string; dotCount: number; delay: number }) => {
   const [hovered, setHovered] = useState(false);
 
-  // Generate dots in a grid pattern, sorted by distance from center for staggered reveal
+  // Generate dots in a symmetric centered grid
   const dots = (() => {
-    const result: { x: number; y: number; dist: number }[] = [];
-    const cols = Math.ceil(Math.sqrt(dotCount * 1.5));
+    // Find best rectangular grid that fits dotCount
+    const cols = Math.ceil(Math.sqrt(dotCount));
     const rows = Math.ceil(dotCount / cols);
-    const spacingX = 60 / cols;
-    const spacingY = 60 / rows;
-    const startX = 50 - (cols - 1) * spacingX / 2;
-    const startY = 50 - (rows - 1) * spacingY / 2;
+    const actualCount = cols * rows;
+    const skip = actualCount - dotCount; // dots to remove symmetrically
     
+    const spacing = 8; // percentage units
+    const result: { x: number; y: number; dist: number }[] = [];
+
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
-        if (result.length >= dotCount) break;
-        const x = startX + c * spacingX;
-        const y = startY + r * spacingY;
+        const x = 50 + (c - (cols - 1) / 2) * spacing;
+        const y = 50 + (r - (rows - 1) / 2) * spacing;
         const dist = Math.sqrt((x - 50) ** 2 + (y - 50) ** 2);
         result.push({ x, y, dist });
       }
     }
-    // Sort by distance so center dots appear first
+
+    // If we have extra dots, remove the ones farthest from center
+    if (skip > 0) {
+      result.sort((a, b) => b.dist - a.dist);
+      result.splice(0, skip);
+    }
+
+    // Sort by distance for staggered animation (center first)
     return result.sort((a, b) => a.dist - b.dist);
   })();
 

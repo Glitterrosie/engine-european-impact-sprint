@@ -126,7 +126,7 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-darkblue rounded-2xl shadow-xl py-10 px-8 md:px-10 text-center"
+          className="bg-esprint-pink rounded-2xl shadow-xl py-10 px-8 md:px-10 text-center"
         >
           <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide mb-8">
             Industry Partners

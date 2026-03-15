@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
-import scheduleDay1 from "@/assets/schedule-day1.jpg";
-import scheduleDay2 from "@/assets/schedule-day2.jpg";
-import scheduleDay3 from "@/assets/schedule-day3.jpg";
-import scheduleDay4 from "@/assets/schedule-day4.jpg";
-
 const criteria = [
   "Bachelor's students in Computer Science, preferably final year",
   "Passion for entrepreneurship, innovation and solving European challenges",

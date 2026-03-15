@@ -86,40 +86,28 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative">
-        {/* Key visual background image */}
-        <img
-          src={keyVisual}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* SVG overlay with text cutout revealing image beneath */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 200 1000"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <mask id="faq-text-mask">
-              <rect width="200" height="1000" fill="white" />
-              <text
-                x="100"
-                y="500"
-                textAnchor="middle"
-                dominantBaseline="central"
-                fontFamily="'TT Lakes Neue', sans-serif"
-                fontWeight="900"
-                fontSize="70"
-                fill="black"
-                transform="rotate(-90, 100, 500)"
-              >
-                Frequently Asked Questions
-              </text>
-            </mask>
-          </defs>
-          <rect width="200" height="1000" fill="white" mask="url(#faq-text-mask)" />
-        </svg>
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            className="font-display font-black"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              letterSpacing: '-0.05em',
+              lineHeight: 1,
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
+            Frequently Asked Questions
+          </span>
+        </div>
       </div>
     </div>
   );

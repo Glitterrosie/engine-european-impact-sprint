@@ -22,18 +22,18 @@ const Partners = () => {
           transition={{ delay: 0.1 }}
           className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-5 md:p-6 text-primary-foreground">
+          <div className="p-4 md:p-5 text-primary-foreground">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
             </div>
-            <div className="mb-6">
-              <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-12" />
+            <div className="mb-3">
+              <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-10" />
             </div>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <p className="text-sm leading-relaxed opacity-90">
+            <div className="grid md:grid-cols-2 gap-4 mb-4">
+              <p className="text-xs leading-relaxed opacity-90">
                 The Hasso Plattner Institute (HPI) was founded in 1998 by Hasso Plattner, co-founder of SAP and one of Europe's most successful tech entrepreneurs. Today, HPI is a leading academic institution for digital engineering, educating the next generation of technology leaders, innovators and entrepreneurs.
               </p>
-              <p className="text-sm leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-90">
                 Located in Potsdam near Berlin, HPI attracts more than 900 Bachelor's and Master's students and around 80 PhD candidates. With a focus on IT Systems Engineering, Computer Science, Digital Health, Cybersecurity and Data Engineering, HPI has produced more than 2,500 graduates supported by state-of-the-art infrastructure and an interdisciplinary faculty of 30+ professors.
               </p>
             </div>
@@ -41,19 +41,19 @@ const Partners = () => {
               href="https://hpi.de/en"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-bold hover:underline underline-offset-2"
+              className="text-xs font-bold hover:underline underline-offset-2"
             >
               More information: hpi.de →
             </a>
           </div>
           <div className="grid grid-cols-3 gap-1">
-            <div className="overflow-hidden h-48">
+            <div className="overflow-hidden h-36">
               <img src={hpiCampus2} alt="HPI Campus building" className="w-full h-full object-cover" />
             </div>
-            <div className="overflow-hidden h-48">
+            <div className="overflow-hidden h-36">
               <img src={hpiCampus1} alt="HPI lecture hall" className="w-full h-full object-cover" />
             </div>
-            <div className="overflow-hidden h-48">
+            <div className="overflow-hidden h-36">
               <img src={hpiCampus3} alt="HPI campus at night" className="w-full h-full object-cover" />
             </div>
           </div>

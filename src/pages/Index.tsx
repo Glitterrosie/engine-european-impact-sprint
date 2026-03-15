@@ -62,7 +62,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-esprint-pink p-10 md:p-14 text-center"
+              className="bg-esprint-darkblue p-10 md:p-14 text-center"
             >
               <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
                 Ready to Shape the Future of Tech in Europe?
@@ -77,9 +77,9 @@ const Index = () => {
               {stats.map((stat, i) => {
                 const colors = [
                   "bg-esprint-orange",
-                  "bg-esprint-purple",
                   "bg-esprint-pink",
-                  "bg-esprint-darkblue",
+                  "bg-esprint-red",
+                  "bg-esprint-purple",
                 ];
                 return (
                   <motion.div
@@ -103,7 +103,7 @@ const Index = () => {
             <div className="grid md:grid-cols-3">
               {[
                 { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
-                { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-purple text-primary-foreground" },
+                { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-darkblue text-primary-foreground" },
                 { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-primary-foreground" },
               ].map((card, i) => (
                 <motion.div

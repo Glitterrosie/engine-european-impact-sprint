@@ -29,6 +29,8 @@ const infoItems = [
 ];
 
 const Challenge = () => {
+  const [isHpiHovered, setIsHpiHovered] = useState(false);
+
   return (
     <PageLayout title="The Challenge" noPadBottom>
       <div className="flex-1 grid lg:grid-cols-2 gap-6 items-stretch">

@@ -107,7 +107,7 @@ const FAQ = () => {
               color: 'transparent',
             }}
           >
-            FAQFAQFAQ
+            FAQFAQFAQFAQ
           </span>
         </div>
       </div>

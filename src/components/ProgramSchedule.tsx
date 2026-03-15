@@ -27,8 +27,11 @@ const ProgramSchedule = () => {
       <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-4">
         Program Schedule
       </h2>
-      <p className="text-primary-foreground/70 leading-relaxed mb-12">
-        Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion. More program details will be added shortly.
+      <p className="text-primary-foreground/70 leading-relaxed mb-2">
+        Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion.
+      </p>
+      <p className="text-primary-foreground/50 text-xs italic mb-12">
+        More program details will be added shortly.
       </p>
 
       <div className="relative">

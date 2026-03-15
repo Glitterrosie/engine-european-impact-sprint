@@ -118,7 +118,7 @@ const Partners = () => {
           className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl"
         >
           <h2 className="font-display font-bold text-2xl text-primary-foreground mb-3">University Partners</h2>
-          <p className="text-primary-foreground/50">Logos of 30 European partner universities – Coming Soon</p>
+          <p className="text-primary-foreground/50">Coming Soon</p>
           <p className="text-sm text-primary-foreground/40 mt-4">
             Interested in becoming a partner?{" "}
             <a href="/contact" className="text-esprint-pink hover:underline font-semibold">Contact us!</a>

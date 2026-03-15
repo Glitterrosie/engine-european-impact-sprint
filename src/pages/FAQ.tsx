@@ -32,25 +32,6 @@ const faqSections = [
 
 const FAQ = () => {
   const questionsRef = React.useRef<HTMLDivElement>(null);
-  const sidebarRef = React.useRef<HTMLDivElement>(null);
-  const [questionsTop, setQuestionsTop] = React.useState(0);
-
-  React.useEffect(() => {
-    const updatePosition = () => {
-      if (questionsRef.current) {
-        const rect = questionsRef.current.getBoundingClientRect();
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        setQuestionsTop(rect.top + scrollTop);
-      }
-    };
-    updatePosition();
-    window.addEventListener('resize', updatePosition);
-    return () => window.removeEventListener('resize', updatePosition);
-  }, []);
-
-  const svgContent = encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 520'>${Array.from({ length: 8 }, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
-  );
 
   return (
     <div className="min-h-screen bg-white relative flex overflow-hidden">
@@ -107,23 +88,28 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* Right side - SVG cutout text revealing key visual */}
-      <div ref={sidebarRef} className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
-        <div
-          className="absolute left-0 right-0 bottom-0"
-          style={{
-            top: questionsTop,
-            backgroundImage: `url(${keyVisual})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            WebkitMaskImage: `url("data:image/svg+xml,${svgContent}")`,
-            WebkitMaskSize: '100% 520px',
-            WebkitMaskRepeat: 'repeat-y',
-            maskImage: `url("data:image/svg+xml,${svgContent}")`,
-            maskSize: '100% 520px',
-            maskRepeat: 'repeat-y',
-          }}
-        />
+      {/* Right side - large vertical text with key visual fill */}
+      <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
+        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-start pt-24">
+          <span
+            className="font-display font-black leading-[0.85] w-full text-center"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+              fontSize: 'clamp(8rem, 12vw, 14rem)',
+              letterSpacing: '-0.04em',
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
+            FAQ
+          </span>
+        </div>
       </div>
     </div>
   );

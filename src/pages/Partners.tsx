@@ -17,11 +17,11 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-esprint-orange rounded-2xl shadow-xl overflow-hidden"
+          className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
         >
           <div className="grid md:grid-cols-2 gap-0">
             {/* Left: Logo + Text */}
-            <div className="p-8 md:p-10 flex flex-col text-esprint-darkblue">
+            <div className="p-8 md:p-10 flex flex-col text-primary-foreground">
               <div className="flex items-center gap-4 mb-2">
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
               </div>
@@ -46,15 +46,15 @@ const Partners = () => {
 
             {/* Right: Campus photos */}
             <div className="grid grid-rows-2 gap-1 min-h-[400px]">
-              <div className="bg-esprint-darkblue/20 flex items-center justify-center">
-                <p className="text-esprint-darkblue/40 text-sm">HPI Campus Photo 1</p>
+              <div className="bg-primary-foreground/10 flex items-center justify-center">
+                <p className="text-primary-foreground/30 text-sm">HPI Campus Photo 1</p>
               </div>
               <div className="grid grid-cols-2 gap-1">
-                <div className="bg-esprint-darkblue/15 flex items-center justify-center">
-                  <p className="text-esprint-darkblue/40 text-xs">Photo 2</p>
+                <div className="bg-primary-foreground/8 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 2</p>
                 </div>
-                <div className="bg-esprint-darkblue/10 flex items-center justify-center">
-                  <p className="text-esprint-darkblue/40 text-xs">Photo 3</p>
+                <div className="bg-primary-foreground/5 flex items-center justify-center">
+                  <p className="text-primary-foreground/30 text-xs">Photo 3</p>
                 </div>
               </div>
             </div>

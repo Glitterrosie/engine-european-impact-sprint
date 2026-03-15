@@ -9,7 +9,7 @@ const partners = [
     logo: hpiLogoWhite,
     logoAlt: "Hasso Plattner Institute",
     logoClass: "h-14",
-    logoMaskSize: "60%",
+    logoMaskSize: "40%",
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",
@@ -19,7 +19,7 @@ const partners = [
     logo: hpiEngineLogo,
     logoAlt: "HPI Engine",
     logoClass: "h-10",
-    logoMaskSize: "55%",
+    logoMaskSize: "35%",
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",
@@ -29,7 +29,7 @@ const partners = [
     logo: sapLogoWhite,
     logoAlt: "SAP",
     logoClass: "h-14",
-    logoMaskSize: "45%",
+    logoMaskSize: "30%",
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",
@@ -64,20 +64,20 @@ const Partners = () => {
                 style={{
                   background: color.bg,
                   WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  WebkitMaskSize: `${p.logoMaskSize} 100%`,
-                  WebkitMaskPosition: 'center 25%, center center',
+                  WebkitMaskSize: `${p.logoMaskSize} auto, 100% 100%`,
+                  WebkitMaskPosition: 'center 20%, center center',
                   WebkitMaskRepeat: 'no-repeat, no-repeat',
                   WebkitMaskComposite: 'xor',
                   maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  maskSize: `${p.logoMaskSize} 100%`,
-                  maskPosition: 'center 25%, center center',
+                  maskSize: `${p.logoMaskSize} auto, 100% 100%`,
+                  maskPosition: 'center 20%, center center',
                   maskRepeat: 'no-repeat, no-repeat',
                   maskComposite: 'exclude',
                 }}
               />
 
               {/* Content */}
-              <div className="relative z-10 p-8 pt-52 md:pt-56 flex flex-col items-start h-full">
+              <div className="relative z-10 p-8 pt-60 md:pt-64 flex flex-col items-start h-full">
                 <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-1`}>
                   {p.role}
                 </p>

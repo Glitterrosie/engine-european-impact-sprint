@@ -112,7 +112,7 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* Schedule – curved line with alternating placeholders */}
-        <div className="max-w-3xl mx-auto">
+        <div className="w-full">
           <h2 className="font-display font-bold text-lg text-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
             Program Schedule
           </h2>
@@ -121,12 +121,12 @@ const HowItWorks = () => {
             {/* SVG curved white line */}
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-full pointer-events-none hidden md:block"
-              viewBox="0 0 600 900"
+              viewBox="0 0 1000 900"
               preserveAspectRatio="none"
               fill="none"
             >
               <path
-                d="M 300 0 C 100 100, 500 200, 300 280 C 100 360, 500 440, 300 530 C 100 620, 500 700, 300 780 C 200 830, 300 870, 300 900"
+                d="M 500 0 C 50 100, 950 200, 500 280 C 50 360, 950 440, 500 530 C 50 620, 950 700, 500 780 C 300 830, 500 870, 500 900"
                 stroke="white"
                 strokeWidth="2.5"
                 strokeDasharray="8 6"
@@ -170,7 +170,7 @@ const HowItWorks = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
+                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12`}
                   >
                     {/* Placeholder with organic blob shape */}
                     <div className="w-full md:w-5/12 flex items-center justify-center">

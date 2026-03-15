@@ -67,10 +67,10 @@ const Benefits = () => {
               >
                 <defs>
                   <mask id={maskId}>
-                    <rect width="300" height="400" fill="white" />
+                    <rect width="300" height="500" fill="white" />
                     <text
                       x="150"
-                      y="130"
+                      y="120"
                       textAnchor="middle"
                       dominantBaseline="central"
                       fontFamily="'TT Lakes Neue', sans-serif"

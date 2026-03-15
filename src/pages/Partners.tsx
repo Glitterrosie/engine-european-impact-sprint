@@ -37,7 +37,7 @@ const partners = [
 const Partners = () => {
   return (
     <PageLayout
-      title="Partners"
+      title="About HPI"
       subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >

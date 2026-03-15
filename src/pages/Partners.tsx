@@ -35,9 +35,9 @@ const partners = [
 ];
 
 const cardColors = [
-  { bg: "hsl(var(--esprint-orange))", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
-  { bg: "hsl(var(--esprint-pink))", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
-  { bg: "hsl(var(--esprint-purple))", text: "text-white", roleText: "text-white/60" },
+  { bg: "hsl(var(--esprint-orange))", hslVar: "var(--esprint-orange)", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
+  { bg: "hsl(var(--esprint-pink))", hslVar: "var(--esprint-pink)", text: "text-esprint-darkblue", roleText: "text-esprint-darkblue/60" },
+  { bg: "hsl(var(--esprint-purple))", hslVar: "var(--esprint-purple)", text: "text-white", roleText: "text-white/60" },
 ];
 
 const Partners = () => {
@@ -53,10 +53,10 @@ const Partners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col md:flex-row overflow-hidden"
+              className="flex flex-col md:flex-row overflow-hidden relative"
             >
               {/* Logo area - transparent, key visual shows through */}
-              <div className="p-10 md:p-12 flex items-center justify-center md:w-64 flex-shrink-0">
+              <div className="p-10 md:p-12 flex items-center justify-center md:w-64 flex-shrink-0 relative z-10">
                 <a href={p.link} target="_blank" rel="noopener noreferrer">
                   <img
                     src={p.logo}
@@ -66,20 +66,43 @@ const Partners = () => {
                 </a>
               </div>
 
-              {/* Details card */}
+              {/* Gradient colored block - fades from transparent to full color */}
               <div
-                className="p-8 md:p-10 flex-1 flex flex-col justify-center"
-                style={{ background: color.bg }}
+                className="flex-1 relative"
+                style={{
+                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0), hsl(${color.hslVar} / 0.4), hsl(${color.hslVar} / 0.8), ${color.bg})`,
+                }}
               >
-                <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2`}>
-                  {p.role}
-                </p>
-                <h3 className={`font-display font-bold text-xl ${color.text} mb-3 leading-tight`}>
-                  {p.name}
-                </h3>
-                <p className={`text-sm ${color.text} opacity-80 leading-relaxed max-w-2xl`}>
-                  {p.desc}
-                </p>
+                {/* Text content */}
+                <div className="relative z-10 p-8 md:p-10 flex flex-col justify-center h-full">
+                  <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2`}>
+                    {p.role}
+                  </p>
+                  <h3 className={`font-display font-bold text-xl ${color.text} mb-3 leading-tight`}>
+                    {p.name}
+                  </h3>
+                  <p className={`text-sm ${color.text} opacity-80 leading-relaxed max-w-2xl`}>
+                    {p.desc}
+                  </p>
+                </div>
+
+                {/* Logo cutout on the right */}
+                <div
+                  className="absolute right-0 top-0 bottom-0 w-48 md:w-64"
+                  style={{
+                    background: color.bg,
+                    WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                    WebkitMaskSize: '60% auto, 100% 100%',
+                    WebkitMaskPosition: 'center center, center center',
+                    WebkitMaskRepeat: 'no-repeat, no-repeat',
+                    WebkitMaskComposite: 'xor',
+                    maskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                    maskSize: '60% auto, 100% 100%',
+                    maskPosition: 'center center, center center',
+                    maskRepeat: 'no-repeat, no-repeat',
+                    maskComposite: 'exclude',
+                  }}
+                />
               </div>
             </motion.div>
           );

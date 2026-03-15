@@ -89,35 +89,29 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large vertical text with key visual fill */}
-      <div className="hidden md:block flex-shrink-0 relative bg-white overflow-hidden">
-        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-start pt-24">
-          <div
-            className="flex gap-0"
-            style={{
-              backgroundImage: `url(${keyVisual})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-            }}
-          >
-            {Array.from({ length: 5 }).map((_, i) => (
-              <span
-                key={i}
-                className="font-display font-black leading-[0.85]"
-                style={{
-                  writingMode: 'vertical-rl',
-                  textOrientation: 'mixed',
-                  fontSize: 'clamp(3rem, 5vw, 5rem)',
-                  letterSpacing: '-0.04em',
-                }}
-              >
-                FAQFAQFAQFAQ
-              </span>
-            ))}
-          </div>
+      <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
+        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-start pt-24 justify-center gap-0">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <span
+              key={i}
+              className="font-display font-black leading-[0.85]"
+              style={{
+                writingMode: 'vertical-rl',
+                textOrientation: 'mixed',
+                fontSize: 'clamp(3rem, 5vw, 5rem)',
+                letterSpacing: '-0.04em',
+                backgroundImage: `url(${keyVisual})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                color: 'transparent',
+              }}
+            >
+              FAQFAQFAQFAQ
+            </span>
+          ))}
         </div>
       </div>
     </div>

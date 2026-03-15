@@ -86,46 +86,27 @@ const FAQ = () => {
       </div>
 
       {/* Right side - SVG cutout text revealing key visual */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative">
-        <div className="absolute inset-0">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 200 900"
-            preserveAspectRatio="xMidYMid slice"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <mask id="faq-text-mask">
-                <rect width="200" height="900" fill="white" />
-                <text
-                  x="100"
-                  y="450"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontFamily="'TT Lakes Neue', sans-serif"
-                  fontWeight="900"
-                  fontSize="38"
-                  fill="black"
-                  writingMode="tb"
-                  letterSpacing="-1"
-                >
-                  Frequently Asked Questions
-                </text>
-              </mask>
-            </defs>
-            <rect
-              width="200"
-              height="900"
-              fill="white"
-              mask="url(#faq-text-mask)"
-            />
-          </svg>
-        </div>
-        {/* Key visual behind the cutout */}
-        <img
-          src={keyVisual}
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover -z-10"
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
+        {/* Key visual image, clipped by text shape */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url(${keyVisual})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 900'><text x='100' y='450' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='38' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text></svg>`
+            )}")`,
+            WebkitMaskSize: 'cover',
+            WebkitMaskPosition: 'center',
+            WebkitMaskRepeat: 'no-repeat',
+            maskImage: `url("data:image/svg+xml,${encodeURIComponent(
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 900'><text x='100' y='450' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='38' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text></svg>`
+            )}")`,
+            maskSize: 'cover',
+            maskPosition: 'center',
+            maskRepeat: 'no-repeat',
+          }}
         />
       </div>
     </div>

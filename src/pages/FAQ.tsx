@@ -6,7 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
-import keyVisual from "@/assets/key-visual.png";
 
 const faqSections = [
   {

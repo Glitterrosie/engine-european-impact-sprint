@@ -14,6 +14,65 @@ const stats = [
   { value: "1", label: "Goal" },
 ];
 
+const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string; label: string }; colorClass: string; dotCount: number; delay: number }) => {
+  const [hovered, setHovered] = useState(false);
+
+  // Pre-generate random positions for dots
+  const dots = Array.from({ length: dotCount }, (_, di) => ({
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 0.4,
+    size: 4 + Math.random() * 3,
+  }));
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className={`${colorClass} p-8 text-center relative overflow-hidden cursor-default`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {/* Dots layer */}
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            className="absolute inset-0 z-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {dots.map((dot, di) => (
+              <motion.div
+                key={di}
+                className="absolute rounded-full bg-current opacity-20"
+                style={{
+                  width: dot.size,
+                  height: dot.size,
+                  left: `${dot.x}%`,
+                  top: `${dot.y}%`,
+                }}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+                transition={{ duration: 0.25, delay: dot.delay }}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <p className="font-display font-black text-5xl md:text-6xl relative z-10">
+        {stat.value}
+      </p>
+      <p className="mt-2 font-semibold text-sm opacity-70 relative z-10">{stat.label}</p>
+    </motion.div>
+  );
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen relative">

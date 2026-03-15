@@ -56,12 +56,12 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300"
+              className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300 min-h-[420px] md:min-h-[480px]"
             >
               {/* SVG background with number cutout */}
               <svg
                 className="absolute inset-0 w-full h-full"
-                viewBox="0 0 300 400"
+                viewBox="0 0 300 500"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
               >

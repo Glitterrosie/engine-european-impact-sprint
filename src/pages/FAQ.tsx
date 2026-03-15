@@ -32,25 +32,6 @@ const faqSections = [
 
 const FAQ = () => {
   const questionsRef = React.useRef<HTMLDivElement>(null);
-  const sidebarRef = React.useRef<HTMLDivElement>(null);
-  const [questionsTop, setQuestionsTop] = React.useState(0);
-
-  React.useEffect(() => {
-    const updatePosition = () => {
-      if (questionsRef.current) {
-        const rect = questionsRef.current.getBoundingClientRect();
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-        setQuestionsTop(rect.top + scrollTop);
-      }
-    };
-    updatePosition();
-    window.addEventListener('resize', updatePosition);
-    return () => window.removeEventListener('resize', updatePosition);
-  }, []);
-
-  const svgContent = encodeURIComponent(
-    `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 520'>${Array.from({ length: 8 }, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
-  );
 
   return (
     <div className="min-h-screen bg-white relative flex overflow-hidden">

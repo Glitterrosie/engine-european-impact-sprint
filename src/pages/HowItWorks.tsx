@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
+import ProgramSchedule from "@/components/ProgramSchedule";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const criteria = [

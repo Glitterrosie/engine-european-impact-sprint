@@ -45,8 +45,8 @@ const Partners = () => {
       subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="relative flex flex-col items-center">
+      <div className="flex-1 flex items-center justify-center px-4 py-12 w-full">
+        <div className="relative flex flex-col items-center w-full max-w-5xl mx-auto">
           {/* Vertical connecting line */}
           <div
             className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-white/10"
@@ -67,9 +67,9 @@ const Partners = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`flex items-center gap-8 md:gap-12 ${i > 0 ? "-mt-4" : ""} ${
+                className={`flex items-center gap-8 md:gap-16 w-full ${i > 0 ? "-mt-4" : ""} ${
                   isRight ? "flex-row-reverse" : "flex-row"
-                }`}
+                } ${isRight ? "justify-start pl-[10%]" : "justify-end pr-[10%]"}`}
                 style={{ zIndex: 10 + i }}
               >
                 {/* Circle assembly */}
@@ -78,10 +78,10 @@ const Partners = () => {
                   <div
                     className="absolute top-1/2 -translate-y-1/2 h-[2px]"
                     style={{
-                      background: `hsl(${p.color})`,
-                      width: dashedSize + 40,
+                      background: `linear-gradient(${isRight ? "to left" : "to right"}, hsl(${p.color}), hsl(${p.color} / 0))`,
+                      width: "200vw",
                       [isRight ? "right" : "left"]: -20,
-                      opacity: 0.5,
+                      opacity: 0.3,
                     }}
                   />
 
@@ -141,7 +141,7 @@ const Partners = () => {
                 </div>
 
                 {/* Text content */}
-                <div className={`max-w-xs ${isRight ? "text-right" : "text-left"}`}>
+                <div className={`max-w-sm md:max-w-md flex-1 ${isRight ? "text-right" : "text-left"}`}>
                   <p
                     className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
                     style={{ color: `hsl(${p.color})` }}

@@ -34,84 +34,87 @@ const FAQ = () => {
   const questionsRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <div className="min-h-screen bg-white relative flex overflow-hidden">
-      {/* Main content */}
-      <div className="flex-1 flex flex-col pt-24 pb-20 px-6 md:px-12 lg:px-16">
-        {/* Logo - inverted to dark/blue */}
-        <img
-          src={esprintLogo}
-          alt="European Impact Sprint"
-          className="w-48 md:w-64 mb-6"
+    <div
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${keyVisual})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* White overlay with text cutouts on the right */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        <div
+          className="absolute top-0 right-0 bottom-0 w-56 lg:w-72"
           style={{
-            filter: "brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(700%) hue-rotate(180deg) brightness(95%) contrast(95%)",
+            background: 'white',
+            WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 1200'><rect width='280' height='1200' fill='white'/>${Array.from({ length: 5 }, (_, i) => `<text x='${28 + i * 56}' y='96' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='48' fill='black' writing-mode='tb' letter-spacing='2'>FAQFAQFAQFAQ</text>`).join('')}</svg>`
+            )}")`,
+            WebkitMaskSize: '100% 1200px',
+            WebkitMaskRepeat: 'repeat-y',
+            maskImage: `url("data:image/svg+xml,${encodeURIComponent(
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 1200'><rect width='280' height='1200' fill='white'/>${Array.from({ length: 5 }, (_, i) => `<text x='${28 + i * 56}' y='96' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='48' fill='black' writing-mode='tb' letter-spacing='2'>FAQFAQFAQFAQ</text>`).join('')}</svg>`
+            )}")`,
+            maskSize: '100% 1200px',
+            maskRepeat: 'repeat-y',
           }}
         />
-
-        {/* Page header */}
-        <div className="mb-10">
-          <h1 className="font-display font-black text-4xl md:text-6xl text-esprint-darkblue">
-            FAQ
-          </h1>
-        </div>
-
-        {/* FAQ sections */}
-        <div ref={questionsRef} className="max-w-3xl space-y-8">
-          {faqSections.map((section, si) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: si * 0.1 }}
-            >
-              <h2 className="font-display font-bold text-sm text-esprint-darkblue uppercase tracking-widest border-b-2 border-esprint-purple pb-3 mb-6">
-                {section.title}
-              </h2>
-              <Accordion type="single" collapsible className="space-y-2">
-                {section.items.map((item, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`${si}-${i}`}
-                    className="border border-gray-200 rounded-lg px-5 bg-gray-50/50"
-                  >
-                    <AccordionTrigger className="text-left font-semibold text-esprint-darkblue hover:no-underline text-sm">
-                      {item.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 leading-relaxed text-sm">
-                      {item.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
-      {/* Right side - large vertical text with key visual fill */}
-      <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
-        <div className="absolute left-0 right-0 top-0 bottom-0 flex items-start pt-24 justify-center gap-3">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <span
-              key={i}
-              className="font-display font-black leading-[0.85]"
-              style={{
-                writingMode: 'vertical-rl',
-                textOrientation: 'mixed',
-                fontSize: 'clamp(3rem, 5vw, 5rem)',
-                letterSpacing: '-0.04em',
-                backgroundImage: `url(${keyVisual})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                color: 'transparent',
-              }}
-            >
-              FAQFAQFAQFAQ
-            </span>
-          ))}
+      {/* Main content on white background */}
+      <div className="relative z-10 flex">
+        <div className="flex-1 bg-white flex flex-col pt-24 pb-20 px-6 md:px-12 lg:px-16 md:mr-56 lg:mr-72">
+          {/* Logo - inverted to dark/blue */}
+          <img
+            src={esprintLogo}
+            alt="European Impact Sprint"
+            className="w-48 md:w-64 mb-6"
+            style={{
+              filter: "brightness(0) saturate(100%) invert(18%) sepia(50%) saturate(700%) hue-rotate(180deg) brightness(95%) contrast(95%)",
+            }}
+          />
+
+          {/* Page header */}
+          <div className="mb-10">
+            <h1 className="font-display font-black text-4xl md:text-6xl text-esprint-darkblue">
+              FAQ
+            </h1>
+          </div>
+
+          {/* FAQ sections */}
+          <div ref={questionsRef} className="max-w-3xl space-y-8">
+            {faqSections.map((section, si) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: si * 0.1 }}
+              >
+                <h2 className="font-display font-bold text-sm text-esprint-darkblue uppercase tracking-widest border-b-2 border-esprint-purple pb-3 mb-6">
+                  {section.title}
+                </h2>
+                <Accordion type="single" collapsible className="space-y-2">
+                  {section.items.map((item, i) => (
+                    <AccordionItem
+                      key={i}
+                      value={`${si}-${i}`}
+                      className="border border-gray-200 rounded-lg px-5 bg-gray-50/50"
+                    >
+                      <AccordionTrigger className="text-left font-semibold text-esprint-darkblue hover:no-underline text-sm">
+                        {item.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-gray-600 leading-relaxed text-sm">
+                        {item.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

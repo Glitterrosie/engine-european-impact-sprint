@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import PageLayout from "@/components/PageLayout";
 import ProgramSchedule from "@/components/ProgramSchedule";
 import challengeBrief from "@/assets/challenge-brief.jpg";
+import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 

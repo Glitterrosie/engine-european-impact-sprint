@@ -74,10 +74,10 @@ const FAQ = () => {
           className="relative px-6 md:px-12 lg:px-16 py-10"
           style={{ background: `hsl(${section.hsl})` }}
         >
-          <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
+          <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6 ${'align' in section && section.align === 'right' ? 'text-right' : ''}`}>
             {section.title}
           </h2>
-          <Accordion type="single" collapsible className="space-y-3 max-w-3xl">
+          <Accordion type="single" collapsible className={`space-y-3 max-w-3xl ${'align' in section && section.align === 'right' ? 'ml-auto' : ''}`}>
             {section.items.map((item, i) => (
               <AccordionItem
                 key={i}

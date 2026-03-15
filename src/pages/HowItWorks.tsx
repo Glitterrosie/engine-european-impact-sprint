@@ -45,33 +45,21 @@ const HowItWorks = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="bg-white rounded-2xl p-8 shadow-xl overflow-hidden relative"
+            className="bg-white rounded-2xl p-8 shadow-xl"
           >
             <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
               Student Selection Criteria
             </h2>
-            <div className="grid grid-cols-2 gap-3">
-              {criteria.map((c, i) => {
-                const accents = [
-                  "from-esprint-orange to-esprint-pink",
-                  "from-esprint-pink to-esprint-purple",
-                  "from-esprint-purple to-esprint-red",
-                  "from-esprint-red to-esprint-orange",
-                ];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.15 + i * 0.1 }}
-                    className={`relative rounded-xl p-4 bg-gradient-to-br ${accents[i]} text-white flex flex-col justify-between min-h-[120px]`}
-                  >
-                    <span className="text-3xl font-black opacity-20 absolute top-2 right-3 font-display">{i + 1}</span>
-                    <p className="text-sm font-medium leading-snug relative z-10">{c}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
+            <ul className="space-y-3">
+              {criteria.map((c, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
+                  </span>
+                  <p className="text-gray-700 text-sm">{c}</p>
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           <motion.div

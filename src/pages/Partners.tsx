@@ -72,13 +72,13 @@ const Partners = () => {
                 style={{
                   background: `linear-gradient(to left, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
                   WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  WebkitMaskSize: '15% auto, 100% 100%',
-                  WebkitMaskPosition: '2rem center, center center',
+                  WebkitMaskSize: '12% auto, 100% 100%',
+                  WebkitMaskPosition: '8rem center, center center',
                   WebkitMaskRepeat: 'no-repeat, no-repeat',
                   WebkitMaskComposite: 'xor',
                   maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                  maskSize: '15% auto, 100% 100%',
-                  maskPosition: '2rem center, center center',
+                  maskSize: '12% auto, 100% 100%',
+                  maskPosition: '8rem center, center center',
                   maskRepeat: 'no-repeat, no-repeat',
                   maskComposite: 'exclude',
                 }}

@@ -16,7 +16,7 @@ const timeline = [
   { date: "5 May", title: "Online Info-session for Universities", desc: "A briefing call for universities.", dots: 1 },
   { date: "3 July", title: "Nomination Deadline", desc: "Deadline to submit two selected students.", dots: 1 },
   { date: "15 July", title: "Participants Announcement", desc: "Selected participants are announced.", dots: 1 },
-  { date: "3 August", title: "Info-session for Students", desc: "A briefing call for nominated students.", dots: 1 },
+  { date: "3 August", title: "Online Info-session for Students", desc: "A briefing call for nominated students.", dots: 1 },
   { date: "25–28 August", title: "European Impact Sprint", desc: "The main event at HPI, Potsdam.", dots: 4, isMain: true },
 ];
 

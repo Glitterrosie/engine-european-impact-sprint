@@ -8,7 +8,7 @@ const navItems = [
   { label: "The Challenge", path: "/challenge" },
   { label: "How it Works", path: "/how-it-works" },
   { label: "Benefits", path: "/benefits" },
-  { label: "Partners", path: "/partners" },
+  { label: "About HPI", path: "/partners" },
   { label: "Contact", path: "/contact" },
   { label: "FAQ", path: "/faq" },
 ];

@@ -78,12 +78,12 @@ const ProgramSchedule = () => {
                         <path d={blobPaths[i]} transform="scale(1)" />
                       </clipPath>
                     </defs>
-                    <rect
+                    <image
+                      href={scheduleImages[i]}
                       x="-100" y="-100" width="200" height="200"
                       clipPath={`url(#blob-${i})`}
-                      className={i === 0 ? 'fill-esprint-orange/40' : i === 1 ? 'fill-esprint-pink/40' : i === 2 ? 'fill-esprint-purple/40' : 'fill-esprint-red/40'}
+                      preserveAspectRatio="xMidYMid slice"
                     />
-                    <text x="0" y="4" textAnchor="middle" className="fill-foreground/30 text-[8px]">Photo</text>
                   </svg>
                 </div>
 

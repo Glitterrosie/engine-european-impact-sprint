@@ -6,7 +6,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
-import keyVisual from "@/assets/key-visual.png";
 
 const faqSections = [
   {
@@ -48,23 +47,25 @@ const FAQ = () => {
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative pt-24 pb-10 text-center"
+        className="relative pt-24 pb-10"
       >
-        <img
-          src={esprintLogo}
-          alt="European Impact Sprint"
-          className="w-48 md:w-64 mb-6 mx-auto drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
-        />
-        <h1 className="font-display font-black text-5xl md:text-7xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
-          FAQ
-        </h1>
-        <p className="text-white/80 mt-3 text-lg max-w-xl mx-auto drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
-          Everything you need to know about the European Impact Sprint.
-        </p>
+        <div className="container mx-auto px-4 md:px-8">
+          <img
+            src={esprintLogo}
+            alt="European Impact Sprint"
+            className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
+          />
+          <h1 className="font-display font-black text-5xl md:text-7xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+            FAQ
+          </h1>
+          <p className="text-white/80 mt-3 text-lg max-w-3xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+            Everything you need to know about the European Impact Sprint.
+          </p>
+        </div>
       </motion.div>
 
-      {/* Centered color blocks */}
-      <div className="flex flex-col items-center gap-6 px-4 md:px-8 pb-20">
+      {/* Left-aligned color blocks */}
+      <div className="container mx-auto flex flex-col gap-6 px-4 md:px-8 pb-20">
         {faqSections.map((section, si) => (
           <motion.div
             key={section.title}

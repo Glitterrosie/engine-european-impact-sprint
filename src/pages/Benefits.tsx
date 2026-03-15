@@ -43,8 +43,9 @@ const Benefits = () => {
     <PageLayout
       title="Program Benefits"
       subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
+      noPadBottom
     >
-      <div className="rounded-2xl overflow-hidden shadow-xl grid md:grid-cols-5">
+      <div className="rounded-t-2xl overflow-hidden shadow-xl grid md:grid-cols-5 flex-1">
         {benefits.map((b, i) => {
           const color = cardColors[i];
           return (

@@ -6,14 +6,15 @@ interface PageLayoutProps {
   children: ReactNode;
   title: string;
   subtitle?: ReactNode;
+  noPadBottom?: boolean;
 }
 
-const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
+const PageLayout = ({ children, title, subtitle, noPadBottom }: PageLayoutProps) => {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative flex flex-col">
 
-      <div className="pt-20 pb-20">
-        <div className="container mx-auto px-4">
+      <div className={`pt-20 ${noPadBottom ? '' : 'pb-20'} flex flex-col flex-1`}>
+        <div className="container mx-auto px-4 flex flex-col flex-1">
           {/* E-Sprint logo */}
           <img src={esprintLogo} alt="European Impact Sprint" loading="eager" fetchPriority="high" className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]" />
 

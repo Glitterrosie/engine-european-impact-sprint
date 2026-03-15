@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import ProgramSchedule from "@/components/ProgramSchedule";
+import gisNewYork from "@/assets/gis-newyork.png";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const criteria = [
@@ -56,9 +57,7 @@ const HowItWorks = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center"
           >
-            <div className="w-full h-full min-h-[250px] bg-gray-100 flex items-center justify-center">
-              <p className="text-gray-400 text-sm">Photo placeholder</p>
-            </div>
+            <img src={gisNewYork} alt="Global Impact Sprint participants in New York" className="w-full h-full min-h-[250px] object-cover" />
           </motion.div>
         </div>
 

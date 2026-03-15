@@ -160,16 +160,21 @@ const HowItWorks = () => {
                     transition={{ delay: 0.1 }}
                     className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
                   >
-                    {/* Placeholder with smooth blob border */}
-                    <div className="w-full md:w-5/12">
-                      <div
-                        className={`${bgColors[i]} overflow-hidden`}
-                        style={{ clipPath: blobClipPath, borderRadius: '50%' }}
-                      >
-                        <div className="w-full aspect-square flex items-center justify-center">
-                          <p className="text-foreground/40 text-sm">Photo placeholder</p>
-                        </div>
-                      </div>
+                    {/* Placeholder with organic blob shape */}
+                    <div className="w-full md:w-5/12 flex items-center justify-center">
+                      <svg viewBox="-100 -100 200 200" className="w-full max-w-[220px]">
+                        <defs>
+                          <clipPath id={`blob-${i}`}>
+                            <path d={blobPaths[i]} transform="scale(1)" />
+                          </clipPath>
+                        </defs>
+                        <rect
+                          x="-100" y="-100" width="200" height="200"
+                          clipPath={`url(#blob-${i})`}
+                          className={i === 0 ? 'fill-esprint-orange/40' : i === 1 ? 'fill-esprint-pink/40' : i === 2 ? 'fill-esprint-purple/40' : 'fill-esprint-red/40'}
+                        />
+                        <text x="0" y="4" textAnchor="middle" className="fill-foreground/30 text-[8px]">Photo</text>
+                      </svg>
                     </div>
 
                     {/* Text content */}

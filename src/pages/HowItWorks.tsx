@@ -158,7 +158,7 @@ const HowItWorks = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-0 md:gap-0`}
+                    className={`flex flex-col md:flex-row items-center gap-2 md:gap-6`}
                   >
                     {/* Blob with overlaid text */}
                     <div className="w-full md:w-5/12 flex items-center justify-center relative">

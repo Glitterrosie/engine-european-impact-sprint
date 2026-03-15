@@ -9,7 +9,7 @@ const partners = [
     logo: hpiLogoWhite,
     logoAlt: "Hasso Plattner Institute",
     logoClass: "h-14",
-    logoMaskSize: "60%",
+    logoMaskSize: "40%",
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",

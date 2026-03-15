@@ -150,6 +150,12 @@ const HowItWorks = () => {
                   "bg-esprint-purple",
                   "bg-esprint-red",
                 ];
+                const blockText = [
+                  "text-esprint-darkblue",
+                  "text-esprint-darkblue",
+                  "text-white",
+                  "text-white",
+                ];
                 const bgColors = [
                   "bg-esprint-orange/40",
                   "bg-esprint-pink/40",
@@ -185,9 +191,9 @@ const HowItWorks = () => {
 
                     {/* Text content */}
                     <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
-                      <span className={`${bgSolid[i]} text-esprint-darkblue inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
+                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
                       <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
-                      <span className={`${bgSolid[i]} text-esprint-darkblue inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
+                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
                     </div>
                   </motion.div>
                 );

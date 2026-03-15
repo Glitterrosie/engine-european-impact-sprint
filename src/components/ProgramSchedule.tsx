@@ -42,18 +42,18 @@ const ProgramSchedule = () => {
       <div className="relative">
         {/* SVG curved line that passes through the circles */}
         <svg
-          className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-full pointer-events-none hidden md:block"
-          viewBox="0 0 800 1000"
+          className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
           preserveAspectRatio="none"
           fill="none"
         >
           <path
-            d="M 400 0 C 150 80, 650 200, 400 280 C 150 360, 650 480, 400 560 C 150 640, 650 760, 400 840 C 250 900, 400 950, 400 1000"
+            d="M 25% 0% S 25% 12%, 25% 14% S 75% 26%, 75% 38% S 25% 50%, 25% 62% S 75% 74%, 75% 86% S 50% 95%, 50% 100%"
             stroke="white"
             strokeWidth="2"
             strokeDasharray="8 6"
             opacity="0.4"
             fill="none"
+            vectorEffect="non-scaling-stroke"
           />
         </svg>
 

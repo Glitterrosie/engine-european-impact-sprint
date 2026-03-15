@@ -3,7 +3,6 @@ import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogoWhite from "@/assets/sap-logo-white.png";
-import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const partners = [
   {
@@ -12,14 +11,8 @@ const partners = [
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",
-    desc: "Germany's center of excellence for digital engineering.",
+    desc: "Germany's center of excellence for digital engineering, advancing research in IT, cyber security, and entrepreneurship.",
     color: "var(--esprint-orange)",
-    // Position on the canvas (percentage-based)
-    cx: 25,
-    cy: 10,
-    size: 140,
-    rings: 4,
-    textSide: "left" as const,
   },
   {
     logo: hpiEngineLogo,
@@ -27,13 +20,8 @@ const partners = [
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",
-    desc: "Europe's leading startup ecosystem for tech founders.",
+    desc: "One of Europe's leading startup ecosystems, empowering tech talent to become founders through innovation programs.",
     color: "var(--esprint-red)",
-    cx: 55,
-    cy: 25,
-    size: 110,
-    rings: 3,
-    textSide: "right" as const,
   },
   {
     logo: sapLogoWhite,
@@ -41,20 +29,15 @@ const partners = [
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",
-    desc: "Europe's largest software company and global leader in business AI.",
+    desc: "Europe's largest software company, partnering with HPI to empower the next generation of tech innovators.",
     color: "var(--esprint-purple)",
-    cx: 18,
-    cy: 45,
-    size: 120,
-    rings: 3,
-    textSide: "left" as const,
   },
 ];
 
 const Partners = () => {
-  // Bottom convergence point
-  const convergenceX = 50;
-  const convergenceY = 88;
+  const circleSize = 120;
+  const outerSize = 160;
+  const dashedSize = 190;
 
   return (
     <PageLayout
@@ -62,146 +45,120 @@ const Partners = () => {
       subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >
-      <div className="relative w-full max-w-3xl mx-auto flex-1" style={{ minHeight: 700 }}>
-        {/* SVG layer for connecting curves */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          style={{ zIndex: 0 }}
-        >
-          {partners.map((p, i) => {
-            const midY = (p.cy + convergenceY) / 2;
-            return (
-              <motion.path
-                key={i}
-                d={`M ${p.cx} ${p.cy + (p.size / 14)} C ${p.cx} ${midY}, ${convergenceX} ${midY}, ${convergenceX} ${convergenceY}`}
-                fill="none"
-                stroke="white"
-                strokeOpacity={0.12}
-                strokeWidth={0.3}
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, delay: 0.3 + i * 0.2 }}
-              />
-            );
-          })}
-        </svg>
+      <div className="flex-1 flex items-center justify-center px-4 py-12">
+        <div className="relative flex flex-col items-center">
+          {/* Vertical connecting line */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-white/10"
+            style={{
+              top: outerSize / 2,
+              bottom: outerSize / 2,
+            }}
+          />
 
-        {/* Partner circles */}
-        {partners.map((p, i) => {
-          const totalRingSize = p.size + p.rings * 20;
-          return (
-            <motion.div
-              key={p.name}
-              className="absolute"
-              style={{
-                left: `${p.cx}%`,
-                top: `${p.cy}%`,
-                transform: "translate(-50%, -50%)",
-                zIndex: 10 + i,
-              }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-            >
-              {/* Concentric rings */}
-              <div className="relative flex items-center justify-center" style={{ width: totalRingSize, height: totalRingSize }}>
-                {Array.from({ length: p.rings }).map((_, ri) => (
+          {partners.map((p, i) => {
+            // Alternate: odd items offset right
+            const isRight = i % 2 === 1;
+
+            return (
+              <motion.div
+                key={p.name}
+                initial={{ opacity: 0, x: isRight ? 30 : -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                className={`flex items-center gap-8 md:gap-12 ${i > 0 ? "-mt-4" : ""} ${
+                  isRight ? "flex-row-reverse" : "flex-row"
+                }`}
+                style={{ zIndex: 10 + i }}
+              >
+                {/* Circle assembly */}
+                <div className="relative flex-shrink-0" style={{ width: dashedSize, height: dashedSize }}>
+                  {/* Horizontal accent line through circle */}
                   <div
-                    key={ri}
-                    className="absolute rounded-full border border-white/10"
+                    className="absolute top-1/2 -translate-y-1/2 h-[2px]"
                     style={{
-                      width: p.size + (ri + 1) * 20,
-                      height: p.size + (ri + 1) * 20,
+                      background: `hsl(${p.color})`,
+                      width: dashedSize + 40,
+                      [isRight ? "right" : "left"]: -20,
+                      opacity: 0.5,
                     }}
                   />
-                ))}
 
-                {/* Colored circle with logo */}
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative z-10 group"
-                >
-                  <motion.div
-                    className="rounded-full flex items-center justify-center shadow-lg"
+                  {/* Dashed outer ring */}
+                  <div
+                    className="absolute inset-0 rounded-full"
                     style={{
-                      width: p.size,
-                      height: p.size,
-                      background: `hsl(${p.color})`,
-                      boxShadow: `0 4px 30px hsl(${p.color} / 0.3)`,
+                      border: `2px dashed hsl(${p.color} / 0.4)`,
                     }}
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                  />
+
+                  {/* Colored outer circle */}
+                  <div
+                    className="absolute rounded-full"
+                    style={{
+                      width: outerSize,
+                      height: outerSize,
+                      top: (dashedSize - outerSize) / 2,
+                      left: (dashedSize - outerSize) / 2,
+                      background: `hsl(${p.color} / 0.25)`,
+                    }}
+                  />
+
+                  {/* Inner circle with logo */}
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute rounded-full flex items-center justify-center shadow-lg group"
+                    style={{
+                      width: circleSize,
+                      height: circleSize,
+                      top: (dashedSize - circleSize) / 2,
+                      left: (dashedSize - circleSize) / 2,
+                      background: `hsl(${p.color})`,
+                      boxShadow: `0 8px 25px hsl(${p.color} / 0.35)`,
+                    }}
                   >
                     <img
                       src={p.logo}
                       alt={p.logoAlt}
-                      className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"
+                      className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform"
                     />
-                  </motion.div>
-                </a>
-              </div>
+                  </a>
 
-              {/* Curved text label */}
-              <div
-                className={`absolute top-1/2 -translate-y-1/2 whitespace-nowrap ${
-                  p.textSide === "left"
-                    ? "right-full pr-4 text-right"
-                    : "left-full pl-4 text-left"
-                }`}
-              >
-                <p
-                  className="text-[10px] font-bold uppercase tracking-[0.2em] mb-0.5"
-                  style={{ color: `hsl(${p.color})` }}
-                >
-                  {p.role}
-                </p>
-                <h3 className="font-display font-bold text-sm md:text-base text-white leading-tight">
-                  {p.name}
-                </h3>
-                <p className="text-[11px] text-white/50 leading-snug mt-1 max-w-[180px]">
-                  {p.desc}
-                </p>
-              </div>
+                  {/* Number badge */}
+                  <div
+                    className="absolute font-display font-bold text-lg"
+                    style={{
+                      color: `hsl(${p.color})`,
+                      top: (dashedSize - circleSize) / 2 - 4,
+                      [isRight ? "left" : "right"]: (dashedSize - outerSize) / 2 - 8,
+                    }}
+                  >
+                    {i + 1}
+                  </div>
+                </div>
 
-              {/* Role badge (like the percentage badges in the reference) */}
-              <div
-                className="absolute left-1/2 -translate-x-1/2 px-3 py-1 rounded-sm"
-                style={{
-                  bottom: -12,
-                  background: "hsl(var(--esprint-darkblue))",
-                  border: "1px solid rgba(255,255,255,0.15)",
-                  zIndex: 20,
-                }}
-              >
-                <span className="text-[10px] font-bold text-white uppercase tracking-wider">
-                  {p.role}
-                </span>
-              </div>
-            </motion.div>
-          );
-        })}
-
-        {/* Bottom convergence: eSprint logo */}
-        <motion.div
-          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-          style={{ top: `${convergenceY}%`, zIndex: 20 }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8 }}
-        >
-          <div
-            className="w-3 h-3 rounded-full"
-            style={{ background: "white", opacity: 0.3 }}
-          />
-          <img src={esprintLogo} alt="European Impact Sprint" className="w-28 opacity-50" />
-        </motion.div>
+                {/* Text content */}
+                <div className={`max-w-xs ${isRight ? "text-right" : "text-left"}`}>
+                  <p
+                    className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
+                    style={{ color: `hsl(${p.color})` }}
+                  >
+                    {p.role}
+                  </p>
+                  <h3 className="font-display font-bold text-xl text-white mb-2 leading-tight">
+                    {p.name}
+                  </h3>
+                  <p className="text-sm text-white/50 leading-relaxed">
+                    {p.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
 
       {/* University partners */}

@@ -170,7 +170,7 @@ const HowItWorks = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
+                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-12`}
                   >
                     {/* Placeholder with organic blob shape */}
                     <div className="w-full md:w-5/12 flex items-center justify-center">

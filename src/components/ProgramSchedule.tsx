@@ -43,17 +43,17 @@ const ProgramSchedule = () => {
         {/* SVG curved line that passes through the circles */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
+          viewBox="0 0 100 100"
           preserveAspectRatio="none"
           fill="none"
         >
           <path
-            d="M 25% 0% S 25% 12%, 25% 14% S 75% 26%, 75% 38% S 25% 50%, 25% 62% S 75% 74%, 75% 86% S 50% 95%, 50% 100%"
+            d="M 21 0 C 21 8, 21 10, 21 14 C 21 22, 79 28, 79 38 C 79 48, 21 52, 21 62 C 21 72, 79 78, 79 86 C 79 92, 50 96, 50 100"
             stroke="white"
-            strokeWidth="2"
-            strokeDasharray="8 6"
+            strokeWidth="0.3"
+            strokeDasharray="1 0.8"
             opacity="0.4"
             fill="none"
-            vectorEffect="non-scaling-stroke"
           />
         </svg>
 

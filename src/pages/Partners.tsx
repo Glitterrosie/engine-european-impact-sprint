@@ -66,11 +66,21 @@ const Partners = () => {
                 </a>
               </div>
 
-              {/* Gradient colored block - fades from transparent to full color */}
+              {/* Gradient colored block with logo cutout on right */}
               <div
                 className="flex-1 relative"
                 style={{
                   background: `linear-gradient(to right, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
+                  WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                  WebkitMaskSize: '15% auto, 100% 100%',
+                  WebkitMaskPosition: 'calc(100% - 2rem) center, center center',
+                  WebkitMaskRepeat: 'no-repeat, no-repeat',
+                  WebkitMaskComposite: 'xor',
+                  maskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                  maskSize: '15% auto, 100% 100%',
+                  maskPosition: 'calc(100% - 2rem) center, center center',
+                  maskRepeat: 'no-repeat, no-repeat',
+                  maskComposite: 'exclude',
                 }}
               >
                 {/* Text content */}
@@ -85,24 +95,6 @@ const Partners = () => {
                     {p.desc}
                   </p>
                 </div>
-
-                {/* Logo cutout on the right */}
-                <div
-                  className="absolute right-4 top-0 bottom-0 w-36 md:w-48"
-                  style={{
-                    background: color.bg,
-                    WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                    WebkitMaskSize: '60% auto, 100% 100%',
-                    WebkitMaskPosition: 'center center, center center',
-                    WebkitMaskRepeat: 'no-repeat, no-repeat',
-                    WebkitMaskComposite: 'xor',
-                    maskImage: `url(${p.logo}), linear-gradient(black, black)`,
-                    maskSize: '60% auto, 100% 100%',
-                    maskPosition: 'center center, center center',
-                    maskRepeat: 'no-repeat, no-repeat',
-                    maskComposite: 'exclude',
-                  }}
-                />
               </div>
             </motion.div>
           );

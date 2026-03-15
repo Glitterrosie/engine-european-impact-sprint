@@ -93,7 +93,7 @@ const FAQ = () => {
             style={{
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
-              fontSize: 'clamp(10rem, 20vw, 14rem)',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               letterSpacing: '-0.05em',
               lineHeight: 1,
               backgroundImage: `url(${keyVisual})`,

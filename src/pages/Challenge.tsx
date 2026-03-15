@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
+import challengeBrief from "@/assets/challenge-brief.jpg";
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },

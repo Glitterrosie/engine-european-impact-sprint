@@ -84,14 +84,14 @@ const Benefits = () => {
                 </defs>
                 <rect
                   width="300"
-                  height="400"
+                  height="500"
                   fill={color.bg}
                   mask={`url(#${maskId})`}
                 />
               </svg>
 
               {/* Content */}
-              <div className="relative z-10 p-6 pt-32 md:pt-36 flex flex-col items-start">
+              <div className="relative z-10 p-6 pt-48 md:pt-56 flex flex-col items-start">
                 <div className="w-10 h-0.5 bg-current opacity-30 mb-4" />
                 <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>
                   {b.title}

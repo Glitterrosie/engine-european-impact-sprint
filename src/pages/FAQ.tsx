@@ -95,12 +95,12 @@ const FAQ = () => {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='200' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
             WebkitMaskSize: '100% 400px',
             WebkitMaskRepeat: 'repeat-y',
             maskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='200' text-anchor='middle' dominant-baseline='central' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 400'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='-1'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
             maskSize: '100% 400px',
             maskRepeat: 'repeat-y',

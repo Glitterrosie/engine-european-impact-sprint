@@ -24,7 +24,7 @@ const HowItWorks = () => {
   return (
     <PageLayout
       title="How it Works"
-      subtitle="Students are nominated by their universities, joined into diverse teams and guided by experts throughout their 4-day journey on-site at HPI Potsdam."
+      subtitle="Students are nominated by their universities, joined into diverse teams and guided by experts throughout their 4-day journey on-site at HPI Potsdam/Berlin."
     >
       <div className="space-y-8">
         {/* Collaboration & Criteria + Selection Process */}

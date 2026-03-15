@@ -43,26 +43,21 @@ const faqSections = [
 const FAQ = () => {
   return (
     <div className="min-h-screen relative flex flex-col">
-      {/* Header with key visual background */}
+      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative pt-24 pb-10 px-6 md:px-12 lg:px-16 z-10"
-        style={{
-          backgroundImage: `url(${keyVisual})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
-        }}
+        className="relative pt-24 pb-10 px-6 md:px-12 lg:px-16"
       >
         <img
           src={esprintLogo}
           alt="European Impact Sprint"
-          className="w-48 md:w-64 mb-6"
+          className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
         />
-        <h1 className="font-display font-black text-5xl md:text-7xl text-white">
+        <h1 className="font-display font-black text-5xl md:text-7xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
           FAQ
         </h1>
-        <p className="text-white/70 mt-3 text-lg max-w-xl">
+        <p className="text-white/80 mt-3 text-lg max-w-xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
           Everything you need to know about the European Impact Sprint.
         </p>
       </motion.div>
@@ -75,7 +70,7 @@ const FAQ = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: si * 0.1 }}
-          className="relative px-6 md:px-12 lg:px-16 py-10 z-10"
+          className="relative px-6 md:px-12 lg:px-16 py-10"
           style={{ background: `hsl(${section.hsl})` }}
         >
           <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>
@@ -101,16 +96,8 @@ const FAQ = () => {
         </motion.div>
       ))}
 
-      {/* Bottom key visual section */}
-      <div
-        className="flex-1 min-h-[120px] relative z-10"
-        style={{
-          backgroundImage: `url(${keyVisual})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
-        }}
-      />
-
+      {/* Spacer to let background show at bottom */}
+      <div className="flex-1" />
     </div>
   );
 };

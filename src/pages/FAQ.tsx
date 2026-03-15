@@ -86,36 +86,36 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:flex w-36 lg:w-48 flex-shrink-0 relative overflow-hidden items-center justify-center -ml-6 lg:-ml-10">
+      <div className="hidden md:flex w-40 lg:w-52 flex-shrink-0 relative overflow-hidden items-center justify-center">
         <svg
           className="absolute inset-0 w-full h-full"
-          viewBox="0 0 120 800"
-          preserveAspectRatio="none"
+          viewBox="0 0 200 800"
+          preserveAspectRatio="xMidYMid slice"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="120" height="800">
-              <image href={keyVisual} x="-200" y="0" width="800" height="800" preserveAspectRatio="xMidYMid slice" />
+            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="200" height="800">
+              <image href={keyVisual} x="-300" y="0" width="800" height="800" preserveAspectRatio="xMidYMid slice" />
             </pattern>
             <mask id="faq-text-mask">
-              <rect width="120" height="800" fill="black" />
+              <rect width="200" height="800" fill="black" />
               <text
-                x="60"
+                x="100"
                 y="400"
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontFamily="'TT Lakes Neue', sans-serif"
                 fontWeight="900"
-                fontSize="180"
+                fontSize="220"
                 fill="white"
-                transform="rotate(-90, 60, 400)"
+                transform="rotate(-90, 100, 400)"
                 letterSpacing="-5"
               >
                 FAQ
               </text>
             </mask>
           </defs>
-          <rect width="120" height="800" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
+          <rect width="200" height="800" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
         </svg>
       </div>
     </div>

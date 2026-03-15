@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
-import sapLogoWhite from "@/assets/sap-logo-white.png";
+import sapLogo from "@/assets/sap-logo.png";
 
 const Partners = () => {
   return (
@@ -130,9 +130,9 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="py-12 px-8 md:px-10 text-center"
+          className="bg-esprint-pink rounded-2xl shadow-xl py-10 px-8 md:px-10 text-center"
         >
-          <h2 className="font-display font-bold text-lg text-primary-foreground/60 uppercase tracking-wide mb-8">
+          <h2 className="font-display font-bold text-lg text-esprint-darkblue uppercase tracking-wide mb-8">
             Industry Partners
           </h2>
           <div className="max-w-sm mx-auto">
@@ -143,11 +143,11 @@ const Partners = () => {
               className="flex flex-col items-center group"
             >
               <img
-                src={sapLogoWhite}
+                src={sapLogo}
                 alt="SAP"
-                className="h-10 opacity-60 group-hover:opacity-100 transition-opacity mb-3"
+                className="h-10 group-hover:scale-105 transition-transform mb-3"
               />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary-foreground/40">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-esprint-darkblue/60">
                 Camp Sponsor
               </span>
             </a>

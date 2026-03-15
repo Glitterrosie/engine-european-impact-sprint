@@ -55,18 +55,19 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-start group hover:bg-white/20 transition-colors duration-300"
+              className={`${color.bg} rounded-2xl p-6 flex flex-col items-start group hover:brightness-110 transition-all duration-300 relative overflow-hidden`}
             >
               <span
-                className={`font-display font-black text-7xl md:text-8xl leading-none ${color.num} opacity-90 mb-4`}
+                className="font-display font-black text-7xl md:text-8xl leading-none mb-4 mix-blend-multiply opacity-20 select-none"
+                style={{ color: "rgba(0,0,0,0.35)" }}
               >
                 {num}
               </span>
-              <div className={`w-10 h-1 ${color.border} border-t-2 mb-4`} />
-              <h3 className="font-display font-bold text-lg text-white mb-2 leading-tight">
+              <div className="w-10 h-0.5 bg-current opacity-30 mb-4" />
+              <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>
                 {b.title}
               </h3>
-              <p className="text-sm text-white/70 leading-relaxed">{b.desc}</p>
+              <p className={`text-sm ${color.text} opacity-80 leading-relaxed`}>{b.desc}</p>
             </motion.div>
           );
         })}

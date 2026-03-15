@@ -85,37 +85,28 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* Right side - real cutout text revealing background */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative">
-        <div className="absolute inset-0">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <mask id="faq-cutout-mask">
-                <rect width="100%" height="100%" fill="white" />
-                <text
-                  x="50%"
-                  y="50%"
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontFamily="'TT Lakes Neue', sans-serif"
-                  fontWeight="900"
-                  fontSize="38"
-                  fill="black"
-                  writingMode="tb"
-                  letterSpacing="-0.02em"
-                >
-                  Frequently Asked Questions
-                </text>
-              </mask>
-            </defs>
-            <image
-              href={keyVisual}
-              width="100%"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              mask="url(#faq-cutout-mask)"
-            />
-          </svg>
+      {/* Right side - large FAQ cutout text */}
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            className="font-display font-black"
+            style={{
+              writingMode: 'vertical-rl',
+              textOrientation: 'mixed',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              letterSpacing: '-0.05em',
+              lineHeight: 1,
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
+            }}
+          >
+            Frequently Asked Questions
+          </span>
         </div>
       </div>
     </div>

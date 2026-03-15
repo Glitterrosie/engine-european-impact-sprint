@@ -31,11 +31,11 @@ const benefits = [
 ];
 
 const cardColors = [
-  { bg: "bg-esprint-orange", text: "text-esprint-darkblue", hoverText: "hover:text-esprint-orange" },
-  { bg: "bg-esprint-pink", text: "text-esprint-darkblue", hoverText: "hover:text-esprint-pink" },
-  { bg: "bg-esprint-purple", text: "text-primary-foreground", hoverText: "hover:text-esprint-purple" },
-  { bg: "bg-esprint-red", text: "text-primary-foreground", hoverText: "hover:text-esprint-red" },
-  { bg: "bg-esprint-darkblue", text: "text-primary-foreground", hoverText: "hover:text-esprint-darkblue" },
+  { color: "text-esprint-orange", border: "border-esprint-orange", num: "text-esprint-orange" },
+  { color: "text-esprint-pink", border: "border-esprint-pink", num: "text-esprint-pink" },
+  { color: "text-esprint-purple", border: "border-esprint-purple", num: "text-esprint-purple" },
+  { color: "text-esprint-red", border: "border-esprint-red", num: "text-esprint-red" },
+  { color: "text-esprint-darkblue", border: "border-esprint-darkblue", num: "text-esprint-darkblue" },
 ];
 
 const Benefits = () => {
@@ -43,30 +43,33 @@ const Benefits = () => {
     <PageLayout
       title="Program Benefits"
       subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
-      noPadBottom
     >
-      <div className="relative rounded-t-2xl overflow-hidden shadow-xl flex-1">
-        <div className="grid md:grid-cols-5 h-full">
-          {benefits.map((b, i) => {
-            const color = cardColors[i];
-            return (
-              <motion.div
-                key={b.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className={`${color.bg} ${color.text} ${color.hoverText} hover:bg-white p-8 text-center transition-all duration-300 cursor-default group`}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-4">
+        {benefits.map((b, i) => {
+          const color = cardColors[i];
+          const num = String(i + 1).padStart(2, "0");
+          return (
+            <motion.div
+              key={b.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-start group hover:bg-white/20 transition-colors duration-300"
+            >
+              <span
+                className={`font-display font-black text-7xl md:text-8xl leading-none ${color.num} opacity-90 mb-4`}
               >
-                <div className="h-12 w-12 rounded-lg bg-background/15 group-hover:bg-current/10 flex items-center justify-center mb-4 mx-auto transition-colors duration-300">
-                  <b.icon className="h-6 w-6" />
-                </div>
-                <h3 className="font-display font-bold mb-2">{b.title}</h3>
-                <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
+                {num}
+              </span>
+              <div className={`w-10 h-1 ${color.border} border-t-2 mb-4`} />
+              <h3 className="font-display font-bold text-lg text-white mb-2 leading-tight">
+                {b.title}
+              </h3>
+              <p className="text-sm text-white/70 leading-relaxed">{b.desc}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </PageLayout>
   );

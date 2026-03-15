@@ -31,7 +31,7 @@ const faqSections = [
 
 const FAQ = () => {
   return (
-    <div className="min-h-screen bg-white relative flex">
+    <div className="min-h-screen bg-white relative flex overflow-hidden">
       {/* Main content */}
       <div className="flex-1 flex flex-col pt-24 pb-20 px-6 md:px-12 lg:px-16">
         {/* Logo - inverted to dark/blue */}

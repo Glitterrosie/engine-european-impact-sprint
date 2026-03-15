@@ -86,7 +86,7 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:flex w-24 lg:w-32 flex-shrink-0 relative overflow-hidden items-center justify-center">
+      <div className="hidden md:flex w-36 lg:w-48 flex-shrink-0 relative overflow-hidden items-center justify-center -ml-6 lg:-ml-10">
         <svg
           className="absolute inset-0 w-full h-full"
           viewBox="0 0 120 800"

@@ -67,9 +67,9 @@ const Partners = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`flex items-center gap-8 md:gap-12 ${i > 0 ? "-mt-4" : ""} ${
+                className={`flex items-center gap-8 md:gap-16 w-full ${i > 0 ? "-mt-4" : ""} ${
                   isRight ? "flex-row-reverse" : "flex-row"
-                }`}
+                } ${isRight ? "justify-start pl-[10%]" : "justify-end pr-[10%]"}`}
                 style={{ zIndex: 10 + i }}
               >
                 {/* Circle assembly */}

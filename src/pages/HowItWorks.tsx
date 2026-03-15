@@ -135,7 +135,7 @@ const HowItWorks = () => {
               />
             </svg>
 
-            <div className="relative z-10 space-y-2 md:space-y-0">
+            <div className="relative z-10 space-y-0 md:-space-y-6">
               {schedule.map((s, i) => {
                 const isEven = i % 2 === 0;
                 const bgSolid = [

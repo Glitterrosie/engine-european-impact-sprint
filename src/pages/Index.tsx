@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
+import hpiLogo from "@/assets/hpi-logo-white.png";
 import esprintLogo from "@/assets/esprint-logo-date-white.svg";
 
 const stats = [
@@ -184,7 +184,7 @@ const Index = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <img src={hpiEngineLogo} alt="HPI Engine" className="h-7 mb-8" />
+            <img src={hpiLogo} alt="Hasso Plattner Institute" className="h-7 mb-8" />
           </motion.div>
 
           <motion.div

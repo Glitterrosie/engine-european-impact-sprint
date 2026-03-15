@@ -53,9 +53,9 @@ const Partners = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col md:flex-row-reverse overflow-hidden relative"
+              className="flex flex-col md:flex-row overflow-hidden relative"
             >
-              {/* White logo area on the right - transparent, key visual shows through */}
+              {/* White logo area on the left - transparent, key visual shows through */}
               <div className="p-10 md:p-12 flex items-center justify-center md:w-64 flex-shrink-0 relative z-10">
                 <a href={p.link} target="_blank" rel="noopener noreferrer">
                   <img
@@ -66,25 +66,25 @@ const Partners = () => {
                 </a>
               </div>
 
-              {/* Gradient colored block with logo cutout on left */}
+              {/* Gradient colored block with logo cutout on right */}
               <div
                 className="flex-1 relative"
                 style={{
-                  background: `linear-gradient(to left, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
+                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
                   WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
                   WebkitMaskSize: '8rem auto, 100% 100%',
-                  WebkitMaskPosition: '3rem center, center center',
+                  WebkitMaskPosition: 'calc(100% - 3rem) center, center center',
                   WebkitMaskRepeat: 'no-repeat, no-repeat',
                   WebkitMaskComposite: 'xor',
                   maskImage: `url(${p.logo}), linear-gradient(black, black)`,
                   maskSize: '8rem auto, 100% 100%',
-                  maskPosition: '3rem center, center center',
+                  maskPosition: 'calc(100% - 3rem) center, center center',
                   maskRepeat: 'no-repeat, no-repeat',
                   maskComposite: 'exclude',
                 }}
               >
                 {/* Text content */}
-                <div className="relative z-10 p-8 md:p-10 md:pl-64 flex flex-col justify-center h-full">
+                <div className="relative z-10 p-8 md:p-10 md:pr-64 flex flex-col justify-center h-full">
                   <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-2`}>
                     {p.role}
                   </p>

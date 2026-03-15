@@ -93,7 +93,6 @@ const ProgramSchedule = () => {
         </div>
       </div>
     </div>
-    </div>
   );
 };
 

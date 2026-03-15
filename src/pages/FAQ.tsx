@@ -85,29 +85,48 @@ const FAQ = () => {
         </div>
       </div>
 
-      {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span
-            className="font-display font-black"
-            style={{
-              writingMode: 'vertical-rl',
-              textOrientation: 'mixed',
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              letterSpacing: '-0.05em',
-              lineHeight: 1,
-              backgroundImage: `url(${keyVisual})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-            }}
+      {/* Right side - SVG cutout text revealing key visual */}
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative">
+        <div className="absolute inset-0">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 200 900"
+            preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Frequently Asked Questions
-          </span>
+            <defs>
+              <mask id="faq-text-mask">
+                <rect width="200" height="900" fill="white" />
+                <text
+                  x="100"
+                  y="450"
+                  textAnchor="middle"
+                  dominantBaseline="central"
+                  fontFamily="'TT Lakes Neue', sans-serif"
+                  fontWeight="900"
+                  fontSize="38"
+                  fill="black"
+                  writingMode="tb"
+                  letterSpacing="-1"
+                >
+                  Frequently Asked Questions
+                </text>
+              </mask>
+            </defs>
+            <rect
+              width="200"
+              height="900"
+              fill="white"
+              mask="url(#faq-text-mask)"
+            />
+          </svg>
         </div>
+        {/* Key visual behind the cutout */}
+        <img
+          src={keyVisual}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+        />
       </div>
     </div>
   );

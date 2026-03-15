@@ -29,7 +29,7 @@ const partners = [
     logo: sapLogoWhite,
     logoAlt: "SAP",
     logoClass: "h-14",
-    logoMaskSize: "45%",
+    logoMaskSize: "30%",
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",

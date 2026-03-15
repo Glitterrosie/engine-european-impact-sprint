@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogoWhite from "@/assets/sap-logo-white.png";
+import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const partners = [
   {
@@ -11,8 +12,14 @@ const partners = [
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",
-    desc: "Germany's center of excellence for digital engineering, advancing research in IT, cyber security, and entrepreneurship.",
+    desc: "Germany's center of excellence for digital engineering.",
     color: "var(--esprint-orange)",
+    // Position on the canvas (percentage-based)
+    cx: 25,
+    cy: 10,
+    size: 140,
+    rings: 4,
+    textSide: "left" as const,
   },
   {
     logo: hpiEngineLogo,
@@ -20,8 +27,13 @@ const partners = [
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",
-    desc: "One of Europe's leading startup ecosystems, empowering tech talent to become founders through innovation programs.",
+    desc: "Europe's leading startup ecosystem for tech founders.",
     color: "var(--esprint-red)",
+    cx: 55,
+    cy: 25,
+    size: 110,
+    rings: 3,
+    textSide: "right" as const,
   },
   {
     logo: sapLogoWhite,
@@ -29,103 +41,167 @@ const partners = [
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",
-    desc: "Europe's largest software company, partnering with HPI to empower the next generation of tech innovators.",
+    desc: "Europe's largest software company and global leader in business AI.",
     color: "var(--esprint-purple)",
+    cx: 18,
+    cy: 45,
+    size: 120,
+    rings: 3,
+    textSide: "left" as const,
   },
 ];
 
-const blobPaths = [
-  "polygon(10% 0%, 90% 5%, 100% 40%, 95% 85%, 70% 100%, 20% 95%, 0% 60%, 5% 20%)",
-  "polygon(15% 5%, 85% 0%, 100% 35%, 90% 90%, 60% 100%, 10% 90%, 0% 50%, 5% 15%)",
-  "polygon(5% 10%, 80% 0%, 100% 45%, 95% 80%, 75% 100%, 15% 95%, 0% 55%, 10% 20%)",
-];
-
-const layouts = [
-  { container: "flex-row-reverse", textAlign: "text-right pr-6", imageSide: "left" },
-  { container: "flex-row", textAlign: "text-left pl-6", imageSide: "right" },
-  { container: "flex-row-reverse", textAlign: "text-right pr-6", imageSide: "left" },
-];
-
 const Partners = () => {
+  // Bottom convergence point
+  const convergenceX = 50;
+  const convergenceY = 88;
+
   return (
     <PageLayout
       title="Partners"
       subtitle="The European Impact Sprint is made possible by leading institutions driving innovation, education, and technology across Europe."
       noPadBottom
     >
-      <div className="flex flex-col -space-y-8 md:-space-y-16 mt-8 flex-1 px-4 md:px-8 lg:px-16 pb-8">
-        {partners.map((p, i) => {
-          const layout = layouts[i];
-          const isLeft = layout.imageSide === "left";
+      <div className="relative w-full max-w-3xl mx-auto flex-1" style={{ minHeight: 700 }}>
+        {/* SVG layer for connecting curves */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          style={{ zIndex: 0 }}
+        >
+          {partners.map((p, i) => {
+            const midY = (p.cy + convergenceY) / 2;
+            return (
+              <motion.path
+                key={i}
+                d={`M ${p.cx} ${p.cy + (p.size / 14)} C ${p.cx} ${midY}, ${convergenceX} ${midY}, ${convergenceX} ${convergenceY}`}
+                fill="none"
+                stroke="white"
+                strokeOpacity={0.12}
+                strokeWidth={0.3}
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3 + i * 0.2 }}
+              />
+            );
+          })}
+        </svg>
 
+        {/* Partner circles */}
+        {partners.map((p, i) => {
+          const totalRingSize = p.size + p.rings * 20;
           return (
             <motion.div
               key={p.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative"
-              style={{ zIndex: partners.length - i }}
+              className="absolute"
+              style={{
+                left: `${p.cx}%`,
+                top: `${p.cy}%`,
+                transform: "translate(-50%, -50%)",
+                zIndex: 10 + i,
+              }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              <div className={`flex ${layout.container} items-center`}>
-                {/* Circle with logo + overlapping blob */}
-                <div className="flex-shrink-0 relative" style={{ width: "clamp(180px, 25vw, 300px)" }}>
-                  {/* Blob image behind/overlapping the circle */}
+              {/* Concentric rings */}
+              <div className="relative flex items-center justify-center" style={{ width: totalRingSize, height: totalRingSize }}>
+                {Array.from({ length: p.rings }).map((_, ri) => (
                   <div
-                    className="absolute w-[120%] aspect-[4/3] bg-white/5 backdrop-blur-sm border border-white/10"
+                    key={ri}
+                    className="absolute rounded-full border border-white/10"
                     style={{
-                      clipPath: blobPaths[i],
-                      top: "15%",
-                      [isLeft ? "left" : "right"]: "-30%",
-                      zIndex: 0,
+                      width: p.size + (ri + 1) * 20,
+                      height: p.size + (ri + 1) * 20,
                     }}
-                  >
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-white/20 text-xs uppercase tracking-widest">Photo</span>
-                    </div>
-                  </div>
+                  />
+                ))}
 
-                  {/* Color circle */}
-                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="relative z-10 block">
-                    <motion.div
-                      className="rounded-full flex items-center justify-center mx-auto"
-                      style={{
-                        width: "clamp(120px, 15vw, 200px)",
-                        height: "clamp(120px, 15vw, 200px)",
-                        background: `hsl(${p.color})`,
-                      }}
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <img
-                        src={p.logo}
-                        alt={p.logoAlt}
-                        className="w-2/3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)]"
-                      />
-                    </motion.div>
-                  </a>
-                </div>
-
-                {/* Text */}
-                <div className={`flex-1 ${layout.textAlign} max-w-sm`}>
-                  <p
-                    className="text-[10px] font-bold uppercase tracking-[0.25em] mb-1"
-                    style={{ color: `hsl(${p.color})` }}
+                {/* Colored circle with logo */}
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative z-10 group"
+                >
+                  <motion.div
+                    className="rounded-full flex items-center justify-center shadow-lg"
+                    style={{
+                      width: p.size,
+                      height: p.size,
+                      background: `hsl(${p.color})`,
+                      boxShadow: `0 4px 30px hsl(${p.color} / 0.3)`,
+                    }}
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {p.role}
-                  </p>
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-white mb-2 leading-tight">
-                    {p.name}
-                  </h3>
-                  <p className="text-sm text-white/60 leading-relaxed">
-                    {p.desc}
-                  </p>
-                </div>
+                    <img
+                      src={p.logo}
+                      alt={p.logoAlt}
+                      className="w-3/5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.25)]"
+                    />
+                  </motion.div>
+                </a>
+              </div>
+
+              {/* Curved text label */}
+              <div
+                className={`absolute top-1/2 -translate-y-1/2 whitespace-nowrap ${
+                  p.textSide === "left"
+                    ? "right-full pr-4 text-right"
+                    : "left-full pl-4 text-left"
+                }`}
+              >
+                <p
+                  className="text-[10px] font-bold uppercase tracking-[0.2em] mb-0.5"
+                  style={{ color: `hsl(${p.color})` }}
+                >
+                  {p.role}
+                </p>
+                <h3 className="font-display font-bold text-sm md:text-base text-white leading-tight">
+                  {p.name}
+                </h3>
+                <p className="text-[11px] text-white/50 leading-snug mt-1 max-w-[180px]">
+                  {p.desc}
+                </p>
+              </div>
+
+              {/* Role badge (like the percentage badges in the reference) */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 px-3 py-1 rounded-sm"
+                style={{
+                  bottom: -12,
+                  background: "hsl(var(--esprint-darkblue))",
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  zIndex: 20,
+                }}
+              >
+                <span className="text-[10px] font-bold text-white uppercase tracking-wider">
+                  {p.role}
+                </span>
               </div>
             </motion.div>
           );
         })}
+
+        {/* Bottom convergence: eSprint logo */}
+        <motion.div
+          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          style={{ top: `${convergenceY}%`, zIndex: 20 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+        >
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ background: "white", opacity: 0.3 }}
+          />
+          <img src={esprintLogo} alt="European Impact Sprint" className="w-28 opacity-50" />
+        </motion.div>
       </div>
 
       {/* University partners */}

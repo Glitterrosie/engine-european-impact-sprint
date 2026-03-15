@@ -30,6 +30,14 @@ const benefits = [
   },
 ];
 
+const cardColors = [
+  "bg-esprint-orange text-esprint-darkblue",
+  "bg-esprint-pink text-esprint-darkblue",
+  "bg-esprint-purple text-primary-foreground",
+  "bg-esprint-red text-primary-foreground",
+  "bg-esprint-darkblue text-primary-foreground",
+];
+
 const Benefits = () => {
   return (
     <PageLayout
@@ -46,13 +54,13 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-white rounded-2xl p-8 shadow-xl text-center"
+              className={`${cardColors[i]} rounded-2xl p-8 shadow-xl text-center`}
             >
-              <div className="h-12 w-12 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 mx-auto">
-                <b.icon className="h-6 w-6 text-esprint-purple" />
+              <div className="h-12 w-12 rounded-lg bg-background/15 flex items-center justify-center mb-4 mx-auto">
+                <b.icon className="h-6 w-6" />
               </div>
-              <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+              <h3 className="font-display font-bold mb-2">{b.title}</h3>
+              <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -65,13 +73,13 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: (i + 3) * 0.08 }}
-              className="bg-white rounded-2xl p-8 shadow-xl text-center"
+              className={`${cardColors[i + 3]} rounded-2xl p-8 shadow-xl text-center`}
             >
-              <div className="h-12 w-12 rounded-lg bg-esprint-purple/10 flex items-center justify-center mb-4 mx-auto">
-                <b.icon className="h-6 w-6 text-esprint-purple" />
+              <div className="h-12 w-12 rounded-lg bg-background/15 flex items-center justify-center mb-4 mx-auto">
+                <b.icon className="h-6 w-6" />
               </div>
-              <h3 className="font-display font-bold text-gray-900 mb-2">{b.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+              <h3 className="font-display font-bold mb-2">{b.title}</h3>
+              <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
             </motion.div>
           ))}
         </div>

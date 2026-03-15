@@ -23,7 +23,7 @@ const Partners = () => {
             {/* Left: Logo + Text */}
             <div className="p-8 md:p-10 flex flex-col text-esprint-darkblue">
               <div className="flex items-center gap-4 mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host & Organizer</span>
+                <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
               </div>
               <div className="mb-6">
                 <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-12" />

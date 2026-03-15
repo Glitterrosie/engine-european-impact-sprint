@@ -28,7 +28,7 @@ const ProgramSchedule = () => {
         Program Schedule
       </h2>
       <p className="text-primary-foreground/70 leading-relaxed mb-12">
-        Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion.
+        Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion. More program details will be added shortly.
       </p>
 
       <div className="relative">

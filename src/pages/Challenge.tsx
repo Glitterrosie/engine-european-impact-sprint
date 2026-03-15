@@ -15,7 +15,7 @@ const infoItems = [
 const Challenge = () => {
   return (
     <PageLayout title="The Challenge" noPadBottom>
-      <div className="flex-1 grid lg:grid-cols-2 gap-6 items-stretch">
+      <div className="flex-1 grid lg:grid-cols-2 gap-6">
         {/* Program Brief – transparent */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

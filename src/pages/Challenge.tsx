@@ -70,7 +70,13 @@ const Challenge = () => {
                 </span>
               </div>
               <div className="px-5 md:px-6 py-4 flex items-center min-w-0">
-                <p className="text-sm leading-relaxed opacity-90">{item.value}</p>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-sm leading-relaxed opacity-90 underline underline-offset-2 hover:opacity-100 transition-opacity">
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="text-sm leading-relaxed opacity-90">{item.value}</p>
+                )}
               </div>
             </motion.div>
           ))}

@@ -26,6 +26,13 @@ const borderColors = [
   "border-esprint-red",
 ];
 
+const textOnBg = [
+  "text-esprint-darkblue",
+  "text-esprint-darkblue",
+  "text-primary-foreground",
+  "text-primary-foreground",
+];
+
 const ProgramSchedule = () => {
   return (
     <div className="max-w-4xl mx-auto">

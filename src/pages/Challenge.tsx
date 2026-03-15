@@ -43,14 +43,14 @@ const Challenge = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className={`${item.bg} ${item.text} flex items-stretch flex-1`}
+                className={`${item.bg} ${item.text} flex`}
               >
-                <div className={`w-28 md:w-36 shrink-0 px-5 md:px-6 py-3 flex items-center border-r ${item.accent}`}>
+                <div className={`w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r ${item.accent}`}>
                   <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">
                     {item.label}
                   </span>
                 </div>
-                <div className="px-5 md:px-6 py-3 flex items-center">
+                <div className="px-5 md:px-6 py-4 flex items-center min-w-0">
                   <p className="text-sm leading-relaxed opacity-90">{item.value}</p>
                 </div>
               </motion.div>

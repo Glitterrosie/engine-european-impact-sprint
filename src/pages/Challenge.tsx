@@ -36,8 +36,8 @@ const Challenge = () => {
 
           {/* Key Facts – right, colored rows */}
           <div className="flex flex-col">
-            <div className="bg-esprint-darkblue px-5 md:px-6 py-4">
-              <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide">
+            <div className="bg-esprint-darkblue p-8 md:p-10 pb-4">
+              <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
                 Key Information
               </h2>
             </div>

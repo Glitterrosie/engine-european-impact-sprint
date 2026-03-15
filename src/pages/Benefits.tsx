@@ -56,21 +56,21 @@ const Benefits = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300"
+              className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300 min-h-[420px] md:min-h-[480px]"
             >
               {/* SVG background with number cutout */}
               <svg
                 className="absolute inset-0 w-full h-full"
-                viewBox="0 0 300 400"
+                viewBox="0 0 300 500"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
                   <mask id={maskId}>
-                    <rect width="300" height="400" fill="white" />
+                    <rect width="300" height="500" fill="white" />
                     <text
                       x="150"
-                      y="130"
+                      y="120"
                       textAnchor="middle"
                       dominantBaseline="central"
                       fontFamily="'TT Lakes Neue', sans-serif"
@@ -84,14 +84,14 @@ const Benefits = () => {
                 </defs>
                 <rect
                   width="300"
-                  height="400"
+                  height="500"
                   fill={color.bg}
                   mask={`url(#${maskId})`}
                 />
               </svg>
 
               {/* Content */}
-              <div className="relative z-10 p-6 pt-32 md:pt-36 flex flex-col items-start">
+              <div className="relative z-10 p-6 pt-48 md:pt-56 flex flex-col items-start">
                 <div className="w-10 h-0.5 bg-current opacity-30 mb-4" />
                 <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>
                   {b.title}

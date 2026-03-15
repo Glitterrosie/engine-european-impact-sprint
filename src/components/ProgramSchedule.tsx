@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
+import scheduleKickoff from "@/assets/schedule-kickoff.jpg";
+import schedulePrototyping from "@/assets/schedule-prototyping.png";
+import scheduleRefining from "@/assets/schedule-refining.jpg";
+import schedulePresentation from "@/assets/schedule-presentation.jpg";
 
+const scheduleImages = [scheduleKickoff, schedulePrototyping, scheduleRefining, schedulePresentation];
 const schedule = [
   { day: "Day 1 – 25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team" },
   { day: "Day 2 – 26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution." },

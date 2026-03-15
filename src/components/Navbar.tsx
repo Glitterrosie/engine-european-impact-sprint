@@ -18,6 +18,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isHome = location.pathname === "/";
+  const isWhitePage = location.pathname === "/faq";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);

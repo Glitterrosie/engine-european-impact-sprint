@@ -30,12 +30,12 @@ const Challenge = () => {
   return (
     <PageLayout title="The Challenge" noPadBottom>
       <div className="flex-1 grid lg:grid-cols-2 gap-6 items-stretch">
-        {/* Program Brief – transparent */}
+        {/* Program Brief */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="p-8 md:p-10 pb-0 flex flex-col h-full"
+          className="bg-esprint-darkblue rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full"
         >
           <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">
             Program Brief
@@ -43,12 +43,12 @@ const Challenge = () => {
           <p className="text-primary-foreground/80 leading-relaxed">
             The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...
           </p>
-          <div className="mt-10 rounded-xl overflow-hidden flex-1 min-h-[200px]">
+          <div className="mt-6 rounded-xl overflow-hidden flex-1 min-h-[200px]">
             <img src={challengeBrief} alt="Students collaborating at HPI campus" className="w-full h-full object-cover" />
           </div>
         </motion.div>
 
-        {/* Key Information – colored rows */}
+        {/* Key Information */}
         <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
           <div className="bg-esprint-darkblue p-8 md:p-10 pb-4">
             <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
@@ -86,7 +86,7 @@ const Challenge = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-darkblue rounded-t-2xl p-8 md:p-10 text-center shadow-xl col-span-full"
+          className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl col-span-full"
         >
           <h2 className="font-display font-bold text-2xl text-primary-foreground mb-8">Partner Universities Coming Soon</h2>
           <div className="max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ const Challenge = () => {
         </motion.div>
 
         {/* Program Schedule */}
-        <div className="col-span-full mt-4">
+        <div className="col-span-full">
           <ProgramSchedule />
         </div>
       </div>

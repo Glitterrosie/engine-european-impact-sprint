@@ -1,6 +1,19 @@
 import { motion } from "framer-motion";
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import PageLayout from "@/components/PageLayout";
 import challengeBrief from "@/assets/challenge-brief.jpg";
+
+const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
+
+const EUROPE_COUNTRIES = [
+  "Albania","Andorra","Austria","Belarus","Belgium","Bosnia and Herzegovina",
+  "Bulgaria","Croatia","Cyprus","Czech Republic","Czechia","Denmark","Estonia","Finland",
+  "France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kosovo",
+  "Latvia","Lithuania","Luxembourg","Malta","Moldova","Monaco","Montenegro",
+  "Netherlands","North Macedonia","Norway","Poland","Portugal","Romania",
+  "Russia","San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden",
+  "Switzerland","Ukraine","United Kingdom","Vatican City"
+];
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },

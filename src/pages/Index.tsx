@@ -76,8 +76,8 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4">
               {stats.map((stat, i) => {
                 const colors = [
-                  "bg-esprint-orange",
-                  "bg-esprint-pink",
+                  "bg-esprint-orange text-esprint-darkblue",
+                  "bg-esprint-pink text-esprint-darkblue",
                   "bg-esprint-red",
                   "bg-esprint-purple",
                 ];

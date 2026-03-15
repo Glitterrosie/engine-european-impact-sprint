@@ -76,8 +76,8 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4">
               {stats.map((stat, i) => {
                 const colors = [
-                  "bg-esprint-orange",
-                  "bg-esprint-pink",
+                  "bg-esprint-orange text-esprint-darkblue",
+                  "bg-esprint-pink text-esprint-darkblue",
                   "bg-esprint-red",
                   "bg-esprint-purple",
                 ];
@@ -90,10 +90,10 @@ const Index = () => {
                     transition={{ delay: i * 0.1 }}
                     className={`${colors[i]} p-8 text-center`}
                   >
-                    <p className="font-display font-black text-5xl md:text-6xl text-primary-foreground">
+                    <p className="font-display font-black text-5xl md:text-6xl">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-primary-foreground/70 font-semibold text-sm">{stat.label}</p>
+                    <p className="mt-2 font-semibold text-sm opacity-70">{stat.label}</p>
                   </motion.div>
                 );
               })}
@@ -104,7 +104,7 @@ const Index = () => {
               {[
                 { title: "The Challenge", desc: "An intensive innovation program bringing together 60 CS students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
                 { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-darkblue text-primary-foreground" },
-                { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-primary-foreground" },
+                { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-esprint-darkblue" },
               ].map((card, i) => (
                 <motion.div
                   key={card.title}

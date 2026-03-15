@@ -145,7 +145,7 @@ const Partners = () => {
               <img
                 src={sapLogo}
                 alt="SAP"
-                className="h-10 group-hover:scale-105 transition-transform mb-3"
+                className="h-10 group-hover:scale-105 transition-transform mb-3 brightness-0"
               />
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-esprint-darkblue/60">
                 Camp Sponsor

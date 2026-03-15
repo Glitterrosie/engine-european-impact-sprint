@@ -88,7 +88,7 @@ const Partners = () => {
 
                 {/* Logo cutout on the right */}
                 <div
-                  className="absolute right-4 top-0 bottom-0 w-36 md:w-48 opacity-20"
+                  className="absolute right-4 top-0 bottom-0 w-36 md:w-48"
                   style={{
                     background: color.bg,
                     WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,

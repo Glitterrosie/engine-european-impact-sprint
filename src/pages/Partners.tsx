@@ -22,7 +22,7 @@ const Partners = () => {
           transition={{ delay: 0.1 }}
           className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-5 md:p-6 text-primary-foreground">
+          <div className="p-4 md:p-5 text-primary-foreground">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
             </div>

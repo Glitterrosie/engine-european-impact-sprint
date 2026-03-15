@@ -86,36 +86,36 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0 overflow-hidden">
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0">
         <svg
           className="absolute inset-0 w-full h-full"
-          viewBox="0 0 200 800"
+          viewBox="0 0 200 1000"
           preserveAspectRatio="xMidYMid slice"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="200" height="800">
-              <image href={keyVisual} x="-300" y="0" width="800" height="800" preserveAspectRatio="xMidYMid slice" />
+            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="200" height="1000">
+              <image href={keyVisual} x="-300" y="0" width="1000" height="1000" preserveAspectRatio="xMidYMid slice" />
             </pattern>
             <mask id="faq-text-mask">
-              <rect width="200" height="800" fill="black" />
+              <rect width="200" height="1000" fill="black" />
               <text
-                x="40"
-                y="400"
+                x="100"
+                y="500"
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontFamily="'TT Lakes Neue', sans-serif"
                 fontWeight="900"
-                fontSize="220"
+                fontSize="200"
                 fill="white"
-                transform="rotate(-90, 40, 400)"
+                transform="rotate(-90, 100, 500)"
                 letterSpacing="-5"
               >
                 FAQ
               </text>
             </mask>
           </defs>
-          <rect width="200" height="800" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
+          <rect width="200" height="1000" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
         </svg>
       </div>
     </div>

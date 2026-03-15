@@ -13,6 +13,7 @@ import Benefits from "./pages/Benefits";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import keyVisual from "@/assets/key-visual.png";
 
@@ -37,7 +38,8 @@ const App = () => (
           <Route path="/benefits" element={<Benefits />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
+           <Route path="/faq" element={<FAQ />} />
+           <Route path="/imprint" element={<Imprint />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

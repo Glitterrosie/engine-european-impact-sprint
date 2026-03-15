@@ -78,10 +78,10 @@ const Partners = () => {
                   <div
                     className="absolute top-1/2 -translate-y-1/2 h-[2px]"
                     style={{
-                      background: `hsl(${p.color})`,
-                      width: dashedSize + 40,
+                      background: `linear-gradient(${isRight ? "to left" : "to right"}, hsl(${p.color}), hsl(${p.color} / 0))`,
+                      width: "200vw",
                       [isRight ? "right" : "left"]: -20,
-                      opacity: 0.5,
+                      opacity: 0.3,
                     }}
                   />
 

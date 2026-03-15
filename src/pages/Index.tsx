@@ -17,13 +17,32 @@ const stats = [
 const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string; label: string }; colorClass: string; dotCount: number; delay: number }) => {
   const [hovered, setHovered] = useState(false);
 
-  // Pre-generate random positions for dots
-  const dots = Array.from({ length: dotCount }, (_, di) => ({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 0.4,
-    size: 4 + Math.random() * 3,
-  }));
+  // Generate dots in concentric rings, pulled toward center
+  const dots = (() => {
+    const result: { x: number; y: number; delay: number; size: number }[] = [];
+    const totalDots = dotCount;
+    // Distribute dots in rings
+    let placed = 0;
+    let ring = 0;
+    while (placed < totalDots) {
+      const radius = ring === 0 ? 0 : 12 + ring * 10;
+      const dotsInRing = ring === 0 ? 1 : Math.min(Math.floor(ring * 6), totalDots - placed);
+      for (let j = 0; j < dotsInRing && placed < totalDots; j++) {
+        const angle = (j / dotsInRing) * Math.PI * 2 + ring * 0.3;
+        // Add slight randomness for organic feel
+        const r = radius + (Math.random() - 0.5) * 6;
+        result.push({
+          x: 50 + Math.cos(angle) * r,
+          y: 50 + Math.sin(angle) * r,
+          delay: ring * 0.06 + j * 0.015,
+          size: Math.max(3, 5 - ring * 0.3),
+        });
+        placed++;
+      }
+      ring++;
+    }
+    return result;
+  })();
 
   return (
     <motion.div
@@ -32,6 +51,7 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
       viewport={{ once: true }}
       transition={{ delay }}
       className={`${colorClass} p-8 text-center relative overflow-hidden cursor-default`}
+      style={{ minHeight: 140 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -39,7 +59,7 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
       <AnimatePresence>
         {hovered && (
           <motion.div
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -48,27 +68,40 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
             {dots.map((dot, di) => (
               <motion.div
                 key={di}
-                className="absolute rounded-full bg-current opacity-20"
+                className="absolute rounded-full bg-white"
                 style={{
                   width: dot.size,
                   height: dot.size,
                   left: `${dot.x}%`,
                   top: `${dot.y}%`,
+                  marginLeft: -dot.size / 2,
+                  marginTop: -dot.size / 2,
                 }}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0 }}
-                transition={{ duration: 0.25, delay: dot.delay }}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 0.9 }}
+                exit={{ scale: 0, opacity: 0 }}
+                transition={{ duration: 0.3, delay: dot.delay }}
               />
             ))}
           </motion.div>
         )}
       </AnimatePresence>
 
-      <p className="font-display font-black text-5xl md:text-6xl relative z-10">
+      {/* Number - fades out on hover */}
+      <motion.p
+        className="font-display font-black text-5xl md:text-6xl relative z-0"
+        animate={{ opacity: hovered ? 0 : 1, scale: hovered ? 0.8 : 1 }}
+        transition={{ duration: 0.25 }}
+      >
         {stat.value}
-      </p>
-      <p className="mt-2 font-semibold text-sm opacity-70 relative z-10">{stat.label}</p>
+      </motion.p>
+      <motion.p
+        className="mt-2 font-semibold text-sm opacity-70 relative z-0"
+        animate={{ opacity: hovered ? 0 : 1 }}
+        transition={{ duration: 0.2 }}
+      >
+        {stat.label}
+      </motion.p>
     </motion.div>
   );
 };

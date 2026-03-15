@@ -100,7 +100,7 @@ const FAQ = () => {
             <mask id="faq-text-mask">
               <rect width="200" height="800" fill="black" />
               <text
-                x="70"
+                x="40"
                 y="400"
                 textAnchor="middle"
                 dominantBaseline="central"
@@ -108,7 +108,7 @@ const FAQ = () => {
                 fontWeight="900"
                 fontSize="220"
                 fill="white"
-                transform="rotate(-90, 70, 400)"
+                transform="rotate(-90, 40, 400)"
                 letterSpacing="-5"
               >
                 FAQ

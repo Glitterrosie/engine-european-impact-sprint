@@ -86,7 +86,7 @@ const FAQ = () => {
       </div>
 
       {/* Right side - SVG cutout text revealing key visual */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
+      <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white">
         {/* Key visual image, clipped by repeating text shape */}
         <div
           className="absolute inset-0"

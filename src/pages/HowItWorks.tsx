@@ -106,43 +106,31 @@ const HowItWorks = () => {
           </div>
         </motion.div>
 
-        {/* Schedule – curved line with alternating image/text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
-        >
-          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
+        {/* Schedule – curved line with alternating placeholders */}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-bold text-lg text-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
             Program Schedule
           </h2>
 
           <div className="relative">
-            {/* SVG curved line */}
+            {/* SVG curved white line */}
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-full pointer-events-none hidden md:block"
-              viewBox="0 0 800 1200"
+              viewBox="0 0 600 900"
               preserveAspectRatio="none"
               fill="none"
             >
               <path
-                d="M 400 0 C 150 150, 650 250, 400 350 C 150 450, 650 550, 400 650 C 150 750, 650 850, 400 950 C 250 1050, 400 1100, 400 1200"
-                stroke="url(#curveGradient)"
-                strokeWidth="3"
+                d="M 300 0 C 100 100, 500 200, 300 280 C 100 360, 500 440, 300 530 C 100 620, 500 700, 300 780 C 200 830, 300 870, 300 900"
+                stroke="white"
+                strokeWidth="2.5"
                 strokeDasharray="8 6"
+                opacity="0.4"
                 fill="none"
               />
-              <defs>
-                <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="hsl(25, 96%, 69%)" />
-                  <stop offset="33%" stopColor="hsl(340, 77%, 70%)" />
-                  <stop offset="66%" stopColor="hsl(258, 40%, 53%)" />
-                  <stop offset="100%" stopColor="hsl(350, 52%, 48%)" />
-                </linearGradient>
-              </defs>
             </svg>
 
-            <div className="relative z-10 space-y-16 md:space-y-24">
+            <div className="relative z-10 space-y-12 md:space-y-16">
               {schedule.map((s, i) => {
                 const isEven = i % 2 === 0;
                 const colors = [
@@ -151,42 +139,46 @@ const HowItWorks = () => {
                   "text-esprint-purple",
                   "text-esprint-red",
                 ];
+                const bgColors = [
+                  "bg-esprint-orange/20",
+                  "bg-esprint-pink/20",
+                  "bg-esprint-purple/20",
+                  "bg-esprint-red/20",
+                ];
 
                 return (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+                    initial={{ opacity: 0, x: isEven ? -20 : 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12`}
+                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
                   >
-                    {/* Image with torn border */}
-                    <div className="w-full md:w-1/2">
+                    {/* Placeholder with torn border */}
+                    <div className="w-full md:w-5/12">
                       <div
-                        className="overflow-hidden shadow-lg"
+                        className={`${bgColors[i]} overflow-hidden`}
                         style={{ clipPath: tornClipPath }}
                       >
-                        <img
-                          src={s.image}
-                          alt={s.title}
-                          className="w-full aspect-[16/10] object-cover"
-                        />
+                        <div className="w-full aspect-[16/10] flex items-center justify-center">
+                          <p className="text-foreground/40 text-sm">Photo placeholder</p>
+                        </div>
                       </div>
                     </div>
 
                     {/* Text content */}
-                    <div className={`w-full md:w-1/2 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
-                      <p className={`${colors[i]} text-xs font-bold uppercase tracking-widest mb-2`}>{s.day}</p>
-                      <h3 className="font-display font-black text-2xl md:text-3xl text-gray-900 mb-3">{s.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{s.desc}</p>
+                    <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
+                      <p className={`${colors[i]} text-xs font-bold uppercase tracking-widest mb-1`}>{s.day}</p>
+                      <h3 className="font-display font-black text-xl md:text-2xl text-foreground mb-2">{s.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
                     </div>
                   </motion.div>
                 );
               })}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </PageLayout>
   );

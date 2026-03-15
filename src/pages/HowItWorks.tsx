@@ -140,10 +140,10 @@ const HowItWorks = () => {
                   "text-esprint-red",
                 ];
                 const bgColors = [
-                  "bg-esprint-orange/20",
-                  "bg-esprint-pink/20",
-                  "bg-esprint-purple/20",
-                  "bg-esprint-red/20",
+                  "bg-esprint-orange/40",
+                  "bg-esprint-pink/40",
+                  "bg-esprint-purple/40",
+                  "bg-esprint-red/40",
                 ];
 
                 return (

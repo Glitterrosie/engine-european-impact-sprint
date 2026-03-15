@@ -9,6 +9,7 @@ const partners = [
     logo: hpiLogoWhite,
     logoAlt: "Hasso Plattner Institute",
     logoClass: "h-14",
+    logoMaskSize: "60%",
     link: "https://hpi.de",
     role: "Host",
     name: "Hasso Plattner Institute",
@@ -18,6 +19,7 @@ const partners = [
     logo: hpiEngineLogo,
     logoAlt: "HPI Engine",
     logoClass: "h-10",
+    logoMaskSize: "55%",
     link: "https://engine.hpi.de",
     role: "Organizer",
     name: "HPI Engine",
@@ -27,6 +29,7 @@ const partners = [
     logo: sapLogoWhite,
     logoAlt: "SAP",
     logoClass: "h-14",
+    logoMaskSize: "45%",
     link: "https://sap.com",
     role: "Partner",
     name: "SAP",
@@ -46,8 +49,6 @@ const Partners = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mt-4 flex-1">
         {partners.map((p, i) => {
           const color = cardColors[i];
-          const num = String(i + 1).padStart(2, "0");
-          const maskId = `partner-mask-${i}`;
           return (
             <motion.div
               key={p.name}
@@ -57,60 +58,34 @@ const Partners = () => {
               transition={{ delay: i * 0.1 }}
               className="relative overflow-hidden group hover:brightness-110 transition-all duration-300 min-h-[520px]"
             >
-              {/* SVG background with number cutout */}
-              <svg
-                className="absolute inset-0 w-full h-full"
-                viewBox="0 0 300 500"
-                preserveAspectRatio="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <mask id={maskId}>
-                    <rect width="300" height="500" fill="white" />
-                    <text
-                      x="150"
-                      y="120"
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontFamily="'TT Lakes Neue', sans-serif"
-                      fontWeight="900"
-                      fontSize="160"
-                      fill="black"
-                    >
-                      {num}
-                    </text>
-                  </mask>
-                </defs>
-                <rect
-                  width="300"
-                  height="500"
-                  fill={color.bg}
-                  mask={`url(#${maskId})`}
-                />
-              </svg>
+              {/* Colored overlay with logo cutout */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: color.bg,
+                  WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                  WebkitMaskSize: `${p.logoMaskSize} 100%`,
+                  WebkitMaskPosition: 'center 25%, center center',
+                  WebkitMaskRepeat: 'no-repeat, no-repeat',
+                  WebkitMaskComposite: 'xor',
+                  maskImage: `url(${p.logo}), linear-gradient(black, black)`,
+                  maskSize: `${p.logoMaskSize} 100%`,
+                  maskPosition: 'center 25%, center center',
+                  maskRepeat: 'no-repeat, no-repeat',
+                  maskComposite: 'exclude',
+                }}
+              />
 
               {/* Content */}
               <div className="relative z-10 p-8 pt-52 md:pt-56 flex flex-col items-start h-full">
-                {/* Logo */}
-                <a href={p.link} target="_blank" rel="noopener noreferrer" className="mb-5">
-                  <img
-                    src={p.logo}
-                    alt={p.logoAlt}
-                    className={`${p.logoClass} drop-shadow-[0_2px_10px_rgba(0,0,0,0.2)]`}
-                    style={{
-                      filter: i < 2
-                        ? "brightness(0) saturate(100%)"
-                        : "brightness(0) saturate(100%) invert(1)",
-                    }}
-                  />
-                </a>
-
                 <p className={`text-[10px] font-bold uppercase tracking-[0.2em] ${color.roleText} mb-1`}>
                   {p.role}
                 </p>
                 <div className={`w-8 h-0.5 bg-current opacity-30 mb-3 ${color.text}`} />
                 <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>
-                  {p.name}
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                    {p.name}
+                  </a>
                 </h3>
                 <p className={`text-sm ${color.text} opacity-80 leading-relaxed`}>
                   {p.desc}

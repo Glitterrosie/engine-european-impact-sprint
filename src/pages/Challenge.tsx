@@ -118,6 +118,11 @@ const Challenge = () => {
             </ComposableMap>
           </div>
         </motion.div>
+
+        {/* Program Schedule */}
+        <div className="col-span-full mt-4">
+          <ProgramSchedule />
+        </div>
       </div>
     </PageLayout>
   );

@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 
+import scheduleDay1 from "@/assets/schedule-day1.jpg";
+import scheduleDay2 from "@/assets/schedule-day2.jpg";
+import scheduleDay3 from "@/assets/schedule-day3.jpg";
+import scheduleDay4 from "@/assets/schedule-day4.jpg";
+
 const infoItems = [
   { label: "Date", value: "25–28th August 2026" },
   { label: "Program Schedule", value: "The European Impact Sprint is a 4-day full time program, featuring on-site workshops during the day (ca. 9 am – 6 pm) as well as community activities during the evenings to connect with other participants. The detailed agenda will be shared at the kick-off in July." },
@@ -11,11 +16,18 @@ const infoItems = [
   { label: "Participants", value: "60 Bachelor students in computer science from 30 countries across Europe, divided into international teams of 5." },
 ];
 
+const schedule = [
+  { day: "Day 1", date: "25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team", color: "bg-esprint-orange text-esprint-darkblue", img: scheduleDay1 },
+  { day: "Day 2", date: "26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution.", color: "bg-esprint-pink text-esprint-darkblue", img: scheduleDay2 },
+  { day: "Day 3", date: "27th August", title: "Refining", desc: "Testing, Improving, Refining your solution.", color: "bg-esprint-purple text-primary-foreground", img: scheduleDay3 },
+  { day: "Day 4", date: "28th August", title: "Presentation", desc: "Final presentation and individual departure.", color: "bg-esprint-red text-primary-foreground", img: scheduleDay4 },
+];
+
 const Challenge = () => {
   return (
     <PageLayout title="The Challenge" noPadBottom>
       <div className="space-y-6 flex-1 flex flex-col">
-        {/* Top two-column row – touching blocks */}
+        {/* Top two-column row */}
         <div className="rounded-2xl overflow-hidden shadow-xl grid lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -56,40 +68,33 @@ const Challenge = () => {
           </motion.div>
         </div>
 
-        {/* Stats strip */}
-        <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-3">
-          {[
-            { value: "60", label: "Students", color: "bg-esprint-orange text-esprint-darkblue" },
-            { value: "30", label: "Countries", color: "bg-esprint-pink text-esprint-darkblue" },
-            { value: "4", label: "Days", color: "bg-esprint-purple text-primary-foreground" },
-          ].map((stat, i) => (
+        {/* Schedule – colored blocks grid */}
+        <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4 flex-1">
+          {schedule.map((s, i) => (
             <motion.div
-              key={stat.label}
+              key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`${stat.color} p-8 text-center`}
+              className={`${s.color} p-6 md:p-8 flex flex-col justify-between relative overflow-hidden group`}
             >
-              <p className="font-display font-black text-4xl md:text-5xl">{stat.value}</p>
-              <p className="mt-1 font-semibold text-sm opacity-70">{stat.label}</p>
+              {/* Background image hint */}
+              <div
+                className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-cover bg-center"
+                style={{ backgroundImage: `url(${s.img})` }}
+              />
+
+              <div className="relative z-10">
+                <span className="text-xs font-bold uppercase tracking-widest opacity-60">{s.day}</span>
+                <p className="text-xs opacity-50 mt-0.5">{s.date}</p>
+                <h3 className="font-display font-black text-2xl md:text-3xl mt-3 leading-tight">{s.title}</h3>
+              </div>
+
+              <p className="relative z-10 text-sm leading-relaxed opacity-80 mt-4">{s.desc}</p>
             </motion.div>
           ))}
         </div>
-
-        {/* Europe map – stretches to footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-esprint-red rounded-t-2xl p-8 md:p-10 text-center shadow-xl flex-1"
-        >
-          <h2 className="font-display font-bold text-2xl text-primary-foreground mb-3">30 Partner Universities Across Europe</h2>
-          <p className="text-primary-foreground/70 mb-8">Hover over countries to see partner universities, logos and contact persons.</p>
-          <div className="rounded-xl bg-primary-foreground/10 aspect-[16/9] max-w-4xl mx-auto flex items-center justify-center border border-primary-foreground/20">
-            <p className="text-primary-foreground/50">Interactive Europe Map – Coming Soon</p>
-          </div>
-        </motion.div>
       </div>
     </PageLayout>
   );

@@ -100,7 +100,16 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-display font-bold text-gray-900">{t.name}</p>
-                  <p className="text-gray-500 text-sm">{t.role}</p>
+                  <p className="text-gray-500 text-sm mb-2">{t.role}</p>
+                  <a
+                    href={t.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-esprint-pink text-esprint-darkblue text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    <Linkedin size={14} />
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             ))}

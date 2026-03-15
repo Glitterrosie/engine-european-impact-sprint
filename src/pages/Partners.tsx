@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogo from "@/assets/sap-logo.png";
+import hpiCampus1 from "@/assets/hpi-campus-1.jpg";
+import hpiCampus2 from "@/assets/hpi-campus-2.jpg";
+import hpiCampus3 from "@/assets/hpi-campus-3.jpg";
 
 const Partners = () => {
   return (
@@ -46,15 +49,15 @@ const Partners = () => {
 
             {/* Right: Campus photos */}
             <div className="grid grid-rows-2 gap-1 min-h-[400px]">
-              <div className="bg-primary-foreground/10 flex items-center justify-center">
-                <p className="text-primary-foreground/30 text-sm">HPI Campus Photo 1</p>
+              <div className="overflow-hidden">
+                <img src={hpiCampus2} alt="HPI Campus building" className="w-full h-full object-cover" />
               </div>
               <div className="grid grid-cols-2 gap-1">
-                <div className="bg-primary-foreground/8 flex items-center justify-center">
-                  <p className="text-primary-foreground/30 text-xs">Photo 2</p>
+                <div className="overflow-hidden">
+                  <img src={hpiCampus1} alt="HPI lecture hall" className="w-full h-full object-cover" />
                 </div>
-                <div className="bg-primary-foreground/5 flex items-center justify-center">
-                  <p className="text-primary-foreground/30 text-xs">Photo 3</p>
+                <div className="overflow-hidden">
+                  <img src={hpiCampus3} alt="HPI campus at night" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

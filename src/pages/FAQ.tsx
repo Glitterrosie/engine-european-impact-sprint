@@ -13,7 +13,7 @@ const faqSections = [
     hsl: "var(--esprint-orange)",
     textClass: "text-esprint-darkblue",
     items: [
-      { q: "As a student, how can I apply to the program?", a: "Please contact your university." },
+      { q: "As a student, how can I apply to the program?", a: "The nomination of students will be facilitated via our partner universities. Please reach out to your university and have them contact us." },
       { q: "Are there specific requirements to participate?", a: "To participate in the European Impact Sprint, you must be a Bachelor's student of Computer Science (or similar) nominated by one of our selected partner universities, proficient in English and completed the application form." },
       { q: "As a university, how can I nominate students for the program?", a: "Reach out to our program manager Essam Sharaf via the contact form and we'll guide you through the process." },
     ],

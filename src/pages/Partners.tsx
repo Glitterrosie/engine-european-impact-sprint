@@ -26,7 +26,7 @@ const Partners = () => {
                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host & Organizer</span>
               </div>
               <div className="mb-6">
-                <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-12 brightness-0" />
+                <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-12" />
               </div>
               <p className="text-sm leading-relaxed opacity-90 mb-4">
                 The Hasso Plattner Institute (HPI) was founded in 1998 by Hasso Plattner, co-founder of SAP and one of Europe's most successful tech entrepreneurs. Today, HPI is a leading academic institution for digital engineering, educating the next generation of technology leaders, innovators and entrepreneurs.

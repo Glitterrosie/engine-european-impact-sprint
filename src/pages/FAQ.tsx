@@ -100,6 +100,13 @@ const FAQ = () => {
         ))}
       </div>
 
+      <div className="container mx-auto px-4 md:px-8 pb-12">
+        <p className="text-white font-display font-bold text-lg">
+          GOT FURTHER QUESTIONS?{" "}
+          <a href="/contact" className="text-esprint-pink hover:underline">Contact us!</a>
+        </p>
+      </div>
+
       {/* Spacer to let background show at bottom */}
       <div className="flex-1" />
     </div>

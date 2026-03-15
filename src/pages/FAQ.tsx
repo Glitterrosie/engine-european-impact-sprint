@@ -86,7 +86,7 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0 bg-white">
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 relative bg-white">
         <div className="absolute inset-0 flex items-center justify-center">
           <span
             className="font-display font-black"

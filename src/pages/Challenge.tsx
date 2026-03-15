@@ -21,7 +21,7 @@ const Challenge = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="p-8 md:p-10 flex flex-col"
+          className="p-8 md:p-10 pb-0 flex flex-col"
         >
           <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">
             Program Brief

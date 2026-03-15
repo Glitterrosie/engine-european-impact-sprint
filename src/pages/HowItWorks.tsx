@@ -155,13 +155,13 @@ const HowItWorks = () => {
                     transition={{ delay: 0.1 }}
                     className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
                   >
-                    {/* Placeholder with organic torn border */}
+                    {/* Placeholder with smooth blob border */}
                     <div className="w-full md:w-5/12">
                       <div
-                        className={`${bgColors[i]} overflow-hidden rounded-3xl border-4 border-foreground/10`}
-                        style={{ clipPath: tornClipPath }}
+                        className={`${bgColors[i]} overflow-hidden`}
+                        style={{ clipPath: blobClipPath, borderRadius: '50%' }}
                       >
-                        <div className="w-full aspect-[16/10] flex items-center justify-center">
+                        <div className="w-full aspect-square flex items-center justify-center">
                           <p className="text-foreground/40 text-sm">Photo placeholder</p>
                         </div>
                       </div>
@@ -169,9 +169,9 @@ const HowItWorks = () => {
 
                     {/* Text content */}
                     <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
-                      <p className={`${colors[i]} text-xs font-bold uppercase tracking-widest mb-1`}>{s.day}</p>
+                      <span className={`${bgColors[i]} ${colors[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
                       <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
-                      <p className={`${colors[i]} text-sm leading-relaxed opacity-80`}>{s.desc}</p>
+                      <span className={`${bgColors[i]} ${colors[i]} inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
                     </div>
                   </motion.div>
                 );

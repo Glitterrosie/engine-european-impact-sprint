@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 
 const infoItems = [
-  { label: "Date", value: "25–28th August 2026", color: "bg-esprint-orange text-esprint-darkblue" },
-  { label: "Location", value: "Hasso Plattner Institute, Potsdam, Germany (30 min from Berlin airport and train station)", color: "bg-esprint-pink text-esprint-darkblue" },
-  { label: "Participants", value: "60 Bachelor students in computer science from 30 countries across Europe, divided into international teams of 5.", color: "bg-esprint-purple text-primary-foreground" },
-  { label: "Accommodation", value: "Shared glamping tents on campus", color: "bg-esprint-red text-primary-foreground" },
-  { label: "Language", value: "English", color: "bg-esprint-darkblue text-primary-foreground" },
-  { label: "Cost", value: "Program participation, accommodation and meals are free of charge. A 200 € travel stipend will be granted to cover your travel costs.", color: "bg-esprint-cream text-esprint-darkblue" },
-  { label: "Schedule", value: "A 4-day full time program with on-site workshops (ca. 9 am – 6 pm) and community activities during the evenings. Detailed agenda shared at the kick-off in July.", color: "bg-esprint-orange text-esprint-darkblue" },
+  { label: "Date", value: "25–28th August 2026", accent: "bg-esprint-orange" },
+  { label: "Location", value: "Hasso Plattner Institute, Potsdam, Germany (30 min from Berlin airport and train station)", accent: "bg-esprint-pink" },
+  { label: "Participants", value: "60 Bachelor students in computer science from 30 countries across Europe, divided into international teams of 5.", accent: "bg-esprint-purple" },
+  { label: "Accommodation", value: "Shared glamping tents on campus", accent: "bg-esprint-red" },
+  { label: "Language", value: "English", accent: "bg-esprint-orange" },
+  { label: "Cost", value: "Program participation, accommodation and meals are free of charge. A 200 € travel stipend will be granted to cover your travel costs.", accent: "bg-esprint-pink" },
+  { label: "Schedule", value: "A 4-day full time program with on-site workshops (ca. 9 am – 6 pm) and community activities during the evenings. Detailed agenda shared at the kick-off in July.", accent: "bg-esprint-purple" },
 ];
 
 const Challenge = () => {
@@ -30,22 +30,46 @@ const Challenge = () => {
           </p>
         </motion.div>
 
-        {/* Key Information – colored blocks */}
-        <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4 flex-1">
-          {infoItems.map((item, i) => (
-            <motion.div
-              key={item.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className={`${item.color} p-6 md:p-8 flex flex-col`}
-            >
-              <span className="text-xs font-bold uppercase tracking-widest opacity-60">{item.label}</span>
-              <p className="mt-2 font-display font-bold text-base md:text-lg leading-snug">{item.value}</p>
-            </motion.div>
-          ))}
-        </div>
+        {/* Key Information – color-accented table */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="bg-esprint-darkblue rounded-2xl shadow-xl overflow-hidden flex-1"
+        >
+          <div className="p-8 md:p-10 pb-4">
+            <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">
+              Key Information
+            </h2>
+          </div>
+          <div className="divide-y divide-primary-foreground/10">
+            {infoItems.map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="flex items-stretch hover:bg-primary-foreground/5 transition-colors"
+              >
+                {/* Color accent bar */}
+                <div className={`${item.accent} w-1.5 shrink-0`} />
+                
+                {/* Label */}
+                <div className="w-36 md:w-44 shrink-0 px-6 py-4 flex items-center">
+                  <span className="font-display font-bold text-xs uppercase tracking-widest text-primary-foreground/60">
+                    {item.label}
+                  </span>
+                </div>
+
+                {/* Value */}
+                <div className="px-4 py-4 flex items-center">
+                  <p className="text-primary-foreground/80 text-sm leading-relaxed">{item.value}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </PageLayout>
   );

@@ -89,7 +89,7 @@ const Challenge = () => {
           className="bg-esprint-darkblue rounded-t-2xl p-8 md:p-10 text-center shadow-xl col-span-full"
         >
           <h2 className="font-display font-bold text-2xl text-primary-foreground mb-8">Partner Universities Coming Soon</h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <ComposableMap
               projection="geoAzimuthalEqualArea"
               projectionConfig={{

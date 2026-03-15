@@ -109,6 +109,44 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
   );
 };
 
+const TYPEWRITER_TEXT = "Ready to Shape the Future of Tech in Europe?";
+
+const TypewriterHeadline = () => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+  const hasTyped = useRef(false);
+
+  useEffect(() => {
+    if (hasTyped.current) return;
+    hasTyped.current = true;
+
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDisplayedText(TYPEWRITER_TEXT.slice(0, i));
+      if (i >= TYPEWRITER_TEXT.length) clearInterval(interval);
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Blinking cursor
+  useEffect(() => {
+    const blink = setInterval(() => setShowCursor((v) => !v), 530);
+    return () => clearInterval(blink);
+  }, []);
+
+  return (
+    <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
+      {displayedText}
+      <span
+        className="inline-block w-[3px] h-[1em] bg-primary-foreground ml-1 align-middle translate-y-[-1px]"
+        style={{ opacity: showCursor ? 1 : 0 }}
+      />
+    </h2>
+  );
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen relative">

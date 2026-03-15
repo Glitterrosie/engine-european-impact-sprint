@@ -89,20 +89,20 @@ const FAQ = () => {
       <div className="hidden md:block w-56 lg:w-72 flex-shrink-0 relative bg-white overflow-hidden">
         {/* Key visual image, clipped by repeating text shape */}
         <div
-          className="absolute top-0 left-0 right-0 bottom-0"
+          className="absolute left-0 right-0 top-24 bottom-20"
           style={{
             backgroundImage: `url(${keyVisual})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 750'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='5' text-anchor='start' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 520'>${Array.from({ length: 8 }, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
-            WebkitMaskSize: '100% 750px',
+            WebkitMaskSize: '100% 520px',
             WebkitMaskRepeat: 'repeat-y',
             maskImage: `url("data:image/svg+xml,${encodeURIComponent(
-              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 750'>${Array.from({length: 8}, (_, i) => `<text x='${17.5 + i * 35}' y='5' text-anchor='start' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
+              `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 520'>${Array.from({ length: 8 }, (_, i) => `<text x='${17.5 + i * 35}' y='0' text-anchor='middle' dominant-baseline='hanging' font-family='sans-serif' font-weight='900' font-size='30' fill='black' writing-mode='tb' letter-spacing='2'>Frequently Asked Questions</text>`).join('')}</svg>`
             )}")`,
-            maskSize: '100% 750px',
+            maskSize: '100% 520px',
             maskRepeat: 'repeat-y',
           }}
         />

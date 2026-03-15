@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
+import hpiLogo from "@/assets/hpi-logo-white.png";
 import esprintLogo from "@/assets/esprint-logo-date-white.svg";
 
 const stats = [

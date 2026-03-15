@@ -70,7 +70,7 @@ const Partners = () => {
               <div
                 className="flex-1 relative"
                 style={{
-                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0), hsl(${color.hslVar} / 0.4), hsl(${color.hslVar} / 0.8), ${color.bg})`,
+                  background: `linear-gradient(to right, hsl(${color.hslVar} / 0) 0%, hsl(${color.hslVar} / 0.9) 25%, ${color.bg} 40%)`,
                 }}
               >
                 {/* Text content */}
@@ -88,7 +88,7 @@ const Partners = () => {
 
                 {/* Logo cutout on the right */}
                 <div
-                  className="absolute right-0 top-0 bottom-0 w-48 md:w-64"
+                  className="absolute right-4 top-0 bottom-0 w-36 md:w-48 opacity-20"
                   style={{
                     background: color.bg,
                     WebkitMaskImage: `url(${p.logo}), linear-gradient(black, black)`,

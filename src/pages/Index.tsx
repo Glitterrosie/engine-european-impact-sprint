@@ -114,20 +114,40 @@ const TYPEWRITER_TEXT = "Ready to Shape the Future of Tech in Europe?";
 const TypewriterHeadline = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
-  const hasTyped = useRef(false);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    if (hasTyped.current) return;
-    hasTyped.current = true;
+    let cancelled = false;
 
-    let i = 0;
-    const interval = setInterval(() => {
-      i++;
-      setDisplayedText(TYPEWRITER_TEXT.slice(0, i));
-      if (i >= TYPEWRITER_TEXT.length) clearInterval(interval);
-    }, 50);
+    const runCycle = async () => {
+      // Type in
+      for (let i = 1; i <= TYPEWRITER_TEXT.length; i++) {
+        if (cancelled) return;
+        setDisplayedText(TYPEWRITER_TEXT.slice(0, i));
+        await new Promise((r) => setTimeout(r, 50));
+      }
 
-    return () => clearInterval(interval);
+      // Hold for 3 seconds
+      await new Promise((r) => setTimeout(r, 3000));
+      if (cancelled) return;
+
+      // Fade out
+      setOpacity(0);
+      await new Promise((r) => setTimeout(r, 600));
+      if (cancelled) return;
+
+      // Reset and fade back in
+      setDisplayedText("");
+      setOpacity(1);
+      await new Promise((r) => setTimeout(r, 400));
+      if (cancelled) return;
+
+      // Restart
+      runCycle();
+    };
+
+    runCycle();
+    return () => { cancelled = true; };
   }, []);
 
   // Blinking cursor
@@ -137,7 +157,10 @@ const TypewriterHeadline = () => {
   }, []);
 
   return (
-    <h2 className="font-display font-bold text-2xl md:text-3xl text-primary-foreground">
+    <h2
+      className="font-display font-bold text-2xl md:text-3xl text-primary-foreground transition-opacity duration-500"
+      style={{ opacity }}
+    >
       {displayedText}
       <span
         className="inline-block w-[3px] h-[1em] bg-primary-foreground ml-1 align-middle translate-y-[-1px]"

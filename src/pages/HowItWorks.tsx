@@ -40,32 +40,38 @@ const HowItWorks = () => {
     >
       <div className="space-y-8">
         {/* Collaboration & Criteria + Selection Process */}
-        <div>
-          <h2 className="font-display font-bold text-lg text-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
-            Student Selection Criteria
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {criteria.map((c, i) => {
-              const colors = [
-                "bg-esprint-orange text-esprint-darkblue",
-                "bg-esprint-pink text-esprint-darkblue",
-                "bg-esprint-purple text-white",
-                "bg-esprint-red text-white",
-              ];
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.05 }}
-                  className={`${colors[i]} rounded-2xl p-5 shadow-lg flex flex-col gap-2`}
-                >
-                  <span className="font-display font-black text-2xl opacity-40">{i + 1}</span>
-                  <p className="text-sm font-medium leading-snug">{c}</p>
-                </motion.div>
-              );
-            })}
-          </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="bg-white rounded-2xl p-8 shadow-xl"
+          >
+            <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-6">
+              Student Selection Criteria
+            </h2>
+            <ul className="space-y-3">
+              {criteria.map((c, i) => (
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="h-6 w-6 rounded-full bg-esprint-purple/10 flex items-center justify-center shrink-0 mt-0.5">
+                    <span className="text-esprint-purple font-bold text-xs">{i + 1}</span>
+                  </span>
+                  <p className="text-gray-700 text-sm">{c}</p>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="bg-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center"
+          >
+            <div className="w-full h-full min-h-[250px] bg-gray-100 flex items-center justify-center">
+              <p className="text-gray-400 text-sm">Photo placeholder</p>
+            </div>
+          </motion.div>
         </div>
 
         {/* Timeline */}
@@ -106,7 +112,7 @@ const HowItWorks = () => {
         </motion.div>
 
         {/* Schedule – curved line with alternating placeholders */}
-        <div className="w-full">
+        <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-bold text-lg text-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
             Program Schedule
           </h2>
@@ -115,34 +121,40 @@ const HowItWorks = () => {
             {/* SVG curved white line */}
             <svg
               className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-full pointer-events-none hidden md:block"
-              viewBox="0 0 1000 900"
+              viewBox="0 0 600 900"
               preserveAspectRatio="none"
               fill="none"
             >
               <path
-                d="M 200 95 C 200 160, 350 240, 800 310 C 950 340, 850 380, 800 420 C 600 500, 250 510, 200 550 C 150 590, 350 640, 800 720 C 900 740, 820 780, 800 800"
+                d="M 300 0 C 100 100, 500 200, 300 280 C 100 360, 500 440, 300 530 C 100 620, 500 700, 300 780 C 200 830, 300 870, 300 900"
                 stroke="white"
                 strokeWidth="2.5"
                 strokeDasharray="8 6"
-                opacity="1"
+                opacity="0.4"
                 fill="none"
               />
             </svg>
 
-            <div className="relative z-10 space-y-0 md:-space-y-6">
+            <div className="relative z-10 space-y-12 md:space-y-16">
               {schedule.map((s, i) => {
                 const isEven = i % 2 === 0;
+                const colors = [
+                  "text-esprint-orange",
+                  "text-esprint-pink",
+                  "text-esprint-purple",
+                  "text-esprint-red",
+                ];
                 const bgSolid = [
                   "bg-esprint-orange",
                   "bg-esprint-pink",
                   "bg-esprint-purple",
                   "bg-esprint-red",
                 ];
-                const blockText = [
-                  "text-esprint-darkblue",
-                  "text-esprint-darkblue",
-                  "text-white",
-                  "text-white",
+                const bgColors = [
+                  "bg-esprint-orange/40",
+                  "bg-esprint-pink/40",
+                  "bg-esprint-purple/40",
+                  "bg-esprint-red/40",
                 ];
 
                 return (
@@ -152,14 +164,14 @@ const HowItWorks = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-0 md:gap-0`}
+                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-6 md:gap-8`}
                   >
-                    {/* Blob with overlaid text */}
-                    <div className="w-full md:w-5/12 flex items-center justify-center relative">
-                      <svg viewBox="-100 -100 200 200" className="w-full max-w-[320px]">
+                    {/* Placeholder with organic blob shape */}
+                    <div className="w-full md:w-5/12 flex items-center justify-center">
+                      <svg viewBox="-100 -100 200 200" className="w-full max-w-[220px]">
                         <defs>
                           <clipPath id={`blob-${i}`}>
-                            <path d={blobPaths[i]} />
+                            <path d={blobPaths[i]} transform="scale(1)" />
                           </clipPath>
                         </defs>
                         <rect
@@ -171,11 +183,11 @@ const HowItWorks = () => {
                       </svg>
                     </div>
 
-                    {/* Text content beside the blob */}
-                    <div className={`w-full md:w-7/12 flex flex-col ${isEven ? 'md:items-start md:-ml-16' : 'md:items-end md:-mr-16'} items-center justify-center -mt-4 md:mt-0`}>
-                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-1`}>{s.day}</span>
-                      <h3 className={`font-display font-black text-lg md:text-xl text-primary-foreground mb-1 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>{s.title}</h3>
-                      <span className={`${bgSolid[i]} ${blockText[i]} inline-block text-xs leading-relaxed px-3 py-1 rounded-lg ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>{s.desc}</span>
+                    {/* Text content */}
+                    <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
+                      <span className={`${bgSolid[i]} text-esprint-darkblue inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
+                      <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
+                      <span className={`${bgSolid[i]} text-esprint-darkblue inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
                     </div>
                   </motion.div>
                 );

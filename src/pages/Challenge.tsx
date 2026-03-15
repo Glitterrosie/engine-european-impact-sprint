@@ -15,13 +15,13 @@ const infoItems = [
 const Challenge = () => {
   return (
     <PageLayout title="The Challenge" noPadBottom>
-      <div className="flex-1 grid lg:grid-cols-2 gap-6">
+      <div className="flex-1 grid lg:grid-cols-2 gap-6 items-stretch">
         {/* Program Brief – transparent */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="p-8 md:p-10"
+          className="p-8 md:p-10 flex flex-col"
         >
           <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">
             Program Brief
@@ -29,7 +29,7 @@ const Challenge = () => {
           <p className="text-primary-foreground/80 leading-relaxed">
             The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...
           </p>
-          <div className="mt-6 rounded-xl overflow-hidden aspect-video">
+          <div className="mt-6 rounded-xl overflow-hidden flex-1 min-h-[200px]">
             <img src={challengeBrief} alt="Students collaborating at HPI campus" className="w-full h-full object-cover" />
           </div>
         </motion.div>

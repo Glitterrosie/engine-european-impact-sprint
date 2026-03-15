@@ -12,7 +12,8 @@ const partners = [
     role: "Host",
     name: "Hasso Plattner Institute",
     desc: "Germany's center of excellence for digital engineering, advancing research in IT, cyber security, and entrepreneurship.",
-    color: "var(--esprint-orange)",
+    bg: "bg-esprint-orange",
+    text: "text-esprint-darkblue",
   },
   {
     logo: hpiEngineLogo,
@@ -21,7 +22,8 @@ const partners = [
     role: "Organizer",
     name: "HPI Engine",
     desc: "One of Europe's leading startup ecosystems, empowering tech talent to become founders through innovation programs.",
-    color: "var(--esprint-red)",
+    bg: "bg-esprint-red",
+    text: "text-primary-foreground",
   },
   {
     logo: sapLogoWhite,
@@ -30,7 +32,8 @@ const partners = [
     role: "Partner",
     name: "SAP",
     desc: "Europe's largest software company, partnering with HPI to empower the next generation of tech innovators.",
-    color: "var(--esprint-purple)",
+    bg: "bg-esprint-purple",
+    text: "text-primary-foreground",
   },
 ];
 

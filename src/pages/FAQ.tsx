@@ -23,6 +23,7 @@ const faqSections = [
     title: "Program Structure",
     hsl: "var(--esprint-pink)",
     textClass: "text-esprint-darkblue",
+    align: "right" as const,
     items: [
       { q: "What challenges will students be working on?", a: "Projects range from sustainability to technology — each designed to solve tangible challenges." },
       { q: "Will I have to pay for travel, accommodation and meals during the program?", a: "HPI will cover all cost for accommodation (glamping camp, on-campus) and meals during the program. In addition, you will be reimbursed for travel costs up to 200€." },

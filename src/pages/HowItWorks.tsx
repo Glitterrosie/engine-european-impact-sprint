@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
+import scheduleDay1 from "@/assets/schedule-day1.jpg";
+import scheduleDay2 from "@/assets/schedule-day2.jpg";
+import scheduleDay3 from "@/assets/schedule-day3.jpg";
+import scheduleDay4 from "@/assets/schedule-day4.jpg";
+
 const criteria = [
   "Bachelor's students in Computer Science, preferably final year",
   "Passion for entrepreneurship, innovation and solving European challenges",
@@ -19,11 +24,13 @@ const timeline = [
 ];
 
 const schedule = [
-  { day: "Day 1 – 25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team" },
-  { day: "Day 2 – 26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution." },
-  { day: "Day 3 – 27th August", title: "Refining", desc: "Testing, Improving, Refining your solution." },
-  { day: "Day 4 – 28th August", title: "Presentation", desc: "Final presentation and individual departure." },
+  { day: "Day 1 – 25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team", image: scheduleDay1 },
+  { day: "Day 2 – 26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution.", image: scheduleDay2 },
+  { day: "Day 3 – 27th August", title: "Refining", desc: "Testing, Improving, Refining your solution.", image: scheduleDay3 },
+  { day: "Day 4 – 28th August", title: "Presentation", desc: "Final presentation and individual departure.", image: scheduleDay4 },
 ];
+
+const tornClipPath = "polygon(0% 2%, 3% 0%, 7% 3%, 11% 1%, 15% 4%, 19% 0%, 23% 2%, 27% 0%, 31% 3%, 35% 1%, 39% 4%, 43% 0%, 47% 3%, 51% 1%, 55% 3%, 59% 0%, 63% 2%, 67% 0%, 71% 3%, 75% 1%, 79% 4%, 83% 0%, 87% 2%, 91% 0%, 95% 3%, 100% 1%, 100% 97%, 97% 100%, 93% 97%, 89% 100%, 85% 97%, 81% 100%, 77% 98%, 73% 100%, 69% 97%, 65% 100%, 61% 98%, 57% 100%, 53% 97%, 49% 100%, 45% 98%, 41% 100%, 37% 97%, 33% 100%, 29% 98%, 25% 100%, 21% 97%, 17% 100%, 13% 98%, 9% 100%, 5% 97%, 0% 100%)";
 
 const HowItWorks = () => {
   return (
@@ -78,20 +85,16 @@ const HowItWorks = () => {
             Timeline
           </h2>
           <div className="relative">
-            {/* Continuous line */}
             <div className="hidden md:block absolute top-[34px] left-0 right-0 h-1 rounded-full bg-gradient-to-r from-esprint-pink via-esprint-purple to-esprint-orange" />
             <div className="grid md:grid-cols-6 gap-4">
               {timeline.map((t, i) => (
                 <div key={i} className="relative text-center">
-                  {/* Date above dots */}
                   <p className="text-esprint-purple font-bold text-sm mb-2">{t.date}</p>
-                  {/* Dots on the line */}
                   <div className="hidden md:flex justify-center gap-1.5 mb-4 relative z-10">
                     {Array.from({ length: t.dots }).map((_, d) => (
                       <div key={d} className="w-4 h-4 rounded-full bg-esprint-purple ring-4 ring-white" />
                     ))}
                   </div>
-                  {/* Description below */}
                   {t.isMain ? (
                     <div className="mt-2 flex justify-center">
                       <img src={esprintLogo} alt="European Impact Sprint" className="h-16 invert" />
@@ -108,29 +111,85 @@ const HowItWorks = () => {
           </div>
         </motion.div>
 
-        {/* Schedule */}
+        {/* Schedule – curved line with alternating image/text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="bg-white rounded-2xl p-8 md:p-10 shadow-xl"
         >
-          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-8">
+          <h2 className="font-display font-bold text-lg text-gray-900 uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-12">
             Program Schedule
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {schedule.map((s, i) => (
-              <div key={i} className="rounded-xl border border-gray-200 overflow-hidden">
-                <div className="aspect-video bg-gray-50 flex items-center justify-center">
-                  <p className="text-gray-400 text-xs">Photo placeholder</p>
-                </div>
-                <div className="p-4">
-                  <p className="text-esprint-purple text-xs font-bold uppercase tracking-wide">{s.day}</p>
-                  <p className="font-display font-bold text-gray-900 mt-1">{s.title}</p>
-                  <p className="text-gray-500 text-sm mt-1">{s.desc}</p>
-                </div>
-              </div>
-            ))}
+
+          <div className="relative">
+            {/* SVG curved line */}
+            <svg
+              className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-full pointer-events-none hidden md:block"
+              viewBox="0 0 800 1200"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <path
+                d="M 400 0 C 150 150, 650 250, 400 350 C 150 450, 650 550, 400 650 C 150 750, 650 850, 400 950 C 250 1050, 400 1100, 400 1200"
+                stroke="url(#curveGradient)"
+                strokeWidth="3"
+                strokeDasharray="8 6"
+                fill="none"
+              />
+              <defs>
+                <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="hsl(25, 96%, 69%)" />
+                  <stop offset="33%" stopColor="hsl(340, 77%, 70%)" />
+                  <stop offset="66%" stopColor="hsl(258, 40%, 53%)" />
+                  <stop offset="100%" stopColor="hsl(350, 52%, 48%)" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div className="relative z-10 space-y-16 md:space-y-24">
+              {schedule.map((s, i) => {
+                const isEven = i % 2 === 0;
+                const colors = [
+                  "text-esprint-orange",
+                  "text-esprint-pink",
+                  "text-esprint-purple",
+                  "text-esprint-red",
+                ];
+
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12`}
+                  >
+                    {/* Image with torn border */}
+                    <div className="w-full md:w-1/2">
+                      <div
+                        className="overflow-hidden shadow-lg"
+                        style={{ clipPath: tornClipPath }}
+                      >
+                        <img
+                          src={s.image}
+                          alt={s.title}
+                          className="w-full aspect-[16/10] object-cover"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Text content */}
+                    <div className={`w-full md:w-1/2 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
+                      <p className={`${colors[i]} text-xs font-bold uppercase tracking-widest mb-2`}>{s.day}</p>
+                      <h3 className="font-display font-black text-2xl md:text-3xl text-gray-900 mb-3">{s.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{s.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>

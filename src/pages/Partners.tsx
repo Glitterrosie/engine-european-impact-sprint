@@ -62,13 +62,26 @@ const Partners = () => {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="flex flex-col items-center text-center"
             >
-              {/* Circle assembly */}
-              <div className="relative flex-shrink-0 mb-6" style={{ width: dashedSize, height: dashedSize }}>
-                {/* Dashed outer ring */}
+              {/* Circle assembly with blob */}
+              <div className="relative flex-shrink-0 mb-6" style={{ width: dashedSize + 80, height: dashedSize + 100 }}>
+                {/* Large blob placeholder behind circle */}
                 <div
-                  className="absolute inset-0 rounded-full"
-                  style={{ border: `2px dashed hsl(${p.color} / 0.4)` }}
-                />
+                  className="absolute w-full h-full"
+                  style={{
+                    clipPath: blobPaths[i],
+                    background: `hsl(${p.color} / 0.08)`,
+                    border: `1px solid hsl(${p.color} / 0.12)`,
+                    top: 10,
+                    left: 0,
+                  }}
+                >
+                  <div className="w-full h-full flex items-end justify-center pb-4">
+                    <span className="text-white/15 text-[10px] uppercase tracking-widest">Photo</span>
+                  </div>
+                </div>
+
+                {/* Circle group centered on blob */}
+                <div className="absolute" style={{ width: dashedSize, height: dashedSize, top: (260 - dashedSize) / 2 - 10, left: (240 - dashedSize) / 2 }}>
 
                 {/* Colored outer circle */}
                 <div

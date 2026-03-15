@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
-import sapLogo from "@/assets/sap-logo.png";
+import sapLogoWhite from "@/assets/sap-logo-white.png";
 import hpiCampus1 from "@/assets/hpi-campus-1.jpg";
 import hpiCampus2 from "@/assets/hpi-campus-2.jpg";
 import hpiCampus3 from "@/assets/hpi-campus-3.jpg";
@@ -133,9 +133,9 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-pink rounded-2xl shadow-xl py-10 px-8 md:px-10 text-center"
+          className="bg-esprint-darkblue rounded-2xl shadow-xl py-10 px-8 md:px-10 text-center"
         >
-          <h2 className="font-display font-bold text-lg text-esprint-darkblue uppercase tracking-wide mb-8">
+          <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide mb-8">
             Industry Partners
           </h2>
           <div className="max-w-sm mx-auto">
@@ -146,11 +146,11 @@ const Partners = () => {
               className="flex flex-col items-center group"
             >
               <img
-                src={sapLogo}
+                src={sapLogoWhite}
                 alt="SAP"
-                className="h-10 group-hover:scale-105 transition-transform mb-3 brightness-0"
+                className="h-10 group-hover:scale-105 transition-transform mb-3"
               />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-esprint-darkblue/60">
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary-foreground/60">
                 Camp Sponsor
               </span>
             </a>

@@ -45,26 +45,49 @@ const Benefits = () => {
       subtitle="Dream big – dive into projects that matter alongside peers from all over Europe. Grow your skills, connect with inspiring mentors and create impact and memories!"
       noPadBottom
     >
-      <div className="rounded-t-2xl overflow-hidden shadow-xl grid md:grid-cols-5 flex-1">
-        {benefits.map((b, i) => {
-          const color = cardColors[i];
-          return (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className={`${color.bg} ${color.text} ${color.hoverText} hover:bg-white p-8 text-center transition-all duration-300 cursor-default group`}
-            >
-              <div className="h-12 w-12 rounded-lg bg-background/15 group-hover:bg-current/10 flex items-center justify-center mb-4 mx-auto transition-colors duration-300">
-                <b.icon className="h-6 w-6" />
-              </div>
-              <h3 className="font-display font-bold mb-2">{b.title}</h3>
-              <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
-            </motion.div>
-          );
-        })}
+      <div className="relative rounded-t-2xl overflow-hidden shadow-xl flex-1">
+        <div className="grid md:grid-cols-5 h-full">
+          {benefits.map((b, i) => {
+            const color = cardColors[i];
+            return (
+              <motion.div
+                key={b.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className={`${color.bg} ${color.text} ${color.hoverText} hover:bg-white p-8 text-center transition-all duration-300 cursor-default group`}
+              >
+                <div className="h-12 w-12 rounded-lg bg-background/15 group-hover:bg-current/10 flex items-center justify-center mb-4 mx-auto transition-colors duration-300">
+                  <b.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-display font-bold mb-2">{b.title}</h3>
+                <p className="text-sm leading-relaxed opacity-80">{b.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+        {/* Decorative white lines matching key visual color transitions */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none z-10"
+          viewBox="0 0 1000 400"
+          preserveAspectRatio="none"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Left bundle - follows purple/blue/dark transition */}
+          <path d="M0,50 Q150,30 250,120 Q350,220 300,350 Q280,400 260,420" stroke="white" strokeWidth="1.5" opacity="0.55" />
+          <path d="M0,80 Q160,60 270,150 Q370,250 320,380 Q300,420 280,450" stroke="white" strokeWidth="1.5" opacity="0.5" />
+          <path d="M0,110 Q170,90 290,180 Q390,280 340,400" stroke="white" strokeWidth="1.5" opacity="0.45" />
+          <path d="M30,0 Q130,40 230,140 Q330,260 280,400" stroke="white" strokeWidth="1.5" opacity="0.4" />
+          
+          {/* Center-right curve - follows orange/pink transition */}
+          <path d="M620,0 Q600,80 610,160 Q630,280 680,400" stroke="white" strokeWidth="1.5" opacity="0.5" />
+          <path d="M660,0 Q640,100 650,200 Q670,310 720,400" stroke="white" strokeWidth="1.5" opacity="0.45" />
+          
+          {/* Right side - follows pink edge */}
+          <path d="M820,0 Q800,120 830,240 Q860,340 880,400" stroke="white" strokeWidth="1.5" opacity="0.4" />
+        </svg>
       </div>
     </PageLayout>
   );

@@ -1,3 +1,4 @@
+import { Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,9 +12,9 @@ import hendrikImg from "@/assets/hendrik.jpg";
 import lisaImg from "@/assets/lisa.png";
 
 const team = [
-  { name: "Essam Sharaf", role: "Program Manager", img: essamImg },
-  { name: "Hendrik Laflör", role: "Program Manager", img: hendrikImg },
-  { name: "Lisa Jeller", role: "Event Manager", img: lisaImg },
+  { name: "Essam Sharaf", role: "Program Manager", img: essamImg, linkedin: "https://linkedin.com/in/essam-sharaf-7a595420" },
+  { name: "Hendrik Laflör", role: "Program Manager", img: hendrikImg, linkedin: "https://de.linkedin.com/in/sayhitohendrik" },
+  { name: "Lisa Jeller", role: "Event Manager", img: lisaImg, linkedin: "https://de.linkedin.com/in/lisajeller" },
 ];
 
 const Contact = () => {
@@ -99,7 +100,16 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-display font-bold text-gray-900">{t.name}</p>
-                  <p className="text-gray-500 text-sm">{t.role}</p>
+                  <p className="text-gray-500 text-sm mb-2">{t.role}</p>
+                  <a
+                    href={t.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-esprint-pink text-esprint-darkblue text-xs font-bold px-3 py-1.5 rounded-full hover:opacity-90 transition-opacity"
+                  >
+                    <Linkedin size={14} />
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             ))}

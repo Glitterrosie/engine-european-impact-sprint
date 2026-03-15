@@ -90,10 +90,10 @@ const Index = () => {
                     transition={{ delay: i * 0.1 }}
                     className={`${colors[i]} p-8 text-center`}
                   >
-                    <p className="font-display font-black text-5xl md:text-6xl text-primary-foreground">
+                    <p className="font-display font-black text-5xl md:text-6xl">
                       {stat.value}
                     </p>
-                    <p className="mt-2 text-primary-foreground/70 font-semibold text-sm">{stat.label}</p>
+                    <p className="mt-2 font-semibold text-sm opacity-70">{stat.label}</p>
                   </motion.div>
                 );
               })}

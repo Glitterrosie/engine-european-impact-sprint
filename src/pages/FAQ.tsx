@@ -86,39 +86,29 @@ const FAQ = () => {
       </div>
 
       {/* Right side - large FAQ cutout text */}
-      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0">
-        <div
-          className="absolute inset-0 flex items-center justify-center"
-          style={{
-            backgroundImage: `url(${keyVisual})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Solid overlay with text cutout */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'white',
-              mixBlendMode: 'screen',
-            }}
-          />
+      <div className="hidden md:block w-40 lg:w-52 flex-shrink-0 fixed right-0 top-0 bottom-0 bg-white">
+        <div className="absolute inset-0 flex items-center justify-center">
           <span
-            className="relative font-display font-black text-black"
+            className="font-display font-black"
             style={{
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
               fontSize: 'clamp(10rem, 20vw, 14rem)',
               letterSpacing: '-0.05em',
               lineHeight: 1,
-              mixBlendMode: 'multiply',
+              backgroundImage: `url(${keyVisual})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              color: 'transparent',
             }}
           >
             FAQ
           </span>
         </div>
       </div>
-    </div>
   );
 };
 

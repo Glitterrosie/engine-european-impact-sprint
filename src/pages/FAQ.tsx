@@ -32,42 +32,8 @@ const faqSections = [
 const FAQ = () => {
   return (
     <div className="min-h-screen bg-white relative flex">
-      {/* Left side - large FAQ cutout text */}
-      <div className="hidden md:flex w-28 lg:w-36 flex-shrink-0 relative overflow-hidden items-center justify-center">
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 140 800"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="140" height="800">
-              <image href={keyVisual} x="-100" y="0" width="800" height="800" preserveAspectRatio="xMidYMid slice" />
-            </pattern>
-            <mask id="faq-text-mask">
-              <rect width="140" height="800" fill="black" />
-              <text
-                x="70"
-                y="400"
-                textAnchor="middle"
-                dominantBaseline="central"
-                fontFamily="'TT Lakes Neue', sans-serif"
-                fontWeight="900"
-                fontSize="200"
-                fill="white"
-                transform="rotate(-90, 70, 400)"
-                letterSpacing="-5"
-              >
-                FAQ
-              </text>
-            </mask>
-          </defs>
-          <rect width="140" height="800" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
-        </svg>
-      </div>
-
-      {/* Main content - pushed right */}
-      <div className="flex-1 flex flex-col pt-24 pb-20 px-6 md:px-16 lg:px-24">
+      {/* Main content */}
+      <div className="flex-1 flex flex-col pt-24 pb-20 px-6 md:px-12 lg:px-16">
         {/* Logo - inverted to dark/blue */}
         <img
           src={esprintLogo}
@@ -117,6 +83,40 @@ const FAQ = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      {/* Right side - large FAQ cutout text */}
+      <div className="hidden md:flex w-24 lg:w-32 flex-shrink-0 relative overflow-hidden items-center justify-center">
+        <svg
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 120 800"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern id="faq-bg-pattern" patternUnits="userSpaceOnUse" width="120" height="800">
+              <image href={keyVisual} x="-200" y="0" width="800" height="800" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <mask id="faq-text-mask">
+              <rect width="120" height="800" fill="black" />
+              <text
+                x="60"
+                y="400"
+                textAnchor="middle"
+                dominantBaseline="central"
+                fontFamily="'TT Lakes Neue', sans-serif"
+                fontWeight="900"
+                fontSize="180"
+                fill="white"
+                transform="rotate(-90, 60, 400)"
+                letterSpacing="-5"
+              >
+                FAQ
+              </text>
+            </mask>
+          </defs>
+          <rect width="120" height="800" fill="url(#faq-bg-pattern)" mask="url(#faq-text-mask)" />
+        </svg>
       </div>
     </div>
   );

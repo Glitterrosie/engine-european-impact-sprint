@@ -19,10 +19,10 @@ const timeline = [
 ];
 
 const schedule = [
-  { day: "Day 1 – 25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team", image: scheduleDay1 },
-  { day: "Day 2 – 26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution.", image: scheduleDay2 },
-  { day: "Day 3 – 27th August", title: "Refining", desc: "Testing, Improving, Refining your solution.", image: scheduleDay3 },
-  { day: "Day 4 – 28th August", title: "Presentation", desc: "Final presentation and individual departure.", image: scheduleDay4 },
+  { day: "Day 1 – 25th August", title: "Kick-Off", desc: "Individual arrival, Kick-Off, Challenge Keynotes and finding your Team" },
+  { day: "Day 2 – 26th August", title: "Prototyping", desc: "Mapping the problem, prototyping the solution." },
+  { day: "Day 3 – 27th August", title: "Refining", desc: "Testing, Improving, Refining your solution." },
+  { day: "Day 4 – 28th August", title: "Presentation", desc: "Final presentation and individual departure." },
 ];
 
 const tornClipPath = "polygon(0% 2%, 3% 0%, 7% 3%, 11% 1%, 15% 4%, 19% 0%, 23% 2%, 27% 0%, 31% 3%, 35% 1%, 39% 4%, 43% 0%, 47% 3%, 51% 1%, 55% 3%, 59% 0%, 63% 2%, 67% 0%, 71% 3%, 75% 1%, 79% 4%, 83% 0%, 87% 2%, 91% 0%, 95% 3%, 100% 1%, 100% 97%, 97% 100%, 93% 97%, 89% 100%, 85% 97%, 81% 100%, 77% 98%, 73% 100%, 69% 97%, 65% 100%, 61% 98%, 57% 100%, 53% 97%, 49% 100%, 45% 98%, 41% 100%, 37% 97%, 33% 100%, 29% 98%, 25% 100%, 21% 97%, 17% 100%, 13% 98%, 9% 100%, 5% 97%, 0% 100%)";

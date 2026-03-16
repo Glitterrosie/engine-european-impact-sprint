@@ -58,7 +58,7 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
         {hovered && (
           <motion.div className="absolute inset-0 z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             {dots.map((dot, di) => (
-              <motion.div key={di} className="absolute rounded-full bg-white"
+              <motion.div key={di} className="absolute rounded-full bg-esprint-red"
                 style={{ width: 5, height: 5, left: `${dot.x}%`, top: `${dot.y}%`, marginLeft: -2.5, marginTop: -2.5 }}
                 initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 0.9 }} exit={{ scale: 0, opacity: 0 }}
                 transition={{ duration: 0.25, delay: di * 0.008 }}
@@ -212,7 +212,7 @@ const Index = () => {
           </motion.div>
           <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4">
             {stats.map((stat, i) => {
-              const colors = ["bg-esprint-orange text-esprint-darkblue", "bg-esprint-pink text-esprint-darkblue", "bg-esprint-red", "bg-esprint-purple"];
+              const colors = ["bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue"];
               return <StatCard key={stat.label} stat={stat} colorClass={colors[i]} dotCount={parseInt(stat.value) || 0} delay={i * 0.1} />;
             })}
           </div>

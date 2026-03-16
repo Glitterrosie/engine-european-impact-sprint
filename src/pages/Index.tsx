@@ -121,13 +121,13 @@ const OTHER_EUROPEAN = [
 ];
 
 const infoItems = [
-  { label: "Date", value: "25–28th August 2026", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },
-  { label: "Location", value: "Hasso Plattner Institute, Potsdam, Germany (30 min from Berlin airport and train station)", link: "https://share.google/7SDAwRHNbxiPhAaWK", bg: "bg-esprint-pink", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },
-  { label: "Participants", value: "60 Bachelor students in computer science from 30 countries across Europe, divided into international teams of 5.", bg: "bg-esprint-purple", text: "text-primary-foreground", accent: "border-primary-foreground/20" },
-  { label: "Accommodation", value: "Shared glamping tents on campus", bg: "bg-esprint-red", text: "text-primary-foreground", accent: "border-primary-foreground/20" },
-  { label: "Language", value: "English", bg: "bg-esprint-cream", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/10" },
-  { label: "Cost", value: "Program participation, accommodation and meals are free of charge for all participants. In addition, a 200 € travel stipend will be granted to participants to cover your travel costs to Berlin and back.", bg: "bg-esprint-darkblue", text: "text-primary-foreground", accent: "border-primary-foreground/10" },
-  { label: "Schedule", value: "The European Impact Sprint is a 4-day full time program, featuring on-site workshops during the day (ca. 9 am – 6 pm) as well as community activities during the evenings to connect with other participants. The detailed agenda will be shared at the kick-off in July.", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },
+  { label: "Date", value: "25–28th August 2026" },
+  { label: "Location", value: "Hasso Plattner Institute, Potsdam, Germany (30 min from Berlin airport and train station)", link: "https://share.google/7SDAwRHNbxiPhAaWK" },
+  { label: "Participants", value: "60 Bachelor students in computer science from 30 countries across Europe, divided into international teams of 5." },
+  { label: "Accommodation", value: "Shared glamping tents on campus" },
+  { label: "Language", value: "English" },
+  { label: "Cost", value: "Program participation, accommodation and meals are free of charge for all participants. In addition, a 200 € travel stipend will be granted to participants to cover your travel costs to Berlin and back." },
+  { label: "Schedule", value: "The European Impact Sprint is a 4-day full time program, featuring on-site workshops during the day (ca. 9 am – 6 pm) as well as community activities during the evenings to connect with other participants. The detailed agenda will be shared at the kick-off in July." },
 ];
 
 // ── Benefits data ────────────────────────────────────────────────────
@@ -228,26 +228,26 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
             {/* Program Brief */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-red rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
-              <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Program Brief</h2>
-              <p className="text-primary-foreground/80 leading-relaxed">The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...</p>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
+              <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Program Brief</h2>
+              <p className="text-esprint-darkblue/80 leading-relaxed">The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...</p>
               <div className="mt-6 rounded-xl overflow-hidden flex-1 min-h-[200px]">
                 <img src={challengeBrief} alt="Students collaborating at HPI campus" className="w-full h-full object-cover" />
               </div>
             </motion.div>
 
             {/* Key Information */}
-            <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
-              <div className="bg-esprint-darkblue p-8 md:p-10 pb-4">
-                <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
+              <div className="p-8 md:p-10 pb-4">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
               </div>
               {infoItems.map((item, i) => (
-                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className={`${item.bg} ${item.text} flex flex-1`}>
-                  <div className={`w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r ${item.accent}`}>
+                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-esprint-darkblue flex flex-1 border-t border-esprint-darkblue/10">
+                  <div className="w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r border-esprint-darkblue/10">
                     <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">{item.label}</span>
                   </div>
                   <div className="px-5 md:px-6 py-4 flex items-center min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed opacity-90">{item.value}</p>
+                    <p className="text-sm leading-relaxed opacity-80">{item.value}</p>
                   </div>
                   {item.link && (
                     <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-4 py-4 flex items-center shrink-0 opacity-70 hover:opacity-100 transition-opacity">
@@ -296,8 +296,8 @@ const Index = () => {
             </motion.div>
 
             {/* Schedule */}
-            <div className="col-span-full">
-              <ProgramSchedule />
+            <div className="col-span-full bg-white rounded-2xl shadow-xl p-8 md:p-10">
+              <ProgramSchedule variant="blue" />
             </div>
           </div>
         </div>
@@ -314,27 +314,16 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {benefits.map((b, i) => {
-              const color = benefitColors[i];
-              const num = String(i + 1).padStart(2, "0");
-              const maskId = `num-mask-home-${i}`;
+              const IconComp = b.icon;
               return (
                 <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300 min-h-[420px] md:min-h-[480px]"
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-start group hover:shadow-2xl transition-all duration-300"
                 >
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <mask id={maskId}>
-                        <rect width="300" height="500" fill="white" />
-                        <text x="150" y="120" textAnchor="middle" dominantBaseline="central" fontFamily="'TT Lakes Neue', sans-serif" fontWeight="900" fontSize="160" fill="black">{num}</text>
-                      </mask>
-                    </defs>
-                    <rect width="300" height="500" fill={color.bg} mask={`url(#${maskId})`} />
-                  </svg>
-                  <div className="relative z-10 p-6 pt-48 md:pt-56 flex flex-col items-start">
-                    <div className="w-10 h-0.5 bg-current opacity-30 mb-4" />
-                    <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>{b.title}</h3>
-                    <p className={`text-sm ${color.text} opacity-80 leading-relaxed`}>{b.desc}</p>
+                  <div className="w-12 h-12 rounded-full bg-esprint-darkblue/10 flex items-center justify-center mb-5">
+                    <IconComp className="text-esprint-darkblue" size={24} />
                   </div>
+                  <h3 className="font-display font-bold text-lg text-esprint-darkblue mb-2 leading-tight">{b.title}</h3>
+                  <p className="text-sm text-esprint-darkblue/70 leading-relaxed">{b.desc}</p>
                 </motion.div>
               );
             })}

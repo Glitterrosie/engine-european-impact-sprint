@@ -33,16 +33,22 @@ const textOnBg = [
   "text-primary-foreground",
 ];
 
-const ProgramSchedule = () => {
+const ProgramSchedule = ({ variant = "default" }: { variant?: "default" | "blue" }) => {
+  const isBlue = variant === "blue";
+  const headingColor = isBlue ? "text-esprint-darkblue" : "text-primary-foreground";
+  const bodyColor = isBlue ? "text-esprint-darkblue/70" : "text-primary-foreground/70";
+  const subtleColor = isBlue ? "text-esprint-darkblue/50" : "text-primary-foreground/50";
+  const lineStroke = isBlue ? "hsl(var(--esprint-darkblue))" : "white";
+
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="font-display font-bold text-lg text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-4">
+      <h2 className={`font-display font-bold text-lg ${headingColor} uppercase tracking-wide border-b-2 border-esprint-purple pb-3 mb-4`}>
         Program Schedule
       </h2>
-      <p className="text-primary-foreground/70 leading-relaxed mb-2">
+      <p className={`${bodyColor} leading-relaxed mb-2`}>
         Collaborate with international students and experts, tackle real-world challenges, and enjoy four unforgettable days of teamwork, sports, a BBQ night and an exciting excursion.
       </p>
-      <p className="text-primary-foreground/50 text-xs italic mb-12">
+      <p className={`${subtleColor} text-xs italic mb-12`}>
         More program details will be added shortly.
       </p>
 
@@ -56,7 +62,7 @@ const ProgramSchedule = () => {
         >
           <path
             d="M 21 0 C 21 8, 21 10, 21 14 C 21 22, 79 28, 79 38 C 79 48, 21 52, 21 62 C 21 72, 79 78, 79 86"
-            stroke="white"
+            stroke={lineStroke}
             strokeWidth="0.3"
             strokeDasharray="1 0.8"
             opacity="0.4"
@@ -91,7 +97,7 @@ const ProgramSchedule = () => {
                 {/* Text content */}
                 <div className={`w-full md:w-7/12 ${isEven ? 'md:text-left' : 'md:text-right'} text-center`}>
                   <span className={`${bgSolid[i]} ${textOnBg[i]} inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-2`}>{s.day}</span>
-                  <h3 className="font-display font-black text-xl md:text-2xl text-primary-foreground mb-2">{s.title}</h3>
+                  <h3 className={`font-display font-black text-xl md:text-2xl ${headingColor} mb-2`}>{s.title}</h3>
                   <span className={`${bgSolid[i]} ${textOnBg[i]} inline-block text-sm leading-relaxed px-3 py-1.5 rounded-lg`}>{s.desc}</span>
                 </div>
               </motion.div>

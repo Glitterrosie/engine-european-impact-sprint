@@ -226,18 +226,88 @@ const Index = () => {
             The Challenge
           </motion.h1>
 
-          <div className="grid lg:grid-cols-2 gap-6 items-stretch">
-            {/* Program Brief */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
-              <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Program Brief</h2>
-              <p className="text-esprint-darkblue/80 leading-relaxed">The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...</p>
-              <div className="mt-6 rounded-xl overflow-hidden flex-1 min-h-[200px]">
-                <img src={challengeBrief} alt="Students collaborating at HPI campus" className="w-full h-full object-cover" />
+          <div className="space-y-6">
+            {/* Challenge Title & Overview */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+              <h2 className="font-display font-black text-2xl md:text-3xl text-esprint-darkblue mb-4">Europe Interconnected / Digital Sovereignty Challenge</h2>
+              <div className="space-y-1 text-sm text-esprint-darkblue/70 mb-6">
+                <p><span className="font-bold text-esprint-darkblue">Title:</span> <em>"Digital Sovereignty for a Stronger, More Connected Europe"</em></p>
+                <p><span className="font-bold text-esprint-darkblue">Theme:</span> Digital Sovereignty, Cross-Border Services & Data Rights</p>
+                <p><span className="font-bold text-esprint-darkblue">SDG:</span> 9, 16, 17</p>
+                <p><span className="font-bold text-esprint-darkblue">Target Outcome:</span> Prototype of a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border digital cooperation.</p>
+              </div>
+              <div className="grid grid-cols-3 gap-6 mb-6">
+                <div>
+                  <p className="font-display font-black text-3xl text-esprint-darkblue">30%</p>
+                  <p className="text-xs text-esprint-darkblue/60 mt-1">of EU citizens live in cross-border regions</p>
+                </div>
+                <div>
+                  <p className="font-display font-black text-3xl text-esprint-darkblue">90%</p>
+                  <p className="text-xs text-esprint-darkblue/60 mt-1">of European data resides outside EU-controlled infrastructure</p>
+                </div>
+                <div className="rounded-xl overflow-hidden min-h-[120px]">
+                  <img src={challengeBrief} alt="Students collaborating" className="w-full h-full object-cover" />
+                </div>
               </div>
             </motion.div>
 
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Challenge Statement */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Challenge Statement</h2>
+                <p className="text-esprint-darkblue/80 leading-relaxed font-semibold mb-3">How can we empower people and organizations across Europe to collaborate, share data, and access digital services securely and independently while strengthening European values and sovereignty?</p>
+                <p className="text-esprint-darkblue/60 text-sm italic">Case: Students, workers, and refugees frequently struggle to use digital services across borders (ID, healthcare, education), despite EU-wide frameworks.</p>
+              </motion.div>
+
+              {/* Context & Rationale */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Context & Rationale</h2>
+                <p className="text-esprint-darkblue/80 leading-relaxed mb-4">Europe's digital future depends on trust, interoperability, and autonomy. Yet fragmentation, platform dependency, and inconsistent service access weaken Europe's ability to operate as a cohesive digital space.</p>
+                <p className="text-esprint-darkblue/80 leading-relaxed mb-3">This challenge focuses on building sovereign digital tools that are:</p>
+                <ul className="space-y-2 text-esprint-darkblue/70 text-sm">
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-purple mt-1.5 shrink-0" />Privacy-by-design</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-purple mt-1.5 shrink-0" />Interoperable across EU borders</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-purple mt-1.5 shrink-0" />Safe, transparent, and accountable</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-purple mt-1.5 shrink-0" />User-centered and accessible in multiple languages</li>
+                </ul>
+              </motion.div>
+
+              {/* Sprint Goals */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-orange pb-3">Sprint Goals</h2>
+                <ul className="space-y-3 text-esprint-darkblue/80 text-sm">
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-orange mt-1.5 shrink-0" />Identify key user problems tied to cross-border digital services.</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-orange mt-1.5 shrink-0" />Develop a prototype that strengthens autonomy, privacy, or cooperation.</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-orange mt-1.5 shrink-0" />Validate with real users (students, travelers, citizens).</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-orange mt-1.5 shrink-0" />Align the concept with EU data values: transparency, fairness, and interoperability.</li>
+                </ul>
+                {/* Image placeholder */}
+                <div className="mt-6 rounded-xl overflow-hidden h-40 bg-esprint-darkblue/5 flex items-center justify-center">
+                  <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
+                </div>
+              </motion.div>
+
+              {/* Proposed Product Directions */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-red pb-3">Proposed Product Directions</h2>
+                <p className="text-esprint-darkblue/60 text-sm mb-4 italic">Teams may explore (but are not limited to):</p>
+                <ul className="space-y-3 text-esprint-darkblue/80 text-sm">
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />European Digital Identity Wallet use cases for students or newcomers</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />Cross-border service navigator (health, transport, education)</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />User-friendly GDPR & data-rights assistant</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />AI-driven multilingual collaboration tools</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />Transparency dashboard for digital infrastructure dependencies</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-red mt-1.5 shrink-0" />Identify deepfakes and AI-generated misinformation in news and social media</li>
+                </ul>
+                {/* Image placeholder */}
+                <div className="mt-6 rounded-xl overflow-hidden h-40 bg-esprint-darkblue/5 flex items-center justify-center">
+                  <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
+                </div>
+              </motion.div>
+            </div>
+
             {/* Key Information */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col">
               <div className="p-8 md:p-10 pb-4">
                 <h2 className="font-display font-bold text-xl text-esprint-darkblue uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
               </div>
@@ -259,7 +329,7 @@ const Index = () => {
             </div>
 
             {/* Map */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl col-span-full">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl">
               <h2 className="font-display font-bold text-2xl text-primary-foreground mb-8">Partner Universities Coming Soon</h2>
               <div className="max-w-2xl mx-auto">
                 <ComposableMap projection="geoAzimuthalEqualArea" projectionConfig={{ rotate: [-10, -52, 0], scale: 700 }} width={800} height={550} style={{ width: "100%", height: "auto" }}>
@@ -296,7 +366,7 @@ const Index = () => {
             </motion.div>
 
             {/* Schedule */}
-            <div className="col-span-full bg-white rounded-2xl shadow-xl p-8 md:p-10">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
               <ProgramSchedule variant="blue" />
             </div>
           </div>

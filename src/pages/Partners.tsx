@@ -67,20 +67,20 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-red rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-4 md:p-5 text-primary-foreground">
+          <div className="p-4 md:p-5 text-esprint-darkblue">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Organizer</span>
             </div>
             <div className="mb-3">
-              <img src={hpiEngineLogo} alt="HPI Engine" className="h-9" />
+              <img src={hpiEngineLogo} alt="HPI Engine" className="h-9 invert" />
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 HPI Engine is one of Europe's leading entrepreneurship ecosystems. We empower students, scientists, and tech founders to build digital products and startups through tailored programs, state-of-the-art infrastructure, close mentoring and a strong community.
               </p>
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 The HPI ecosystem has produced 300+ startups shaping industries worldwide and attracting over €1B in venture capital.
               </p>
             </div>

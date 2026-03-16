@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Users, Lightbulb, PartyPopper, Network, Wrench } from "lucide-react";
+import { ArrowRight, Handshake, Mic, Tent, Globe, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import {
@@ -133,11 +133,11 @@ const infoItems = [
 // ── Benefits data ────────────────────────────────────────────────────
 
 const benefits = [
-  { icon: Users, title: "Make Friends Across Europe", desc: "Team up with talented IT students from top tech universities across Europe, swap ideas and see just how far you can come in only 4 days when working together!" },
-  { icon: Lightbulb, title: "Get Inspired by Real Legends", desc: "Engage with renowned speakers and industry leaders who share personal stories and insights to broaden your horizons and ignite your passion." },
-  { icon: PartyPopper, title: "Experience an All-Inclusive Innovation Program", desc: "Enjoy a fully covered adventure just outside the startup capital Berlin: accommodation, meals, drinks, and fun events – all designed to support your focus." },
-  { icon: Network, title: "Build a Powerful Network", desc: "Live, learn and build together in an inspiring glamping camp – forging friendships and professional relationships that last way beyond the program." },
-  { icon: Wrench, title: "Sharpen Your Problem-Solving Skills", desc: "Explore real-world solutions for sustainability, discover Berlin's startup energy, and develop skills that empower you to tackle challenges beyond borders." },
+  { icon: Handshake, title: "Make Friends Across Europe", desc: "Team up with talented IT students from top tech universities across Europe, swap ideas and see just how far you can come in only 4 days when working together!" },
+  { icon: Mic, title: "Get Inspired by Real Legends", desc: "Engage with renowned speakers and industry leaders who share personal stories and insights to broaden your horizons and ignite your passion." },
+  { icon: Tent, title: "Experience an All-Inclusive Innovation Program", desc: "Enjoy a fully covered adventure just outside the startup capital Berlin: accommodation, meals, drinks, and fun events – all designed to support your focus." },
+  { icon: Globe, title: "Build a Powerful Network", desc: "Live, learn and build together in an inspiring glamping camp – forging friendships and professional relationships that last way beyond the program." },
+  { icon: Puzzle, title: "Sharpen Your Problem-Solving Skills", desc: "Explore real-world solutions for sustainability, discover Berlin's startup energy, and develop skills that empower you to tackle challenges beyond borders." },
 ];
 
 const benefitColors = [

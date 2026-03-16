@@ -106,30 +106,21 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className={cn(
-          "md:hidden backdrop-blur-xl px-4 pb-4 space-y-1",
-          isWhitePage
-            ? "bg-white/90 border-b border-gray-200"
-            : "bg-black/80 border-b border-white/10"
-        )}>
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={cn(
-                "block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
-                isWhitePage
-                  ? isActive(item.path)
-                    ? "bg-esprint-darkblue/10 text-esprint-darkblue"
-                    : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
-                  : isActive(item.path)
-                    ? "bg-white/20 text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
+        <div className="md:hidden backdrop-blur-xl px-4 pb-4 space-y-1 bg-black/80 border-b border-white/10">
+          {mainItems.map((item) => (
+            <Link key={item.path} to={item.path} onClick={(e) => handleNavClick(e, item.path)}
+              className={cn("block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
+                isActive(item.path) ? "bg-white/20 text-white" : "text-white/70 hover:text-white hover:bg-white/10"
               )}
-            >
-              {item.label}
-            </Link>
+            >{item.label}</Link>
+          ))}
+          <div className="h-px bg-white/15 my-2" />
+          {secondaryItems.map((item) => (
+            <Link key={item.path} to={item.path} onClick={(e) => handleNavClick(e, item.path)}
+              className={cn("block px-3 py-2 rounded-md text-sm font-normal transition-colors",
+                isActive(item.path) ? "bg-white/20 text-white" : "text-white/50 hover:text-white/80 hover:bg-white/5"
+              )}
+            >{item.label}</Link>
           ))}
         </div>
       )}

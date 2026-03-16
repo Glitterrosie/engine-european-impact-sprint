@@ -366,7 +366,7 @@ const Index = () => {
             </motion.div>
 
             {/* Schedule */}
-            <div className="col-span-full bg-white rounded-2xl shadow-xl p-8 md:p-10">
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
               <ProgramSchedule variant="blue" />
             </div>
           </div>

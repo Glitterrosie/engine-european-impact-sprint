@@ -14,6 +14,11 @@ const EU27_COUNTRIES = [
   "Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland",
   "Portugal","Romania","Slovakia","Slovenia","Spain","Sweden"
 ];
+const OTHER_EUROPEAN = [
+  "Albania","Andorra","Belarus","Bosnia and Herzegovina","Iceland","Kosovo",
+  "Moldova","Monaco","Montenegro","North Macedonia","Norway","San Marino",
+  "Serbia","Switzerland","Ukraine","United Kingdom","Vatican City","Turkey","Georgia"
+];
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },
@@ -103,22 +108,26 @@ const Challenge = () => {
             >
               <Geographies geography={EUROPE_GEO_URL}>
                 {({ geographies }) =>
-                  geographies
-                    .filter((geo) => EU27_COUNTRIES.includes(geo.properties.name))
-                    .map((geo) => (
+                  geographies.map((geo) => {
+                    const name = geo.properties.name;
+                    const isEU = EU27_COUNTRIES.includes(name);
+                    const isOther = OTHER_EUROPEAN.includes(name);
+                    if (!isEU && !isOther) return null;
+                    return (
                       <Geography
                         key={geo.rsmKey}
                         geography={geo}
-                        fill="hsl(var(--primary-foreground) / 0.08)"
-                        stroke="hsl(var(--primary-foreground) / 0.3)"
+                        fill={isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
+                        stroke={isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
                         strokeWidth={0.5}
                         style={{
                           default: { outline: "none" },
-                          hover: { fill: "hsl(var(--primary-foreground) / 0.15)", outline: "none" },
+                          hover: { fill: isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none" },
                           pressed: { outline: "none" },
                         }}
                       />
-                    ))
+                    );
+                  })
                 }
               </Geographies>
 

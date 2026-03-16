@@ -9,7 +9,7 @@ const navItems = [
   { label: "How to Join", path: "/how-it-works" },
   { label: "Benefits", path: "/#benefits" },
   { label: "About HPI", path: "/partners" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/how-it-works#contact" },
   { label: "FAQ", path: "/#faq" },
 ];
 

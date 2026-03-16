@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
-import hpiLogoWhite from "@/assets/hpi-logo-white.png";
+import hpiLogo from "@/assets/hpi-logo.svg";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogoWhite from "@/assets/sap-logo-white.png";
 import hpiCampus1 from "@/assets/hpi-campus-1.jpg";

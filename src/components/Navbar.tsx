@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { label: "Home", path: "/" },
   { label: "The Challenge", path: "/#challenge" },
-  { label: "How it Works", path: "/how-it-works" },
+  { label: "How to Join", path: "/how-it-works" },
   { label: "Benefits", path: "/#benefits" },
   { label: "About HPI", path: "/partners" },
   { label: "Contact", path: "/contact" },

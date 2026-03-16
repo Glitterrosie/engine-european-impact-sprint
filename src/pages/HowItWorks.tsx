@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
-import ProgramSchedule from "@/components/ProgramSchedule";
 import gisNewYork from "@/assets/gis-newyork.png";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
@@ -24,7 +23,7 @@ const timeline = [
 const HowItWorks = () => {
   return (
     <PageLayout
-      title="How it Works"
+      title="How to Join"
       subtitle="Students are nominated by their universities, joined into diverse teams and guided by experts throughout their 4-day journey on-site at HPI Potsdam/Berlin."
     >
       <div className="space-y-8">
@@ -98,7 +97,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
 
-        <ProgramSchedule />
+        
       </div>
     </PageLayout>
   );

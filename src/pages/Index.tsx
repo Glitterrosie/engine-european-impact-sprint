@@ -344,15 +344,14 @@ const Index = () => {
           <div className="flex flex-col gap-6 pb-12">
             {faqSections.map((section, si) => (
               <motion.div key={section.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: si * 0.1 }}
-                className="relative w-full max-w-3xl rounded-2xl px-6 md:px-10 py-10"
-                style={{ background: `hsl(${section.hsl})` }}
+                className="relative w-full max-w-3xl bg-white rounded-2xl px-6 md:px-10 py-10 shadow-xl"
               >
-                <h2 className={`font-display font-bold text-xs uppercase tracking-[0.2em] ${section.textClass} opacity-70 mb-6`}>{section.title}</h2>
+                <h2 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-esprint-darkblue opacity-70 mb-6">{section.title}</h2>
                 <Accordion type="single" collapsible className="space-y-3">
                   {section.items.map((item, i) => (
-                    <AccordionItem key={i} value={`${si}-${i}`} className="border-none rounded-xl px-5 backdrop-blur-sm" style={{ background: 'hsla(0, 0%, 100%, 0.15)' }}>
-                      <AccordionTrigger className={`text-left font-semibold ${section.textClass} hover:no-underline text-sm py-4`}>{item.q}</AccordionTrigger>
-                      <AccordionContent className={`${section.textClass} opacity-80 leading-relaxed text-sm`}>{item.a}</AccordionContent>
+                    <AccordionItem key={i} value={`${si}-${i}`} className="border-none rounded-xl px-5" style={{ background: 'hsl(var(--esprint-darkblue) / 0.05)' }}>
+                      <AccordionTrigger className="text-left font-semibold text-esprint-darkblue hover:no-underline text-sm py-4">{item.q}</AccordionTrigger>
+                      <AccordionContent className="text-esprint-darkblue/80 leading-relaxed text-sm">{item.a}</AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>

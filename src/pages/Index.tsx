@@ -314,27 +314,16 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {benefits.map((b, i) => {
-              const color = benefitColors[i];
-              const num = String(i + 1).padStart(2, "0");
-              const maskId = `num-mask-home-${i}`;
+              const IconComp = b.icon;
               return (
                 <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl relative overflow-hidden group hover:brightness-110 transition-all duration-300 min-h-[420px] md:min-h-[480px]"
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-start group hover:shadow-2xl transition-all duration-300"
                 >
-                  <svg className="absolute inset-0 w-full h-full" viewBox="0 0 300 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <mask id={maskId}>
-                        <rect width="300" height="500" fill="white" />
-                        <text x="150" y="120" textAnchor="middle" dominantBaseline="central" fontFamily="'TT Lakes Neue', sans-serif" fontWeight="900" fontSize="160" fill="black">{num}</text>
-                      </mask>
-                    </defs>
-                    <rect width="300" height="500" fill={color.bg} mask={`url(#${maskId})`} />
-                  </svg>
-                  <div className="relative z-10 p-6 pt-48 md:pt-56 flex flex-col items-start">
-                    <div className="w-10 h-0.5 bg-current opacity-30 mb-4" />
-                    <h3 className={`font-display font-bold text-lg ${color.text} mb-2 leading-tight`}>{b.title}</h3>
-                    <p className={`text-sm ${color.text} opacity-80 leading-relaxed`}>{b.desc}</p>
+                  <div className="w-12 h-12 rounded-full bg-esprint-darkblue/10 flex items-center justify-center mb-5">
+                    <IconComp className="text-esprint-darkblue" size={24} />
                   </div>
+                  <h3 className="font-display font-bold text-lg text-esprint-darkblue mb-2 leading-tight">{b.title}</h3>
+                  <p className="text-sm text-esprint-darkblue/70 leading-relaxed">{b.desc}</p>
                 </motion.div>
               );
             })}

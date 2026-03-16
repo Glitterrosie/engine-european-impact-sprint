@@ -127,11 +127,8 @@ const Challenge = () => {
                         }}
                       />
                     );
-                  })
-                        }}
-                      />
-                    ))
                 }
+              </Geographies>
               </Geographies>
 
               <Marker coordinates={[13.12525, 52.392528]}>

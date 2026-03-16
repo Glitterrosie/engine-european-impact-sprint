@@ -23,20 +23,20 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-4 md:p-5 text-primary-foreground">
+          <div className="p-4 md:p-5 text-esprint-darkblue">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
             </div>
             <div className="mb-3">
-              <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-10" />
+              <img src={hpiLogo} alt="Hasso Plattner Institute" className="h-10" />
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 The Hasso Plattner Institute (HPI) was founded in 1998 by Hasso Plattner, co-founder of SAP and one of Europe's most successful tech entrepreneurs. Today, HPI is a leading academic institution for digital engineering, educating the next generation of technology leaders, innovators and entrepreneurs.
               </p>
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 Located in Potsdam near Berlin, HPI attracts more than 900 Bachelor's and Master's students and around 80 PhD candidates. With a focus on IT Systems Engineering, Computer Science, Digital Health, Cybersecurity and Data Engineering, HPI has produced more than 2,500 graduates supported by state-of-the-art infrastructure and an interdisciplinary faculty of 30+ professors.
               </p>
             </div>

@@ -29,14 +29,15 @@ const Navbar = () => {
   const showBg = scrolled;
 
   const handleNavClick = (e: React.MouseEvent, path: string) => {
-    if (path.startsWith("/#")) {
+    const hashIndex = path.indexOf("#");
+    if (hashIndex !== -1) {
       e.preventDefault();
-      const id = path.slice(2);
-      if (location.pathname === "/") {
+      const basePath = path.slice(0, hashIndex) || "/";
+      const id = path.slice(hashIndex + 1);
+      if (location.pathname === basePath) {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
       } else {
-        navigate("/");
-        // Wait for navigation then scroll
+        navigate(basePath);
         setTimeout(() => {
           document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
         }, 100);

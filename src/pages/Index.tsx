@@ -264,11 +264,20 @@ const Index = () => {
               <div className="max-w-2xl mx-auto">
                 <ComposableMap projection="geoAzimuthalEqualArea" projectionConfig={{ rotate: [-10, -52, 0], scale: 700 }} width={800} height={550} style={{ width: "100%", height: "auto" }}>
                   <Geographies geography={EUROPE_GEO_URL}>
-                    {({ geographies }) => geographies.filter((geo) => EU27_COUNTRIES.includes(geo.properties.name)).map((geo) => (
-                      <Geography key={geo.rsmKey} geography={geo} fill="hsl(var(--primary-foreground) / 0.08)" stroke="hsl(var(--primary-foreground) / 0.3)" strokeWidth={0.5}
-                        style={{ default: { outline: "none" }, hover: { fill: "hsl(var(--primary-foreground) / 0.15)", outline: "none" }, pressed: { outline: "none" } }}
-                      />
-                    ))}
+                    {({ geographies }) => geographies.map((geo) => {
+                      const name = geo.properties.name;
+                      const isEU = EU27_COUNTRIES.includes(name);
+                      const isOther = OTHER_EUROPEAN.includes(name);
+                      if (!isEU && !isOther) return null;
+                      return (
+                        <Geography key={geo.rsmKey} geography={geo}
+                          fill={isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
+                          stroke={isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
+                          strokeWidth={0.5}
+                          style={{ default: { outline: "none" }, hover: { fill: isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none" }, pressed: { outline: "none" } }}
+                        />
+                      );
+                    })}
                   </Geographies>
                   <Marker coordinates={[13.12525, 52.392528]}>
                     <g onMouseEnter={() => setIsHpiHovered(true)} onMouseLeave={() => setIsHpiHovered(false)} className="cursor-pointer">

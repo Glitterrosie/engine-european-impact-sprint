@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Handshake, Mic, Tent, Globe, Puzzle } from "lucide-react";
+import { ArrowRight, ArrowDown, Handshake, Mic, Tent, Globe, Puzzle, Factory, Scale, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import {

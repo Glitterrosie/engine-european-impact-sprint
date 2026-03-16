@@ -62,7 +62,7 @@ const ProgramSchedule = ({ variant = "default" }: { variant?: "default" | "blue"
         >
           <path
             d="M 21 0 C 21 8, 21 10, 21 14 C 21 22, 79 28, 79 38 C 79 48, 21 52, 21 62 C 21 72, 79 78, 79 86"
-            stroke="white"
+            stroke={lineStroke}
             strokeWidth="0.3"
             strokeDasharray="1 0.8"
             opacity="0.4"

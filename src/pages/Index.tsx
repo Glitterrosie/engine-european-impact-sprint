@@ -230,9 +230,11 @@ const Index = () => {
             {/* Challenge Title & Overview — dark blue hero block */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-darkblue rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8 md:p-10 pb-6">
-                <span className="text-esprint-pink text-[10px] font-bold uppercase tracking-[0.25em]">2026 Challenge</span>
-                <h2 className="font-display font-black text-2xl md:text-4xl text-primary-foreground mt-2 mb-4 leading-tight">Europe Interconnected /<br/>Digital Sovereignty Challenge</h2>
-                <p className="text-primary-foreground/60 text-sm italic mb-6">"Digital Sovereignty for a Stronger, More Connected Europe"</p>
+                <span className="inline-block bg-esprint-orange text-esprint-darkblue text-[11px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-md mb-4">2026 Challenge</span>
+                <h2 className="font-display font-black text-2xl md:text-4xl text-primary-foreground mb-5 leading-tight">Europe Interconnected /<br/>Digital Sovereignty Challenge</h2>
+                <div className="bg-esprint-purple/30 border border-esprint-purple/50 rounded-xl px-6 py-5 mb-6">
+                  <p className="font-display font-black text-lg md:text-2xl text-esprint-cream tracking-wide italic" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>"Digital Sovereignty for a Stronger, More Connected Europe"</p>
+                </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-primary-foreground/70">
                   <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">Theme</span>Digital Sovereignty, Cross-Border Services & Data Rights</div>
                   <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">SDG</span>9, 16, 17</div>

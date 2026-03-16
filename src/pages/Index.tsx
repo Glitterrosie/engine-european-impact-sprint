@@ -228,26 +228,26 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-6 items-stretch">
             {/* Program Brief */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-red rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
-              <h2 className="font-display font-bold text-xl text-primary-foreground mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Program Brief</h2>
-              <p className="text-primary-foreground/80 leading-relaxed">The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...</p>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
+              <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-purple pb-3">Program Brief</h2>
+              <p className="text-esprint-darkblue/80 leading-relaxed">The European Impact Sprint is an intensive innovation program bringing together 60 Computer Science students from 30 European countries. Over the course of four days in Berlin, you will collaborate in cross-border teams to develop technical solutions for the continent's most pressing challenges. The 2026 focus will be on...</p>
               <div className="mt-6 rounded-xl overflow-hidden flex-1 min-h-[200px]">
                 <img src={challengeBrief} alt="Students collaborating at HPI campus" className="w-full h-full object-cover" />
               </div>
             </motion.div>
 
             {/* Key Information */}
-            <div className="rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
-              <div className="bg-esprint-darkblue p-8 md:p-10 pb-4">
-                <h2 className="font-display font-bold text-xl text-primary-foreground uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
+            <div className="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col h-full">
+              <div className="p-8 md:p-10 pb-4">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
               </div>
               {infoItems.map((item, i) => (
-                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className={`${item.bg} ${item.text} flex flex-1`}>
-                  <div className={`w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r ${item.accent}`}>
+                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-esprint-darkblue flex flex-1 border-t border-esprint-darkblue/10">
+                  <div className="w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r border-esprint-darkblue/10">
                     <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">{item.label}</span>
                   </div>
                   <div className="px-5 md:px-6 py-4 flex items-center min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed opacity-90">{item.value}</p>
+                    <p className="text-sm leading-relaxed opacity-80">{item.value}</p>
                   </div>
                   {item.link && (
                     <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-4 py-4 flex items-center shrink-0 opacity-70 hover:opacity-100 transition-opacity">

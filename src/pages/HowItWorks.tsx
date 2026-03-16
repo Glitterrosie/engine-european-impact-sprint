@@ -97,7 +97,7 @@ const HowItWorks = () => {
           </div>
         </motion.div>
 
-        <ProgramSchedule />
+        
       </div>
     </PageLayout>
   );

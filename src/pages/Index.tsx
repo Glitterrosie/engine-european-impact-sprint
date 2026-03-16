@@ -212,7 +212,7 @@ const Index = () => {
           </motion.div>
           <div className="rounded-2xl overflow-hidden shadow-xl grid grid-cols-2 md:grid-cols-4">
             {stats.map((stat, i) => {
-              const colors = ["bg-esprint-orange text-esprint-darkblue", "bg-esprint-pink text-esprint-darkblue", "bg-esprint-red", "bg-esprint-purple"];
+              const colors = ["bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue", "bg-white text-esprint-darkblue"];
               return <StatCard key={stat.label} stat={stat} colorClass={colors[i]} dotCount={parseInt(stat.value) || 0} delay={i * 0.1} />;
             })}
           </div>

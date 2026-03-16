@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowDown, Handshake, Mic, Tent, Globe, Puzzle, Factory, Scale, Users } from "lucide-react";
+import { ArrowRight, Handshake, Mic, Tent, Globe, Puzzle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import {
@@ -227,71 +227,90 @@ const Index = () => {
           </motion.h1>
 
           <div className="space-y-6">
-            {/* Single Challenge Box */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white rounded-2xl shadow-2xl overflow-hidden ring-1 ring-border/10">
-              {/* Header */}
-              <div className="p-8 md:p-12">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="bg-esprint-pink text-primary-foreground text-[11px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">2026 Challenge</span>
-                  <span className="text-esprint-darkblue/40 text-sm">Europe Interconnected</span>
+            {/* Challenge Title & Overview — dark blue hero block */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-darkblue rounded-2xl shadow-xl overflow-hidden">
+              <div className="p-8 md:p-10 pb-6">
+                <span className="text-esprint-pink text-[10px] font-bold uppercase tracking-[0.25em]">2026 Challenge</span>
+                <h2 className="font-display font-black text-2xl md:text-4xl text-primary-foreground mt-2 mb-4 leading-tight">Europe Interconnected /<br/>Digital Sovereignty Challenge</h2>
+                <p className="text-primary-foreground/60 text-sm italic mb-6">"Digital Sovereignty for a Stronger, More Connected Europe"</p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-primary-foreground/70">
+                  <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">Theme</span>Digital Sovereignty, Cross-Border Services & Data Rights</div>
+                  <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">SDG</span>9, 16, 17</div>
+                  <div className="col-span-2"><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">Target Outcome</span>Prototype of a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border digital cooperation.</div>
                 </div>
-
-                <h2 className="font-display font-black text-3xl md:text-5xl text-esprint-darkblue leading-tight mb-3">Digital Sovereignty</h2>
-                <p className="font-display font-bold text-lg md:text-xl text-esprint-purple/80 mb-8">for a Stronger, More Connected Europe</p>
-
-                {/* Theme */}
-                <div className="bg-esprint-darkblue/5 rounded-xl p-5 mb-8 border-l-4 border-esprint-purple">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-esprint-purple mb-1 block">Theme</span>
-                  <p className="text-esprint-darkblue font-semibold">Digital Sovereignty, Cross-Border Services & Data Rights</p>
-                  <p className="text-esprint-darkblue/60 text-sm mt-2">How can we empower people and organizations across Europe to collaborate, share data, and access digital services securely and independently — while strengthening European values and sovereignty?</p>
+              </div>
+              {/* Stats strip */}
+              <div className="grid grid-cols-3">
+                <div className="bg-esprint-orange p-6 text-esprint-darkblue">
+                  <p className="font-display font-black text-4xl">30%</p>
+                  <p className="text-xs mt-1 opacity-70">of EU citizens live in cross-border regions</p>
                 </div>
-
-                {/* Arrow → Target Outcome */}
-                <div className="flex flex-col items-center my-8">
-                  <div className="w-10 h-10 rounded-full bg-esprint-orange flex items-center justify-center shadow-lg">
-                    <ArrowDown className="h-5 w-5 text-esprint-darkblue" />
-                  </div>
-                  <div className="w-0.5 h-6 bg-esprint-orange/40" />
-                  <div className="bg-esprint-orange/10 border-2 border-esprint-orange rounded-xl p-5 text-center max-w-xl">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-esprint-orange block mb-2">Target Outcome</span>
-                    <p className="text-esprint-darkblue font-semibold text-sm leading-relaxed">Prototype of a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border digital cooperation.</p>
-                  </div>
+                <div className="bg-esprint-pink p-6 text-esprint-darkblue">
+                  <p className="font-display font-black text-4xl">90%</p>
+                  <p className="text-xs mt-1 opacity-70">of European data resides outside EU-controlled infrastructure</p>
                 </div>
-
-                {/* SDG Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                  <div className="bg-esprint-darkblue rounded-xl p-6 text-center group hover:scale-[1.02] transition-transform">
-                    <div className="w-12 h-12 rounded-full bg-esprint-pink/20 flex items-center justify-center mx-auto mb-3">
-                      <Factory className="h-6 w-6 text-esprint-pink" />
-                    </div>
-                    <p className="font-display font-black text-3xl text-primary-foreground">SDG 9</p>
-                    <p className="text-primary-foreground/60 text-xs mt-1 leading-relaxed">Industry, Innovation<br/>& Infrastructure</p>
-                  </div>
-                  <div className="bg-esprint-darkblue rounded-xl p-6 text-center group hover:scale-[1.02] transition-transform">
-                    <div className="w-12 h-12 rounded-full bg-esprint-orange/20 flex items-center justify-center mx-auto mb-3">
-                      <Scale className="h-6 w-6 text-esprint-orange" />
-                    </div>
-                    <p className="font-display font-black text-3xl text-primary-foreground">SDG 16</p>
-                    <p className="text-primary-foreground/60 text-xs mt-1 leading-relaxed">Peace, Justice<br/>& Strong Institutions</p>
-                  </div>
-                  <div className="bg-esprint-darkblue rounded-xl p-6 text-center group hover:scale-[1.02] transition-transform">
-                    <div className="w-12 h-12 rounded-full bg-esprint-purple/20 flex items-center justify-center mx-auto mb-3">
-                      <Users className="h-6 w-6 text-esprint-purple" />
-                    </div>
-                    <p className="font-display font-black text-3xl text-primary-foreground">SDG 17</p>
-                    <p className="text-primary-foreground/60 text-xs mt-1 leading-relaxed">Partnerships<br/>for the Goals</p>
-                  </div>
+                <div className="overflow-hidden">
+                  <img src={challengeBrief} alt="Students collaborating" className="w-full h-full object-cover" />
                 </div>
+              </div>
+            </motion.div>
 
-                {/* Image placeholders */}
-                <div className="grid grid-cols-2 gap-4 mt-8">
-                  <div className="rounded-xl overflow-hidden h-48 bg-esprint-darkblue/5 flex items-center justify-center border-2 border-dashed border-esprint-darkblue/15">
-                    <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
-                  </div>
-                  <div className="rounded-xl overflow-hidden h-48">
-                    <img src={challengeBrief} alt="Students collaborating" className="w-full h-full object-cover rounded-xl" />
-                  </div>
+            {/* Challenge Statement — full-width purple accent */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-purple rounded-2xl shadow-xl p-8 md:p-10">
+              <h2 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Challenge Statement</h2>
+              <p className="text-primary-foreground font-display font-bold text-lg md:text-xl leading-relaxed mb-4">How can we empower people and organizations across Europe to collaborate, share data, and access digital services securely and independently while strengthening European values and sovereignty?</p>
+              <p className="text-primary-foreground/50 text-sm italic">Case: Students, workers, and refugees frequently struggle to use digital services across borders (ID, healthcare, education), despite EU-wide frameworks.</p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Context & Rationale — white */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Context & Rationale</h2>
+                <p className="text-esprint-darkblue/80 leading-relaxed mb-4">Europe's digital future depends on trust, interoperability, and autonomy. Yet fragmentation, platform dependency, and inconsistent service access weaken Europe's ability to operate as a cohesive digital space.</p>
+                <p className="text-esprint-darkblue/80 leading-relaxed mb-3 font-semibold text-sm">Sovereign digital tools that are:</p>
+                <ul className="space-y-2 text-esprint-darkblue/70 text-sm">
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-pink mt-1.5 shrink-0" />Privacy-by-design</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-pink mt-1.5 shrink-0" />Interoperable across EU borders</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-pink mt-1.5 shrink-0" />Safe, transparent, and accountable</li>
+                  <li className="flex gap-2 items-start"><span className="w-1.5 h-1.5 rounded-full bg-esprint-pink mt-1.5 shrink-0" />User-centered and accessible in multiple languages</li>
+                </ul>
+              </motion.div>
+
+              {/* Sprint Goals — orange */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
+                <ul className="space-y-3 text-esprint-darkblue/80 text-sm">
+                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">1</span></span>Identify key user problems tied to cross-border digital services.</li>
+                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">2</span></span>Develop a prototype that strengthens autonomy, privacy, or cooperation.</li>
+                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">3</span></span>Validate with real users (students, travelers, citizens).</li>
+                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">4</span></span>Align the concept with EU data values: transparency, fairness, and interoperability.</li>
+                </ul>
+                <div className="mt-6 rounded-xl overflow-hidden h-40 bg-esprint-darkblue/10 flex items-center justify-center">
+                  <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
                 </div>
+              </motion.div>
+            </div>
+
+            {/* Proposed Product Directions — red, full width */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-red rounded-2xl shadow-xl p-8 md:p-10">
+              <h2 className="font-display font-bold text-xl text-primary-foreground mb-2 uppercase tracking-wide border-b-2 border-primary-foreground/20 pb-3">Proposed Product Directions</h2>
+              <p className="text-primary-foreground/50 text-sm mb-6 italic">Teams may explore (but are not limited to):</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  "European Digital Identity Wallet use cases for students or newcomers",
+                  "Cross-border service navigator (health, transport, education)",
+                  "User-friendly GDPR & data-rights assistant",
+                  "AI-driven multilingual collaboration tools",
+                  "Transparency dashboard for digital infrastructure dependencies",
+                  "Identify deepfakes and AI-generated misinformation in news and social media",
+                ].map((d, i) => (
+                  <div key={i} className="bg-primary-foreground/10 rounded-xl p-4 text-primary-foreground/90 text-sm leading-relaxed backdrop-blur-sm">
+                    {d}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 rounded-xl overflow-hidden h-40 bg-primary-foreground/10 flex items-center justify-center">
+                <span className="text-primary-foreground/30 text-sm font-display">Image coming soon</span>
               </div>
             </motion.div>
 

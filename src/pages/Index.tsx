@@ -108,14 +108,11 @@ const TypewriterHeadline = () => {
 // ── Challenge data ───────────────────────────────────────────────────
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
-const EUROPE_COUNTRIES = [
-  "Albania","Andorra","Austria","Belarus","Belgium","Bosnia and Herzegovina",
-  "Bulgaria","Croatia","Cyprus","Czech Republic","Czechia","Denmark","Estonia","Finland",
-  "France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kosovo",
-  "Latvia","Lithuania","Luxembourg","Malta","Moldova","Monaco","Montenegro",
-  "Netherlands","North Macedonia","Norway","Poland","Portugal","Romania",
-  "Russia","San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden",
-  "Switzerland","Ukraine","United Kingdom","Vatican City"
+const EU27_COUNTRIES = [
+  "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Czechia",
+  "Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland",
+  "Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland",
+  "Portugal","Romania","Slovakia","Slovenia","Spain","Sweden"
 ];
 
 const infoItems = [
@@ -262,7 +259,7 @@ const Index = () => {
               <div className="max-w-2xl mx-auto">
                 <ComposableMap projection="geoAzimuthalEqualArea" projectionConfig={{ rotate: [-10, -52, 0], scale: 700 }} width={800} height={550} style={{ width: "100%", height: "auto" }}>
                   <Geographies geography={EUROPE_GEO_URL}>
-                    {({ geographies }) => geographies.filter((geo) => EUROPE_COUNTRIES.includes(geo.properties.name)).map((geo) => (
+                    {({ geographies }) => geographies.filter((geo) => EU27_COUNTRIES.includes(geo.properties.name)).map((geo) => (
                       <Geography key={geo.rsmKey} geography={geo} fill="hsl(var(--primary-foreground) / 0.08)" stroke="hsl(var(--primary-foreground) / 0.3)" strokeWidth={0.5}
                         style={{ default: { outline: "none" }, hover: { fill: "hsl(var(--primary-foreground) / 0.15)", outline: "none" }, pressed: { outline: "none" } }}
                       />

@@ -8,14 +8,11 @@ import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
-const EUROPE_COUNTRIES = [
-  "Albania","Andorra","Austria","Belarus","Belgium","Bosnia and Herzegovina",
-  "Bulgaria","Croatia","Cyprus","Czech Republic","Czechia","Denmark","Estonia","Finland",
-  "France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Kosovo",
-  "Latvia","Lithuania","Luxembourg","Malta","Moldova","Monaco","Montenegro",
-  "Netherlands","North Macedonia","Norway","Poland","Portugal","Romania",
-  "Russia","San Marino","Serbia","Slovakia","Slovenia","Spain","Sweden",
-  "Switzerland","Ukraine","United Kingdom","Vatican City"
+const EU27_COUNTRIES = [
+  "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Czechia",
+  "Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland",
+  "Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland",
+  "Portugal","Romania","Slovakia","Slovenia","Spain","Sweden"
 ];
 
 const infoItems = [
@@ -107,7 +104,7 @@ const Challenge = () => {
               <Geographies geography={EUROPE_GEO_URL}>
                 {({ geographies }) =>
                   geographies
-                    .filter((geo) => EUROPE_COUNTRIES.includes(geo.properties.name))
+                    .filter((geo) => EU27_COUNTRIES.includes(geo.properties.name))
                     .map((geo) => (
                       <Geography
                         key={geo.rsmKey}

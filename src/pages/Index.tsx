@@ -58,7 +58,7 @@ const StatCard = ({ stat, colorClass, dotCount, delay }: { stat: { value: string
         {hovered && (
           <motion.div className="absolute inset-0 z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
             {dots.map((dot, di) => (
-              <motion.div key={di} className="absolute rounded-full bg-white"
+              <motion.div key={di} className="absolute rounded-full bg-esprint-red"
                 style={{ width: 5, height: 5, left: `${dot.x}%`, top: `${dot.y}%`, marginLeft: -2.5, marginTop: -2.5 }}
                 initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 0.9 }} exit={{ scale: 0, opacity: 0 }}
                 transition={{ duration: 0.25, delay: di * 0.008 }}

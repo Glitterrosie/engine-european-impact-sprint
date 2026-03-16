@@ -104,7 +104,7 @@ const Challenge = () => {
               <Geographies geography={EUROPE_GEO_URL}>
                 {({ geographies }) =>
                   geographies
-                    .filter((geo) => EUROPE_COUNTRIES.includes(geo.properties.name))
+                    .filter((geo) => EU27_COUNTRIES.includes(geo.properties.name))
                     .map((geo) => (
                       <Geography
                         key={geo.rsmKey}

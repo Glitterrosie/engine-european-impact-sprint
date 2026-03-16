@@ -259,7 +259,7 @@ const Index = () => {
               <div className="max-w-2xl mx-auto">
                 <ComposableMap projection="geoAzimuthalEqualArea" projectionConfig={{ rotate: [-10, -52, 0], scale: 700 }} width={800} height={550} style={{ width: "100%", height: "auto" }}>
                   <Geographies geography={EUROPE_GEO_URL}>
-                    {({ geographies }) => geographies.filter((geo) => EUROPE_COUNTRIES.includes(geo.properties.name)).map((geo) => (
+                    {({ geographies }) => geographies.filter((geo) => EU27_COUNTRIES.includes(geo.properties.name)).map((geo) => (
                       <Geography key={geo.rsmKey} geography={geo} fill="hsl(var(--primary-foreground) / 0.08)" stroke="hsl(var(--primary-foreground) / 0.3)" strokeWidth={0.5}
                         style={{ default: { outline: "none" }, hover: { fill: "hsl(var(--primary-foreground) / 0.15)", outline: "none" }, pressed: { outline: "none" } }}
                       />

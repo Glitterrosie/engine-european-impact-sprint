@@ -126,6 +126,7 @@ const Challenge = () => {
                           pressed: { outline: "none" },
                         }}
                       />
+                    );
                   })
                 }
               </Geographies>

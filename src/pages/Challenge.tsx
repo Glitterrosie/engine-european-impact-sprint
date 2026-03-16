@@ -14,6 +14,11 @@ const EU27_COUNTRIES = [
   "Italy","Latvia","Lithuania","Luxembourg","Malta","Netherlands","Poland",
   "Portugal","Romania","Slovakia","Slovenia","Spain","Sweden"
 ];
+const OTHER_EUROPEAN = [
+  "Albania","Andorra","Belarus","Bosnia and Herzegovina","Iceland","Kosovo",
+  "Moldova","Monaco","Montenegro","North Macedonia","Norway","San Marino",
+  "Serbia","Switzerland","Ukraine","United Kingdom","Vatican City","Turkey","Georgia"
+];
 
 const infoItems = [
   { label: "Date", value: "25–28th August 2026", bg: "bg-esprint-orange", text: "text-esprint-darkblue", accent: "border-esprint-darkblue/30" },

@@ -1,23 +1,23 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "The Challenge", path: "/challenge" },
+  { label: "The Challenge", path: "/#challenge" },
   { label: "How it Works", path: "/how-it-works" },
-  { label: "Benefits", path: "/benefits" },
+  { label: "Benefits", path: "/#benefits" },
   { label: "About HPI", path: "/partners" },
   { label: "Contact", path: "/contact" },
-  { label: "FAQ", path: "/faq" },
+  { label: "FAQ", path: "/#faq" },
 ];
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const isHome = location.pathname === "/";
   const isWhitePage = false;
 
   useEffect(() => {
@@ -27,6 +27,29 @@ const Navbar = () => {
   }, []);
 
   const showBg = scrolled;
+
+  const handleNavClick = (e: React.MouseEvent, path: string) => {
+    if (path.startsWith("/#")) {
+      e.preventDefault();
+      const id = path.slice(2);
+      if (location.pathname === "/") {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+    setMobileOpen(false);
+  };
+
+  const isActive = (path: string) => {
+    if (path === "/") return location.pathname === "/" && !location.hash;
+    if (path.startsWith("/#")) return location.hash === path.slice(1);
+    return location.pathname === path;
+  };
 
   return (
     <nav
@@ -50,13 +73,14 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
+              onClick={(e) => handleNavClick(e, item.path)}
               className={cn(
                 "px-3 py-1.5 rounded-md text-sm font-semibold transition-colors",
                 isWhitePage
-                  ? location.pathname === item.path
+                  ? isActive(item.path)
                     ? "bg-esprint-darkblue/10 text-esprint-darkblue"
                     : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
-                  : location.pathname === item.path
+                  : isActive(item.path)
                     ? "bg-white/20 text-white"
                     : "text-white/70 hover:text-white hover:bg-white/10"
               )}
@@ -87,14 +111,14 @@ const Navbar = () => {
             <Link
               key={item.path}
               to={item.path}
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => handleNavClick(e, item.path)}
               className={cn(
                 "block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
                 isWhitePage
-                  ? location.pathname === item.path
+                  ? isActive(item.path)
                     ? "bg-esprint-darkblue/10 text-esprint-darkblue"
                     : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
-                  : location.pathname === item.path
+                  : isActive(item.path)
                     ? "bg-white/20 text-white"
                     : "text-white/70 hover:text-white hover:bg-white/10"
               )}

@@ -3,14 +3,17 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navItems = [
+const mainItems = [
   { label: "Home", path: "/" },
   { label: "The Challenge", path: "/#challenge" },
-  { label: "How to Join", path: "/how-it-works" },
   { label: "Benefits", path: "/#benefits" },
-  { label: "About HPI", path: "/partners" },
-  { label: "Contact", path: "/how-it-works#contact" },
   { label: "FAQ", path: "/#faq" },
+];
+
+const secondaryItems = [
+  { label: "How to Join", path: "/how-it-works" },
+  { label: "Contact", path: "/how-it-works#contact" },
+  { label: "About HPI", path: "/partners" },
 ];
 
 const Navbar = () => {
@@ -52,43 +55,44 @@ const Navbar = () => {
     return location.pathname === path;
   };
 
+  const renderNavItem = (item: { label: string; path: string }, isSecondary: boolean) => (
+    <Link
+      key={item.path}
+      to={item.path}
+      onClick={(e) => handleNavClick(e, item.path)}
+      className={cn(
+        "px-3 py-1.5 rounded-md text-sm transition-colors",
+        isSecondary ? "font-normal" : "font-semibold",
+        isActive(item.path)
+          ? "bg-white/20 text-white"
+          : isSecondary
+            ? "text-white/50 hover:text-white/80 hover:bg-white/5"
+            : "text-white/70 hover:text-white hover:bg-white/10"
+      )}
+    >
+      {item.label}
+    </Link>
+  );
+
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         showBg
-          ? isWhitePage
-            ? "bg-white/90 backdrop-blur-xl border-b border-gray-200"
-            : "bg-esprint-darkblue/90 backdrop-blur-xl border-b border-white/10"
+          ? "bg-esprint-darkblue/90 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent border-b border-transparent"
       )}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className={isWhitePage ? "text-esprint-darkblue" : "text-white"}>
+        <Link to="/" className="text-white">
           <span className="sr-only">Home</span>
         </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={cn(
-                "px-3 py-1.5 rounded-md text-sm font-semibold transition-colors",
-                isWhitePage
-                  ? isActive(item.path)
-                    ? "bg-esprint-darkblue/10 text-esprint-darkblue"
-                    : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
-                  : isActive(item.path)
-                    ? "bg-white/20 text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {mainItems.map((item) => renderNavItem(item, false))}
+          <div className="w-px h-5 bg-white/20 mx-2" />
+          {secondaryItems.map((item) => renderNavItem(item, true))}
         </div>
 
         {/* Mobile toggle */}
@@ -102,30 +106,21 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className={cn(
-          "md:hidden backdrop-blur-xl px-4 pb-4 space-y-1",
-          isWhitePage
-            ? "bg-white/90 border-b border-gray-200"
-            : "bg-black/80 border-b border-white/10"
-        )}>
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={cn(
-                "block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
-                isWhitePage
-                  ? isActive(item.path)
-                    ? "bg-esprint-darkblue/10 text-esprint-darkblue"
-                    : "text-esprint-darkblue/60 hover:text-esprint-darkblue hover:bg-esprint-darkblue/5"
-                  : isActive(item.path)
-                    ? "bg-white/20 text-white"
-                    : "text-white/70 hover:text-white hover:bg-white/10"
+        <div className="md:hidden backdrop-blur-xl px-4 pb-4 space-y-1 bg-black/80 border-b border-white/10">
+          {mainItems.map((item) => (
+            <Link key={item.path} to={item.path} onClick={(e) => handleNavClick(e, item.path)}
+              className={cn("block px-3 py-2 rounded-md text-sm font-semibold transition-colors",
+                isActive(item.path) ? "bg-white/20 text-white" : "text-white/70 hover:text-white hover:bg-white/10"
               )}
-            >
-              {item.label}
-            </Link>
+            >{item.label}</Link>
+          ))}
+          <div className="h-px bg-white/15 my-2" />
+          {secondaryItems.map((item) => (
+            <Link key={item.path} to={item.path} onClick={(e) => handleNavClick(e, item.path)}
+              className={cn("block px-3 py-2 rounded-md text-sm font-normal transition-colors",
+                isActive(item.path) ? "bg-white/20 text-white" : "text-white/50 hover:text-white/80 hover:bg-white/5"
+              )}
+            >{item.label}</Link>
           ))}
         </div>
       )}

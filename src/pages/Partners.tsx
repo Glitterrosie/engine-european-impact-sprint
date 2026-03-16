@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
-import hpiLogoWhite from "@/assets/hpi-logo-white.png";
+import hpiLogo from "@/assets/hpi-logo.svg";
 import hpiEngineLogo from "@/assets/hpi-engine-white.svg";
 import sapLogoWhite from "@/assets/sap-logo-white.png";
 import hpiCampus1 from "@/assets/hpi-campus-1.jpg";
@@ -23,20 +23,20 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-esprint-purple rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-4 md:p-5 text-primary-foreground">
+          <div className="p-4 md:p-5 text-esprint-darkblue">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Host</span>
             </div>
             <div className="mb-3">
-              <img src={hpiLogoWhite} alt="Hasso Plattner Institute" className="h-10" />
+              <img src={hpiLogo} alt="Hasso Plattner Institute" className="h-10" />
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 The Hasso Plattner Institute (HPI) was founded in 1998 by Hasso Plattner, co-founder of SAP and one of Europe's most successful tech entrepreneurs. Today, HPI is a leading academic institution for digital engineering, educating the next generation of technology leaders, innovators and entrepreneurs.
               </p>
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 Located in Potsdam near Berlin, HPI attracts more than 900 Bachelor's and Master's students and around 80 PhD candidates. With a focus on IT Systems Engineering, Computer Science, Digital Health, Cybersecurity and Data Engineering, HPI has produced more than 2,500 graduates supported by state-of-the-art infrastructure and an interdisciplinary faculty of 30+ professors.
               </p>
             </div>
@@ -67,20 +67,20 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-red rounded-2xl shadow-xl overflow-hidden"
+          className="bg-white rounded-2xl shadow-xl overflow-hidden"
         >
-          <div className="p-4 md:p-5 text-primary-foreground">
+          <div className="p-4 md:p-5 text-esprint-darkblue">
             <div className="flex items-center gap-4 mb-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] opacity-60">Organizer</span>
             </div>
             <div className="mb-3">
-              <img src={hpiEngineLogo} alt="HPI Engine" className="h-9" />
+              <img src={hpiEngineLogo} alt="HPI Engine" className="h-9 invert" />
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 HPI Engine is one of Europe's leading entrepreneurship ecosystems. We empower students, scientists, and tech founders to build digital products and startups through tailored programs, state-of-the-art infrastructure, close mentoring and a strong community.
               </p>
-              <p className="text-xs leading-relaxed opacity-90">
+              <p className="text-xs leading-relaxed opacity-80">
                 The HPI ecosystem has produced 300+ startups shaping industries worldwide and attracting over €1B in venture capital.
               </p>
             </div>

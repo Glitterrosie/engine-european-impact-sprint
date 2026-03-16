@@ -242,33 +242,6 @@ const Index = () => {
             })}
           </div>
 
-          {/* Overview cards – touching, own rounded block */}
-          <div className="rounded-2xl overflow-hidden shadow-xl grid md:grid-cols-3">
-            {[
-              { title: "The Challenge", desc: "An intensive innovation program bringing together 60 Computer Science students from 30 European countries.", link: "/challenge", color: "bg-esprint-cream text-background" },
-              { title: "Program Benefits", desc: "Make friends across Europe, get inspired by real legends, and sharpen your problem-solving skills.", link: "/benefits", color: "bg-esprint-darkblue text-primary-foreground" },
-              { title: "How it Works", desc: "Students are nominated by their universities, joined into diverse teams and guided by experts.", link: "/how-it-works", color: "bg-esprint-orange text-esprint-darkblue" },
-            ].map((card, i) => (
-              <motion.div
-                key={card.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Link
-                  to={card.link}
-                  className={`block ${card.color} p-8 hover:brightness-110 transition-all group h-full`}
-                >
-                  <h3 className="font-display font-bold text-xl mb-3">{card.title}</h3>
-                  <p className="text-sm leading-relaxed opacity-80">{card.desc}</p>
-                  <span className="inline-flex items-center mt-4 text-sm font-semibold opacity-90 group-hover:gap-2 transition-all">
-                    Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
     </div>

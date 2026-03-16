@@ -228,8 +228,8 @@ const Index = () => {
 
           <div className="space-y-6">
             {/* Quote — standalone box */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-purple/30 border border-esprint-purple/50 rounded-xl px-6 py-5">
-              <p className="font-display font-black text-lg md:text-2xl text-esprint-cream tracking-wide italic" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>"Digital Sovereignty for a Stronger, More Connected Europe"</p>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-purple rounded-2xl shadow-xl px-8 py-8 md:px-10 md:py-10 text-center">
+              <p className="font-display font-black text-2xl md:text-4xl text-primary-foreground leading-snug tracking-wide" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>"Digital Sovereignty for a Stronger,<br/>More Connected Europe"</p>
             </motion.div>
 
             {/* Challenge Overview — dark blue hero block */}

@@ -328,17 +328,33 @@ const Index = () => {
                 </ul>
               </motion.div>
 
-              {/* Sprint Goals — orange */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10">
-                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
-                <ul className="space-y-3 text-esprint-darkblue/80 text-sm">
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">1</span></span>Identify key user problems tied to cross-border digital services.</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">2</span></span>Develop a prototype that strengthens autonomy, privacy, or cooperation.</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">3</span></span>Validate with real users (students, travelers, citizens).</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">4</span></span>Align the concept with EU data values: transparency, fairness, and interoperability.</li>
-                </ul>
-                <div className="mt-6 rounded-xl overflow-hidden h-40 bg-esprint-darkblue/10 flex items-center justify-center">
-                  <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
+              {/* Sprint Goals — orange with bold cards */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10 relative overflow-hidden">
+                {/* Decorative large number watermark */}
+                <div className="absolute -right-6 -top-6 font-display font-black text-[12rem] leading-none text-esprint-darkblue/[0.04] pointer-events-none select-none">4</div>
+                <h2 className="font-display font-black text-2xl text-esprint-darkblue mb-6 uppercase tracking-wide">Sprint Goals</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    { icon: "🔍", title: "Discover", desc: "Identify key user problems tied to cross-border digital services" },
+                    { icon: "⚡", title: "Build", desc: "Develop a prototype that strengthens autonomy, privacy, or cooperation" },
+                    { icon: "👥", title: "Validate", desc: "Test with real users — students, travelers, citizens" },
+                    { icon: "🇪🇺", title: "Align", desc: "Ensure the concept upholds EU data values: transparency, fairness & interoperability" },
+                  ].map((goal, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 + i * 0.07 }}
+                      className="bg-esprint-darkblue rounded-xl p-5 group hover:scale-[1.02] transition-transform"
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-2xl">{goal.icon}</span>
+                        <span className="font-display font-black text-esprint-orange text-sm uppercase tracking-wider">{goal.title}</span>
+                      </div>
+                      <p className="text-primary-foreground/70 text-sm leading-relaxed">{goal.desc}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </motion.div>
             </div>

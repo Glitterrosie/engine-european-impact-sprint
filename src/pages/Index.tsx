@@ -249,31 +249,33 @@ const Index = () => {
               <p className="font-black text-3xl md:text-5xl text-primary-foreground tracking-tight relative z-10" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>Digital Sovereignty for a Stronger, More Connected Europe</p>
             </motion.div>
 
-            {/* Challenge Overview — dark blue hero block */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-darkblue rounded-2xl shadow-xl overflow-hidden">
-              <div className="p-8 md:p-10 pb-6">
-                <span className="inline-block bg-esprint-orange text-esprint-darkblue text-[11px] font-black uppercase tracking-[0.25em] px-3 py-1.5 rounded-md mb-4">2026 Challenge</span>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-primary-foreground/70">
-                  <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">Theme</span>Digital Sovereignty, Cross-Border Services & Data Rights</div>
-                  <div><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">SDG</span>9, 16, 17</div>
-                  <div className="col-span-2"><span className="block text-[10px] font-bold uppercase tracking-widest text-esprint-pink mb-1">Target Outcome</span>Prototype of a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border digital cooperation.</div>
-                </div>
-              </div>
-              {/* Stats strip */}
-              <div className="grid grid-cols-3">
-                <div className="bg-esprint-orange p-6 text-esprint-darkblue">
-                  <p className="font-display font-black text-4xl">30%</p>
-                  <p className="text-xs mt-1 opacity-70">of EU citizens live in cross-border regions</p>
-                </div>
-                <div className="bg-esprint-pink p-6 text-esprint-darkblue">
-                  <p className="font-display font-black text-4xl">90%</p>
-                  <p className="text-xs mt-1 opacity-70">of European data resides outside EU-controlled infrastructure</p>
-                </div>
-                <div className="overflow-hidden">
-                  <img src={challengeBrief} alt="Students collaborating" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </motion.div>
+            {/* Stats — 2 boxes */}
+            <div className="grid grid-cols-2 gap-4">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-orange rounded-2xl p-6 md:p-8 text-esprint-darkblue">
+                <p className="font-display font-black text-4xl md:text-5xl">30%</p>
+                <p className="text-sm mt-2 opacity-80">of EU citizens live in cross-border regions</p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="bg-esprint-pink rounded-2xl p-6 md:p-8 text-esprint-darkblue">
+                <p className="font-display font-black text-4xl md:text-5xl">90%</p>
+                <p className="text-sm mt-2 opacity-80">of European data resides outside EU-controlled infrastructure</p>
+              </motion.div>
+            </div>
+
+            {/* Theme / SDGs / Target — 3 boxes */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-esprint-purple rounded-2xl p-6 md:p-8">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">Theme</span>
+                <p className="font-display font-bold text-lg text-primary-foreground">Digital Sovereignty, Cross-Border Services & Data Rights</p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }} className="bg-esprint-darkblue rounded-2xl p-6 md:p-8">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">SDGs</span>
+                <p className="font-display font-bold text-lg text-primary-foreground">9, 16, 17</p>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-esprint-red rounded-2xl p-6 md:p-8">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">Target Outcome</span>
+                <p className="font-display font-bold text-lg text-primary-foreground">Prototype a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border cooperation.</p>
+              </motion.div>
+            </div>
 
             {/* Challenge Statement — full-width purple accent */}
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-purple rounded-2xl shadow-xl p-8 md:p-10">

@@ -227,38 +227,41 @@ const Index = () => {
           </motion.h1>
 
           <div className="space-y-6">
-            {/* Quote — standalone box with EU stars */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl shadow-xl px-8 py-6 md:px-10 md:py-8 relative overflow-hidden">
-              {/* EU stars circle — decorative */}
-              <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 opacity-[0.12] pointer-events-none">
-                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {Array.from({ length: 12 }).map((_, i) => {
-                    const angle = (i * 30 - 90) * (Math.PI / 180);
-                    const cx = 60 + 45 * Math.cos(angle);
-                    const cy = 60 + 45 * Math.sin(angle);
-                    return (
-                      <polygon
-                        key={i}
-                        points={`${cx},${cy - 7} ${cx + 2.5},${cy - 2} ${cx + 7},${cy - 2} ${cx + 3.5},${cy + 1.5} ${cx + 5},${cy + 7} ${cx},${cy + 3.5} ${cx - 5},${cy + 7} ${cx - 3.5},${cy + 1.5} ${cx - 7},${cy - 2} ${cx - 2.5},${cy - 2}`}
-                        fill="hsl(var(--esprint-orange))"
-                      />
-                    );
-                  })}
-                </svg>
-              </div>
-              <p className="font-black text-3xl md:text-5xl text-primary-foreground tracking-tight relative z-10" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>Digital Sovereignty for a Stronger, More Connected Europe</p>
-            </motion.div>
+            {/* Quote + Stats side by side */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-4">
+              {/* Quote — main box */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl shadow-xl px-8 py-6 md:px-10 md:py-8 relative overflow-hidden flex items-center">
+                {/* EU stars circle — decorative */}
+                <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 opacity-[0.12] pointer-events-none">
+                  <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    {Array.from({ length: 12 }).map((_, i) => {
+                      const angle = (i * 30 - 90) * (Math.PI / 180);
+                      const cx = 60 + 45 * Math.cos(angle);
+                      const cy = 60 + 45 * Math.sin(angle);
+                      return (
+                        <polygon
+                          key={i}
+                          points={`${cx},${cy - 7} ${cx + 2.5},${cy - 2} ${cx + 7},${cy - 2} ${cx + 3.5},${cy + 1.5} ${cx + 5},${cy + 7} ${cx},${cy + 3.5} ${cx - 5},${cy + 7} ${cx - 3.5},${cy + 1.5} ${cx - 7},${cy - 2} ${cx - 2.5},${cy - 2}`}
+                          fill="hsl(var(--esprint-orange))"
+                        />
+                      );
+                    })}
+                  </svg>
+                </div>
+                <p className="font-black text-3xl md:text-5xl text-primary-foreground tracking-tight relative z-10" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>Digital Sovereignty for a Stronger, More Connected Europe</p>
+              </motion.div>
 
-            {/* Stats — 2 boxes */}
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-orange rounded-2xl p-6 md:p-8 text-esprint-darkblue">
-                <p className="font-display font-black text-4xl md:text-5xl">30%</p>
-                <p className="text-sm mt-2 opacity-80">of EU citizens live in cross-border regions</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="bg-esprint-pink rounded-2xl p-6 md:p-8 text-esprint-darkblue">
-                <p className="font-display font-black text-4xl md:text-5xl">90%</p>
-                <p className="text-sm mt-2 opacity-80">of European data resides outside EU-controlled infrastructure</p>
-              </motion.div>
+              {/* Stats — stacked on the right */}
+              <div className="flex flex-row md:flex-col gap-4 md:w-48">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-esprint-orange rounded-2xl p-5 text-esprint-darkblue flex-1">
+                  <p className="font-display font-black text-3xl md:text-4xl">30%</p>
+                  <p className="text-xs mt-1 opacity-80 leading-tight">of EU citizens live in cross-border regions</p>
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="bg-esprint-pink rounded-2xl p-5 text-esprint-darkblue flex-1">
+                  <p className="font-display font-black text-3xl md:text-4xl">90%</p>
+                  <p className="text-xs mt-1 opacity-80 leading-tight">of European data resides outside EU infrastructure</p>
+                </motion.div>
+              </div>
             </div>
 
             {/* Theme / SDGs / Target — 3 boxes */}

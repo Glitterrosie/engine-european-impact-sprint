@@ -264,19 +264,52 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Theme / SDGs / Target — 3 boxes */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-esprint-purple rounded-2xl p-6 md:p-8">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">Theme</span>
-                <p className="font-display font-bold text-lg text-primary-foreground">Digital Sovereignty, Cross-Border Services & Data Rights</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }} className="bg-esprint-darkblue rounded-2xl p-6 md:p-8">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">SDGs</span>
-                <p className="font-display font-bold text-lg text-primary-foreground">9, 16, 17</p>
-              </motion.div>
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-esprint-red rounded-2xl p-6 md:p-8">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">Target Outcome</span>
-                <p className="font-display font-bold text-lg text-primary-foreground">Prototype a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border cooperation.</p>
+            {/* Theme + SDGs (small) | Target Outcome (large) */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+              {/* Left column: Theme + SDGs stacked */}
+              <div className="flex flex-col gap-4">
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="bg-esprint-purple rounded-2xl p-5">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-2">Theme</span>
+                  <p className="font-display font-bold text-base text-primary-foreground">Digital Sovereignty, Cross-Border Services & Data Rights</p>
+                </motion.div>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 }} className="bg-esprint-darkblue rounded-2xl p-5">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/50 mb-3">Sustainable Development Goals</span>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-esprint-orange/20 flex items-center justify-center flex-shrink-0">
+                        <Globe className="w-5 h-5 text-esprint-orange" />
+                      </div>
+                      <div>
+                        <p className="font-display font-bold text-sm text-primary-foreground">SDG 9</p>
+                        <p className="text-[11px] text-primary-foreground/50">Industry, Innovation & Infrastructure</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-esprint-pink/20 flex items-center justify-center flex-shrink-0">
+                        <Handshake className="w-5 h-5 text-esprint-pink" />
+                      </div>
+                      <div>
+                        <p className="font-display font-bold text-sm text-primary-foreground">SDG 16</p>
+                        <p className="text-[11px] text-primary-foreground/50">Peace, Justice & Strong Institutions</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-esprint-purple/30 flex items-center justify-center flex-shrink-0">
+                        <Puzzle className="w-5 h-5 text-esprint-purple" />
+                      </div>
+                      <div>
+                        <p className="font-display font-bold text-sm text-primary-foreground">SDG 17</p>
+                        <p className="text-[11px] text-primary-foreground/50">Partnerships for the Goals</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right column: Target Outcome — large */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-esprint-red rounded-2xl p-8 md:p-10 flex flex-col justify-center">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Target Outcome</span>
+                <p className="font-display font-bold text-2xl md:text-3xl text-primary-foreground leading-snug">Prototype a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border cooperation.</p>
               </motion.div>
             </div>
 

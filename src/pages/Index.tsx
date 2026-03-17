@@ -306,19 +306,13 @@ const Index = () => {
                 </motion.div>
               </div>
 
-              {/* Right column: Target Outcome — large */}
+              {/* Right column: Challenge Statement — large */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="bg-esprint-red rounded-2xl p-8 md:p-10 flex flex-col justify-center">
-                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Target Outcome</span>
-                <p className="font-display font-bold text-2xl md:text-3xl text-primary-foreground leading-snug">Prototype a digital product that strengthens Europe's technological autonomy, data privacy, or cross-border cooperation.</p>
+                <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Challenge Statement</span>
+                <p className="font-display font-bold text-xl md:text-2xl text-primary-foreground leading-snug mb-4">How can we empower people and organizations across Europe to collaborate, share data, and access digital services securely and independently while strengthening European values and sovereignty?</p>
+                <p className="text-primary-foreground/50 text-sm italic">Case: Students, workers, and refugees frequently struggle to use digital services across borders (ID, healthcare, education), despite EU-wide frameworks.</p>
               </motion.div>
             </div>
-
-            {/* Challenge Statement — full-width purple accent */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-purple rounded-2xl shadow-xl p-8 md:p-10">
-              <h2 className="font-display font-bold text-xs uppercase tracking-[0.2em] text-primary-foreground/60 mb-4">Challenge Statement</h2>
-              <p className="text-primary-foreground font-display font-bold text-lg md:text-xl leading-relaxed mb-4">How can we empower people and organizations across Europe to collaborate, share data, and access digital services securely and independently while strengthening European values and sovereignty?</p>
-              <p className="text-primary-foreground/50 text-sm italic">Case: Students, workers, and refugees frequently struggle to use digital services across borders (ID, healthcare, education), despite EU-wide frameworks.</p>
-            </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Context & Rationale — white */}

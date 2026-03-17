@@ -222,14 +222,31 @@ const Index = () => {
       {/* ═══ CHALLENGE ═══ */}
       <section id="challenge" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4">
-          <motion.h1 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-8">
-            The Challenge
+          <motion.h1 initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-display font-black text-4xl md:text-6xl text-primary-foreground drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-8">
+            The <span className="text-esprint-orange">2026</span> Challenge
           </motion.h1>
 
           <div className="space-y-6">
-            {/* Quote — standalone box */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl shadow-xl px-8 py-6 md:px-10 md:py-8">
-              <p className="font-black text-3xl md:text-5xl text-primary-foreground tracking-tight whitespace-nowrap" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>Digital Sovereignty for a Stronger, More Connected Europe</p>
+            {/* Quote — standalone box with EU stars */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl shadow-xl px-8 py-6 md:px-10 md:py-8 relative overflow-hidden">
+              {/* EU stars circle — decorative */}
+              <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 opacity-[0.12] pointer-events-none">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {Array.from({ length: 12 }).map((_, i) => {
+                    const angle = (i * 30 - 90) * (Math.PI / 180);
+                    const cx = 60 + 45 * Math.cos(angle);
+                    const cy = 60 + 45 * Math.sin(angle);
+                    return (
+                      <polygon
+                        key={i}
+                        points={`${cx},${cy - 7} ${cx + 2.5},${cy - 2} ${cx + 7},${cy - 2} ${cx + 3.5},${cy + 1.5} ${cx + 5},${cy + 7} ${cx},${cy + 3.5} ${cx - 5},${cy + 7} ${cx - 3.5},${cy + 1.5} ${cx - 7},${cy - 2} ${cx - 2.5},${cy - 2}`}
+                        fill="hsl(var(--esprint-orange))"
+                      />
+                    );
+                  })}
+                </svg>
+              </div>
+              <p className="font-black text-3xl md:text-5xl text-primary-foreground tracking-tight relative z-10" style={{ fontFamily: "'TT Lakes Neue Compressed', 'TT Lakes Neue', sans-serif" }}>Digital Sovereignty for a Stronger, More Connected Europe</p>
             </motion.div>
 
             {/* Challenge Overview — dark blue hero block */}

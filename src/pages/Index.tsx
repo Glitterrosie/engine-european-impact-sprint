@@ -333,20 +333,8 @@ const Index = () => {
                 <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-10 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
                 
                 <div className="relative">
-                  {/* Organic flowing line — desktop */}
-                  <svg className="absolute top-[18px] left-0 right-0 w-full h-8 hidden md:block" preserveAspectRatio="none" viewBox="0 0 1000 30" fill="none">
-                    <motion.path
-                      d="M 0 15 C 250 15, 200 5, 500 15 C 800 25, 750 15, 1000 15"
-                      stroke="hsl(var(--esprint-darkblue))"
-                      strokeWidth="2"
-                      strokeOpacity="0.15"
-                      fill="none"
-                      initial={{ pathLength: 0 }}
-                      whileInView={{ pathLength: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                    />
-                  </svg>
+                  {/* Straight horizontal line — desktop */}
+                  <div className="absolute top-[7px] left-[12.5%] right-[12.5%] h-[2px] bg-esprint-darkblue/15 hidden md:block rounded-full" />
 
                   {/* Vertical line — mobile */}
                   <div className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-esprint-darkblue/10 md:hidden" />
@@ -366,11 +354,12 @@ const Index = () => {
                         transition={{ delay: 0.15 + i * 0.12 }}
                         className="flex md:flex-col items-start gap-4 md:items-center md:text-center pl-6 md:pl-0"
                       >
-                        {/* Dot marker */}
-                        <div className="w-4 h-4 rounded-full bg-esprint-darkblue/80 shrink-0 md:mb-1 ring-4 ring-esprint-orange" />
+                        {/* Dot on the line */}
+                        <div className="w-4 h-4 rounded-full bg-esprint-darkblue/80 shrink-0 ring-4 ring-esprint-orange" />
                         
-                        <div>
-                          <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-esprint-darkblue/35 mb-1">{i + 1}</span>
+                        {/* Number + text below */}
+                        <div className="md:mt-4">
+                          <span className="block font-display font-bold text-lg text-esprint-darkblue/25 mb-1">{i + 1}</span>
                           <p className="text-esprint-darkblue/75 text-sm leading-relaxed">{goal}</p>
                         </div>
                       </motion.div>

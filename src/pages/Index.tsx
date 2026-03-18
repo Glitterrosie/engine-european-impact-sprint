@@ -328,17 +328,62 @@ const Index = () => {
                 </ul>
               </motion.div>
 
-              {/* Sprint Goals — orange */}
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10">
-                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-4 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
-                <ul className="space-y-3 text-esprint-darkblue/80 text-sm">
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">1</span></span>Identify key user problems tied to cross-border digital services.</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">2</span></span>Develop a prototype that strengthens autonomy, privacy, or cooperation.</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">3</span></span>Validate with real users (students, travelers, citizens).</li>
-                  <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-esprint-darkblue/10 flex items-center justify-center shrink-0 mt-0.5"><span className="text-esprint-darkblue font-bold text-xs">4</span></span>Align the concept with EU data values: transparency, fairness, and interoperability.</li>
-                </ul>
-                <div className="mt-6 rounded-xl overflow-hidden h-40 bg-esprint-darkblue/10 flex items-center justify-center">
-                  <span className="text-esprint-darkblue/30 text-sm font-display">Image coming soon</span>
+              {/* Sprint Goals — roadmap */}
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10 overflow-hidden">
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-8 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
+                
+                <div className="relative">
+                  {/* Animated road line */}
+                  <div className="absolute top-[30px] left-6 right-6 h-[3px] bg-esprint-darkblue/10 rounded-full hidden md:block" />
+                  <div className="absolute top-[30px] left-6 right-6 hidden md:block overflow-hidden">
+                    <motion.div 
+                      className="h-[3px] bg-esprint-darkblue/30 rounded-full"
+                      initial={{ width: "0%" }}
+                      whileInView={{ width: "100%" }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, delay: 0.3 }}
+                    />
+                  </div>
+                  
+                  {/* Dashed path for mobile */}
+                  <div className="absolute top-0 bottom-0 left-[18px] w-0.5 border-l-2 border-dashed border-esprint-darkblue/20 md:hidden" />
+
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-3 relative">
+                    {[
+                      { goal: "Identify key user problems tied to cross-border digital services.", emoji: "🔍" },
+                      { goal: "Develop a prototype that strengthens autonomy, privacy, or cooperation.", emoji: "🛠️" },
+                      { goal: "Validate with real users (students, travelers, citizens).", emoji: "✅" },
+                      { goal: "Align with EU data values: transparency, fairness, and interoperability.", emoji: "🇪🇺" },
+                    ].map((item, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 + i * 0.15 }}
+                        className="flex md:flex-col items-start gap-3 md:items-center md:text-center pl-10 md:pl-0"
+                      >
+                        {/* Flag */}
+                        <div className="flex flex-col items-center shrink-0">
+                          <div className="relative">
+                            <div className="w-11 h-8 bg-esprint-darkblue rounded-r-sm flex items-center justify-center text-lg shadow-md relative">
+                              <span>{item.emoji}</span>
+                              <div className="absolute" style={{ borderTop: '16px solid transparent', borderBottom: '16px solid transparent', borderRight: '7px solid hsl(var(--esprint-orange))', right: '-7px' }} />
+                            </div>
+                          </div>
+                          {/* Pole + dot */}
+                          <div className="w-[2px] h-3 bg-esprint-darkblue/30 hidden md:block" />
+                          <div className="w-[14px] h-[14px] rounded-full bg-esprint-darkblue border-[3px] border-esprint-orange shadow hidden md:block" />
+                        </div>
+                        
+                        {/* Label */}
+                        <div className="md:mt-3">
+                          <span className="block text-[10px] font-black uppercase tracking-widest text-esprint-darkblue/40 mb-1">Goal {i + 1}</span>
+                          <p className="text-esprint-darkblue/80 text-xs leading-relaxed">{item.goal}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>

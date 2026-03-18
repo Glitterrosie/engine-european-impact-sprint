@@ -330,56 +330,48 @@ const Index = () => {
 
               {/* Sprint Goals — roadmap */}
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-orange rounded-2xl shadow-xl p-8 md:p-10 overflow-hidden">
-                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-8 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
+                <h2 className="font-display font-bold text-xl text-esprint-darkblue mb-10 uppercase tracking-wide border-b-2 border-esprint-darkblue/20 pb-3">Sprint Goals</h2>
                 
                 <div className="relative">
-                  {/* Animated road line */}
-                  <div className="absolute top-[30px] left-6 right-6 h-[3px] bg-esprint-darkblue/10 rounded-full hidden md:block" />
-                  <div className="absolute top-[30px] left-6 right-6 hidden md:block overflow-hidden">
-                    <motion.div 
-                      className="h-[3px] bg-esprint-darkblue/30 rounded-full"
-                      initial={{ width: "0%" }}
-                      whileInView={{ width: "100%" }}
+                  {/* Organic flowing line — desktop */}
+                  <svg className="absolute top-[18px] left-0 right-0 w-full h-8 hidden md:block" preserveAspectRatio="none" viewBox="0 0 1000 30" fill="none">
+                    <motion.path
+                      d="M 0 15 C 250 15, 200 5, 500 15 C 800 25, 750 15, 1000 15"
+                      stroke="hsl(var(--esprint-darkblue))"
+                      strokeWidth="2"
+                      strokeOpacity="0.15"
+                      fill="none"
+                      initial={{ pathLength: 0 }}
+                      whileInView={{ pathLength: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.2, delay: 0.3 }}
+                      transition={{ duration: 1.5, delay: 0.2 }}
                     />
-                  </div>
-                  
-                  {/* Dashed path for mobile */}
-                  <div className="absolute top-0 bottom-0 left-[18px] w-0.5 border-l-2 border-dashed border-esprint-darkblue/20 md:hidden" />
+                  </svg>
 
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-3 relative">
+                  {/* Vertical line — mobile */}
+                  <div className="absolute top-0 bottom-0 left-[7px] w-[2px] bg-esprint-darkblue/10 md:hidden" />
+
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-5 relative">
                     {[
-                      { goal: "Identify key user problems tied to cross-border digital services.", emoji: "🔍" },
-                      { goal: "Develop a prototype that strengthens autonomy, privacy, or cooperation.", emoji: "🛠️" },
-                      { goal: "Validate with real users (students, travelers, citizens).", emoji: "✅" },
-                      { goal: "Align with EU data values: transparency, fairness, and interoperability.", emoji: "🇪🇺" },
-                    ].map((item, i) => (
+                      "Identify key user problems tied to cross-border digital services.",
+                      "Develop a prototype that strengthens autonomy, privacy, or cooperation.",
+                      "Validate with real users (students, travelers, citizens).",
+                      "Align with EU data values: transparency, fairness, and interoperability.",
+                    ].map((goal, i) => (
                       <motion.div
                         key={i}
-                        initial={{ opacity: 0, y: 15 }}
+                        initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2 + i * 0.15 }}
-                        className="flex md:flex-col items-start gap-3 md:items-center md:text-center pl-10 md:pl-0"
+                        transition={{ delay: 0.15 + i * 0.12 }}
+                        className="flex md:flex-col items-start gap-4 md:items-center md:text-center pl-6 md:pl-0"
                       >
-                        {/* Flag */}
-                        <div className="flex flex-col items-center shrink-0">
-                          <div className="relative">
-                            <div className="w-11 h-8 bg-esprint-darkblue rounded-r-sm flex items-center justify-center text-lg shadow-md relative">
-                              <span>{item.emoji}</span>
-                              <div className="absolute" style={{ borderTop: '16px solid transparent', borderBottom: '16px solid transparent', borderRight: '7px solid hsl(var(--esprint-orange))', right: '-7px' }} />
-                            </div>
-                          </div>
-                          {/* Pole + dot */}
-                          <div className="w-[2px] h-3 bg-esprint-darkblue/30 hidden md:block" />
-                          <div className="w-[14px] h-[14px] rounded-full bg-esprint-darkblue border-[3px] border-esprint-orange shadow hidden md:block" />
-                        </div>
+                        {/* Dot marker */}
+                        <div className="w-4 h-4 rounded-full bg-esprint-darkblue/80 shrink-0 md:mb-1 ring-4 ring-esprint-orange" />
                         
-                        {/* Label */}
-                        <div className="md:mt-3">
-                          <span className="block text-[10px] font-black uppercase tracking-widest text-esprint-darkblue/40 mb-1">Goal {i + 1}</span>
-                          <p className="text-esprint-darkblue/80 text-xs leading-relaxed">{item.goal}</p>
+                        <div>
+                          <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-esprint-darkblue/35 mb-1">{i + 1}</span>
+                          <p className="text-esprint-darkblue/75 text-sm leading-relaxed">{goal}</p>
                         </div>
                       </motion.div>
                     ))}

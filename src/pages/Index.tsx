@@ -369,26 +369,37 @@ const Index = () => {
               </motion.div>
             </div>
 
-            {/* Proposed Product Directions — red, full width */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-red rounded-2xl shadow-xl p-8 md:p-10">
-              <h2 className="font-display font-bold text-xl text-primary-foreground mb-2 uppercase tracking-wide border-b-2 border-primary-foreground/20 pb-3">Proposed Product Directions</h2>
-              <p className="text-primary-foreground/50 text-sm mb-6 italic">Teams may explore (but are not limited to):</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Proposed Product Directions — stars */}
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-esprint-darkblue rounded-2xl shadow-xl p-8 md:p-10">
+              <h2 className="font-display font-bold text-xl text-primary-foreground mb-2 uppercase tracking-wide border-b-2 border-esprint-orange/30 pb-3">Proposed Product Directions</h2>
+              <p className="text-primary-foreground/40 text-sm mb-8 italic">Teams may explore (but are not limited to):</p>
+              <div className="flex flex-wrap justify-center gap-6 md:gap-8">
                 {[
                   "European Digital Identity Wallet use cases for students or newcomers",
                   "Cross-border service navigator (health, transport, education)",
                   "User-friendly GDPR & data-rights assistant",
                   "AI-driven multilingual collaboration tools",
                   "Transparency dashboard for digital infrastructure dependencies",
-                  "Identify deepfakes and AI-generated misinformation in news and social media",
+                  "Identify deepfakes and AI-generated misinformation",
                 ].map((d, i) => (
-                  <div key={i} className="bg-primary-foreground/10 rounded-xl p-4 text-primary-foreground/90 text-sm leading-relaxed backdrop-blur-sm">
-                    {d}
-                  </div>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 + i * 0.08 }}
+                    className="flex flex-col items-center text-center w-36 md:w-40"
+                  >
+                    {/* Star SVG */}
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-3 shrink-0">
+                      <path
+                        d="M24 4 L28.5 17.5 L42 17.5 L31 26 L34.5 40 L24 31.5 L13.5 40 L17 26 L6 17.5 L19.5 17.5 Z"
+                        fill="hsl(var(--esprint-orange))"
+                      />
+                    </svg>
+                    <p className="text-primary-foreground/80 text-xs leading-relaxed">{d}</p>
+                  </motion.div>
                 ))}
-              </div>
-              <div className="mt-6 rounded-xl overflow-hidden h-40 bg-primary-foreground/10 flex items-center justify-center">
-                <span className="text-primary-foreground/30 text-sm font-display">Image coming soon</span>
               </div>
             </motion.div>
 

@@ -405,22 +405,24 @@ const Index = () => {
 
             {/* Key Information — white table */}
             <div className="bg-white rounded-2xl overflow-hidden shadow-xl flex flex-col">
-              <div className="p-8 md:p-10 pb-4">
+              <div className="p-6 md:p-10 pb-4">
                 <h2 className="font-display font-bold text-xl text-esprint-darkblue uppercase tracking-wide border-b-2 border-esprint-pink pb-3">Key Information</h2>
               </div>
               {infoItems.map((item, i) => (
-                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-esprint-darkblue flex flex-1 border-t border-esprint-darkblue/10">
-                  <div className="w-32 md:w-40 shrink-0 px-5 md:px-6 py-4 flex items-center border-r border-esprint-darkblue/10">
-                    <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">{item.label}</span>
+                <motion.div key={item.label} initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-esprint-darkblue border-t border-esprint-darkblue/10">
+                  <div className="flex flex-col sm:flex-row">
+                    <div className="sm:w-40 shrink-0 px-5 md:px-6 pt-4 pb-1 sm:py-4 flex items-start sm:items-center sm:border-r border-esprint-darkblue/10">
+                      <span className="font-display font-bold text-xs uppercase tracking-widest opacity-70">{item.label}</span>
+                    </div>
+                    <div className="px-5 md:px-6 pb-4 pt-1 sm:py-4 flex items-center min-w-0 flex-1">
+                      <p className="text-sm leading-relaxed opacity-80">{item.value}</p>
+                    </div>
+                    {item.link && (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-4 py-4 flex items-center shrink-0 opacity-70 hover:opacity-100 transition-opacity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                      </a>
+                    )}
                   </div>
-                  <div className="px-5 md:px-6 py-4 flex items-center min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed opacity-80">{item.value}</p>
-                  </div>
-                  {item.link && (
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="px-4 py-4 flex items-center shrink-0 opacity-70 hover:opacity-100 transition-opacity">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                    </a>
-                  )}
                 </motion.div>
               ))}
             </div>

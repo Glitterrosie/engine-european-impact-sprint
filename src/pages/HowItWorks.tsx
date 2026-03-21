@@ -31,7 +31,7 @@ const timeline = [
 
 const team = [
   { name: "Essam Sharaf", role: "Program Manager", img: essamImg, linkedin: "https://linkedin.com/in/essam-sharaf" },
-  { name: "Hendrik Laflör", role: "Program Manager", img: hendrikImg, linkedin: "https://de.linkedin.com/in/sayhitohendrik" },
+  { name: "Hendrik Laflör", role: "Program Lead", img: hendrikImg, linkedin: "https://de.linkedin.com/in/sayhitohendrik" },
   { name: "Lisa Jeller", role: "Event Manager", img: lisaImg, linkedin: "https://de.linkedin.com/in/lisajeller" },
 ];
 

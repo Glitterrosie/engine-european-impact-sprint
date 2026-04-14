@@ -111,7 +111,7 @@ const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m
 
 const UNIVERSITY_PARTNERS: Record<string, { universities: string[]; coordinates: [number, number] }> = {
   Portugal: {
-    universities: ["Instituto Superior Técnico", "Universidade de Lisboa"],
+    universities: ["Instituto Superior Técnico (Universidade de Lisboa)"],
     coordinates: [-8.24, 39.4],
   },
 };
@@ -467,10 +467,10 @@ const Index = () => {
                   {hoveredCountry && UNIVERSITY_PARTNERS[hoveredCountry] && (
                     <Marker coordinates={UNIVERSITY_PARTNERS[hoveredCountry].coordinates}>
                       <g transform="translate(0,-10)" style={{ pointerEvents: "none" }}>
-                        <rect x={-90} y={-12 - UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16} width={180} height={UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 20} rx={8} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange))" strokeWidth={1} />
-                        <text x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 4} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={9} fontWeight="bold">{hoveredCountry}</text>
+                        <rect x={-130} y={-16 - UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22} width={260} height={UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 28} rx={10} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange))" strokeWidth={1.5} />
+                        <text x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 6} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={13} fontWeight="bold">{hoveredCountry}</text>
                         {UNIVERSITY_PARTNERS[hoveredCountry].universities.map((uni, i) => (
-                          <text key={i} x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 20 + i * 14} textAnchor="middle" fill="white" fontSize={7}>{uni}</text>
+                          <text key={i} x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 28 + i * 20} textAnchor="middle" fill="white" fontSize={11}>{uni}</text>
                         ))}
                       </g>
                     </Marker>

@@ -188,7 +188,7 @@ const faqSections = [
 
 const Index = () => {
   const [isHpiHovered, setIsHpiHovered] = useState(false);
-  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+  const [hoveredPartner, setHoveredPartner] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen relative">
@@ -447,34 +447,50 @@ const Index = () => {
                       const isEU = EU27_COUNTRIES.includes(name);
                       const isOther = OTHER_EUROPEAN.includes(name);
                       if (!isEU && !isOther) return null;
-                      const hasPartner = !!UNIVERSITY_PARTNERS[name];
                       return (
                         <Geography key={geo.rsmKey} geography={geo}
-                          fill={hasPartner && hoveredCountry === name ? "hsl(var(--esprint-orange) / 0.35)" : isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
-                          stroke={hasPartner ? "hsl(var(--esprint-orange) / 0.6)" : isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
-                          strokeWidth={hasPartner ? 1 : 0.5}
-                          onMouseEnter={() => hasPartner && setHoveredCountry(name)}
-                          onMouseLeave={() => hasPartner && setHoveredCountry(null)}
+                          fill={isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
+                          stroke={isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
+                          strokeWidth={0.5}
                           style={{
-                            default: { outline: "none", cursor: hasPartner ? "pointer" : "default" },
-                            hover: { fill: hasPartner ? "hsl(var(--esprint-orange) / 0.35)" : isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none", cursor: hasPartner ? "pointer" : "default" },
+                            default: { outline: "none" },
+                            hover: { fill: isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none" },
                             pressed: { outline: "none" },
                           }}
                         />
                       );
                     })}
                   </Geographies>
-                  {hoveredCountry && UNIVERSITY_PARTNERS[hoveredCountry] && (
-                    <Marker coordinates={UNIVERSITY_PARTNERS[hoveredCountry].coordinates}>
-                      <g transform="translate(0,-10)" style={{ pointerEvents: "none" }}>
-                        <rect x={-130} y={-16 - UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22} width={260} height={UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 28} rx={10} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange))" strokeWidth={1.5} />
-                        <text x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 6} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={13} fontWeight="bold">{hoveredCountry}</text>
-                        {UNIVERSITY_PARTNERS[hoveredCountry].universities.map((uni, i) => (
-                          <text key={i} x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 22 + 28 + i * 20} textAnchor="middle" fill="white" fontSize={11}>{uni}</text>
-                        ))}
+                  {Object.entries(UNIVERSITY_PARTNERS).map(([country, data]) => (
+                    <Marker key={country} coordinates={data.coordinates}>
+                      <g
+                        onMouseEnter={() => setHoveredPartner(country)}
+                        onMouseLeave={() => setHoveredPartner(null)}
+                        className="cursor-pointer"
+                      >
+                        <circle r={6} fill="hsl(var(--esprint-orange))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
+                        <circle r={2.5} fill="hsl(var(--primary-foreground))" />
+                        {hoveredPartner === country && (
+                          <g transform="translate(0,-56)">
+                            <rect
+                              x={-90}
+                              y={-30}
+                              width={180}
+                              height={52}
+                              rx={16}
+                              fill="hsl(var(--esprint-darkblue))"
+                              stroke="hsl(var(--esprint-orange) / 0.5)"
+                              strokeWidth={0.6}
+                            />
+                            <text x={0} y={-14} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={10} fontWeight="bold">{country}</text>
+                            {data.universities.map((uni, i) => (
+                              <text key={i} x={0} y={2 + i * 14} textAnchor="middle" fill="white" fontSize={8}>{uni}</text>
+                            ))}
+                          </g>
+                        )}
                       </g>
                     </Marker>
-                  )}
+                  ))}
                   <Marker coordinates={[13.12525, 52.392528]}>
                     <g onMouseEnter={() => setIsHpiHovered(true)} onMouseLeave={() => setIsHpiHovered(false)} className="cursor-pointer">
                       <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />

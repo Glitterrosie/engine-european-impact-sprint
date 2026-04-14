@@ -8,6 +8,13 @@ import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
+const UNIVERSITY_PARTNERS: Record<string, { universities: string[]; coordinates: [number, number] }> = {
+  Portugal: {
+    universities: ["Instituto Superior Técnico", "Universidade de Lisboa"],
+    coordinates: [-8.24, 39.4],
+  },
+};
+
 const EU27_COUNTRIES = [
   "Austria","Belgium","Bulgaria","Croatia","Cyprus","Czech Republic","Czechia",
   "Denmark","Estonia","Finland","France","Germany","Greece","Hungary","Ireland",
@@ -32,6 +39,7 @@ const infoItems = [
 
 const Challenge = () => {
   const [isHpiHovered, setIsHpiHovered] = useState(false);
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   return (
     <PageLayout title="The Challenge" noPadBottom>

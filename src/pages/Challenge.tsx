@@ -121,16 +121,19 @@ const Challenge = () => {
                     const isEU = EU27_COUNTRIES.includes(name);
                     const isOther = OTHER_EUROPEAN.includes(name);
                     if (!isEU && !isOther) return null;
+                    const hasPartner = !!UNIVERSITY_PARTNERS[name];
                     return (
                       <Geography
                         key={geo.rsmKey}
                         geography={geo}
-                        fill={isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
-                        stroke={isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
-                        strokeWidth={0.5}
+                        fill={hasPartner && hoveredCountry === name ? "hsl(var(--esprint-orange) / 0.35)" : isEU ? "hsl(var(--primary-foreground) / 0.08)" : "hsl(var(--primary-foreground) / 0.03)"}
+                        stroke={hasPartner ? "hsl(var(--esprint-orange) / 0.6)" : isEU ? "hsl(var(--primary-foreground) / 0.3)" : "hsl(var(--primary-foreground) / 0.1)"}
+                        strokeWidth={hasPartner ? 1 : 0.5}
+                        onMouseEnter={() => hasPartner && setHoveredCountry(name)}
+                        onMouseLeave={() => hasPartner && setHoveredCountry(null)}
                         style={{
-                          default: { outline: "none" },
-                          hover: { fill: isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none" },
+                          default: { outline: "none", cursor: hasPartner ? "pointer" : "default" },
+                          hover: { fill: hasPartner ? "hsl(var(--esprint-orange) / 0.35)" : isEU ? "hsl(var(--primary-foreground) / 0.15)" : "hsl(var(--primary-foreground) / 0.05)", outline: "none", cursor: hasPartner ? "pointer" : "default" },
                           pressed: { outline: "none" },
                         }}
                       />
@@ -138,6 +141,17 @@ const Challenge = () => {
                   })
                 }
               </Geographies>
+              {hoveredCountry && UNIVERSITY_PARTNERS[hoveredCountry] && (
+                <Marker coordinates={UNIVERSITY_PARTNERS[hoveredCountry].coordinates}>
+                  <g transform="translate(0,-10)" style={{ pointerEvents: "none" }}>
+                    <rect x={-90} y={-12 - UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16} width={180} height={UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 20} rx={8} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange))" strokeWidth={1} />
+                    <text x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 4} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={9} fontWeight="bold">{hoveredCountry}</text>
+                    {UNIVERSITY_PARTNERS[hoveredCountry].universities.map((uni, i) => (
+                      <text key={i} x={0} y={-UNIVERSITY_PARTNERS[hoveredCountry].universities.length * 16 + 20 + i * 14} textAnchor="middle" fill="white" fontSize={7}>{uni}</text>
+                    ))}
+                  </g>
+                </Marker>
+              )}
 
               <Marker coordinates={[13.12525, 52.392528]}>
                 <g

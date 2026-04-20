@@ -497,7 +497,7 @@ const Index = () => {
                                   wordWrap: "break-word",
                                 }}
                               >
-                                <div style={{ marginBottom: 4 }}><strong>University:</strong> {data.university}</div>
+                                <div style={{ marginBottom: 4, fontWeight: "bold" }}>{data.university}</div>
                                 <div style={{ marginBottom: 4 }}><strong>Country:</strong> {data.country}</div>
                                 <div><strong>City:</strong> {data.city}</div>
                               </div>
@@ -512,9 +512,24 @@ const Index = () => {
                       <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                       <circle r={2.5} fill="hsl(var(--primary-foreground))" />
                       {isHpiHovered && (
-                        <g transform="translate(0,-56)">
-                          <rect x={-68} y={-30} width={136} height={52} rx={16} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
-                          <image href={hpiLogoWhite} x={-48} y={-18} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
+                        <g transform="translate(0,-130)">
+                          <rect x={-110} y={-30} width={220} height={140} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
+                          <image href={hpiLogoWhite} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
+                          <foreignObject x={-100} y={14} width={200} height={92}>
+                            <div
+                              style={{
+                                color: "white",
+                                fontSize: "9px",
+                                lineHeight: 1.35,
+                                fontFamily: "inherit",
+                                wordWrap: "break-word",
+                              }}
+                            >
+                              <div style={{ marginBottom: 4, fontWeight: "bold" }}>Hasso Plattner Institute</div>
+                              <div style={{ marginBottom: 4 }}><strong>Country:</strong> Germany</div>
+                              <div><strong>City:</strong> Potsdam</div>
+                            </div>
+                          </foreignObject>
                         </g>
                       )}
                     </g>

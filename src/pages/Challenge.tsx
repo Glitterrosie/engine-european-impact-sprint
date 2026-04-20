@@ -174,7 +174,7 @@ const Challenge = () => {
                               wordWrap: "break-word",
                             }}
                           >
-                            <div style={{ marginBottom: 4 }}><strong>University:</strong> {data.university}</div>
+                            <div style={{ marginBottom: 4, fontWeight: "bold" }}>{data.university}</div>
                             <div style={{ marginBottom: 4 }}><strong>Country:</strong> {data.country}</div>
                             <div><strong>City:</strong> {data.city}</div>
                           </div>

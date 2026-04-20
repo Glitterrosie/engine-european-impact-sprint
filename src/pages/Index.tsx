@@ -505,8 +505,6 @@ const Index = () => {
                             </foreignObject>
                           </g>
                         )}
-                          </g>
-                        )}
                       </g>
                     </Marker>
                   ))}

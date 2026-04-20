@@ -182,8 +182,6 @@ const Challenge = () => {
                         </foreignObject>
                       </g>
                     )}
-                      </g>
-                    )}
                   </g>
                 </Marker>
               ))}

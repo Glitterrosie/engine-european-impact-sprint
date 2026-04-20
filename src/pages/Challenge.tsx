@@ -152,30 +152,36 @@ const Challenge = () => {
                     <circle r={6} fill="hsl(var(--esprint-orange))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                     <circle r={2.5} fill="hsl(var(--primary-foreground))" />
                     {hoveredPartner === key && (
-                      <g transform="translate(0,-110)">
+                      <g transform="translate(0,-130)">
                         <rect
                           x={-110}
                           y={-30}
                           width={220}
-                          height={108}
+                          height={140}
                           rx={14}
                           fill="hsl(var(--esprint-darkblue))"
                           stroke="hsl(var(--esprint-orange) / 0.5)"
                           strokeWidth={0.6}
                         />
                         <image href={data.logo} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
-                        <text x={-100} y={28} fill="white" fontSize={9}>
-                          <tspan fontWeight="bold">University: </tspan>
-                          <tspan>{data.university}</tspan>
-                        </text>
-                        <text x={-100} y={50} fill="white" fontSize={9}>
-                          <tspan fontWeight="bold">Country: </tspan>
-                          <tspan>{data.country}</tspan>
-                        </text>
-                        <text x={-100} y={70} fill="white" fontSize={9}>
-                          <tspan fontWeight="bold">City: </tspan>
-                          <tspan>{data.city}</tspan>
-                        </text>
+                        <foreignObject x={-100} y={14} width={200} height={92}>
+                          <div
+                            xmlns="http://www.w3.org/1999/xhtml"
+                            style={{
+                              color: "white",
+                              fontSize: "9px",
+                              lineHeight: 1.35,
+                              fontFamily: "inherit",
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            <div style={{ marginBottom: 4 }}><strong>University:</strong> {data.university}</div>
+                            <div style={{ marginBottom: 4 }}><strong>Country:</strong> {data.country}</div>
+                            <div><strong>City:</strong> {data.city}</div>
+                          </div>
+                        </foreignObject>
+                      </g>
+                    )}
                       </g>
                     )}
                   </g>

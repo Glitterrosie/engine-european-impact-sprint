@@ -17,6 +17,7 @@ import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import esprintLogo from "@/assets/esprint-logo-date-white.svg";
 import challengeBrief from "@/assets/challenge-brief.jpg";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
+import tuWienWhite from "@/assets/tu-wien-white.png";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -117,6 +118,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Portugal",
     logo: tecnicoLisboaWhite,
     coordinates: [-9.14, 38.74],
+  },
+  Austria: {
+    university: "TU Wien",
+    city: "Vienna",
+    country: "Austria",
+    logo: tuWienWhite,
+    coordinates: [16.3705, 48.1965],
   },
 };
 

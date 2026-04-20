@@ -9,6 +9,7 @@ import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import tuWienWhite from "@/assets/tu-wien-white.png";
 import charlesUniversityWhite from "@/assets/charles-university-white.png";
 import tartuWhite from "@/assets/tartu-white.png";
+import creteWhite from "@/assets/crete-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -40,6 +41,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Estonia",
     logo: tartuWhite,
     coordinates: [26.7290, 58.3776],
+  },
+  Greece: {
+    university: "University of Crete",
+    city: "Rethymnon/Heraklion (Crete)",
+    country: "Greece",
+    logo: creteWhite,
+    coordinates: [24.4730, 35.3650],
   },
 };
 

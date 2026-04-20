@@ -10,6 +10,7 @@ import tuWienWhite from "@/assets/tu-wien-white.png";
 import charlesUniversityWhite from "@/assets/charles-university-white.png";
 import tartuWhite from "@/assets/tartu-white.png";
 import creteWhite from "@/assets/crete-white.png";
+import obudaWhite from "@/assets/obuda-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -48,6 +49,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Greece",
     logo: creteWhite,
     coordinates: [24.4730, 35.3650],
+  },
+  Hungary: {
+    university: "University of Óbuda",
+    city: "Budapest",
+    country: "Hungary",
+    logo: obudaWhite,
+    coordinates: [19.0402, 47.4979],
   },
 };
 

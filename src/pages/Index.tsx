@@ -473,6 +473,33 @@ const Index = () => {
                       );
                     })}
                   </Geographies>
+                  <Marker coordinates={[13.12525, 52.392528]}>
+                    <g onMouseEnter={() => setIsHpiHovered(true)} onMouseLeave={() => setIsHpiHovered(false)} className="cursor-pointer">
+                      <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
+                      <circle r={2.5} fill="hsl(var(--primary-foreground))" />
+                      {isHpiHovered && (
+                        <g transform="translate(0,-100)">
+                          <rect x={-110} y={-30} width={220} height={110} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
+                          <image href={hpiLogoWhite} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
+                          <foreignObject x={-100} y={14} width={200} height={70}>
+                            <div
+                              style={{
+                                color: "white",
+                                fontSize: "9px",
+                                lineHeight: 1.35,
+                                fontFamily: "inherit",
+                                wordWrap: "break-word",
+                              }}
+                            >
+                              <div style={{ marginBottom: 4, fontWeight: "bold" }}>Hasso Plattner Institute</div>
+                              <div style={{ marginBottom: 4 }}><strong>Country:</strong> Germany</div>
+                              <div><strong>City:</strong> Potsdam</div>
+                            </div>
+                          </foreignObject>
+                        </g>
+                      )}
+                    </g>
+                  </Marker>
                   {Object.entries(UNIVERSITY_PARTNERS).map(([key, data]) => (
                     <Marker key={key} coordinates={data.coordinates}>
                       <g
@@ -483,19 +510,19 @@ const Index = () => {
                         <circle r={6} fill="hsl(var(--esprint-orange))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                         <circle r={2.5} fill="hsl(var(--primary-foreground))" />
                         {hoveredPartner === key && (
-                          <g transform="translate(0,-130)">
+                          <g transform="translate(0,-100)">
                             <rect
                               x={-110}
                               y={-30}
                               width={220}
-                              height={140}
+                              height={110}
                               rx={14}
                               fill="hsl(var(--esprint-darkblue))"
                               stroke="hsl(var(--esprint-orange) / 0.5)"
                               strokeWidth={0.6}
                             />
                             <image href={data.logo} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
-                            <foreignObject x={-100} y={14} width={200} height={92}>
+                            <foreignObject x={-100} y={14} width={200} height={70}>
                               <div
                                 style={{
                                   color: "white",
@@ -515,33 +542,6 @@ const Index = () => {
                       </g>
                     </Marker>
                   ))}
-                  <Marker coordinates={[13.12525, 52.392528]}>
-                    <g onMouseEnter={() => setIsHpiHovered(true)} onMouseLeave={() => setIsHpiHovered(false)} className="cursor-pointer">
-                      <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
-                      <circle r={2.5} fill="hsl(var(--primary-foreground))" />
-                      {isHpiHovered && (
-                        <g transform="translate(0,-130)">
-                          <rect x={-110} y={-30} width={220} height={140} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
-                          <image href={hpiLogoWhite} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
-                          <foreignObject x={-100} y={14} width={200} height={92}>
-                            <div
-                              style={{
-                                color: "white",
-                                fontSize: "9px",
-                                lineHeight: 1.35,
-                                fontFamily: "inherit",
-                                wordWrap: "break-word",
-                              }}
-                            >
-                              <div style={{ marginBottom: 4, fontWeight: "bold" }}>Hasso Plattner Institute</div>
-                              <div style={{ marginBottom: 4 }}><strong>Country:</strong> Germany</div>
-                              <div><strong>City:</strong> Potsdam</div>
-                            </div>
-                          </foreignObject>
-                        </g>
-                      )}
-                    </g>
-                  </Marker>
                 </ComposableMap>
               </div>
             </motion.div>

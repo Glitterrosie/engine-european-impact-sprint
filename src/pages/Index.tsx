@@ -489,7 +489,6 @@ const Index = () => {
                             <image href={data.logo} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
                             <foreignObject x={-100} y={14} width={200} height={92}>
                               <div
-                                xmlns="http://www.w3.org/1999/xhtml"
                                 style={{
                                   color: "white",
                                   fontSize: "9px",

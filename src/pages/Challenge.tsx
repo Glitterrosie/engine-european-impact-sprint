@@ -5,13 +5,17 @@ import PageLayout from "@/components/PageLayout";
 import ProgramSchedule from "@/components/ProgramSchedule";
 import challengeBrief from "@/assets/challenge-brief.jpg";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
+import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
-const UNIVERSITY_PARTNERS: Record<string, { universities: string[]; coordinates: [number, number] }> = {
+const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; country: string; logo: string; coordinates: [number, number] }> = {
   Portugal: {
-    universities: ["Instituto Superior Técnico (Universidade de Lisboa)"],
-    coordinates: [-8.24, 39.4],
+    university: "Instituto Superior Técnico (Universidade de Lisboa)",
+    city: "Lisbon",
+    country: "Portugal",
+    logo: tecnicoLisboaWhite,
+    coordinates: [-9.14, 38.74],
   },
 };
 
@@ -138,31 +142,40 @@ const Challenge = () => {
                   })
                 }
               </Geographies>
-              {Object.entries(UNIVERSITY_PARTNERS).map(([country, data]) => (
-                <Marker key={country} coordinates={data.coordinates}>
+              {Object.entries(UNIVERSITY_PARTNERS).map(([key, data]) => (
+                <Marker key={key} coordinates={data.coordinates}>
                   <g
-                    onMouseEnter={() => setHoveredPartner(country)}
+                    onMouseEnter={() => setHoveredPartner(key)}
                     onMouseLeave={() => setHoveredPartner(null)}
                     className="cursor-pointer"
                   >
                     <circle r={6} fill="hsl(var(--esprint-orange))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                     <circle r={2.5} fill="hsl(var(--primary-foreground))" />
-                    {hoveredPartner === country && (
-                      <g transform="translate(0,-56)">
+                    {hoveredPartner === key && (
+                      <g transform="translate(0,-110)">
                         <rect
-                          x={-90}
+                          x={-110}
                           y={-30}
-                          width={180}
-                          height={52}
-                          rx={16}
+                          width={220}
+                          height={108}
+                          rx={14}
                           fill="hsl(var(--esprint-darkblue))"
                           stroke="hsl(var(--esprint-orange) / 0.5)"
                           strokeWidth={0.6}
                         />
-                        <text x={0} y={-14} textAnchor="middle" fill="hsl(var(--esprint-orange))" fontSize={10} fontWeight="bold">{country}</text>
-                        {data.universities.map((uni, i) => (
-                          <text key={i} x={0} y={2 + i * 14} textAnchor="middle" fill="white" fontSize={8}>{uni}</text>
-                        ))}
+                        <image href={data.logo} x={-60} y={-22} width={120} height={28} preserveAspectRatio="xMidYMid meet" />
+                        <text x={-100} y={26} fill="white" fontSize={7}>
+                          <tspan fontWeight="bold">University: </tspan>
+                          <tspan>{data.university}</tspan>
+                        </text>
+                        <text x={-100} y={46} fill="white" fontSize={7}>
+                          <tspan fontWeight="bold">Country: </tspan>
+                          <tspan>{data.country}</tspan>
+                        </text>
+                        <text x={-100} y={64} fill="white" fontSize={7}>
+                          <tspan fontWeight="bold">City: </tspan>
+                          <tspan>{data.city}</tspan>
+                        </text>
                       </g>
                     )}
                   </g>

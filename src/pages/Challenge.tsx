@@ -7,6 +7,7 @@ import challengeBrief from "@/assets/challenge-brief.jpg";
 import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import tuWienWhite from "@/assets/tu-wien-white.png";
+import charlesUniversityWhite from "@/assets/charles-university-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -24,6 +25,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Austria",
     logo: tuWienWhite,
     coordinates: [16.3705, 48.1965],
+  },
+  Czechia: {
+    university: "Charles University",
+    city: "Prague",
+    country: "Czech Republic",
+    logo: charlesUniversityWhite,
+    coordinates: [14.4378, 50.0755],
   },
 };
 

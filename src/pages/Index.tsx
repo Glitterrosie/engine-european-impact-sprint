@@ -486,16 +486,16 @@ const Index = () => {
                               stroke="hsl(var(--esprint-orange) / 0.5)"
                               strokeWidth={0.6}
                             />
-                            <image href={data.logo} x={-60} y={-22} width={120} height={28} preserveAspectRatio="xMidYMid meet" />
-                            <text x={-100} y={26} fill="white" fontSize={7}>
+                            <image href={data.logo} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
+                            <text x={-100} y={28} fill="white" fontSize={9}>
                               <tspan fontWeight="bold">University: </tspan>
                               <tspan>{data.university}</tspan>
                             </text>
-                            <text x={-100} y={46} fill="white" fontSize={7}>
+                            <text x={-100} y={50} fill="white" fontSize={9}>
                               <tspan fontWeight="bold">Country: </tspan>
                               <tspan>{data.country}</tspan>
                             </text>
-                            <text x={-100} y={64} fill="white" fontSize={7}>
+                            <text x={-100} y={70} fill="white" fontSize={9}>
                               <tspan fontWeight="bold">City: </tspan>
                               <tspan>{data.city}</tspan>
                             </text>

@@ -8,6 +8,7 @@ import hpiLogoWhite from "@/assets/hpi-logo-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import tuWienWhite from "@/assets/tu-wien-white.png";
 import charlesUniversityWhite from "@/assets/charles-university-white.png";
+import tartuWhite from "@/assets/tartu-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -32,6 +33,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Czech Republic",
     logo: charlesUniversityWhite,
     coordinates: [14.4378, 50.0755],
+  },
+  Estonia: {
+    university: "University of Tartu",
+    city: "Tartu",
+    country: "Estonia",
+    logo: tartuWhite,
+    coordinates: [26.7290, 58.3776],
   },
 };
 

@@ -23,6 +23,7 @@ import tartuWhite from "@/assets/tartu-white.png";
 import creteWhite from "@/assets/crete-white.png";
 import obudaWhite from "@/assets/obuda-white.png";
 import ktuWhite from "@/assets/ktu-white.png";
+import luxembourgWhite from "@/assets/luxembourg-white.png";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -165,6 +166,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Lithuania",
     logo: ktuWhite,
     coordinates: [23.9036, 54.8985],
+  },
+  Luxembourg: {
+    university: "University of Luxembourg",
+    city: "Luxembourg",
+    country: "Luxembourg",
+    logo: luxembourgWhite,
+    coordinates: [6.1296, 49.8153],
   },
 };
 

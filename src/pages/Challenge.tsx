@@ -16,6 +16,7 @@ import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
+import ethWhite from "@/assets/eth-white.png";
 
 const EUROPE_GEO_URL = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json";
 
@@ -96,6 +97,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Spain",
     logo: uabWhite,
     coordinates: [2.1734, 41.3851],
+  },
+  Switzerland: {
+    university: "ETH Zürich",
+    city: "Zurich",
+    country: "Switzerland",
+    logo: ethWhite,
+    coordinates: [8.5417, 47.3769],
   },
 };
 

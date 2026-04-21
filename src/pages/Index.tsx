@@ -25,6 +25,7 @@ import obudaWhite from "@/assets/obuda-white.png";
 import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
+import comeniusWhite from "@/assets/comenius-white.png";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -181,6 +182,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Poland",
     logo: warsawWhite,
     coordinates: [21.0122, 52.2297],
+  },
+  Slovakia: {
+    university: "Comenius University",
+    city: "Bratislava",
+    country: "Slovakia",
+    logo: comeniusWhite,
+    coordinates: [17.1077, 48.1486],
   },
 };
 

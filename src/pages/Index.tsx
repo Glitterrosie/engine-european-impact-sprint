@@ -199,6 +199,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     logo: uabWhite,
     coordinates: [2.1734, 41.3851],
   },
+  Switzerland: {
+    university: "ETH Zürich",
+    city: "Zurich",
+    country: "Switzerland",
+    logo: ethWhite,
+    coordinates: [8.5417, 47.3769],
+  },
 };
 
 const EU27_COUNTRIES = [

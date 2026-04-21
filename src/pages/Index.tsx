@@ -28,6 +28,7 @@ import warsawWhite from "@/assets/warsaw-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
+import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
 

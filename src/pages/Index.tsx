@@ -28,6 +28,7 @@ import warsawWhite from "@/assets/warsaw-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
+import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -205,6 +206,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Switzerland",
     logo: ethWhite,
     coordinates: [8.5417, 47.3769],
+  },
+  Liechtenstein: {
+    university: "University of Liechtenstein",
+    city: "Vaduz",
+    country: "Liechtenstein",
+    logo: liechtensteinWhite,
+    coordinates: [9.5215, 47.1410],
   },
 };
 

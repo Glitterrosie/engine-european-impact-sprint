@@ -207,6 +207,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     logo: ethWhite,
     coordinates: [8.5417, 47.3769],
   },
+  Liechtenstein: {
+    university: "University of Liechtenstein",
+    city: "Vaduz",
+    country: "Liechtenstein",
+    logo: liechtensteinWhite,
+    coordinates: [9.5215, 47.1410],
+  },
 };
 
 const EU27_COUNTRIES = [

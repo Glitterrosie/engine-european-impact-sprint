@@ -26,6 +26,7 @@ import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
+import uabWhite from "@/assets/uab-white.png";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -189,6 +190,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Slovakia",
     logo: comeniusWhite,
     coordinates: [17.1077, 48.1486],
+  },
+  Spain: {
+    university: "Universitat Autònoma de Barcelona",
+    city: "Barcelona",
+    country: "Spain",
+    logo: uabWhite,
+    coordinates: [2.1734, 41.3851],
   },
 };
 

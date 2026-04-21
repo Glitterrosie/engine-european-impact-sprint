@@ -561,31 +561,11 @@ const Index = () => {
                       );
                     })}
                   </Geographies>
+                  {/* Pins layer */}
                   <Marker coordinates={[13.12525, 52.392528]}>
                     <g onMouseEnter={() => setIsHpiHovered(true)} onMouseLeave={() => setIsHpiHovered(false)} className="cursor-pointer">
                       <circle r={6} fill="hsl(var(--esprint-pink))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                       <circle r={2.5} fill="hsl(var(--primary-foreground))" />
-                      {isHpiHovered && (
-                        <g transform="translate(0,-100)">
-                          <rect x={-110} y={-30} width={220} height={110} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
-                          <image href={hpiLogoWhite} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
-                          <foreignObject x={-100} y={14} width={200} height={70}>
-                            <div
-                              style={{
-                                color: "white",
-                                fontSize: "9px",
-                                lineHeight: 1.35,
-                                fontFamily: "inherit",
-                                wordWrap: "break-word",
-                              }}
-                            >
-                              <div style={{ marginBottom: 4, fontWeight: "bold" }}>Hasso Plattner Institute</div>
-                              <div style={{ marginBottom: 4 }}><strong>Country:</strong> Germany</div>
-                              <div><strong>City:</strong> Potsdam</div>
-                            </div>
-                          </foreignObject>
-                        </g>
-                      )}
                     </g>
                   </Marker>
                   {Object.entries(UNIVERSITY_PARTNERS).map(([key, data]) => (
@@ -597,39 +577,56 @@ const Index = () => {
                       >
                         <circle r={6} fill="hsl(var(--esprint-orange))" stroke="hsl(var(--primary-foreground))" strokeWidth={1.5} />
                         <circle r={2.5} fill="hsl(var(--primary-foreground))" />
-                        {hoveredPartner === key && (
-                          <g transform="translate(0,-100)">
-                            <rect
-                              x={-110}
-                              y={-30}
-                              width={220}
-                              height={110}
-                              rx={14}
-                              fill="hsl(var(--esprint-darkblue))"
-                              stroke="hsl(var(--esprint-orange) / 0.5)"
-                              strokeWidth={0.6}
-                            />
-                            <image href={data.logo} x={-48} y={-22} width={96} height={28} preserveAspectRatio="xMidYMid meet" />
-                            <foreignObject x={-100} y={14} width={200} height={70}>
-                              <div
-                                style={{
-                                  color: "white",
-                                  fontSize: "9px",
-                                  lineHeight: 1.35,
-                                  fontFamily: "inherit",
-                                  wordWrap: "break-word",
-                                }}
-                              >
-                                <div style={{ marginBottom: 4, fontWeight: "bold" }}>{data.university}</div>
-                                <div style={{ marginBottom: 4 }}><strong>Country:</strong> {data.country}</div>
-                                <div><strong>City:</strong> {data.city}</div>
-                              </div>
-                            </foreignObject>
-                          </g>
-                        )}
                       </g>
                     </Marker>
                   ))}
+                  {/* Tooltip layer (rendered last so it sits on top of all pins) */}
+                  {isHpiHovered && (
+                    <Marker coordinates={[13.12525, 52.392528]}>
+                      <g transform="translate(0,-110)" style={{ pointerEvents: "none" }}>
+                        <rect x={-140} y={-34} width={280} height={124} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--primary-foreground) / 0.35)" strokeWidth={0.6} />
+                        <image href={hpiLogoWhite} x={-86} y={-26} width={173} height={32} preserveAspectRatio="xMidYMid meet" />
+                        <foreignObject x={-130} y={14} width={260} height={80}>
+                          <div
+                            style={{
+                              color: "white",
+                              fontSize: "11px",
+                              lineHeight: 1.35,
+                              fontFamily: "inherit",
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            <div style={{ marginBottom: 4, fontWeight: "bold" }}>Hasso Plattner Institute</div>
+                            <div style={{ marginBottom: 4 }}><strong>Country:</strong> Germany</div>
+                            <div><strong>City:</strong> Potsdam</div>
+                          </div>
+                        </foreignObject>
+                      </g>
+                    </Marker>
+                  )}
+                  {hoveredPartner && UNIVERSITY_PARTNERS[hoveredPartner] && (
+                    <Marker coordinates={UNIVERSITY_PARTNERS[hoveredPartner].coordinates}>
+                      <g transform="translate(0,-110)" style={{ pointerEvents: "none" }}>
+                        <rect x={-140} y={-34} width={280} height={124} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange) / 0.5)" strokeWidth={0.6} />
+                        <image href={UNIVERSITY_PARTNERS[hoveredPartner].logo} x={-86} y={-26} width={173} height={32} preserveAspectRatio="xMidYMid meet" />
+                        <foreignObject x={-130} y={14} width={260} height={80}>
+                          <div
+                            style={{
+                              color: "white",
+                              fontSize: "11px",
+                              lineHeight: 1.35,
+                              fontFamily: "inherit",
+                              wordWrap: "break-word",
+                            }}
+                          >
+                            <div style={{ marginBottom: 4, fontWeight: "bold" }}>{UNIVERSITY_PARTNERS[hoveredPartner].university}</div>
+                            <div style={{ marginBottom: 4 }}><strong>Country:</strong> {UNIVERSITY_PARTNERS[hoveredPartner].country}</div>
+                            <div><strong>City:</strong> {UNIVERSITY_PARTNERS[hoveredPartner].city}</div>
+                          </div>
+                        </foreignObject>
+                      </g>
+                    </Marker>
+                  )}
                 </ComposableMap>
               </div>
             </motion.div>

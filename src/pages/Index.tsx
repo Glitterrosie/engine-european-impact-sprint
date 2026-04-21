@@ -24,6 +24,7 @@ import creteWhite from "@/assets/crete-white.png";
 import obudaWhite from "@/assets/obuda-white.png";
 import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
+import warsawWhite from "@/assets/warsaw-white.png";
 
 // ── Stats data & component ──────────────────────────────────────────
 
@@ -173,6 +174,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Luxembourg",
     logo: luxembourgWhite,
     coordinates: [6.1296, 49.8153],
+  },
+  Poland: {
+    university: "University of Warsaw",
+    city: "Warsaw",
+    country: "Poland",
+    logo: warsawWhite,
+    coordinates: [21.0122, 52.2297],
   },
 };
 

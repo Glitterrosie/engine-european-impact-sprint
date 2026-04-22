@@ -9,6 +9,35 @@ import hpiCampus3 from "@/assets/hpi-campus-3.jpg";
 import hpiEngine1 from "@/assets/hpi-engine-1.jpg";
 import hpiEngine2 from "@/assets/hpi-engine-2.jpg";
 import hpiEngine3 from "@/assets/hpi-engine-3.jpg";
+import tuWienWhite from "@/assets/tu-wien-white.png";
+import charlesUniversityWhite from "@/assets/charles-university-white.png";
+import tartuWhite from "@/assets/tartu-white.png";
+import creteWhite from "@/assets/crete-white.png";
+import obudaWhite from "@/assets/obuda-white.png";
+import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
+import ktuWhite from "@/assets/ktu-white.png";
+import luxembourgWhite from "@/assets/luxembourg-white.png";
+import warsawWhite from "@/assets/warsaw-white.png";
+import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
+import comeniusWhite from "@/assets/commun-transparent-white.png";
+import uabWhite from "@/assets/uab-white.png";
+import ethWhite from "@/assets/eth-white.png";
+
+const UNIVERSITY_PARTNERS_LIST = [
+  { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
+  { university: "Charles University", city: "Prague", country: "Czech Republic", logo: charlesUniversityWhite },
+  { university: "University of Tartu", city: "Tartu", country: "Estonia", logo: tartuWhite },
+  { university: "University of Crete", city: "Rethymnon/Heraklion (Crete)", country: "Greece", logo: creteWhite },
+  { university: "University of Óbuda", city: "Budapest", country: "Hungary", logo: obudaWhite },
+  { university: "University of Liechtenstein", city: "Vaduz", country: "Liechtenstein", logo: liechtensteinWhite },
+  { university: "Kaunas University of Technology", city: "Kaunas", country: "Lithuania", logo: ktuWhite },
+  { university: "University of Luxembourg", city: "Luxembourg", country: "Luxembourg", logo: luxembourgWhite },
+  { university: "University of Warsaw", city: "Warsaw", country: "Poland", logo: warsawWhite },
+  { university: "Instituto Superior Técnico (Universidade de Lisboa)", city: "Lisbon", country: "Portugal", logo: tecnicoLisboaWhite },
+  { university: "Comenius University", city: "Bratislava", country: "Slovakia", logo: comeniusWhite },
+  { university: "Universitat Autònoma de Barcelona", city: "Barcelona", country: "Spain", logo: uabWhite },
+  { university: "ETH Zürich", city: "Zurich", country: "Switzerland", logo: ethWhite },
+];
 
 const Partners = () => {
   return (

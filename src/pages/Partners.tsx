@@ -140,11 +140,24 @@ const Partners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 text-center shadow-xl"
+          className="bg-esprint-darkblue rounded-2xl p-8 md:p-10 shadow-xl"
         >
-          <h2 className="font-display font-bold text-2xl text-primary-foreground mb-3">University Partners</h2>
-          <p className="text-primary-foreground/50">Coming Soon</p>
-          <p className="text-sm text-primary-foreground/40 mt-4">
+          <h2 className="font-display font-bold text-2xl text-primary-foreground mb-6 text-center">University Partners</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {UNIVERSITY_PARTNERS_LIST.map((p) => (
+              <div
+                key={p.country}
+                className="bg-white/5 border border-white/10 rounded-xl p-4 flex flex-col items-center text-center"
+              >
+                <div className="h-12 flex items-center justify-center mb-3 w-full">
+                  <img src={p.logo} alt={p.university} className="max-h-12 max-w-full object-contain" />
+                </div>
+                <div className="text-primary-foreground font-semibold text-sm leading-tight mb-1">{p.university}</div>
+                <div className="text-primary-foreground/70 text-xs">{p.city}, {p.country}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-primary-foreground/40 mt-6 text-center">
             Interested in becoming a partner?{" "}
             <a href="/contact" className="text-esprint-pink hover:underline font-semibold">Contact us!</a>
           </p>

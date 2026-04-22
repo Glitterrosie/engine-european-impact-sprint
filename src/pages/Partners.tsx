@@ -19,7 +19,7 @@ import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
-import comeniusWhite from "@/assets/commun-transparent-white.png";
+import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 

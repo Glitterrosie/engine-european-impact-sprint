@@ -1,0 +1,22 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Jede Stunde prüfen
+  workflow_dispatch:       # Auch manuell auslösbar
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync upstream
+        run: |
+          git remote add upstream https://github.com/matveysiva/european-impact-sprint-prototype.git
+          git fetch upstream
+          git checkout main
+          git merge upstream/main --ff-only
+          git push

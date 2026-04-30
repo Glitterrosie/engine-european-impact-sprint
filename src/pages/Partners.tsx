@@ -18,6 +18,7 @@ import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
+import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
@@ -34,6 +35,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "University of Luxembourg", city: "Luxembourg", country: "Luxembourg", logo: luxembourgWhite },
   { university: "University of Warsaw", city: "Warsaw", country: "Poland", logo: warsawWhite },
   { university: "Instituto Superior Técnico (Universidade de Lisboa)", city: "Lisbon", country: "Portugal", logo: tecnicoLisboaWhite },
+  { university: "Babeș-Bolyai University", city: "Cluj-Napoca", country: "Romania", logo: babesBolyaiWhite },
   { university: "Comenius University", city: "Bratislava", country: "Slovakia", logo: comeniusWhite },
   { university: "Universitat Autònoma de Barcelona", city: "Barcelona", country: "Spain", logo: uabWhite },
   { university: "ETH Zürich", city: "Zurich", country: "Switzerland", logo: ethWhite },

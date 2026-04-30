@@ -15,6 +15,7 @@ import ktuWhite from "@/assets/ktu-white.png";
 import luxembourgWhite from "@/assets/luxembourg-white.png";
 import warsawWhite from "@/assets/warsaw-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
+import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
@@ -84,6 +85,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Poland",
     logo: warsawWhite,
     coordinates: [21.0122, 52.2297],
+  },
+  Romania: {
+    university: "Babeș-Bolyai University",
+    city: "Cluj-Napoca",
+    country: "Romania",
+    logo: babesBolyaiWhite,
+    coordinates: [23.5933, 46.7712],
   },
   Slovakia: {
     university: "Comenius University",

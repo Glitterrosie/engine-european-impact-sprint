@@ -16,6 +16,7 @@ import FAQ from "./pages/FAQ";
 import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import keyVisual from "@/assets/key-visual.png";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
         </Routes>
         <Footer />
       </BrowserRouter>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );

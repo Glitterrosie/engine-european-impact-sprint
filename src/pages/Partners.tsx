@@ -21,6 +21,7 @@ import warsawWhite from "@/assets/warsaw-white.png";
 import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
+import twenteWhite from "@/assets/twente-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
@@ -36,6 +37,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "Kaunas University of Technology", city: "Kaunas", country: "Lithuania", logo: ktuWhite },
   { university: "University of Luxembourg", city: "Luxembourg", country: "Luxembourg", logo: luxembourgWhite },
   { university: "University of Malta", city: "Msida", country: "Malta", logo: maltaWhite },
+  { university: "University of Twente", city: "Enschede", country: "Netherlands", logo: twenteWhite },
   { university: "University of Warsaw", city: "Warsaw", country: "Poland", logo: warsawWhite },
   { university: "Instituto Superior Técnico (Universidade de Lisboa)", city: "Lisbon", country: "Portugal", logo: tecnicoLisboaWhite },
   { university: "Babeș-Bolyai University", city: "Cluj-Napoca", country: "Romania", logo: babesBolyaiWhite },

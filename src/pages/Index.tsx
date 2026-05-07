@@ -29,6 +29,7 @@ import comeniusWhite from "@/assets/comenius-white.png";
 import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
+import twenteWhite from "@/assets/twente-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
@@ -209,6 +210,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Slovenia",
     logo: ljubljanaWhite,
     coordinates: [14.5058, 46.0569],
+  },
+  Netherlands: {
+    university: "University of Twente",
+    city: "Enschede",
+    country: "Netherlands",
+    logo: twenteWhite,
+    coordinates: [6.8568, 52.2215],
   },
   Slovakia: {
     university: "Comenius University",

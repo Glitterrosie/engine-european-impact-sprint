@@ -23,6 +23,7 @@ import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
 import twenteWhite from "@/assets/twente-white.png";
 import zagrebWhite from "@/assets/zagreb-white.png";
+import aaltoWhite from "@/assets/aalto-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";

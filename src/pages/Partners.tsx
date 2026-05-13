@@ -34,6 +34,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "Charles University", city: "Prague", country: "Czech Republic", logo: charlesUniversityWhite },
   { university: "University of Zagreb", city: "Zagreb", country: "Croatia", logo: zagrebWhite },
   { university: "University of Tartu", city: "Tartu", country: "Estonia", logo: tartuWhite },
+  { university: "Aalto University", city: "Espoo", country: "Finland", logo: aaltoWhite },
   { university: "University of Crete", city: "Rethymnon/Heraklion (Crete)", country: "Greece", logo: creteWhite },
   { university: "University of Óbuda", city: "Budapest", country: "Hungary", logo: obudaWhite },
   { university: "University of Liechtenstein", city: "Vaduz", country: "Liechtenstein", logo: liechtensteinWhite },

@@ -30,6 +30,8 @@ import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
 import twenteWhite from "@/assets/twente-white.png";
+import zagrebWhite from "@/assets/zagreb-white.png";
+import aaltoWhite from "@/assets/aalto-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
@@ -245,6 +247,20 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Liechtenstein",
     logo: liechtensteinWhite,
     coordinates: [9.5215, 47.1410],
+  },
+  Croatia: {
+    university: "University of Zagreb",
+    city: "Zagreb",
+    country: "Croatia",
+    logo: zagrebWhite,
+    coordinates: [15.9819, 45.8150],
+  },
+  Finland: {
+    university: "Aalto University",
+    city: "Espoo",
+    country: "Finland",
+    logo: aaltoWhite,
+    coordinates: [24.8255, 60.1841],
   },
 };
 

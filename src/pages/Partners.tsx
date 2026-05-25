@@ -22,6 +22,7 @@ import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
 import twenteWhite from "@/assets/twente-white.png";
+import kuleuvenWhite from "@/assets/kuleuven-white.png";
 import zagrebWhite from "@/assets/zagreb-white.png";
 import aaltoWhite from "@/assets/aalto-white.png";
 import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
@@ -31,6 +32,7 @@ import ethWhite from "@/assets/eth-white.png";
 
 const UNIVERSITY_PARTNERS_LIST = [
   { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
+  { university: "KU Leuven", city: "Leuven", country: "Belgium", logo: kuleuvenWhite },
   { university: "Charles University", city: "Prague", country: "Czech Republic", logo: charlesUniversityWhite },
   { university: "University of Zagreb", city: "Zagreb", country: "Croatia", logo: zagrebWhite },
   { university: "University of Tartu", city: "Tartu", country: "Estonia", logo: tartuWhite },

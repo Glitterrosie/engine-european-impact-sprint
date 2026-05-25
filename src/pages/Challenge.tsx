@@ -19,6 +19,7 @@ import babesBolyaiWhite from "@/assets/babes-bolyai-white.png";
 import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
 import twenteWhite from "@/assets/twente-white.png";
+import kuleuvenWhite from "@/assets/kuleuven-white.png";
 import zagrebWhite from "@/assets/zagreb-white.png";
 import aaltoWhite from "@/assets/aalto-white.png";
 import uabWhite from "@/assets/uab-white.png";
@@ -118,6 +119,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Netherlands",
     logo: twenteWhite,
     coordinates: [6.8568, 52.2215],
+  },
+  Belgium: {
+    university: "KU Leuven",
+    city: "Leuven",
+    country: "Belgium",
+    logo: kuleuvenWhite,
+    coordinates: [4.7005, 50.8798],
   },
   Slovakia: {
     university: "Comenius University",

@@ -31,6 +31,7 @@ import maltaWhite from "@/assets/malta-white.png";
 import ljubljanaWhite from "@/assets/ljubljana-white.png";
 import twenteWhite from "@/assets/twente-white.png";
 import kuleuvenWhite from "@/assets/kuleuven-white.png";
+import reykjavikWhite from "@/assets/reykjavik-white.png";
 import zagrebWhite from "@/assets/zagreb-white.png";
 import aaltoWhite from "@/assets/aalto-white.png";
 import uabWhite from "@/assets/uab-white.png";
@@ -227,6 +228,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Belgium",
     logo: kuleuvenWhite,
     coordinates: [4.7005, 50.8798],
+  },
+  Iceland: {
+    university: "Reykjavik University",
+    city: "Reykjavik",
+    country: "Iceland",
+    logo: reykjavikWhite,
+    coordinates: [-21.9426, 64.1466],
   },
   Slovakia: {
     university: "Comenius University",

@@ -668,9 +668,11 @@ const Index = () => {
                       </g>
                     </Marker>
                   )}
-                  {hoveredPartner && UNIVERSITY_PARTNERS[hoveredPartner] && (
+                  {hoveredPartner && UNIVERSITY_PARTNERS[hoveredPartner] && (() => {
+                    const flipBelow = UNIVERSITY_PARTNERS[hoveredPartner].coordinates[1] >= 60;
+                    return (
                     <Marker coordinates={UNIVERSITY_PARTNERS[hoveredPartner].coordinates}>
-                      <g transform="translate(0,-110)" style={{ pointerEvents: "none" }}>
+                      <g transform={flipBelow ? "translate(0,40)" : "translate(0,-110)"} style={{ pointerEvents: "none" }}>
                         <rect x={-140} y={-34} width={280} height={124} rx={14} fill="hsl(var(--esprint-darkblue))" stroke="hsl(var(--esprint-orange) / 0.5)" strokeWidth={0.6} />
                         <image href={UNIVERSITY_PARTNERS[hoveredPartner].logo} x={-86} y={-26} width={173} height={32} preserveAspectRatio="xMidYMid meet" />
                         <foreignObject x={-130} y={14} width={260} height={80}>
@@ -690,7 +692,8 @@ const Index = () => {
                         </foreignObject>
                       </g>
                     </Marker>
-                  )}
+                    );
+                  })()}
                 </ComposableMap>
               </div>
             </motion.div>

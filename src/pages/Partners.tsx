@@ -40,6 +40,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "Aalto University", city: "Espoo", country: "Finland", logo: aaltoWhite },
   { university: "University of Crete", city: "Rethymnon/Heraklion (Crete)", country: "Greece", logo: creteWhite },
   { university: "University of Óbuda", city: "Budapest", country: "Hungary", logo: obudaWhite },
+  { university: "Reykjavik University", city: "Reykjavik", country: "Iceland", logo: reykjavikWhite },
   { university: "University of Liechtenstein", city: "Vaduz", country: "Liechtenstein", logo: liechtensteinWhite },
   { university: "Kaunas University of Technology", city: "Kaunas", country: "Lithuania", logo: ktuWhite },
   { university: "University of Luxembourg", city: "Luxembourg", country: "Luxembourg", logo: luxembourgWhite },

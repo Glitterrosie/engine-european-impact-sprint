@@ -30,6 +30,7 @@ import tecnicoLisboaWhite from "@/assets/tecnico-lisboa-white.png";
 import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
+import chalmersWhite from "@/assets/chalmers-white.png";
 
 const UNIVERSITY_PARTNERS_LIST = [
   { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
@@ -52,6 +53,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "University of Ljubljana", city: "Ljubljana", country: "Slovenia", logo: ljubljanaWhite },
   { university: "Comenius University", city: "Bratislava", country: "Slovakia", logo: comeniusWhite },
   { university: "Universitat Autònoma de Barcelona", city: "Barcelona", country: "Spain", logo: uabWhite },
+  { university: "Chalmers University of Technology", city: "Gothenburg", country: "Sweden", logo: chalmersWhite },
   { university: "ETH Zürich", city: "Zurich", country: "Switzerland", logo: ethWhite },
 ];
 

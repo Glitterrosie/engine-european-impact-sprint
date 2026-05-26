@@ -23,6 +23,7 @@ import kuleuvenWhite from "@/assets/kuleuven-white.png";
 import reykjavikWhite from "@/assets/reykjavik-white.png";
 import zagrebWhite from "@/assets/zagreb-white.png";
 import aaltoWhite from "@/assets/aalto-white.png";
+import chalmersWhite from "@/assets/chalmers-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
@@ -176,6 +177,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Finland",
     logo: aaltoWhite,
     coordinates: [24.8255, 60.1841],
+  },
+  Sweden: {
+    university: "Chalmers University of Technology",
+    city: "Gothenburg",
+    country: "Sweden",
+    logo: chalmersWhite,
+    coordinates: [11.9746, 57.6892],
   },
 };
 

@@ -38,6 +38,7 @@ import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
 import unimoreWhite from "@/assets/unimore-white.png";
+import uclWhite from "@/assets/ucl-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
@@ -293,6 +294,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Italy",
     logo: unimoreWhite,
     coordinates: [10.9252, 44.6471],
+  },
+  UnitedKingdom: {
+    university: "University College London (UCL)",
+    city: "London",
+    country: "United Kingdom",
+    logo: uclWhite,
+    coordinates: [-0.1340, 51.5246],
   },
 };
 

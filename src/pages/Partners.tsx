@@ -32,6 +32,7 @@ import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
 import unimoreWhite from "@/assets/unimore-white.png";
+import uclWhite from "@/assets/ucl-white.png";
 
 const UNIVERSITY_PARTNERS_LIST = [
   { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
@@ -57,6 +58,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "Universitat Autònoma de Barcelona", city: "Barcelona", country: "Spain", logo: uabWhite },
   { university: "Chalmers University of Technology", city: "Gothenburg", country: "Sweden", logo: chalmersWhite },
   { university: "ETH Zürich", city: "Zurich", country: "Switzerland", logo: ethWhite },
+  { university: "University College London (UCL)", city: "London", country: "United Kingdom", logo: uclWhite },
 ];
 
 const Partners = () => {

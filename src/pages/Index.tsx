@@ -40,6 +40,7 @@ import chalmersWhite from "@/assets/chalmers-white.png";
 import unimoreWhite from "@/assets/unimore-white.png";
 import uclWhite from "@/assets/ucl-white.png";
 import rtuWhite from "@/assets/rtu-white.png";
+import rennesWhite from "@/assets/rennes-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
@@ -309,6 +310,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Latvia",
     logo: rtuWhite,
     coordinates: [24.1052, 56.9496],
+  },
+  France: {
+    university: "University of Rennes",
+    city: "Rennes",
+    country: "France",
+    logo: rennesWhite,
+    coordinates: [-1.6778, 48.1173],
   },
 };
 

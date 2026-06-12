@@ -37,6 +37,10 @@ import aaltoWhite from "@/assets/aalto-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
+import unimoreWhite from "@/assets/unimore-white.png";
+import uclWhite from "@/assets/ucl-white.png";
+import rtuWhite from "@/assets/rtu-white.png";
+import rennesWhite from "@/assets/rennes-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
@@ -285,6 +289,34 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Sweden",
     logo: chalmersWhite,
     coordinates: [11.9746, 57.6892],
+  },
+  Italy: {
+    university: "University of Modena and Reggio Emilia",
+    city: "Modena",
+    country: "Italy",
+    logo: unimoreWhite,
+    coordinates: [10.9252, 44.6471],
+  },
+  UnitedKingdom: {
+    university: "University College London (UCL)",
+    city: "London",
+    country: "United Kingdom",
+    logo: uclWhite,
+    coordinates: [-0.1340, 51.5246],
+  },
+  Latvia: {
+    university: "Riga Technical University",
+    city: "Riga",
+    country: "Latvia",
+    logo: rtuWhite,
+    coordinates: [24.1052, 56.9496],
+  },
+  France: {
+    university: "University of Rennes",
+    city: "Rennes",
+    country: "France",
+    logo: rennesWhite,
+    coordinates: [-1.6778, 48.1173],
   },
 };
 

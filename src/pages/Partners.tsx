@@ -31,6 +31,7 @@ import comeniusWhite from "@/assets/comenius-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
+import unimoreWhite from "@/assets/unimore-white.png";
 
 const UNIVERSITY_PARTNERS_LIST = [
   { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
@@ -42,6 +43,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "University of Crete", city: "Rethymnon/Heraklion (Crete)", country: "Greece", logo: creteWhite },
   { university: "University of Óbuda", city: "Budapest", country: "Hungary", logo: obudaWhite },
   { university: "Reykjavik University", city: "Reykjavik", country: "Iceland", logo: reykjavikWhite },
+  { university: "University of Modena and Reggio Emilia", city: "Modena", country: "Italy", logo: unimoreWhite },
   { university: "University of Liechtenstein", city: "Vaduz", country: "Liechtenstein", logo: liechtensteinWhite },
   { university: "Kaunas University of Technology", city: "Kaunas", country: "Lithuania", logo: ktuWhite },
   { university: "University of Luxembourg", city: "Luxembourg", country: "Luxembourg", logo: luxembourgWhite },

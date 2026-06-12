@@ -37,6 +37,7 @@ import aaltoWhite from "@/assets/aalto-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
+import unimoreWhite from "@/assets/unimore-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
 
 // ── Stats data & component ──────────────────────────────────────────
@@ -285,6 +286,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "Sweden",
     logo: chalmersWhite,
     coordinates: [11.9746, 57.6892],
+  },
+  Italy: {
+    university: "University of Modena and Reggio Emilia",
+    city: "Modena",
+    country: "Italy",
+    logo: unimoreWhite,
+    coordinates: [10.9252, 44.6471],
   },
 };
 

@@ -34,6 +34,7 @@ import chalmersWhite from "@/assets/chalmers-white.png";
 import unimoreWhite from "@/assets/unimore-white.png";
 import uclWhite from "@/assets/ucl-white.png";
 import rtuWhite from "@/assets/rtu-white.png";
+import rennesWhite from "@/assets/rennes-white.png";
 
 const UNIVERSITY_PARTNERS_LIST = [
   { university: "TU Wien", city: "Vienna", country: "Austria", logo: tuWienWhite },
@@ -42,6 +43,7 @@ const UNIVERSITY_PARTNERS_LIST = [
   { university: "University of Zagreb", city: "Zagreb", country: "Croatia", logo: zagrebWhite },
   { university: "University of Tartu", city: "Tartu", country: "Estonia", logo: tartuWhite },
   { university: "Aalto University", city: "Espoo", country: "Finland", logo: aaltoWhite },
+  { university: "University of Rennes", city: "Rennes", country: "France", logo: rennesWhite },
   { university: "University of Crete", city: "Rethymnon/Heraklion (Crete)", country: "Greece", logo: creteWhite },
   { university: "University of Óbuda", city: "Budapest", country: "Hungary", logo: obudaWhite },
   { university: "Reykjavik University", city: "Reykjavik", country: "Iceland", logo: reykjavikWhite },

@@ -26,6 +26,7 @@ import aaltoWhite from "@/assets/aalto-white.png";
 import chalmersWhite from "@/assets/chalmers-white.png";
 import unimoreWhite from "@/assets/unimore-white.png";
 import uclWhite from "@/assets/ucl-white.png";
+import rtuWhite from "@/assets/rtu-white.png";
 import uabWhite from "@/assets/uab-white.png";
 import ethWhite from "@/assets/eth-white.png";
 import liechtensteinWhite from "@/assets/liechtenstein-white.svg";
@@ -200,6 +201,13 @@ const UNIVERSITY_PARTNERS: Record<string, { university: string; city: string; co
     country: "United Kingdom",
     logo: uclWhite,
     coordinates: [-0.1340, 51.5246],
+  },
+  Latvia: {
+    university: "Riga Technical University",
+    city: "Riga",
+    country: "Latvia",
+    logo: rtuWhite,
+    coordinates: [24.1052, 56.9496],
   },
 };
 

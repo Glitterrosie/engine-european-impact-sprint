@@ -144,15 +144,17 @@ const TravelPolicy = () => {
             </Section>
 
             <Section title="Travel dates">
-              <p>
-                The program starts from <Highlight>Tuesday 25 August at 14:00</Highlight> at HPI Campus until <Highlight>Friday 28 August 17:30</Highlight>.
-              </p>
-              <p>
-                If there are no trains or flights that allow you to arrive at HPI Campus at these times without staying overnight, the nights of <Highlight>Monday 24 August</Highlight> and <Highlight>Friday 28 August</Highlight> <strong>can be included in the travel reimbursement</strong>.
-              </p>
-              <p>
-                You can travel before or after the program dates, but <strong>any additional costs will not be covered by HPI</strong>.
-              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  The program starts from <Highlight>Tuesday 25 August at 14:00</Highlight> at HPI Campus until <Highlight>Friday 28 August 17:30</Highlight>.
+                </li>
+                <li>
+                  If there are no trains or flights that allow you to arrive at HPI Campus at these times without staying overnight, the nights of <Highlight>Monday 24 August</Highlight> and <Highlight>Friday 28 August</Highlight> <strong>can be included in the travel reimbursement</strong>.
+                </li>
+                <li>
+                  You can travel before or after the program dates, but <strong>any additional costs will not be covered by HPI</strong>.
+                </li>
+              </ul>
             </Section>
 
             <Section title="Accommodation">

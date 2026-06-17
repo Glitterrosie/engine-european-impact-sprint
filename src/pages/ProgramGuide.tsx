@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
+import essamPhoto from "@/assets/essam.jpeg";
+import hendrikPhoto from "@/assets/hendrik.jpg";
+import lisaPhoto from "@/assets/lisa.png";
 
 interface SectionDef {
   id: string;
@@ -143,7 +146,11 @@ const days: SectionDef[] = [
   { id: "fri-2808", title: "Friday 28.08" },
 ];
 
-const teamRoles = ["Essam Sharaf", "Lisa Jeller", "Hendrik Laßör"];
+const teamMembers = [
+  { name: "Essam Sharaf", photo: essamPhoto, role: "Program Lead" },
+  { name: "Lisa Jeller", photo: lisaPhoto, role: "Program Manager" },
+  { name: "Hendrik Laflör", photo: hendrikPhoto, role: "Program Manager" },
+];
 
 const Placeholder = ({ label = "Content coming soon" }: { label?: string }) => (
   <div className="rounded-xl border-2 border-dashed border-esprint-darkblue/20 bg-esprint-darkblue/5 px-5 py-6 text-esprint-darkblue/50 text-sm italic">
@@ -342,13 +349,20 @@ const ProgramGuide = () => {
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Team</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    {teamRoles.map((name) => (
+                    {teamMembers.map((member) => (
                       <div
-                        key={name}
-                        className="rounded-xl bg-white/90 text-esprint-darkblue p-4"
+                        key={member.name}
+                        className="rounded-xl bg-white/90 text-esprint-darkblue p-4 flex items-center gap-3"
                       >
-                        <div className="font-semibold">{name}</div>
-                        <div className="text-xs opacity-70 mt-1">Can help with: —</div>
+                        <img
+                          src={member.photo}
+                          alt={member.name}
+                          className="w-14 h-14 rounded-full object-cover shrink-0"
+                        />
+                        <div>
+                          <div className="font-semibold">{member.name}</div>
+                          <div className="text-xs opacity-70 mt-0.5">{member.role}</div>
+                        </div>
                       </div>
                     ))}
                   </div>

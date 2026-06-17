@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
@@ -8,12 +8,131 @@ interface SectionDef {
   title: string;
 }
 
-const weatherDays = [
-  { day: "Tuesday 25 Aug", icon: "☀️", temp: "22° | 11°" },
-  { day: "Wednesday 26 Aug", icon: "☀️", temp: "22° | 11°" },
-  { day: "Thursday 27 Aug", icon: "☀️", temp: "22° | 14°" },
-  { day: "Friday 28 Aug", icon: "☀️", temp: "22° | 14°" },
-];
+// Potsdam coordinates
+const POTSDAM = { lat: 52.4009, lon: 13.0591 };
+// Event dates (Tue–Fri of the sprint week)
+const EVENT_DATES = ["2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28"];
+
+const WEATHER_ICONS: Record<number, string> = {
+  0: "☀️", 1: "🌤️", 2: "⛅", 3: "☁️",
+  45: "🌫️", 48: "🌫️",
+  51: "🌦️", 53: "🌦️", 55: "🌦️",
+  61: "🌧️", 63: "🌧️", 65: "🌧️",
+  71: "🌨️", 73: "🌨️", 75: "🌨️",
+  80: "🌦️", 81: "🌧️", 82: "⛈️",
+  95: "⛈️", 96: "⛈️", 99: "⛈️",
+};
+
+const formatDay = (iso: string) =>
+  new Date(iso + "T00:00:00").toLocaleDateString("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+  });
+
+interface WeatherDay {
+  day: string;
+  icon: string;
+  temp: string;
+  source: "forecast" | "historical" | "loading";
+}
+
+const initialWeather: WeatherDay[] = EVENT_DATES.map((d) => ({
+  day: formatDay(d),
+  icon: "…",
+  temp: "—",
+  source: "loading",
+}));
+
+const useWeather = () => {
+  const [days, setDays] = useState<WeatherDay[]>(initialWeather);
+  const [note, setNote] = useState<string>("");
+
+  useEffect(() => {
+    let cancelled = false;
+    const start = EVENT_DATES[0];
+    const end = EVENT_DATES[EVENT_DATES.length - 1];
+    const daysUntilEvent = Math.ceil(
+      (new Date(start).getTime() - Date.now()) / 86_400_000,
+    );
+
+    const buildDays = (
+      dates: string[],
+      codes: number[],
+      tmax: number[],
+      tmin: number[],
+      source: "forecast" | "historical",
+    ): WeatherDay[] =>
+      EVENT_DATES.map((target) => {
+        const idx = dates.indexOf(target) >= 0
+          ? dates.indexOf(target)
+          : dates.indexOf(target.replace("2026", "2025"));
+        const code = codes[idx];
+        return {
+          day: formatDay(target),
+          icon: WEATHER_ICONS[code] ?? "🌡️",
+          temp: `${Math.round(tmax[idx])}° | ${Math.round(tmin[idx])}°`,
+          source,
+        };
+      });
+
+    const fetchData = async () => {
+      // Forecast only reaches ~16 days
+      if (daysUntilEvent <= 16 && daysUntilEvent >= -1) {
+        try {
+          const url = `https://api.open-meteo.com/v1/forecast?latitude=${POTSDAM.lat}&longitude=${POTSDAM.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin&start_date=${start}&end_date=${end}`;
+          const res = await fetch(url);
+          const json = await res.json();
+          if (!cancelled && json?.daily) {
+            setDays(
+              buildDays(
+                json.daily.time,
+                json.daily.weather_code,
+                json.daily.temperature_2m_max,
+                json.daily.temperature_2m_min,
+                "forecast",
+              ),
+            );
+            setNote("Live forecast for Potsdam (Open-Meteo).");
+          }
+        } catch {
+          /* fall through to historical */
+        }
+      } else {
+        // Use last year's actuals for the same dates as a reference
+        try {
+          const ly = (d: string) => d.replace("2026", "2025");
+          const url = `https://archive-api.open-meteo.com/v1/archive?latitude=${POTSDAM.lat}&longitude=${POTSDAM.lon}&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Europe%2FBerlin&start_date=${ly(start)}&end_date=${ly(end)}`;
+          const res = await fetch(url);
+          const json = await res.json();
+          if (!cancelled && json?.daily) {
+            setDays(
+              buildDays(
+                json.daily.time,
+                json.daily.weather_code,
+                json.daily.temperature_2m_max,
+                json.daily.temperature_2m_min,
+                "historical",
+              ),
+            );
+            setNote(
+              "Reference: same dates in 2025 (Potsdam). Live forecast appears ~2 weeks before the event.",
+            );
+          }
+        } catch {
+          if (!cancelled) setNote("Weather data unavailable right now.");
+        }
+      }
+    };
+
+    fetchData();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return { days, note };
+};
 
 const days: SectionDef[] = [
   { id: "mon-2408", title: "Monday 24.08" },

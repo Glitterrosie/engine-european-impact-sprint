@@ -41,8 +41,8 @@ const SubSection = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <div className="mb-5">
-    <h3 className="font-display font-bold text-lg text-esprint-darkblue mb-2">
+  <div className="rounded-xl bg-white/70 p-4 md:p-5 border border-esprint-darkblue/10 shadow-sm">
+    <h3 className="font-display font-bold text-lg text-esprint-darkblue mb-3">
       {title}
     </h3>
     <div className="space-y-2 text-esprint-darkblue/85 leading-relaxed">

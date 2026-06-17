@@ -46,6 +46,7 @@ const App = () => (
            <Route path="/imprint" element={<Imprint />} />
           <Route path="/register" element={<Register />} />
           <Route path="/program-guide" element={<ProgramGuide />} />
+          <Route path="/travel-policy" element={<TravelPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

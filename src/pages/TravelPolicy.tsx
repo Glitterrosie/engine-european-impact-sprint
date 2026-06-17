@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Bus, CalendarDays, Hotel, MapPin, ClipboardCheck, Receipt, Mail } from "lucide-react";
+import { ArrowLeft, Bus, CalendarDays, Hotel, MapPin, ClipboardCheck, Receipt, Mail, AlertTriangle } from "lucide-react";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const sectionIcons: Record<string, React.ReactNode> = {

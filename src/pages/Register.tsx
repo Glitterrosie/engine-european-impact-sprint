@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const FORM_URL =
-  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=QBH3WEkfkEiD0dx77jY0_FMBtGQIOVFMt16wrIuEWShUMEZCSEdKVDlXT05OMElJQ0FTSjZBMVVLWi4u&embed=true";
+  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=QBH3WEkfkEiD0dx77jY0_FMBtGQIOVFMt16wrIuEWShUMEZCSEdKVDlXT05OMElJQ0FTSjZBMVVLWi4u";
 
 const Register = () => {
   return (

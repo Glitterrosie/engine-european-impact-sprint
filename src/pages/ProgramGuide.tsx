@@ -144,7 +144,7 @@ const ProgramGuide = () => {
               <div className="space-y-6">
                 {days.map((d) => (
                   <div key={d.id}>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">
+                    <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                       {d.title}
                     </h3>
                     <Placeholder label="Schedule details — placeholder" />
@@ -157,21 +157,21 @@ const ProgramGuide = () => {
             <AccordionSection title="Camp Information">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Camp Map</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Map</h3>
                   <Placeholder label="🗺️ Camp Map — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Camp Rules</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Rules</h3>
                   <Placeholder label="📄 Camp Rules — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Code of Conduct
                   </h3>
                   <Placeholder label="📄 Code of Conduct — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Activities</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Activities</h3>
                   <Placeholder label="📄 Camp Activities — placeholder" />
                 </div>
               </div>
@@ -181,7 +181,7 @@ const ProgramGuide = () => {
             <AccordionSection title="Community & Network">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Team</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Team</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {teamRoles.map((name) => (
                       <div
@@ -195,19 +195,19 @@ const ProgramGuide = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Lead Coaches</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Lead Coaches</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Speakers</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Speakers</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Participants</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Participants</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Emergencies</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Emergencies</h3>
                   <div className="rounded-xl bg-white/90 text-esprint-darkblue p-5 space-y-1 text-sm">
                     <div><span className="font-semibold">Police:</span> 110</div>
                     <div><span className="font-semibold">Fire / Ambulance:</span> 112</div>

@@ -99,13 +99,13 @@ const ProgramGuide = () => {
             <AccordionSection title="Travel & Logistics">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Travel Policy & Reimbursement
                   </h3>
                   <Placeholder label="📄 Travel Policy — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Weather Forecast
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -122,16 +122,16 @@ const ProgramGuide = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Packing List
                   </h3>
                   <Placeholder label="📄 Packing List — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Staying Longer in Berlin? What to do
                   </h3>
-                  <p className="text-white/80 mb-3">
+                  <p className="text-esprint-darkblue/80 mb-3">
                     Insights from different organizing team members about favorite things to do in Berlin.
                   </p>
                   <Placeholder />

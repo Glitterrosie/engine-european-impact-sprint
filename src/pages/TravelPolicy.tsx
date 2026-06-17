@@ -85,15 +85,17 @@ const TravelPolicy = () => {
             <ArrowLeft className="h-4 w-4" /> Back to Program Guide
           </Link>
 
-          <div className="rounded-2xl bg-esprint-cream/95 p-6 md:p-10">
-            <h1 className="font-display font-black text-4xl md:text-5xl text-esprint-darkblue mb-4">
-              Travel Policy
-            </h1>
-            <p className="text-esprint-darkblue/85 leading-relaxed mb-8">
-              As part of the European Impact Sprint, HPI Engine has agreed to cover up to
-              up to €200 in travel scholarships per participant. This scholarship must
-              adhere to the following guidelines and policy.
-            </p>
+          <div className="space-y-6">
+            <div className="rounded-2xl bg-white p-6 md:p-8 shadow-sm">
+              <h1 className="font-display font-black text-4xl md:text-5xl text-esprint-darkblue mb-4">
+                Travel Policy
+              </h1>
+              <p className="text-esprint-darkblue/85 leading-relaxed">
+                As part of the European Impact Sprint, HPI Engine has agreed to cover up to
+                up to €200 in travel scholarships per participant. This scholarship must
+                adhere to the following guidelines and policy.
+              </p>
+            </div>
 
             <Section title="Travel Methods">
               <SubSection title="Bus / Train">
@@ -122,11 +124,11 @@ const TravelPolicy = () => {
               <SubSection title="Other travel methods">
                 <p>
                   If you plan to travel by any other means (e.g. private car, ferry),
-                  please reach out to us &lt;
+                  please reach out to us <{" "}
                   <ExtLink href="mailto:impact-sprint@engine.hpi.de">
                     impact-sprint@engine.hpi.de
                   </ExtLink>
-                  &gt; before booking to confirm whether reimbursement can be arranged.
+                  > before booking to confirm whether reimbursement can be arranged.
                 </p>
               </SubSection>
             </Section>

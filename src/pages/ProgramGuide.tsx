@@ -295,7 +295,7 @@ const ProgramGuide = () => {
               <div className="space-y-8">
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Map</h3>
-                  <Placeholder label="🗺️ Camp Map — placeholder" />
+                  <Placeholder label="🗺️ Camp Map — Coming soon" />
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Rules</h3>

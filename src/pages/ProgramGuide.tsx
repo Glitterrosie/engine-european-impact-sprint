@@ -262,7 +262,7 @@ const ProgramGuide = () => {
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Packing List
                   </h3>
-                  <Placeholder label="📄 Packing List — placeholder" />
+                  <Placeholder label="📄 Packing List — Coming Soon" />
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">

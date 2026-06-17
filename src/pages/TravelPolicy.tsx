@@ -62,6 +62,20 @@ const ExtLink = ({ href, children }: { href: string; children: React.ReactNode }
   </a>
 );
 
+const EmailButton = ({ email }: { email: string }) => (
+  <a
+    href={`mailto:${email}`}
+    className="inline-flex items-center gap-1.5 align-baseline rounded-md bg-esprint-pink/15 text-esprint-pink hover:bg-esprint-pink hover:text-white px-2.5 py-1 text-sm font-semibold transition-colors no-underline"
+  >
+    <Mail className="h-3.5 w-3.5" />
+    {email}
+  </a>
+);
+
+const Highlight = ({ children }: { children: React.ReactNode }) => (
+  <span className="font-semibold text-esprint-pink whitespace-nowrap">{children}</span>
+);
+
 const TravelPolicy = () => {
   return (
     <>

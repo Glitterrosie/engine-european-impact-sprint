@@ -124,11 +124,11 @@ const TravelPolicy = () => {
               <SubSection title="Other travel methods">
                 <p>
                   If you plan to travel by any other means (e.g. private car, ferry),
-                  please reach out to us <{" "}
+                  please reach out to us &lt;{" "}
                   <ExtLink href="mailto:impact-sprint@engine.hpi.de">
                     impact-sprint@engine.hpi.de
                   </ExtLink>
-                  > before booking to confirm whether reimbursement can be arranged.
+                  {" "}&gt; before booking to confirm whether reimbursement can be arranged.
                 </p>
               </SubSection>
             </Section>

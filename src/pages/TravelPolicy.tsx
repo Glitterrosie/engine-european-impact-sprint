@@ -212,19 +212,27 @@ const TravelPolicy = () => {
                 <p>
                   The same rules apply to your travel to or from an airport or train station in your home city. <strong>Use public transportation where possible</strong> and keep proof of purchase.
                 </p>
-                <div className="rounded-xl border border-esprint-darkblue/15 bg-white/60 p-4 mt-2">
-                  <p className="font-semibold mb-2">
+              </SubSection>
+            </Section>
+
+            <section className="rounded-2xl bg-esprint-pink/10 p-6 md:p-8 border border-esprint-pink/20 shadow-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-esprint-pink/20 text-esprint-pink shrink-0 mt-0.5">
+                  <AlertTriangle className="h-6 w-6" />
+                </div>
+                <div className="space-y-3 text-esprint-darkblue/85 leading-relaxed">
+                  <h2 className="font-display font-bold text-lg md:text-xl text-esprint-darkblue">
                     Do not use taxis or other private means of transportation unless:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-1">
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Physical or health reasons</strong> require an alternative mode of transport.</li>
                     <li>
                       The <strong>time of travel is highly inconvenient</strong> and no reasonable public transport option is available.
                     </li>
                   </ul>
                 </div>
-              </SubSection>
-            </Section>
+              </div>
+            </section>
 
             <Section title="Booking the trip">
               <p>

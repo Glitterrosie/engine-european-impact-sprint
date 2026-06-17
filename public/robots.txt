@@ -1,19 +1,24 @@
 User-agent: Googlebot
 Allow: /
 Disallow: /register
+Disallow: /program-guide
 
 User-agent: Bingbot
 Allow: /
 Disallow: /register
+Disallow: /program-guide
 
 User-agent: Twitterbot
 Allow: /
 Disallow: /register
+Disallow: /program-guide
 
 User-agent: facebookexternalhit
 Allow: /
 Disallow: /register
+Disallow: /program-guide
 
 User-agent: *
 Allow: /
 Disallow: /register
+Disallow: /program-guide

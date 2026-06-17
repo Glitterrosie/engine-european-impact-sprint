@@ -16,6 +16,7 @@ import FAQ from "./pages/FAQ";
 import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
+import ProgramGuide from "./pages/ProgramGuide";
 import keyVisual from "@/assets/key-visual.png";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -43,6 +44,7 @@ const App = () => (
            <Route path="/faq" element={<FAQ />} />
            <Route path="/imprint" element={<Imprint />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/program-guide" element={<ProgramGuide />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

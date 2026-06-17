@@ -381,12 +381,22 @@ const ProgramGuide = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Emergencies</h3>
-                  <div className="rounded-xl bg-white/90 text-esprint-darkblue p-5 space-y-1 text-sm">
-                    <div><span className="font-semibold">Police:</span> 110</div>
-                    <div><span className="font-semibold">Fire / Ambulance:</span> 112</div>
-                    <div><span className="font-semibold">HPI Security:</span> —</div>
-                    <div><span className="font-semibold">Program Managers:</span> —</div>
-                    <div><span className="font-semibold">First Aid:</span> —</div>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {[
+                      { label: "Police", value: "110" },
+                      { label: "Fire / Ambulance", value: "112" },
+                      { label: "HPI Security", value: "—" },
+                      { label: "Program Managers", value: "—" },
+                      { label: "First Aid", value: "—" },
+                    ].map((c) => (
+                      <div
+                        key={c.label}
+                        className="rounded-xl bg-white/90 border border-esprint-darkblue/10 p-3 text-esprint-darkblue"
+                      >
+                        <div className="text-xs font-semibold opacity-70">{c.label}</div>
+                        <div className="text-lg font-bold mt-1">{c.value}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

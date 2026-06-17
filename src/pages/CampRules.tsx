@@ -89,7 +89,7 @@ const sections: Section[] = [
             href="https://hpi.de/en/data-privacy.html"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center rounded-md border border-esprint-darkblue/10 bg-white/70 hover:bg-white px-2 py-0.5 text-sm font-semibold transition-colors no-underline"
+            className="inline-flex items-center rounded-md border border-esprint-pink/30 bg-esprint-pink/10 hover:bg-esprint-pink/20 px-2 py-0.5 text-sm font-semibold text-esprint-darkblue transition-colors no-underline"
           >
             hpi.de/en/data-privacy.html
           </a>

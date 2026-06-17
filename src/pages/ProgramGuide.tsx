@@ -184,6 +184,7 @@ const AccordionSection = ({
 };
 
 const ProgramGuide = () => {
+  const { days: weatherDays, note: weatherNote } = useWeather();
   return (
     <>
       <Helmet>

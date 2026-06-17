@@ -105,9 +105,7 @@ const TravelPolicy = () => {
                 Travel Policy
               </h1>
               <p className="text-esprint-darkblue/85 leading-relaxed">
-                As part of the European Impact Sprint, HPI Engine has agreed to cover up to
-                up to €200 in travel scholarships per participant. This scholarship must
-                adhere to the following guidelines and policy.
+                As part of the European Impact Sprint, HPI Engine has agreed to cover <strong>up to <Highlight>€200 in travel scholarships per participant</Highlight></strong>. This scholarship must adhere to the following guidelines and policy.
               </p>
             </div>
 

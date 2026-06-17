@@ -17,6 +17,7 @@ import Imprint from "./pages/Imprint";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
 import ProgramGuide from "./pages/ProgramGuide";
+import TravelPolicy from "./pages/TravelPolicy";
 import keyVisual from "@/assets/key-visual.png";
 import { Analytics } from "@vercel/analytics/react";
 

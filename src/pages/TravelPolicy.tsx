@@ -197,36 +197,29 @@ const TravelPolicy = () => {
             </Section>
 
             <Section title="Local Travel">
-              <p>In principle, you should only use public means of transportation.</p>
+              <p>In principle, you should <strong>only use public means of transportation</strong>.</p>
 
               <SubSection title="From Berlin to HPI Campus">
                 <p>
-                  Travel from a Berlin airport, Berlin central station, or any other
-                  location within Berlin to HPI Campus (Potsdam) can be covered. Use
-                  regional trains (RE/RB lines) or public transport (S-Bahn, U-Bahn,
-                  trams or busses).
+                  Travel from a Berlin airport, Berlin central station, or any other location within Berlin to HPI Campus (Potsdam) <strong>can be covered</strong>. Use <strong>regional trains (RE/RB lines)</strong> or <strong>public transport (S-Bahn, U-Bahn, trams or busses)</strong>.
                 </p>
                 <p>
-                  Make sure to keep your stamped tickets or proof of purchase, as this is
-                  required for reimbursement.
+                  Make sure to <strong>keep your stamped tickets or proof of purchase</strong>, as this is required for reimbursement.
                 </p>
               </SubSection>
 
               <SubSection title="In your home city">
                 <p>
-                  The same rules apply to your travel to or from an airport or train
-                  station in your home city. Use public transportation where possible and
-                  keep proof of purchase.
+                  The same rules apply to your travel to or from an airport or train station in your home city. <strong>Use public transportation where possible</strong> and keep proof of purchase.
                 </p>
                 <div className="rounded-xl border border-esprint-darkblue/15 bg-white/60 p-4 mt-2">
                   <p className="font-semibold mb-2">
                     Do not use taxis or other private means of transportation unless:
                   </p>
                   <ul className="list-disc pl-6 space-y-1">
-                    <li>Physical or health reasons require an alternative mode of transport.</li>
+                    <li><strong>Physical or health reasons</strong> require an alternative mode of transport.</li>
                     <li>
-                      The time of travel is highly inconvenient and no reasonable public
-                      transport option is available.
+                      The <strong>time of travel is highly inconvenient</strong> and no reasonable public transport option is available.
                     </li>
                   </ul>
                 </div>
@@ -235,19 +228,15 @@ const TravelPolicy = () => {
 
             <Section title="Booking the trip">
               <p>
-                Arrange and book your travel as early as possible to keep costs low and
-                comply with this policy.
+                <strong>Arrange and book your travel as early as possible</strong> to keep costs low and comply with this policy.
               </p>
               <p>
-                If you are in doubt if you chosen trip adhere to the travel policy, feel
-                free to reach out to Essam Sharaf at{" "}
-                <ExtLink href="mailto:essam.sharaf@hpi.de">essam.sharaf@hpi.de</ExtLink>{" "}
-                or{" "}
-                <ExtLink href="mailto:impact-sprint@engine.hpi.de">
-                  impact-sprint@engine.hpi.de
-                </ExtLink>{" "}
-                and get a pre-approval.
+                If you are in doubt whether your chosen trip adheres to the travel policy, feel free to reach out to <strong>Essam Sharaf</strong> and get a <strong>pre-approval</strong>:
               </p>
+              <div className="flex flex-wrap gap-2">
+                <EmailButton email="essam.sharaf@hpi.de" />
+                <EmailButton email="impact-sprint@engine.hpi.de" />
+              </div>
             </Section>
 
             <Section title="Travel reimbursement">
@@ -257,8 +246,8 @@ const TravelPolicy = () => {
 
               <SubSection title="Requirements for travel reimbursement">
                 <ul className="list-disc pl-6 space-y-1">
-                  <li>Attend the full program</li>
-                  <li>Adhere to the travel policy</li>
+                  <li><strong>Attend the full program</strong></li>
+                  <li><strong>Adhere to the travel policy</strong></li>
                 </ul>
               </SubSection>
 
@@ -275,10 +264,7 @@ const TravelPolicy = () => {
 
               <SubSection title="Timeline">
                 <p>
-                  The travel expense report must be submitted within 4 weeks of the end
-                  of the business trip. The reimbursement process and receiving the
-                  travel scholarship will take about 4 weeks after that, unless
-                  additional documentation is required.
+                  The travel expense report must be <strong>submitted within <Highlight>4 weeks</Highlight> of the end of the business trip</strong>. The reimbursement process and receiving the travel scholarship will take about <Highlight>4 weeks</Highlight> after that, unless additional documentation is required.
                 </p>
               </SubSection>
             </Section>

@@ -248,13 +248,14 @@ const TravelPolicy = () => {
 
             <Section title="Travel reimbursement">
               <div className="rounded-xl border-2 border-dashed border-esprint-darkblue/20 bg-esprint-darkblue/5 px-5 py-4 text-esprint-darkblue/60 text-sm italic">
-                📄 Travel Reimbursement Form — placeholder
+                📄 Travel Reimbursement Form — Coming soon
               </div>
 
               <SubSection title="Requirements for travel reimbursement">
                 <ul className="list-disc pl-6 space-y-1">
                   <li><strong>Attend the full program</strong></li>
                   <li><strong>Adhere to the travel policy</strong></li>
+                  <li>Provide <strong>proofs of purchase</strong> such as stamped tickets, invoices, and receipts</li>
                 </ul>
               </SubSection>
 

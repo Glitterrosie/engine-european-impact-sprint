@@ -284,7 +284,7 @@ const ProgramGuide = () => {
                     <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                       {d.title}
                     </h3>
-                    <Placeholder label="Schedule details — placeholder" />
+                    <Placeholder label="Schedule details — Coming soon" />
                   </div>
                 ))}
               </div>

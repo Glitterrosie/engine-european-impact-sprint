@@ -26,7 +26,7 @@ const days: SectionDef[] = [
 const teamRoles = ["Essam Sharaf", "Lisa Jeller", "Hendrik Laßör"];
 
 const Placeholder = ({ label = "Content coming soon" }: { label?: string }) => (
-  <div className="rounded-xl border-2 border-dashed border-white/30 bg-white/5 px-5 py-6 text-white/60 text-sm italic">
+  <div className="rounded-xl border-2 border-dashed border-esprint-darkblue/20 bg-esprint-darkblue/5 px-5 py-6 text-esprint-darkblue/50 text-sm italic">
     {label}
   </div>
 );
@@ -43,20 +43,20 @@ const AccordionSection = ({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-esprint-darkblue/60 backdrop-blur-xl overflow-hidden">
+    <div className="rounded-2xl border border-esprint-darkblue/10 bg-esprint-cream/95 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/5"
+        className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/50"
       >
-        <h2 className="font-display font-black text-2xl md:text-3xl text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+        <h2 className="font-display font-black text-2xl md:text-3xl text-esprint-darkblue">
           {title}
         </h2>
         <ChevronDown
-          className={`h-6 w-6 text-white/70 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          className={`h-6 w-6 text-esprint-darkblue/70 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
         />
       </button>
       {open && (
-        <div className="px-6 pb-6 pt-2 border-t border-white/10">
+        <div className="px-6 pb-6 pt-2 border-t border-esprint-darkblue/10">
           {children}
         </div>
       )}
@@ -83,7 +83,7 @@ const ProgramGuide = () => {
             European Impact Sprint 2026 — Program Guide
           </h1>
 
-          <div className="space-y-6 text-white">
+          <div className="space-y-6">
             {/* Welcome — always open */}
             <section className="rounded-2xl bg-esprint-cream/95 text-esprint-darkblue p-6 md:p-8">
               <h2 className="font-display font-bold text-2xl md:text-3xl mb-3">
@@ -93,25 +93,19 @@ const ProgramGuide = () => {
                 We are super excited to welcome you to the first European Impact Sprint hosted
                 by the Hasso-Plattner Institute in Potsdam/Berlin.
               </p>
-              <div className="mt-4 rounded-xl border-l-4 border-esprint-red bg-white/70 px-4 py-3 text-sm">
-                <p className="font-semibold mb-1">❗ Here is how we suggest you use this guide</p>
-                <ul className="list-disc pl-5 opacity-80">
-                  <li>Placeholder list item</li>
-                </ul>
-              </div>
             </section>
 
             {/* Travel & Logistics */}
             <AccordionSection title="Travel & Logistics">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Travel Policy & Reimbursement
                   </h3>
                   <Placeholder label="📄 Travel Policy — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Weather Forecast
                   </h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -128,16 +122,16 @@ const ProgramGuide = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Packing List
                   </h3>
                   <Placeholder label="📄 Packing List — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Staying Longer in Berlin? What to do
                   </h3>
-                  <p className="text-white/80 mb-3">
+                  <p className="text-esprint-darkblue/80 mb-3">
                     Insights from different organizing team members about favorite things to do in Berlin.
                   </p>
                   <Placeholder />
@@ -150,7 +144,7 @@ const ProgramGuide = () => {
               <div className="space-y-6">
                 {days.map((d) => (
                   <div key={d.id}>
-                    <h3 className="font-display font-bold text-xl text-white mb-3">
+                    <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                       {d.title}
                     </h3>
                     <Placeholder label="Schedule details — placeholder" />
@@ -163,21 +157,21 @@ const ProgramGuide = () => {
             <AccordionSection title="Camp Information">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Camp Map</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Map</h3>
                   <Placeholder label="🗺️ Camp Map — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Camp Rules</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Rules</h3>
                   <Placeholder label="📄 Camp Rules — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                     Code of Conduct
                   </h3>
                   <Placeholder label="📄 Code of Conduct — placeholder" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Activities</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Activities</h3>
                   <Placeholder label="📄 Camp Activities — placeholder" />
                 </div>
               </div>
@@ -187,7 +181,7 @@ const ProgramGuide = () => {
             <AccordionSection title="Community & Network">
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Team</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Team</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {teamRoles.map((name) => (
                       <div
@@ -201,19 +195,19 @@ const ProgramGuide = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Lead Coaches</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Lead Coaches</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Speakers</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Speakers</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Participants</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Participants</h3>
                   <Placeholder />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-white mb-3">Emergencies</h3>
+                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Emergencies</h3>
                   <div className="rounded-xl bg-white/90 text-esprint-darkblue p-5 space-y-1 text-sm">
                     <div><span className="font-semibold">Police:</span> 110</div>
                     <div><span className="font-semibold">Fire / Ambulance:</span> 112</div>

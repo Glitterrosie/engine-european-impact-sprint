@@ -67,7 +67,18 @@ const sections: Section[] = [
         <li>
           HPI will be taking photos and videos during the program. The photographs may be published, e.g.
           <ul className="mt-2 space-y-1 list-[circle] pl-5 marker:text-esprint-darkblue/40">
-            <li>on the HPI homepage (www.hpi.de)</li>
+            <li>
+              on the HPI homepage ({" "}
+              <a
+                href="https://www.hpi.de"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-md border border-esprint-darkblue/10 bg-white/70 hover:bg-white px-2 py-0.5 text-sm font-semibold transition-colors no-underline"
+              >
+                www.hpi.de
+              </a>
+              )
+            </li>
             <li>in (print) publications of HPI, such as brochures and study program flyers</li>
             <li>on the HPI social media channels</li>
           </ul>
@@ -78,7 +89,7 @@ const sections: Section[] = [
             href="https://hpi.de/en/data-privacy.html"
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-esprint-pink underline-offset-2 hover:text-esprint-pink"
+            className="inline-flex items-center rounded-md border border-esprint-darkblue/10 bg-white/70 hover:bg-white px-2 py-0.5 text-sm font-semibold transition-colors no-underline"
           >
             hpi.de/en/data-privacy.html
           </a>

@@ -80,7 +80,7 @@ const ProgramGuide = () => {
             className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
           />
           <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-10">
-            European Impact Sprint 2026 — Program Guide
+            Program Guide
           </h1>
 
           <div className="space-y-6">

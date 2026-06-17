@@ -26,7 +26,7 @@ const days: SectionDef[] = [
 const teamRoles = ["Essam Sharaf", "Lisa Jeller", "Hendrik Laßör"];
 
 const Placeholder = ({ label = "Content coming soon" }: { label?: string }) => (
-  <div className="rounded-xl border-2 border-dashed border-white/30 bg-white/5 px-5 py-6 text-white/60 text-sm italic">
+  <div className="rounded-xl border-2 border-dashed border-esprint-darkblue/20 bg-esprint-darkblue/5 px-5 py-6 text-esprint-darkblue/50 text-sm italic">
     {label}
   </div>
 );

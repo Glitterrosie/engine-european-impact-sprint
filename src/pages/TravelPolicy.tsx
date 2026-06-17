@@ -99,37 +99,43 @@ const TravelPolicy = () => {
 
             <Section title="Travel Methods">
               <SubSection title="Bus / Train">
-                <p>
-                  Traveling by train or bus is the preferred and required mode of transport
-                  for trips under 4 hours in total.
-                </p>
-                <p>When traveling by train, the use of the 2nd class is necessary.</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    Traveling by train or bus is the preferred and required mode of transport
+                    for trips under 4 hours in total.
+                  </li>
+                  <li>When traveling by train, the use of the 2nd class is necessary.</li>
+                </ul>
               </SubSection>
 
               <SubSection title="Flights">
-                <p>
-                  Airplane travel is only permitted if travel time by train or bus exceeds
-                  4 hours.
-                </p>
-                <p>
-                  All flights must be booked in Economy class at the lowest available
-                  airfare. Plan and book as early as possible to secure the best prices.
-                </p>
-                <p>
-                  Keep all boarding passes and include them in your travel reimbursement
-                  form.
-                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    Airplane travel is only permitted if travel time by train or bus exceeds
+                    4 hours.
+                  </li>
+                  <li>
+                    All flights must be booked in Economy class at the lowest available
+                    airfare. Plan and book as early as possible to secure the best prices.
+                  </li>
+                  <li>
+                    Keep all boarding passes and include them in your travel reimbursement
+                    form.
+                  </li>
+                </ul>
               </SubSection>
 
               <SubSection title="Other travel methods">
-                <p>
-                  If you plan to travel by any other means (e.g. private car, ferry),
-                  please reach out to us &lt;{" "}
-                  <ExtLink href="mailto:impact-sprint@engine.hpi.de">
-                    impact-sprint@engine.hpi.de
-                  </ExtLink>
-                  {" "}&gt; before booking to confirm whether reimbursement can be arranged.
-                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    If you plan to travel by any other means (e.g. private car, ferry),
+                    please reach out to us &lt;{" "}
+                    <ExtLink href="mailto:impact-sprint@engine.hpi.de">
+                      impact-sprint@engine.hpi.de
+                    </ExtLink>
+                    {" "}&gt; before booking to confirm whether reimbursement can be arranged.
+                  </li>
+                </ul>
               </SubSection>
             </Section>
 

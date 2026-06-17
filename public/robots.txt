@@ -1,14 +1,29 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /register
+Disallow: /program-guide
+Disallow: /travel-policy
 
 User-agent: Bingbot
 Allow: /
+Disallow: /register
+Disallow: /program-guide
+Disallow: /travel-policy
 
 User-agent: Twitterbot
 Allow: /
+Disallow: /register
+Disallow: /program-guide
+Disallow: /travel-policy
 
 User-agent: facebookexternalhit
 Allow: /
+Disallow: /register
+Disallow: /program-guide
+Disallow: /travel-policy
 
 User-agent: *
 Allow: /
+Disallow: /register
+Disallow: /program-guide
+Disallow: /travel-policy

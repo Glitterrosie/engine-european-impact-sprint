@@ -93,12 +93,6 @@ const ProgramGuide = () => {
                 We are super excited to welcome you to the first European Impact Sprint hosted
                 by the Hasso-Plattner Institute in Potsdam/Berlin.
               </p>
-              <div className="mt-4 rounded-xl border-l-4 border-esprint-red bg-white/70 px-4 py-3 text-sm">
-                <p className="font-semibold mb-1">❗ Here is how we suggest you use this guide</p>
-                <ul className="list-disc pl-5 opacity-80">
-                  <li>Placeholder list item</li>
-                </ul>
-              </div>
             </section>
 
             {/* Travel & Logistics */}

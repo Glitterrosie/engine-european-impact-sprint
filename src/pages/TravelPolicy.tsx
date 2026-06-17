@@ -73,7 +73,7 @@ const EmailButton = ({ email }: { email: string }) => (
 );
 
 const Highlight = ({ children }: { children: React.ReactNode }) => (
-  <span className="font-semibold text-esprint-pink whitespace-nowrap">{children}</span>
+  <span className="font-semibold text-esprint-pink">{children}</span>
 );
 
 const TravelPolicy = () => {

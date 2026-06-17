@@ -1,7 +1,16 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Bus, Plane, CalendarDays, Hotel, MapPin, ClipboardCheck, Receipt } from "lucide-react";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
+
+const sectionIcons: Record<string, React.ReactNode> = {
+  "Travel Methods": <Bus className="h-6 w-6" />,
+  "Travel dates": <CalendarDays className="h-6 w-6" />,
+  "Accommodation": <Hotel className="h-6 w-6" />,
+  "Local Travel": <MapPin className="h-6 w-6" />,
+  "Booking the trip": <ClipboardCheck className="h-6 w-6" />,
+  "Travel reimbursement": <Receipt className="h-6 w-6" />,
+};
 
 const Section = ({
   title,
@@ -10,11 +19,16 @@ const Section = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <section className="mb-8">
-    <h2 className="font-display font-bold text-2xl md:text-3xl text-esprint-darkblue mb-3">
-      {title}
-    </h2>
-    <div className="space-y-3 text-esprint-darkblue/85 leading-relaxed">
+  <section className="py-8 first:pt-0 last:pb-0">
+    <div className="flex items-center gap-3 mb-5">
+      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white shadow-sm text-esprint-darkblue">
+        {sectionIcons[title]}
+      </div>
+      <h2 className="font-display font-bold text-2xl md:text-3xl text-esprint-darkblue">
+        {title}
+      </h2>
+    </div>
+    <div className="space-y-4 text-esprint-darkblue/85 leading-relaxed">
       {children}
     </div>
   </section>

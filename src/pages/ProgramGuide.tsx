@@ -331,7 +331,7 @@ const ProgramGuide = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Activities</h3>
-                  <Placeholder label="📄 Camp Activities — placeholder" />
+                  <Placeholder label="📄 Camp Activities — Coming soon" />
                 </div>
               </div>
             </AccordionSection>

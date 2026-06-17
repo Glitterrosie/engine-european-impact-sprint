@@ -240,6 +240,11 @@ const ProgramGuide = () => {
                       </div>
                     ))}
                   </div>
+                  {weatherNote && (
+                    <p className="mt-3 text-xs text-esprint-darkblue/60 italic">
+                      {weatherNote}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">

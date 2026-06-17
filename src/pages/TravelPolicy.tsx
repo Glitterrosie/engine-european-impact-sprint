@@ -115,26 +115,22 @@ const TravelPolicy = () => {
               <SubSection title="Bus / Train">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    Traveling by train or bus is the preferred and required mode of transport
-                    for trips under 4 hours in total.
+                    Traveling by <strong>train or bus is the preferred and required mode of transport</strong> for trips <strong>under 4 hours</strong> in total.
                   </li>
-                  <li>When traveling by train, the use of the 2nd class is necessary.</li>
+                  <li>When traveling by train, the use of <strong>2nd class</strong> is necessary.</li>
                 </ul>
               </SubSection>
 
               <SubSection title="Flights">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    Airplane travel is only permitted if travel time by train or bus exceeds
-                    4 hours.
+                    Airplane travel is <strong>only permitted if travel time by train or bus exceeds 4 hours</strong>.
                   </li>
                   <li>
-                    All flights must be booked in Economy class at the lowest available
-                    airfare. Plan and book as early as possible to secure the best prices.
+                    All flights must be booked in <strong>Economy class at the lowest available airfare</strong>. Plan and book as early as possible to secure the best prices.
                   </li>
                   <li>
-                    Keep all boarding passes and include them in your travel reimbursement
-                    form.
+                    <strong>Keep all boarding passes</strong> and include them in your travel reimbursement form.
                   </li>
                 </ul>
               </SubSection>
@@ -142,12 +138,8 @@ const TravelPolicy = () => {
               <SubSection title="Other travel methods">
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    If you plan to travel by any other means (e.g. private car, ferry),
-                    please reach out to us &lt;{" "}
-                    <ExtLink href="mailto:impact-sprint@engine.hpi.de">
-                      impact-sprint@engine.hpi.de
-                    </ExtLink>
-                    {" "}&gt; before booking to confirm whether reimbursement can be arranged.
+                    If you plan to travel by any other means (e.g. private car, ferry), please <strong>reach out before booking</strong> to confirm whether reimbursement can be arranged:{" "}
+                    <EmailButton email="impact-sprint@engine.hpi.de" />
                   </li>
                 </ul>
               </SubSection>
@@ -155,17 +147,13 @@ const TravelPolicy = () => {
 
             <Section title="Travel dates">
               <p>
-                The program starts from Tuesday 25 August at 14:00 at HPI Campus until
-                Friday 28 August 17:30.
+                The program starts from <Highlight>Tuesday 25 August at 14:00</Highlight> at HPI Campus until <Highlight>Friday 28 August 17:30</Highlight>.
               </p>
               <p>
-                If there are no trains or flights that allow you to arrive to HPI Campus
-                at these times without staying for Monday 24 August or Friday 28 August.
-                These two nights can be included in the travel reimbursement.
+                If there are no trains or flights that allow you to arrive at HPI Campus at these times without staying overnight, the nights of <Highlight>Monday 24 August</Highlight> and <Highlight>Friday 28 August</Highlight> <strong>can be included in the travel reimbursement</strong>.
               </p>
               <p>
-                You can travel before or after the program dates, but any costs
-                associated with that will not be covered by HPI.
+                You can travel before or after the program dates, but <strong>any additional costs will not be covered by HPI</strong>.
               </p>
             </Section>
 

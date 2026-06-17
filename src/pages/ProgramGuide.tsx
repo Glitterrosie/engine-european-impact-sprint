@@ -83,7 +83,7 @@ const ProgramGuide = () => {
             European Impact Sprint 2026 — Program Guide
           </h1>
 
-          <div className="space-y-6 text-white">
+          <div className="space-y-6">
             {/* Welcome — always open */}
             <section className="rounded-2xl bg-esprint-cream/95 text-esprint-darkblue p-6 md:p-8">
               <h2 className="font-display font-bold text-2xl md:text-3xl mb-3">

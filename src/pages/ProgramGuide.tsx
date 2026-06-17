@@ -43,20 +43,20 @@ const AccordionSection = ({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-esprint-darkblue/60 backdrop-blur-xl overflow-hidden">
+    <div className="rounded-2xl border border-esprint-darkblue/10 bg-esprint-cream/95 overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/5"
+        className="flex w-full items-center justify-between px-6 py-5 text-left transition-colors hover:bg-white/50"
       >
-        <h2 className="font-display font-black text-2xl md:text-3xl text-white drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)]">
+        <h2 className="font-display font-black text-2xl md:text-3xl text-esprint-darkblue">
           {title}
         </h2>
         <ChevronDown
-          className={`h-6 w-6 text-white/70 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          className={`h-6 w-6 text-esprint-darkblue/70 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
         />
       </button>
       {open && (
-        <div className="px-6 pb-6 pt-2 border-t border-white/10">
+        <div className="px-6 pb-6 pt-2 border-t border-esprint-darkblue/10">
           {children}
         </div>
       )}

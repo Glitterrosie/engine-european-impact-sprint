@@ -19,7 +19,7 @@ const Section = ({
   title: string;
   children: React.ReactNode;
 }) => (
-  <section className="py-8 first:pt-0 last:pb-0">
+  <section className="py-8 first:pt-0 last:pb-0 border-t border-esprint-darkblue/10 first:border-t-0">
     <div className="flex items-center gap-3 mb-5">
       <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-white shadow-sm text-esprint-darkblue">
         {sectionIcons[title]}

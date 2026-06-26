@@ -320,19 +320,11 @@ const ProgramGuide = () => {
                   </Link>
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
-                    Code of Conduct
-                  </h3>
                   <Link
                     to="/code-of-conduct"
                     className="group flex items-center justify-between gap-4 rounded-xl border border-esprint-darkblue/15 bg-white/80 hover:bg-white px-5 py-4 text-esprint-darkblue transition-colors"
                   >
-                    <div>
-                      <div className="font-semibold">📄 Read the full Code of Conduct</div>
-                      <div className="text-sm text-esprint-darkblue/70">
-                        Respect, inclusivity, safety, and accountability guidelines.
-                      </div>
-                    </div>
+                    <div className="font-display font-bold text-xl">Code of Conduct</div>
                     <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>

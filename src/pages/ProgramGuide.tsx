@@ -147,9 +147,9 @@ const days: SectionDef[] = [
 ];
 
 const teamMembers = [
-  { name: "Essam Sharaf", photo: essamPhoto, role: "Program Lead" },
-  { name: "Lisa Jeller", photo: lisaPhoto, role: "Program Manager" },
-  { name: "Hendrik Laflör", photo: hendrikPhoto, role: "Program Manager" },
+  { name: "Essam Sharaf", photo: essamPhoto, role: "Program Manager" },
+  { name: "Lisa Jeller", photo: lisaPhoto, role: "Event Manager" },
+  { name: "Hendrik Laflör", photo: hendrikPhoto, role: "Program Lead" },
 ];
 
 const Placeholder = ({ label = "Content coming soon" }: { label?: string }) => (

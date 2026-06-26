@@ -305,17 +305,11 @@ const ProgramGuide = () => {
                   <Placeholder label="🗺️ Camp Map — Coming soon" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">Camp Rules</h3>
                   <Link
                     to="/camp-rules"
                     className="group flex items-center justify-between gap-4 rounded-xl border border-esprint-darkblue/15 bg-white/80 hover:bg-white px-5 py-4 text-esprint-darkblue transition-colors"
                   >
-                    <div>
-                      <div className="font-semibold">📄 Read the full Camp Rules</div>
-                      <div className="text-sm text-esprint-darkblue/70">
-                        Time & participation, etiquette, safety, photos, and more.
-                      </div>
-                    </div>
+                    <div className="font-display font-bold text-xl">Camp Rules</div>
                     <ArrowRight className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>

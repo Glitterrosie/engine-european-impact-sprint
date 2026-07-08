@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Calendar, MapPin, Users, Globe, Mail, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Users, Globe, Mail, ArrowRight, Tent } from "lucide-react";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const timeline = [

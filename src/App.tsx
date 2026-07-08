@@ -20,6 +20,7 @@ import ProgramGuide from "./pages/ProgramGuide";
 import TravelPolicy from "./pages/TravelPolicy";
 import CampRules from "./pages/CampRules";
 import CodeOfConduct from "./pages/CodeOfConduct";
+import HpiStudents from "./pages/HpiStudents";
 import keyVisual from "@/assets/key-visual.png";
 import { Analytics } from "@vercel/analytics/react";
 

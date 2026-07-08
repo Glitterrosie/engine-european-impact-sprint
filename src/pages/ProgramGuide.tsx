@@ -138,12 +138,77 @@ const useWeather = () => {
   return { days, note };
 };
 
-const days: SectionDef[] = [
-  { id: "mon-2408", title: "Monday 24.08" },
-  { id: "tue-2508", title: "Tuesday 25.08" },
-  { id: "wed-2608", title: "Wednesday 26.08" },
-  { id: "thu-2708", title: "Thursday 27.08" },
-  { id: "fri-2808", title: "Friday 28.08" },
+interface ScheduleItem {
+  time: string;
+  title: string;
+}
+interface ScheduleDay {
+  id: string;
+  title: string;
+  items: ScheduleItem[];
+}
+
+const scheduleDays: ScheduleDay[] = [
+  {
+    id: "tue-2508",
+    title: "Day 1 — Tue 25.08",
+    items: [
+      { time: "08:00 – 14:00", title: "Arrival & Check-in" },
+      { time: "14:00 – 14:30", title: "Welcome & Tour" },
+      { time: "14:30 – 15:30", title: "Introductions" },
+      { time: "15:30 – 16:00", title: "Team Contract" },
+      { time: "16:00 – 18:00", title: "Smart Plants Team Workshop" },
+      { time: "18:00 – 19:00", title: "Dinner" },
+      { time: "19:00 – 19:30", title: "Problem Space" },
+      { time: "19:30 – 20:00", title: "Pub Quiz" },
+    ],
+  },
+  {
+    id: "wed-2608",
+    title: "Day 2 — Wed 26.08",
+    items: [
+      { time: "08:00", title: "Wake-Up Call" },
+      { time: "08:00 – 09:00", title: "Breakfast" },
+      { time: "09:30 – 11:00", title: "Problem Definition" },
+      { time: "11:00 – 12:00", title: "Keynote Speeches & Opening Panel" },
+      { time: "12:00 – 13:00", title: "Lunch" },
+      { time: "13:00 – 15:00", title: "Brainstorming & Prototyping" },
+      { time: "15:00 – 17:00", title: "European Datasets Workshop" },
+      { time: "18:00 – 19:00", title: "Dinner" },
+      { time: "19:00 – 20:30", title: "Inspirational Night" },
+    ],
+  },
+  {
+    id: "thu-2708",
+    title: "Day 3 — Thu 27.08",
+    items: [
+      { time: "08:00", title: "Wake-Up Call" },
+      { time: "08:00 – 08:45", title: "Running Group" },
+      { time: "08:00 – 09:00", title: "Breakfast" },
+      { time: "09:30 – 12:00", title: "Building Concept" },
+      { time: "12:00 – 13:00", title: "Lunch" },
+      { time: "13:00 – 14:00", title: "Pitching Workshop" },
+      { time: "14:00 – 17:00", title: "Pitch Coaching" },
+      { time: "14:00 – 17:00", title: "Continue Building" },
+      { time: "16:00 – 17:00", title: "Generative AI Tools" },
+      { time: "17:00 – 18:00", title: "Usability Testing & Feedback" },
+      { time: "18:00 – 19:00", title: "Dinner" },
+      { time: "18:00 – 22:00", title: "MakerUniverse Rave" },
+    ],
+  },
+  {
+    id: "fri-2808",
+    title: "Day 4 — Fri 28.08",
+    items: [
+      { time: "08:00", title: "Wake-Up Call" },
+      { time: "08:00 – 09:00", title: "Breakfast" },
+      { time: "09:00 – 12:00", title: "Finish Building" },
+      { time: "12:00 – 13:00", title: "Lunch" },
+      { time: "13:00 – 13:30", title: "Welcome to Demo Day" },
+      { time: "13:30 – 15:30", title: "Final Presentations" },
+      { time: "15:30 – 16:00", title: "Closing Remarks" },
+    ],
+  },
 ];
 
 const teamMembers = [

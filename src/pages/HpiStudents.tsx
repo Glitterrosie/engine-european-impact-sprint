@@ -114,10 +114,10 @@ const HpiStudents = () => {
                 How can HPI students apply?
               </h2>
               <p className="leading-relaxed mb-4">
-                All HPI Bachelor students. Students need to be comfortable working in
-                English and collaborating in multicultural teams. No prior entrepreneurial
-                experience required but being passionate about developing ideas tackling
-                Europe's digital and tech sovereignty is a plus!
+                All HPI bachelor students can apply. You need to be comfortable working
+                in English and collaborating in multicultural teams. No prior
+                entrepreneurial experience required but being passionate about developing
+                ideas tackling Europe's digital and tech sovereignty is a plus!
               </p>
 
               <ol className="space-y-3 mb-6">

@@ -342,13 +342,28 @@ const ProgramGuide = () => {
 
             {/* Program Schedule */}
             <AccordionSection title="Program Schedule">
+              <p className="text-sm italic text-esprint-darkblue/60 mb-6">
+                Preliminary schedule — subject to changes.
+              </p>
               <div className="space-y-6">
-                {days.map((d) => (
+                {scheduleDays.map((d) => (
                   <div key={d.id}>
                     <h3 className="font-display font-bold text-xl text-esprint-darkblue mb-3">
                       {d.title}
                     </h3>
-                    <Placeholder label="Schedule details — Coming soon" />
+                    <ul className="rounded-xl bg-white/80 border border-esprint-darkblue/10 divide-y divide-esprint-darkblue/10 overflow-hidden">
+                      {d.items.map((it, i) => (
+                        <li
+                          key={i}
+                          className="flex gap-4 px-4 py-2.5 text-esprint-darkblue"
+                        >
+                          <span className="font-mono text-sm font-semibold opacity-80 shrink-0 w-32 md:w-36">
+                            {it.time}
+                          </span>
+                          <span className="text-sm md:text-base">{it.title}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>

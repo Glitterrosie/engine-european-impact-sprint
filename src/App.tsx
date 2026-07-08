@@ -52,6 +52,7 @@ const App = () => (
           <Route path="/travel-policy" element={<TravelPolicy />} />
           <Route path="/camp-rules" element={<CampRules />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/hpi" element={<HpiStudents />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

@@ -20,6 +20,7 @@ import ProgramGuide from "./pages/ProgramGuide";
 import TravelPolicy from "./pages/TravelPolicy";
 import CampRules from "./pages/CampRules";
 import CodeOfConduct from "./pages/CodeOfConduct";
+import HpiStudents from "./pages/HpiStudents";
 import keyVisual from "@/assets/key-visual.png";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/travel-policy" element={<TravelPolicy />} />
           <Route path="/camp-rules" element={<CampRules />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+          <Route path="/hpi" element={<HpiStudents />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Calendar, MapPin, Users, Globe, Mail, ArrowRight, Tent } from "lucide-react";
+import { Calendar, MapPin, Users, Globe, Mail, ArrowRight } from "lucide-react";
 import esprintLogo from "@/assets/esprint-logo-white.svg";
 
 const timeline = [
@@ -47,9 +47,13 @@ const HpiStudents = () => {
             alt="European Impact Sprint"
             className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
           />
-          <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-10">
-            HPI Bachelor students can now apply for the first European Impact Sprint, 25–28 August 2026 at HPI Campus
+          <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-3">
+            Applications for HPI Students are Open!
           </h1>
+          <p className="text-lg text-white max-w-3xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.4)] mb-10">
+            HPI Bachelor students can now apply for the first European Impact Sprint,
+            25–28 August 2026 at HPI Potsdam/Berlin.
+          </p>
 
           <div className="space-y-6">
             {/* What is the program */}
@@ -70,17 +74,6 @@ const HpiStudents = () => {
                 teams, develop and prototype new ideas, and engage with talented peers
                 from across Europe.
               </p>
-
-              <div className="mt-5 rounded-xl bg-esprint-purple/10 border border-esprint-purple/30 p-4 flex items-start gap-3">
-                <Tent className="h-6 w-6 shrink-0 text-esprint-purple mt-0.5" />
-                <div>
-                  <div className="font-display font-bold">Glamping-style experience on campus</div>
-                  <p className="text-sm text-esprint-darkblue/80 mt-1">
-                    Sleep under the stars in glamping tents right by the HPI Main Building —
-                    a truly unique way to experience campus alongside 60 students from across Europe.
-                  </p>
-                </div>
-              </div>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {details.map((d) => (
@@ -121,7 +114,7 @@ const HpiStudents = () => {
                 How can HPI students apply?
               </h2>
               <p className="leading-relaxed mb-4">
-                All HPI bachelor students can apply. You need to be comfortable working in
+                All HPI Bachelor students. Students need to be comfortable working in
                 English and collaborating in multicultural teams. No prior entrepreneurial
                 experience required but being passionate about developing ideas tackling
                 Europe's digital and tech sovereignty is a plus!

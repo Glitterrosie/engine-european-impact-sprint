@@ -71,6 +71,17 @@ const HpiStudents = () => {
                 from across Europe.
               </p>
 
+              <div className="mt-5 rounded-xl bg-esprint-purple/10 border border-esprint-purple/30 p-4 flex items-start gap-3">
+                <Tent className="h-6 w-6 shrink-0 text-esprint-purple mt-0.5" />
+                <div>
+                  <div className="font-display font-bold">Glamping-style experience on campus</div>
+                  <p className="text-sm text-esprint-darkblue/80 mt-1">
+                    Sleep under the stars in glamping tents right by the HPI Main Building —
+                    a truly unique way to experience campus alongside 60 students from across Europe.
+                  </p>
+                </div>
+              </div>
+
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {details.map((d) => (
                   <div

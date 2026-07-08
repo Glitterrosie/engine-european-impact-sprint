@@ -47,7 +47,7 @@ const HpiStudents = () => {
             alt="European Impact Sprint"
             className="w-48 md:w-64 mb-6 drop-shadow-[0_2px_20px_rgba(0,0,0,0.3)]"
           />
-          <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-3">
+          <h1 className="font-display font-black text-4xl md:text-6xl text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)] mb-10">
             HPI Bachelor students can now apply for the first European Impact Sprint, 25–28 August 2026 at HPI Campus
           </h1>
 

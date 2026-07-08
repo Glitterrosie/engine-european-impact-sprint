@@ -114,9 +114,9 @@ const HpiStudents = () => {
                 How can HPI students apply?
               </h2>
               <p className="leading-relaxed mb-4">
-                Open to <strong>all HPI Bachelor students</strong>. You should be
-                comfortable working in English and collaborating in multicultural teams.
-                No prior entrepreneurial experience required — but a passion for tackling
+                All HPI Bachelor students. Students need to be comfortable working in
+                English and collaborating in multicultural teams. No prior entrepreneurial
+                experience required but being passionate about developing ideas tackling
                 Europe's digital and tech sovereignty is a plus!
               </p>
 

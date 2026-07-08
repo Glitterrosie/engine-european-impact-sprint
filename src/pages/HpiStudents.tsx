@@ -63,16 +63,16 @@ const HpiStudents = () => {
               </h2>
               <p className="leading-relaxed mb-4">
                 The European Impact Sprint is an intensive four-day innovation program
-                hosted by the Hasso Plattner Institute (HPI) in Potsdam/Berlin. It brings
-                together 60 outstanding Computer Science students from 30 European
-                countries — from Reykjavík in the north to Crete in the south —
-                representing leading universities such as UCL, ETH Zurich and many others.
+                hosted by the Hasso Plattner Institute (HPI) in Potsdam/Berlin from
+                25–28th August 2026. The program bring together 60 outstanding Computer
+                Science students from 30 European countries, from Reykjavík in the north
+                to Crete in the south, representing leading universities such as UCL,
+                ETH Zurich and many others.
               </p>
               <p className="leading-relaxed">
-                Throughout the program, participants work in diverse international teams,
-                develop and prototype new ideas, and engage with talented peers from
-                across Europe. Expect workshops, collaborative challenges, keynote
-                sessions, a BBQ — and glamping-style accommodation right on campus.
+                Throughout the program, participants will work in diverse international
+                teams, develop and prototype new ideas, and engage with talented peers
+                from across Europe.
               </p>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
